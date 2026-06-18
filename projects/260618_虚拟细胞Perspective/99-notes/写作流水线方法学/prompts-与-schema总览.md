@@ -1,7 +1,7 @@
 # 02 · 实际用过的 Prompt 与 Schema
 
 > 把本次真正发出去的 agent prompt、JSON schema、规范词表都抄在这里，方便提炼技能时直接复用/改写。
-> 运行件本体在 `workflow-scripts/` 和 `skills/`；本文件给的是"串起来的胶水"。
+> 本文件给的是"串起来的胶水"。P3/P4 完整 prompt 见同目录 `prompts/`；精练 4.0 技能源见 `../../05-distilled/SKILL.md`；P2/P5 等运行脚本（.py/.js）未入库，在桌面 `补充/` 原始素材包里。
 
 ---
 
@@ -44,7 +44,7 @@ prompt 核心：读 refined.md → 用 Claim Touchpoints 表作脊柱 → 每 (c
 ---
 
 ## 2. P1B —— 精练 4.0 跑全文 → excerpt-centric JSON（现行）
-脚本：`workflow-scripts/P1B-distill-v4_cleaned到json_workflow.js`；技能：`skills/精练4.0-index.md`（schema 在里面）。
+脚本：`P1B-distill-v4_cleaned到json_workflow.js`（未入库，在桌面素材包）；技能：`../../05-distilled/SKILL.md`（精练 4.0，schema 在里面）。
 **workflow 里每个 subagent 的 prompt（原文）**：
 
 ```
@@ -70,7 +70,7 @@ Return ONLY the structured counts for the file you wrote.
   primarySources:int, flags:int, jsonValid:bool }
 ```
 
-v4 卡 schema（详见 `skills/精练4.0-index.md` 的 Output Schema；形状）：
+v4 卡 schema（详见 `../../05-distilled/SKILL.md` 的 Output Schema；形状）：
 ```jsonc
 { schemaVersion, citationKey, title, authors, venue, year, doi, readOn, sourceFile,
   oneSentence, orientation,
