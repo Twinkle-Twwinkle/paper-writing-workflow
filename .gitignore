@@ -1,0 +1,9 @@
+# 真实论文项目里下载的 PDF 通常很大且受版权保护，默认不提交到 GitHub。
+# 文件夹结构靠各目录下的 README.md 保留。如确需版本化某些 PDF，用 git add -f 强制添加。
+projects/*/pdfs/*.pdf
+
+# 系统 / 编辑器杂项
+.DS_Store
+*.swp
+.idea/
+.vscode/
