@@ -1,0 +1,158 @@
+{
+  "schemaVersion": "精练-4.0",
+  "citationKey": "08a",
+  "title": "Visualization and analysis of gene expression in tissue sections by spatial transcriptomics",
+  "authors": "Patrik L. Ståhl, Fredrik Salmén, Sanja Vickovic, Anna Lundmark, José Fernández Navarro, Jens Magnusson, Stefania Giacomello, Michaela Asp, Jakub O. Westholm, Mikael Huss, Annelie Mollbrink, Sten Linnarsson, Simone Codeluppi, Åke Borg, Fredrik Pontén, Paul Igor Costea, Pelin Sahlén, Jan Mulder, Olaf Bergmann, Joakim Lundeberg, Jonas Frisén",
+  "venue": "Science, 2016, 353(6294):78-82",
+  "year": "2016",
+  "doi": "doi:10.1126/science.aaf2403",
+  "readOn": "2026-06-18",
+  "sourceFile": "/Users/augustsirius/Desktop/已清洗_260617/08a - Spatial transcriptomics - Stahl et al. Science 2016_cleaned.md",
+  "oneSentence": "The authors devised \"spatial transcriptomics,\" a method that places histological tissue sections onto a slide arrayed with positionally barcoded reverse-transcription primers, so that RNA-sequencing of the section yields genome-wide expression while retaining two-dimensional positional information, demonstrated in mouse brain and human breast cancer.",
+  "orientation": "This is a foundational spatial-omics method paper that most directly feeds our claim that the standard dissociation/homogenization paradigm destroys spatial information, and our claim that high-throughput spatial measurement is feasible. It concedes verbatim that conventional RNA-seq averages the transcriptome and loses spatial context (support for our spatial-gap argument) while presenting a remedy (support for spatial feasibility). It can also serve as a nuance/foil on the modality axis: spatial transcriptomics restores space but is still RNA-only, and its sensitivity is far below FISH, so it illustrates the resolution-throughput trade-off.",
+  "excerpts": [
+    {
+      "id": "e1",
+      "text": "Tissue transcriptomes are typically studied by RNA-sequencing (RNA-seq) ( ) of ho-1mogenized biopsies, which results in an averaged transcriptome and loss of spatial information.",
+      "anchor": "Introduction / p.78",
+      "touchpoints": [
+        { "claimId": "Claim 2", "direction": "supports" },
+        { "claimId": "C", "direction": "supports" }
+      ],
+      "note": "States that the standard RNA-seq workflow homogenizes biopsies, producing an averaged transcriptome and discarding spatial information."
+    },
+    {
+      "id": "e2",
+      "text": "The positional context of gene expression is of key importance to understanding tissue functionality and pathological changes.",
+      "anchor": "Introduction / p.78",
+      "touchpoints": [
+        { "claimId": "C", "direction": "supports" }
+      ],
+      "note": "Asserts that spatial/positional context of expression is essential to understanding tissue function and disease."
+    },
+    {
+      "id": "e3",
+      "text": "Several strategies have recently been developed with this aim ( – ), but they have limitations in 2 5the number of transcripts that can be analyzed, rely on rich preexisting data sets, and/or are costly and labor-intensive, and none of them are operational in the standard research and diagnostic setting of regular histological tissue sections.",
+      "anchor": "Introduction / p.78",
+      "touchpoints": [
+        { "claimId": "Claim 10", "direction": "supports" },
+        { "claimId": "Claim 2", "direction": "nuances" }
+      ],
+      "note": "Concedes that prior spatial methods are limited in transcript number, dependent on preexisting data, costly/labor-intensive, and not usable in standard histology settings."
+    },
+    {
+      "id": "e4",
+      "text": "We have devised a strategy, which we call “spatial transcriptomics,” that allows visualization and quantitative analysis of the transcriptome with spatial resolution in individual tissue sections.",
+      "anchor": "Abstract / p.78",
+      "touchpoints": [
+        { "claimId": "Claim 6", "direction": "supports" },
+        { "claimId": "C", "direction": "supports" }
+      ],
+      "note": "Introduces spatial transcriptomics as a method for quantitative, spatially resolved transcriptome analysis in tissue sections."
+    },
+    {
+      "id": "e5",
+      "text": "By positioning histological sections on arrayed reverse transcription primers with unique positional barcodes, we demonstrate high-quality RNA-sequencing data with maintained two-dimensional positional information from the mouse brain and human breast cancer.",
+      "anchor": "Abstract / p.78",
+      "touchpoints": [
+        { "claimId": "Claim 6", "direction": "supports" }
+      ],
+      "note": "Demonstrates that positional barcoding preserves 2D spatial information alongside RNA-seq data in two tissue types."
+    },
+    {
+      "id": "e6",
+      "text": "We deposited 200 million oligonucleotides in each of 1007 features, with a diameter of 100 m and a center-to-center distance of 200 m, over an area of 6.2 mm by 6.6 mm (fig. S2).",
+      "anchor": "Main text / p.78",
+      "touchpoints": [
+        { "claimId": "Claim 10", "direction": "nuances" }
+      ],
+      "note": "Specifies the array geometry: 1007 features of 100 um diameter at 200 um center-to-center spacing, defining the spatial resolution of the platform."
+    },
+    {
+      "id": "e7",
+      "text": "Furthermore, we compared spatial transcriptomics with the near-100% sensitivity of single-molecule fluorescent in situ hybridization in adjacent tissue sections. The sensitivity of spatial transcriptomics was 6.9 ± 1.5% of singlemolecule fluorescent in situ hybridization (fig. S6). By comparison, single-cell RNA sequencing has been reported to have about 5 to 40% sensitivity ( ).",
+      "anchor": "Main text / p.79",
+      "touchpoints": [
+        { "claimId": "Claim 10", "direction": "supports" }
+      ],
+      "note": "Quantifies a sensitivity trade-off: spatial transcriptomics detects only 6.9% of transcripts relative to smFISH, comparable to the 5-40% sensitivity reported for single-cell RNA-seq."
+    },
+    {
+      "id": "e8",
+      "text": "The number of genes and transcripts captured was at least twice as high as when using laser capture microdissection ( ), and spatial transcriptomics detected 11almost twice as many genes as examination by in situ hybridization in the Allen Brain Atlas (fig. S5, C and D).",
+      "anchor": "Main text / p.79",
+      "touchpoints": [
+        { "claimId": "Claim 6", "direction": "supports" }
+      ],
+      "note": "Reports that spatial transcriptomics captures at least twice as many genes/transcripts as laser capture microdissection and nearly twice as many genes as in situ hybridization."
+    },
+    {
+      "id": "e9",
+      "text": "Analysis of the ductal cancer in situ areas revealed a surprisingly high degree of heterogeneity in gene expression between these regions, probably reflecting different subclones, with varying expression of several genes implicated in cancer progression (Fig. 4E and fig. S11C).",
+      "anchor": "Breast cancer application / p.80",
+      "touchpoints": [
+        { "claimId": "Claim 7", "direction": "supports" }
+      ],
+      "note": "Finds spatially resolved heterogeneity in gene expression across separate ductal-cancer-in-situ regions of one biopsy, attributed to distinct subclones."
+    },
+    {
+      "id": "e10",
+      "text": "Thus, spatial transcriptomics revealed unexpected heterogeneity within a biopsy, which would not be possible to detect with regular transcriptome analysis and which may give more detailed prognostic information.",
+      "anchor": "Breast cancer application / p.80",
+      "touchpoints": [
+        { "claimId": "Claim 7", "direction": "supports" },
+        { "claimId": "Claim 2", "direction": "supports" }
+      ],
+      "note": "States that intra-biopsy spatial heterogeneity detected here is invisible to conventional (bulk, non-spatial) transcriptome analysis."
+    },
+    {
+      "id": "e11",
+      "text": "In contrast to standard methods, different domains of the tissue are processed in the same reaction in spatial transcriptomics, which removes technical variation between samples.",
+      "anchor": "Discussion / p.80",
+      "touchpoints": [
+        { "claimId": "Claim 9", "direction": "supports" }
+      ],
+      "note": "Claims that processing all tissue domains in a single reaction removes between-sample technical variation, a comparability advantage over standard methods."
+    },
+    {
+      "id": "e12",
+      "text": "Finally, in contrast to when different regions of a tissue are dissected for analysis, the information for the whole section is maintained; hence, the analysis is not limited to the initially selected regions. An individual spatial transcriptomics experiment thus serves as a permanent resource to investigate gene expression patterns for future research questions.",
+      "anchor": "Discussion / p.80",
+      "touchpoints": [
+        { "claimId": "C", "direction": "supports" }
+      ],
+      "note": "States that unlike dissection-based analysis, the whole-section information is retained, making each experiment a reusable spatial resource rather than a region-limited measurement."
+    },
+    {
+      "id": "e13",
+      "text": "By comparing the hematoxylin-and-eosin and fluorescent signals, we could measure the average distance of diffusion outside the border of a cell to 1.7 ± 2 m (mean ± SD) (fig. S1, E to H).",
+      "anchor": "Main text / p.78",
+      "touchpoints": [
+        { "claimId": "C", "direction": "nuances" }
+      ],
+      "note": "Quantifies lateral mRNA diffusion as 1.7 um outside a cell border, bounding the spatial fidelity of the capture."
+    }
+  ],
+  "figuresNumbers": [
+    { "item": "Array design (fig. S2)", "contains": "200 million oligonucleotides per feature; 1007 features; 100 um feature diameter; 200 um center-to-center distance; area 6.2 mm x 6.6 mm." },
+    { "item": "Sensitivity (fig. S6)", "contains": "Spatial transcriptomics sensitivity = 6.9 ± 1.5% of single-molecule FISH; single-cell RNA-seq reported at ~5 to 40% sensitivity." },
+    { "item": "Method comparison (fig. S3C/D/E)", "contains": "95% of genes found by one method also found by the other (surface vs in-solution); surface vs in-solution correlation r = 0.94; replicate adjacent-section correlation r = 0.97." },
+    { "item": "Gene capture (fig. S5C/D)", "contains": "At least twice as many genes/transcripts as laser capture microdissection; almost twice as many genes as in situ hybridization in the Allen Brain Atlas." },
+    { "item": "Diffusion (fig. S1E-H)", "contains": "Average mRNA diffusion distance outside a cell border = 1.7 ± 2 um (mean ± SD)." },
+    { "item": "Fig. 4A / clustering", "contains": "t-SNE plus hierarchical clustering of 551 features from two replicates yields five distinct clusters mapping onto morphological layers." },
+    { "item": "Differential expression (Fig. 3)", "contains": "170 differentially expressed genes between distinct domains; 196 and 328 differentially expressed genes between interneuron-marker feature profiles." }
+  ],
+  "primarySources": [
+    { "topic": "Standard RNA-seq of homogenized tissue loses spatial information", "citation": "Z. Wang, M. Gerstein, M. Snyder, Nat. Rev. Genet. 10:57-63 (2009)", "refN": "1" },
+    { "topic": "Prior spatial / in situ transcriptomics strategies and their limitations", "citation": "N. Crosetto, M. Bienko, A. van Oudenaarden, Nat. Rev. Genet. 16:57-66 (2015)", "refN": "2" },
+    { "topic": "Spatial reconstruction of single-cell RNA-seq data (preexisting-dataset dependence)", "citation": "R. Satija, J. A. Farrell, D. Gennert, A. F. Schier, A. Regev, Nat. Biotechnol. 33:495-502 (2015)", "refN": "3" },
+    { "topic": "Single-cell RNA-seq sensitivity (~5 to 40%)", "citation": "D. Grün, A. van Oudenaarden, Cell 163:799-810 (2015)", "refN": "12" },
+    { "topic": "t-SNE dimensionality-reduction algorithm used for clustering features", "citation": "L. J. P. van der Maaten, G. E. Hinton, J. Mach. Learn. Res. 9:2579-2605 (2008)", "refN": "15" }
+  ],
+  "flags": [
+    "OCR quirks preserved verbatim: reference markers appear as empty parentheses '( )', interleaved digits (e.g. 'ho-1mogenized', '6.9 ... ( )'), and dropped micron symbols (e.g. '1.7 ± 2 m' for 1.7 ± 2 um, '100 m'/'200 m' for um). Quotes copied as-is per skill rule.",
+    "Metadata verified from text: DOI 10.1126/science.aaf2403 (line 64/70); venue Science 353(6294):78-82, published 30 June 2016 (Editor's Summary line 70); received 12 January 2016, accepted 31 May 2016 (line 63).",
+    "Scope note: This paper is RNA-only spatial transcriptomics; it restores the spatial axis but does not address the modality-breadth gap (no protein/PTM/metabolite). Useful as a nuance/foil on axis A (modality) even though it strongly supports axis C (spatial).",
+    "Scope note: Method is on fixed tissue sections (a static snapshot); it does not provide time-course/trajectory data, so it does not bear on the temporal axis (B)."
+  ]
+}
