@@ -1,4 +1,4 @@
-# 论文写作工作流（Paper Writing Workflow）
+# Agent 写作工作流（Paper Writing Workflow）
 
 一套用 **Claude Code 技能（skills）** 串起来的论文写作流程模板。
 从「给定研究 context」到「完成论文初稿」，共 **6 步**，**每一步都需要人工核验后再进入下一步**。
