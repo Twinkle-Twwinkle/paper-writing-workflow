@@ -79,7 +79,7 @@
    cp -r projects/_example projects/<你的论文名>
    ```
 2. 填好 `projects/<你的论文名>/00_context.md`（见 `templates/00_context_template.md`）。
-3. 在 Claude Code 里逐步走第 1～6 步；每步产出后核验，再继续。
+3. 打开该项目里的 **`CHECKLIST.md`**，按时间顺序从第 1 步勾到第 6 步；每步产出后核验，再继续。
 4. 阶段性提交存档：
    ```bash
    git add . && git commit -m "step N: <做了什么>"
