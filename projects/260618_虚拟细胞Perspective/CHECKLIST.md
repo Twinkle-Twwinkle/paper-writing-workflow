@@ -25,7 +25,7 @@
 - [ ] ✅ 核验:结构规范?正文连贯?
 
 ## 步骤 5 · 精练（skill：精练3.0 → 本项目升级为 4.0/JSON）　→　`05-distilled/`
-- [x] 41 篇高召回打捞为 `cards.json`（excerpt-centric），转置成 `evidence-matrix.md` + `citation-registry.md`（见 `_本项目精练说明.md`）
+- [x] 41 篇高召回打捞为 `cards.json`（excerpt-centric），转置成 `evidence-matrix.md` + `citation-registry.md`（说明见 `05-distilled/README.md`）
 - [ ] ✅ 核验:支持/反方引文都抓到?引文逐字无改写?claim-touchpoint 键对得上 context?未核实元数据进 Flags(`meta?=⚠`)?
 
 ## 步骤 6 · Outline → 成文　→　`06-outline-and-draft/`
