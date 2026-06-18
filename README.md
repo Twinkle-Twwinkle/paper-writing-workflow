@@ -8,6 +8,7 @@
 本仓库的作用：
 1. **文档化流程** —— 写清每一步做什么、用哪个 skill、核验什么。
 2. **可复用模板** —— 每写一篇新论文，复制 `projects/_example/` 为新项目，照着编号文件夹和 `CHECKLIST.md` 走。
+3. **随仓库附带技能源码** —— 每个步骤文件夹里直接放它用到的 Claude Code 技能源文件 `SKILL.md`（如 `05-distilled/SKILL.md` = 精练3.0、`03-markdown-raw/SKILL.md` = MinerU），迁移到新机器时把对应 `SKILL.md` 复制到 `~/.claude/commands/<技能名>/` 即可。
 
 ---
 
@@ -21,7 +22,7 @@
 ├── 02-pdfs/              # 步骤2 · skill:论文下载    → 下载的 PDF
 ├── 03-markdown-raw/      # 步骤3 · skill:MinerU       → PDF 转的 raw md
 ├── 04-markdown-clean/    # 步骤4 · skill:论文清洗2.0  → 清洗后的 md
-├── 05-distilled/         # 步骤5 · skill:精练         → 纯英文 distilled md
+├── 05-distilled/         # 步骤5 · skill:精练3.0      → 纯英文 Source Index
 ├── 06-outline-and-draft/ # 步骤6:outline.md → draft.md
 ├── 99-notes/             # 杂项:临时笔记 / 一次性脚本 / 会议记录
 └── _archive/             # 归档:废弃版本、走偏的尝试(别删,留痕)
@@ -50,9 +51,11 @@
 - **动作**：用 **论文清洗 2.0** skill 对 raw md 拍版矫正(移除图片、图注归文末、标准化结构)，输出到 `04-markdown-clean/`。
 - **核验点**：结构规范、正文连贯、原文件保留（03 不动）。
 
-### 05 · 精练（skill：精练）
-- **动作**：用 **精练** skill 精读每篇清洗后的论文，对照本文逐条提炼相关原文与意义，输出纯英文 md 到 `05-distilled/`。
-- **核验点**：是否抓住与本文论点的关联；文献定性是否准确；未核实的元数据没被当事实。
+### 05 · 精练（skill：精练3.0）
+- **输入（两个，都必需）**：① 每篇 `04-markdown-clean/` 的清洗稿；② `00-context/context.md`（作为 claim 路由键 —— 3.0 强制要求，缺失则先索要）。
+- **动作**：用 **精练3.0** skill 精读每篇论文，高召回逐字打捞承重原文、连出处与所触论点索引，输出纯英文「源索引（Source Index）」到 `05-distilled/`。
+- **3.0 与旧版的区别**：不再预写论点 / 示范改写 / 把论文锁成单一角色；改为中立索引 + `claim-touchpoint` 路由表（键到 `00-context` 的 claim/axis 标识符），下游 outline agent 才能跨论文按 claim 聚合证据。
+- **核验点**：是否高召回（支持与反方引文都抓到）；引文逐字无改写；`claim-touchpoint` 表键名对得上 context 文件；未核实的元数据没被当事实（进 Flags）。
 
 ### 06 · 写 outline → 填充成文（Claude 完成）
 - **6a**：综合 context + 全部 `05-distilled/`，写 `06-outline-and-draft/outline.md`。核验论证主线、各节逻辑、论点是否有文献支撑。
@@ -82,6 +85,7 @@
 | 02-pdfs | 论文下载 | 按 DOI 批量下载 PDF（9 层策略 + Sci-Hub 兜底） |
 | 03-markdown-raw | MinerU | PDF → markdown |
 | 04-markdown-clean | 论文清洗 2.0 | 清洗 / 拍版 raw markdown |
-| 05-distilled | 精练 | 对照本文论点提炼文献，输出英文 distilled md |
+| 05-distilled | 精练3.0 | 论文 + `00-context` → 高召回逐字打捞 + claim 路由，输出英文 Source Index |
 
 > 00/01 与 06 由 Claude 直接完成，不依赖专门 skill。
+> 各 skill 的源文件就放在对应步骤文件夹里的 `SKILL.md`（如 `05-distilled/SKILL.md`）。新机器使用前，把它复制到 `~/.claude/commands/<技能名>/`。

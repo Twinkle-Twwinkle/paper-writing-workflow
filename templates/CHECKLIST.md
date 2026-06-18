@@ -22,9 +22,9 @@
 - [ ] 用「论文清洗 2.0」skill 拍版矫正、移除图片、图注归文末、标准化结构
 - [ ] ✅ 核验:结构规范?正文连贯?原文件保留(03 不动)?
 
-## 步骤 5 · 精练（skill：精练）　→　`05-distilled/`
-- [ ] 用「精练」skill 对照本文论点逐篇提炼,输出纯英文 md
-- [ ] ✅ 核验:抓住与本文的关联?文献定性准确?未核实元数据没当事实?
+## 步骤 5 · 精练（skill：精练3.0）　→　`05-distilled/`
+- [ ] 用「精练3.0」skill,输入「清洗稿 + `00-context/context.md`」逐篇高召回打捞,输出纯英文 Source Index
+- [ ] ✅ 核验:支持/反方引文都抓到?引文逐字无改写?claim-touchpoint 表键对得上 context?未核实元数据没当事实(进 Flags)?
 
 ## 步骤 6 · Outline → 成文　→　`06-outline-and-draft/`
 - [ ] 6a 综合 context + 全部 `05-distilled/`,写 `outline.md`
