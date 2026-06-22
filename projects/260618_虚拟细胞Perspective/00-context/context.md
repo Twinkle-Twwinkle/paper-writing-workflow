@@ -1,8 +1,9 @@
 # 虚拟细胞数据 Perspective —— Foundational Input Context
 
-> ⚠️ **版本说明（260618）**：本文件为 **v1 地基**——`05-distilled/` 与 `06-outline-and-draft/` 的产物即基于此版生成。郭天南老师 260618 新增了「Virtual Cell ≠ Digital Twin」的范围界定要求，更新版见同目录：
-> - [`郭天南附加要求_VC-vs-DT_260618.md`](郭天南附加要求_VC-vs-DT_260618.md) —— 老师原话 + 任务
-> - [`Foundational-Context-v2_含VC-vs-DT.md`](Foundational-Context-v2_含VC-vs-DT.md) —— 把新要求织入 THESIS/逻辑链的 **v2 整合版**（自包含，下一轮 outline/draft 应以 v2 为准）
+> ⚠️ **版本说明（260618 / 260622）**：本文件为 **v1 地基**——`05-distilled/` 与 `06-outline-and-draft/` 的产物即基于此版生成。郭天南老师后续新增了多项范围界定要求，更新版见同目录：
+> - [`郭天南新增意见汇总_260622.md`](郭天南新增意见汇总_260622.md) —— **最新统一汇总（保真原话 + 要点提炼）**，含两条意见：**①「AIVC ≠ scRNA 单细胞」（260622 新增，老师定性"极其重要，尽快写出来"）**；②「Virtual Cell ≠ Digital Twin」。下一轮 outline/draft 应纳入此文件。
+> - [`郭天南附加要求_VC-vs-DT_260618.md`](郭天南附加要求_VC-vs-DT_260618.md) —— 260618「VC ≠ Digital Twin」老师原话 + 任务（已并入上面的统一汇总）
+> - [`Foundational-Context-v2_含VC-vs-DT.md`](Foundational-Context-v2_含VC-vs-DT.md) —— 把 VC-vs-DT 要求织入 THESIS/逻辑链的 **v2 整合版**（自包含，下一轮 outline/draft 应以 v2 为准）
 >
 > 用途：这篇 perspective 动笔前的"地基文档"。锁定**一条核心主线**（我们要论证什么），并标出**沿哪些论点去广泛搜集文献**。  
 > 融合来源：① AIVC Webinar 信息提取（郭天南原话 = 老师的原始构思）；② `虚拟细胞数据Perspective_目标与方向.md`（数据维度与结构）。  
