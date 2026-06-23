@@ -1,0 +1,352 @@
+{
+  "schemaVersion": "精练-4.0",
+  "citationKey": "38",
+  "title": "Modeling intercellular communication in tissues using spatial graphs of cells",
+  "authors": "David S. Fischer, Anna C. Schaar and Fabian J. Theis",
+  "venue": "Nature Biotechnology, 2022 (online 27 October 2022); volume/issue/pages not printed in cleaned text",
+  "year": "2022",
+  "doi": "doi:10.1038/s41587-022-01467-z",
+  "readOn": "2026-06-18",
+  "sourceFile": "/Users/augustsirius/Desktop/已清洗_260617/38 - Modeling intercellular communication in tissues using spatial graphs of cells_cleaned.md",
+  "oneSentence": "Introduces node-centric expression models (NCEM), graph-neural-network models that predict a cell's gene expression from its cell type plus the composition of its spatial niche, applied to six imaging-based spatial molecular datasets (MERFISH, CODEX, MIBI-TOF, MELC, chip cytometry) and deconvoluted Visium, recovering cell-communication signatures and showing cell-cell dependencies on physiologically relevant length scales (~69 µm).",
+  "orientation": "Spatial-omics methods paper whose explicit motivation is that current cell-communication models are 'based on molecular profiles of dissociated cells ... and ignore spatial proximity in situ' — directly supports our spatial-loss critique (Claim 2, Claim 7, Axis C). It operates across both RNA imaging (MERFISH, Visium) and protein imaging (CODEX, MIBI-TOF, MELC, chip cytometry), so it feeds Axis A modality and multimodal-integration (Claim 8). It also concedes spatial-data limitations (limited ligand/receptor capture in targeted assays; need for 3D data, more cells, perturbations of niche structure) which feed Claim 1 and Axis B (temporal/perturbation). A routing hint, non-binding: most useful as support for 'space matters / dissociation destroys it' and as a concrete example that niche composition is a measurable, predictive variable.",
+  "excerpts": [
+    {
+      "id": "e1",
+      "text": "Models of intercellular communication in tissues are based on molecular profiles of dissociated cells, are limited to receptor–ligand signaling and ignore spatial proximity in situ.",
+      "anchor": "Abstract / p.1",
+      "touchpoints": [
+        {
+          "claimId": "2",
+          "direction": "supports"
+        },
+        {
+          "claimId": "C",
+          "direction": "supports"
+        }
+      ],
+      "note": "States that existing intercellular-communication models rely on dissociated-cell profiles and ignore in situ spatial proximity, the spatial-loss gap our thesis targets."
+    },
+    {
+      "id": "e2",
+      "text": "We present node-centric expression modeling, a method based on graph neural networks that estimates the effects of niche composition on gene expression in an unbiased manner from spatial molecular profiling data. We recover signatures of molecular processes known to underlie cell communication.",
+      "anchor": "Abstract / p.1",
+      "touchpoints": [
+        {
+          "claimId": "7",
+          "direction": "supports"
+        },
+        {
+          "claimId": "C",
+          "direction": "supports"
+        }
+      ],
+      "note": "Introduces NCEM, which models the effect of spatial niche composition on a cell's gene expression from spatial molecular profiling data."
+    },
+    {
+      "id": "e3",
+      "text": "Cells interact on multiple length-scales through direct contact of surface-bound receptors and ligands, tight junctions and mechanical effects, and through indirect mechanisms, including soluble factors. Usually, these communication events cannot be directly observed but are critical to understand emergent phenomena in tissue niches<sup>1</sup>.",
+      "anchor": "Main text / p.1",
+      "touchpoints": [
+        {
+          "claimId": "7",
+          "direction": "supports"
+        }
+      ],
+      "note": "States cells communicate across multiple length-scales via diverse mechanisms and that these niche-level events, though usually unobserved, are critical to tissue function."
+    },
+    {
+      "id": "e4",
+      "text": "We infer cell communication from image-structured molecular profiling assays of RNA or proteins with subcellular resolution (Fig. 1a). We defined an NCEM as a graph neural network that predicts a cell’s observed gene expression vector from its cell type label and its niche<sup>5</sup> (Fig. 1b and Methods).",
+      "anchor": "Main text / p.1",
+      "touchpoints": [
+        {
+          "claimId": "A",
+          "direction": "supports"
+        },
+        {
+          "claimId": "C",
+          "direction": "supports"
+        }
+      ],
+      "note": "States the method operates on image-based assays of either RNA or protein at subcellular resolution, predicting expression from cell type plus spatial niche."
+    },
+    {
+      "id": "e5",
+      "text": "Cell–cell dependencies may be caused by diverse molecular mechanisms not limited to ligand–receptor-based communication. Therefore, we consider the effects of niche composition on all genes in an unbiased manner.",
+      "anchor": "Main text / p.1",
+      "touchpoints": [
+        {
+          "claimId": "7",
+          "direction": "supports"
+        }
+      ],
+      "note": "Argues spatial cell-cell dependencies arise from diverse mechanisms beyond ligand-receptor signaling, motivating an unbiased genome-wide niche-effect model."
+    },
+    {
+      "id": "e6",
+      "text": "We demonstrate cell communication inference with NCEMs on six datasets measured with MERFISH<sup>11,12</sup>, CODEX<sup>13</sup>, MIBI-TOF<sup>14</sup>, MELC<sup>15</sup> and chip cytometry<sup>16</sup> (Extended Data Fig. 2 and Methods).",
+      "anchor": "Main text / p.1",
+      "touchpoints": [
+        {
+          "claimId": "A",
+          "direction": "supports"
+        }
+      ],
+      "note": "Lists the spatial assays used, spanning RNA imaging (MERFISH) and several protein/multiplexed-imaging modalities (CODEX, MIBI-TOF, MELC, chip cytometry)."
+    },
+    {
+      "id": "e7",
+      "text": "On average, intracell-type variance accounted for 40.6% of the total variance (Supplementary Fig. 1 and Methods).",
+      "anchor": "Main text / p.1",
+      "touchpoints": [
+        {
+          "claimId": "7",
+          "direction": "supports"
+        }
+      ],
+      "note": "Quantifies that within-cell-type variation is a large fraction (40.6%) of total variance, the variation NCEM attributes partly to spatial niche."
+    },
+    {
+      "id": "e8",
+      "text": "Linear NCEMs were most predictive on an intermediate length scale of 69 µm across the six datasets (Fig. 1c), showing that cell–cell dependencies appear on length scales characteristic of molecular mechanisms of cell communication.",
+      "anchor": "Main text / p.2",
+      "touchpoints": [
+        {
+          "claimId": "7",
+          "direction": "supports"
+        },
+        {
+          "claimId": "C",
+          "direction": "supports"
+        }
+      ],
+      "note": "Reports that spatial cell-cell dependencies peak at ~69 µm, a physiologically meaningful length scale for cell communication."
+    },
+    {
+      "id": "e9",
+      "text": "NCEMs outperformed nonspatial baseline models consistently by an average ΔR<sup>2</sup> (Online Methods) of 0.016 (Fig. 1c). As expected, the ΔR<sup>2</sup> is small compared to the baseline model R<sup>2</sup> that characterizes between-cell-type variance (0.39–0.79) because cell type identity accounts for a large fraction of variance in single-cell gene expression assays<sup>17</sup>.",
+      "anchor": "Main text / p.2",
+      "touchpoints": [
+        {
+          "claimId": "7",
+          "direction": "supports"
+        },
+        {
+          "claimId": "C",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Spatial models beat nonspatial baselines by a small but consistent ΔR2 of 0.016; nuance that cell-type identity dominates variance so the incremental spatial signal is modest."
+    },
+    {
+      "id": "e10",
+      "text": "The spatial effect on model performance varies between target cell types, suggesting that cell-type-specific molecular mediators of cell–cell dependency are captured (Supplementary Fig. 3).",
+      "anchor": "Main text / p.2",
+      "touchpoints": [
+        {
+          "claimId": "7",
+          "direction": "supports"
+        }
+      ],
+      "note": "Spatial-niche effect on expression varies by cell type, interpreted as capturing cell-type-specific mediators of cell-cell dependency."
+    },
+    {
+      "id": "e11",
+      "text": "NCEMs can be extended to spot transcriptomics if within-cell-type variation can be recovered from spot transcriptomics datasets in deconvolution analyses<sup>18,19</sup>. Here NCEMs model the expression variation within cell types across spots as a function of the inferred spot composition (Fig. 1d and Methods).",
+      "anchor": "Main text / p.2",
+      "touchpoints": [
+        {
+          "claimId": "2",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Extends the niche model to spot (Visium) transcriptomics via deconvolution; nuance that spot data needs computational recovery of single-cell-level variation."
+    },
+    {
+      "id": "e12",
+      "text": "We found putatively interacting ligand–receptor pairs for almost all type couplings in CellPhoneDB<sup>3</sup> and NicheNet<sup>2</sup> analyses of matched single-cell RNA sequencing (scRNA-seq) data, thus demonstrating the need for a quantitative description of statistical couplings in niches (Extended Data Fig. 4e–g).",
+      "anchor": "Main text / p.2",
+      "touchpoints": [
+        {
+          "claimId": "2",
+          "direction": "supports"
+        }
+      ],
+      "note": "Argues that scRNA-seq-based ligand-receptor inference is non-specific (finds pairs for almost all couplings), motivating spatially-grounded quantitative niche descriptions."
+    },
+    {
+      "id": "e13",
+      "text": "We identified a bidirectional dependency of B cells and follicular dendritic cells (FDCs) that is indicative of positive feedback between both cell types in germinal center organization<sup>20</sup> (Fig. 2a,b and Extended Data Fig. 4c).",
+      "anchor": "Main text / p.2",
+      "touchpoints": [
+        {
+          "claimId": "7",
+          "direction": "supports"
+        }
+      ],
+      "note": "Recovers a known biological niche interaction (B cell–FDC positive feedback in germinal centers), validating that spatial niche structure encodes real cell-state dependencies."
+    },
+    {
+      "id": "e14",
+      "text": "The interpretation of spatial dependencies inferred on targeted spatial molecular profiling assays is constrained by the limited capture of ligand–receptor pairs.",
+      "anchor": "Main text / p.2",
+      "touchpoints": [
+        {
+          "claimId": "A",
+          "direction": "challenges"
+        },
+        {
+          "claimId": "10",
+          "direction": "supports"
+        }
+      ],
+      "note": "Author-conceded limitation: targeted spatial assays measure only a limited panel of genes, restricting ligand-receptor and niche interpretation."
+    },
+    {
+      "id": "e15",
+      "text": "We imputed the cell-wise gene expression in the MERFISH fetal liver data using corresponding scRNA-seq data<sup>21</sup> (Extended Data Fig. 10).",
+      "anchor": "Main text / p.2",
+      "touchpoints": [
+        {
+          "claimId": "8",
+          "direction": "supports"
+        }
+      ],
+      "note": "Combines targeted spatial (MERFISH) data with scRNA-seq by imputation to expand measurable genes, an example of integrating complementary modalities to fill measurement gaps."
+    },
+    {
+      "id": "e16",
+      "text": "The peak predictive performance of the ligand–receptor nonlinear NCEM was much higher compared to the nonlinear NCEM (R<sup>2</sup> of 0.799 and 0.947), demonstrating the increased complexity of the input compared to categorical cell type labels.",
+      "anchor": "Main text / p.2",
+      "touchpoints": [
+        {
+          "claimId": "7",
+          "direction": "supports"
+        }
+      ],
+      "note": "Reports that a ligand-receptor graph kernel raises predictive R2 from 0.799 to 0.947, showing molecular niche signals add information beyond categorical cell-type labels."
+    },
+    {
+      "id": "e17",
+      "text": "The statistical identifiability of cell type couplings may improve with increased capture of niche heterogeneity, through the inclusion of three-dimensional data, by increasing the number of cells measured and by increasing the variation in the training data through perturbations of niche structure.",
+      "anchor": "Discussion / p.3",
+      "touchpoints": [
+        {
+          "claimId": "1",
+          "direction": "supports"
+        },
+        {
+          "claimId": "B",
+          "direction": "supports"
+        },
+        {
+          "claimId": "C",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Author-conceded data limitations: better inference needs 3D spatial data, more cells, and perturbation-driven variation in niche structure, framing data quantity/design as the bottleneck."
+    },
+    {
+      "id": "e18",
+      "text": "Uncertainty in segmentation of cells or nuclei can be improved on the level of the spatial measurement<sup>22</sup> or may be addressed in model extensions.",
+      "anchor": "Discussion / p.3",
+      "touchpoints": [
+        {
+          "claimId": "10",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concedes that cell/nucleus segmentation uncertainty is a measurement-level limitation affecting spatial niche inference."
+    },
+    {
+      "id": "e19",
+      "text": "Nonlinear NCEMs learn a cellular representation within the spatial graph<sup>23</sup>, and we demonstrated that these representations can model niches and may be exploited for unsupervised analysis of tissue structures.",
+      "anchor": "Discussion / p.3",
+      "touchpoints": [
+        {
+          "claimId": "7",
+          "direction": "supports"
+        }
+      ],
+      "note": "States learned spatial-graph representations capture tissue niche structure and enable unsupervised analysis of tissue organization."
+    },
+    {
+      "id": "e20",
+      "text": "Notably, the nonlinear models did not outperform linear models in gene expression prediction, which suggests that the spatial dependencies in the given datasets are well described by linear models (Extended Data Fig. 8b).",
+      "anchor": "Main text / p.2",
+      "touchpoints": [
+        {
+          "claimId": "1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Reports nonlinear deep models did not beat linear models, implying the spatial signal recoverable from current data is limited rather than model-capacity-limited."
+    }
+  ],
+  "figuresNumbers": [
+    {
+      "item": "Optimal length scale (Fig. 1c)",
+      "contains": "Linear NCEMs most predictive at an intermediate length scale of 69 µm averaged across the six datasets; NCEMs outperform nonspatial baselines by an average ΔR2 of 0.016; baseline model R2 (between-cell-type variance) ranges 0.39–0.79."
+    },
+    {
+      "item": "Variance decomposition",
+      "contains": "Intracell-type variance accounted for 40.6% of total variance on average across datasets."
+    },
+    {
+      "item": "Ligand–receptor NCEM (Fig. 2g,h)",
+      "contains": "Peak R2 of ligand–receptor nonlinear NCEM 0.947 vs 0.799 for the standard nonlinear NCEM on imputed MERFISH fetal liver data."
+    },
+    {
+      "item": "Datasets (Methods / Extended Data Fig. 2)",
+      "contains": "MERFISH fetal liver: 132 genes, 40,864 (WT) + 54,970 (Tet2-/-) cells. MERFISH brain: 254 genes, 284,098 cells, 2 mice. Chip cytometry colon: 19 genes, 11,321 cells, 1 patient. MIBI-TOF cancer: 36 genes, 63,747 cells, 4 individuals. MELC tonsils: 51 genes, 9,512 cells, 1 patient. CODEX cancer: 57 genes, 272,266 cells, 35 patients. Visium lymph node deconvoluted with cell2location."
+    },
+    {
+      "item": "Train/test partition (Methods)",
+      "contains": "10% of all nodes across images/patients held out as test set; 10% of the remainder as validation."
+    },
+    {
+      "item": "Nonlinear-model significance (Extended Data Fig. 8b)",
+      "contains": "Paired t-test p-values for best spatial vs baseline: MERFISH brain p_IND=0.033; chip cytometry colon p_GCN=0.026; MIBI-TOF cancer p_IND=0.005 and p_GCN=0.036."
+    }
+  ],
+  "primarySources": [
+    {
+      "topic": "Spatial components of molecular tissue biology (framing of niche/spatial proximity importance)",
+      "citation": "Palla, G., Fischer, D. S., Regev, A. & Theis, F. J. Spatial components of molecular tissue biology. Nat. Biotechnol. 40, 308-318 (2022)",
+      "refN": "1"
+    },
+    {
+      "topic": "scRNA-seq-based ligand-receptor / cell-communication inference (NicheNet)",
+      "citation": "Browaeys, R., Saelens, W. & Saeys, Y. NicheNet: modeling intercellular communication by linking ligands to target genes. Nat. Methods 17, 159-162 (2020)",
+      "refN": "2"
+    },
+    {
+      "topic": "scRNA-seq-based ligand-receptor cell-communication inference (CellPhoneDB)",
+      "citation": "Efremova, M., Vento-Tormo, M., Teichmann, S. A. & Vento-Tormo, R. CellPhoneDB: inferring cell-cell communication from combined expression of multi-subunit ligand-receptor complexes. Nat. Protoc. 15, 1484-1506 (2020)",
+      "refN": "3"
+    },
+    {
+      "topic": "Deconvolution mapping of cell types in spatial transcriptomics (cell2location, used for Visium)",
+      "citation": "Kleshchevnikov, V. et al. Cell2location maps fine-grained cell types in spatial transcriptomics. Nat. Biotechnol. 40, 661-671 (2022)",
+      "refN": "19"
+    },
+    {
+      "topic": "Integration/imputation of scRNA-seq onto spatial data (Tangram)",
+      "citation": "Biancalani, T. et al. Deep learning and alignment of spatially resolved single-cell transcriptomes with Tangram. Nat. Methods 18, 1352-1362 (2021)",
+      "refN": "21"
+    },
+    {
+      "topic": "Germinal-center B cell / FDC positive-feedback chemokine loop (Cxcl13)",
+      "citation": "Ansel, K. M. et al. A chemokine-driven positive feedback loop organizes lymphoid follicles. Nature 406, 309-314 (2000)",
+      "refN": "20"
+    }
+  ],
+  "flags": [
+    "Metadata: venue confirmed as Nature Biotechnology from DOI 10.1038/s41587-022-01467-z and corresponding-author/peer-review notes; volume/issue/pages not printed in cleaned text. Dates printed: Received 1 July 2021; Accepted 11 August 2022; Published online 27 October 2022.",
+    "Authors: full names taken from the author block (David S. Fischer, Anna C. Schaar, Fabian J. Theis); reference list separately mis-prints the senior author as 'Teis, F. J.' (OCR error) in refs 1, 17, 23.",
+    "OCR quirks preserved verbatim in figure descriptions and methods (e.g. 'classifcation', 'profling', 'parafn-embedded', garbled equations and reporting-summary text); not corrected.",
+    "Scope note: this is a spatial-graph cell-communication MODELING method paper, but its motivation (dissociated profiles ignore spatial proximity) and its cross-modality RNA+protein imaging application make it on-roadmap for the spatial-loss (Claim 2/7, Axis C) and multimodal (Axis A, Claim 8) arguments; the modeling-method details themselves are out of our scope per context section 6.",
+    "Read at source: ref #1 (Palla et al., Nat. Biotechnol. 2022, 'Spatial components of molecular tissue biology') is a review worth first-hand for the general spatial-tissue-biology framing."
+  ]
+}

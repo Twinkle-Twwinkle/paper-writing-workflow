@@ -1,0 +1,574 @@
+{
+  "schemaVersion": "精练-4.0",
+  "citationKey": "03",
+  "title": "From modality-specific to compositional foundation models for cell biology",
+  "authors": "M.B., T.R., N.A.S., F.J.T. (initials from Acknowledgments; Theis group). Full author list not present in cleaned source",
+  "venue": "Cell Systems, Perspective (year unverified; see flags)",
+  "year": "unverified; see flags",
+  "doi": null,
+  "readOn": "2026-06-18",
+  "sourceFile": "/Users/augustsirius/Desktop/已清洗_260617/03 - From modality-specific to compositional foundation models for cell biology_cleaned.md",
+  "oneSentence": "A perspective arguing that multimodal single-cell foundation models should be built through compositional AI—modular assembly of independently pretrained, modality-specific expert modules aligned via transformer attention—rather than monolithic unified models, reviewing attention building blocks, architectures (bi-encoder/cross-encoder/language encoding), existing methods, prior-knowledge integration, multiscale modeling, data management, and evaluation toward agentic virtual cell models.",
+  "orientation": "A Theis-group modeling perspective that sits opposite our data-first thesis on emphasis (it advocates an architectural fix—compositional AI—for fragmented, scarce, weakly-paired data) yet repeatedly concedes the very data-foundation facts we build on: biological modalities are fragmented and complementary (not redundant), no single technology captures all modalities, paired multimodal measurements are rare, samples are scarce relative to biological complexity, and current single-cell studies capture only a tiny fraction of cellular states. Strong supplier for claims on modality narrowness, modality orthogonality/non-substitutability, the scarcity/imbalance of paired data, integration needs, and data-as-bottleneck; can also be deployed as a named foil since it treats the problem as solvable by modeling composition and largely underweights the temporal axis and cross-experiment standardization. Routing hint only.",
+  "excerpts": [
+    {
+      "id": "e1",
+      "text": "However, in cell biology, training a unified non-compositional model is significantly more difficult because paired multimodal measurements are rare relative to the vast amount of available unimodal data. Unlike vision and language, biological modalities are fragmented and may encode useful complementary information, and no single technology currently captures all these distinct aspects simultaneously.",
+      "anchor": "MULTI-MODALITY AND COMPOSITIONAL AI",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        },
+        {
+          "claimId": "轴 A · 模态",
+          "direction": "supports"
+        }
+      ],
+      "note": "States biological modalities are fragmented and encode complementary information, and no single technology captures all modalities at once."
+    },
+    {
+      "id": "e2",
+      "text": "Furthermore, the scarcity of biological samples relative to the immense complexity and dimensionality of cellular systems makes it challenging for monolithic architectures to learn robust, generalized representations without the modular flexibility offered by a compositional approach.",
+      "anchor": "MULTI-MODALITY AND COMPOSITIONAL AI",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concedes that the scarcity of biological samples relative to system complexity hampers robust generalized representations."
+    },
+    {
+      "id": "e3",
+      "text": "By contrast, recent large-scale single-cell studies only capture a tiny fraction of possible cellular states and conditions given the complexity of biological systems. This scarcity of samples, combined with the high dimensionality and heterogeneity of biological data, makes it challenging to learn robust representations that generalize across different biological contexts and experimental conditions while enabling the inference of biological mechanisms.",
+      "anchor": "Challenges in modeling across modalities",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "States current large-scale single-cell studies sample only a tiny fraction of cellular states, limiting generalization."
+    },
+    {
+      "id": "e4",
+      "text": "A fundamental distinction between biological multimodal learning and web-scale multimodal representation learning lies in both data availability and assumptions about cross-modal information content. In vision-language models, modalities are typically designed to be redundant, and large, high-quality paired datasets enable joint optimization of modality-specific encoders using alignment-based objectives. By contrast, biological modalities often encode complementary information, while paired multimodal measurements are rare compared with unimodal data.",
+      "anchor": "Challenges in modeling across modalities",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        }
+      ],
+      "note": "Contrasts redundant vision-language modalities with biological modalities that encode complementary (non-redundant) information and are rarely paired."
+    },
+    {
+      "id": "e5",
+      "text": "While effective for retrieval or matching tasks, such objectives are poorly suited for settings in which modalities must be integrated to recover information absent from any single view. From a methodological perspective, this suggests a need to move beyond alignment-centric interfaces toward integration mechanisms that explicitly model how complementary biological signals interact under limited and noisy pairing.",
+      "anchor": "Challenges in modeling across modalities",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 8",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Argues some modalities carry information absent from any single view, so integration must recover complementary signals rather than assume semantic overlap."
+    },
+    {
+      "id": "e6",
+      "text": "Functionally, interpretable integration seeks to uncover causal and mechanistic relationships across modalities, enabling the identification of regulatory programs, signaling pathways, and cell-cell communication processes that are not observable from any single modality alone.",
+      "anchor": "INTRODUCTION",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        }
+      ],
+      "note": "States regulatory programs, pathways, and cell-cell communication are not observable from any single modality alone."
+    },
+    {
+      "id": "e7",
+      "text": "Cross-modality integration aims to reconstruct coherent cellular states by jointly modeling complementary molecular layers—such as transcription, chromatin accessibility, protein abundance, and spatial context—that together govern gene regulation, cell identity, and cellular responses to perturbations.",
+      "anchor": "INTRODUCTION",
+      "touchpoints": [
+        {
+          "claimId": "轴 A · 模态",
+          "direction": "supports"
+        }
+      ],
+      "note": "Enumerates complementary molecular layers (transcription, chromatin, protein abundance, spatial context) that together govern cell state."
+    },
+    {
+      "id": "e8",
+      "text": "While single-cell transcriptomics has been a primary driver of this endeavor thanks to substantial efforts in collecting, organizing, and maintaining a wealth of publicly available datasets.",
+      "anchor": "INTRODUCTION",
+      "touchpoints": [
+        {
+          "claimId": "转录组",
+          "direction": "supports"
+        }
+      ],
+      "note": "Notes single-cell transcriptomics has been the primary driver of foundation-model efforts due to abundant public datasets."
+    },
+    {
+      "id": "e9",
+      "text": "Going beyond transcriptomic profiles alone, recent studies have begun to take initial steps toward constructing large pretrained single-cell models that integrate multiple modalities.",
+      "anchor": "INTRODUCTION",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Frames most prior foundation-model work as transcriptome-only, with multimodal integration only at an initial stage."
+    },
+    {
+      "id": "e10",
+      "text": "Single-cell proteomics quantifies protein levels and modifications,<sup>67</sup> offering a functional perspective on cellular states.",
+      "anchor": "Multi-modal measurements",
+      "touchpoints": [
+        {
+          "claimId": "蛋白质组",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 5",
+          "direction": "supports"
+        }
+      ],
+      "note": "States single-cell proteomics quantifies protein levels and modifications, giving a functional view of cellular states."
+    },
+    {
+      "id": "e11",
+      "text": "Such cross-modality supervision could be acquired through technologies that allow simultaneous profiling of multiple molecular modalities within a single cell,<sup>84</sup> providing deeper insights into gene regulatory mechanisms.",
+      "anchor": "Multi-modal measurements",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        }
+      ],
+      "note": "Lists co-assay technologies (SNARE-seq, SHARE-seq, sci-CAR, CITE-seq, TEA-seq, etc.) that jointly measure modalities within one cell."
+    },
+    {
+      "id": "e12",
+      "text": "In addition to spatial omics,<sup>73,98–100</sup> spatial multiomics technologies, including DBiT-seq,<sup>101</sup> spatial CITE-seq,<sup>102</sup> SPOTS,<sup>103</sup> SM-OMICS,<sup>104</sup> Stereo-seq-based multiomics,<sup>105,106</sup> SlideseqV2 extensions,<sup>74</sup> and spatial ATAC-RNA co-profiling methods (e.g., spatial-ATAC-seq and spatial CUT&Tag RNAseq<sup>75</sup>) enable joint modality measurements, providing spatial organization of cells and subcellular structure.",
+      "anchor": "Multi-modal measurements",
+      "touchpoints": [
+        {
+          "claimId": "Claim 2",
+          "direction": "supports"
+        },
+        {
+          "claimId": "轴 C · 空间",
+          "direction": "supports"
+        }
+      ],
+      "note": "Lists spatial multiomics technologies that provide spatial organization of cells and subcellular structure."
+    },
+    {
+      "id": "e13",
+      "text": "However, since no single technology currently captures all modalities simultaneously, an anchoring strategy is required to align and integrate different modalities into a shared space as illustrated in Figure 2. For instance, transcriptomics can serve as an anchor modality (a modality shared between different multimodal assays) to integrate Multiome and CITE-seq datasets, connecting chromatin accessibility and protein abundance.",
+      "anchor": "Multi-modal measurements",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        },
+        {
+          "claimId": "standard",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Reiterates no technology captures all modalities at once, requiring transcriptomics as an anchor modality to integrate assays into a shared space."
+    },
+    {
+      "id": "e14",
+      "text": "By contrast, unpaired multimodal assays measure different modalities from different biological samples. For instance, scRNA-seq and spatial transcriptomics performed on similar or replicate samples still measure different cells.",
+      "anchor": "Multi-modal measurements",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "supports"
+        },
+        {
+          "claimId": "标准与整合",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Notes unpaired assays measure different cells, so even similar/replicate samples do not give matched cell-to-cell observations across modalities."
+    },
+    {
+      "id": "e15",
+      "text": "However, the restricted amount of paired multimodal measurements limits their capabilities for learning from independent modalities. Composing a foundation model from a smaller model approach is a promising way to take advantage of the large amount of existing unpaired measurements of distinct modalities by learning the connections between different modalities with minimum direct supervision.",
+      "anchor": "Multi-modal measurements",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        }
+      ],
+      "note": "States paired multimodal measurements are restricted in amount, limiting models that need to learn across independent modalities."
+    },
+    {
+      "id": "e16",
+      "text": "The relative abundance of unpaired measurements motivates the use of distribution alignment strategies, such as optimal transport-based methods,<sup>113–116</sup> which align feature distributions across modalities without requiring direct cell-tocell correspondence.",
+      "anchor": "Multi-modal measurements",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "supports"
+        }
+      ],
+      "note": "Notes alignment uses distribution-level methods (optimal transport) because direct cell-to-cell correspondence across modalities is unavailable."
+    },
+    {
+      "id": "e17",
+      "text": "In addition, cross-modal pairing is often imperfect due to technical effects or biological heterogeneity. These constraints motivate compositional multimodal architectures that reuse pretrained unimodal models and restrict cross-modal learning to lightweight interfaces.",
+      "anchor": "Challenges in modeling across modalities",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "States cross-modal pairing is often imperfect due to technical effects or biological heterogeneity."
+    },
+    {
+      "id": "e18",
+      "text": "However, although high performance on classification tasks demonstrates a model's ability to learn meaningful cellular representations, it may not directly translate to improvements in downstream applications such as drug discovery or disease modeling.",
+      "anchor": "Evaluation",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concedes high classification accuracy may not translate to downstream utility, questioning standard benchmarks."
+    },
+    {
+      "id": "e19",
+      "text": "A key limitation is that most metrics used to evaluate multimodal models are inherited from unimodal settings and primarily quantify downstream performance, without indicating whether improvements arise from true cross-modal integration or from aggregating redundant information already present in a dominant modality. This obscures whether a model actually exploits complementary signals across modalities.",
+      "anchor": "Evaluation",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        }
+      ],
+      "note": "States current multimodal metrics are inherited from unimodal settings and cannot tell true cross-modal integration from redundancy in a dominant modality."
+    },
+    {
+      "id": "e20",
+      "text": "Addressing this gap will require evaluation criteria and benchmark tasks that are explicitly sensitive to cross-modal complementarity, rather than accuracy alone, particularly in settings where relevant information is distributed across modalities.",
+      "anchor": "Evaluation",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        }
+      ],
+      "note": "Calls for benchmarks sensitive to cross-modal complementarity because relevant information is distributed across modalities."
+    },
+    {
+      "id": "e21",
+      "text": "An example is cross-modality prediction, which evaluates a model's ability to predict one modality from another, for example predicting protein abundance from transcriptomics data.<sup>23,191</sup> This task can provide a metric for mutual information across different modalities while also evaluating a multi-modal foundation model's capability to recover the underlying mutual dependency.",
+      "anchor": "Evaluation",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "nuances"
+        },
+        {
+          "claimId": "蛋白质组",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Frames protein abundance prediction from transcriptomics as an evaluation of cross-modal mutual information (implying partial, non-trivial RNA-protein dependency)."
+    },
+    {
+      "id": "e22",
+      "text": "High-throughput technologies have enabled unprecedented data generation, but a significant imbalance persists between unimodal and paired multimodal measurements. While multimodal measurements naturally include diverse information, unimodal readouts are often cheaper, and one modality may be more economic than another.",
+      "anchor": "Multimodal data management",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        }
+      ],
+      "note": "States a significant imbalance persists between abundant unimodal and scarce paired multimodal measurements, partly driven by cost."
+    },
+    {
+      "id": "e23",
+      "text": "However, data from separate modalities are often available in different amounts, and adding more modalities is usually associated with different costs. Images, for example, are often cheap to acquire and comparatively simple to add as an additional modality, as demonstrated in spatial transcriptomics and -proteomics techniques.<sup>77,190</sup> However, imaging data, due to the absence of rich spatial labels by default, are usually harder to interpret than, for example, transcriptomics data. In contrast to imaging, profiling the transcriptome jointly with molecular modalities such as chromatin accessibility<sup>62</sup> or protein abundance<sup>93</sup> is more limited in depth and throughput.",
+      "anchor": "Multimodal data management",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        },
+        {
+          "claimId": "蛋白质组",
+          "direction": "supports"
+        }
+      ],
+      "note": "States joint profiling of transcriptome with chromatin accessibility or protein abundance is more limited in depth and throughput than imaging, naming a depth/throughput trade-off across modalities."
+    },
+    {
+      "id": "e24",
+      "text": "In addition to molecular-level priors, models can also benefit from spatial and temporal information. Spatial transcriptomics and time-series single-cell data provide insights into the organization of cells within tissues and their progression over time during development, differentiation, or disease.",
+      "anchor": "Integrating prior knowledge",
+      "touchpoints": [
+        {
+          "claimId": "Claim 2",
+          "direction": "supports"
+        },
+        {
+          "claimId": "轴 B · 时间",
+          "direction": "supports"
+        }
+      ],
+      "note": "States spatial and time-series single-cell data give insight into tissue organization and temporal progression."
+    },
+    {
+      "id": "e25",
+      "text": "Likewise, longstanding insights from developmental biology and time-resolved lineage tracing studies have immense potential to provide critical context for modeling dynamic cellular processes.",
+      "anchor": "Integrating prior knowledge",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "nuances"
+        },
+        {
+          "claimId": "轴 B · 时间",
+          "direction": "supports"
+        }
+      ],
+      "note": "Points to time-resolved lineage tracing and developmental biology as prior knowledge for modeling dynamic (temporal) cellular processes."
+    },
+    {
+      "id": "e26",
+      "text": "Gene regulatory networks (GRNs) offer another critical form of prior knowledge, as they encode directed relationships between transcription factors and their target genes. ... In contrast to co-expression patterns learned from data, GRNs introduce causality and control into the modeling process, enabling biologically grounded inference of transcriptional regulation over time.",
+      "anchor": "Integrating prior knowledge",
+      "touchpoints": [
+        {
+          "claimId": "调控 / 信号网络",
+          "direction": "supports"
+        }
+      ],
+      "note": "States GRNs encode directed TF-target relationships and add causality/control beyond data-driven co-expression."
+    },
+    {
+      "id": "e27",
+      "text": "Likewise, protein-protein interaction (PPI) networks capture functional or physical associations between proteins, reflecting post-transcriptional regulation and co-regulated modules that extend beyond transcriptional readouts.",
+      "anchor": "Integrating prior knowledge",
+      "touchpoints": [
+        {
+          "claimId": "互作组 / 复合物",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        }
+      ],
+      "note": "States PPI networks capture post-transcriptional regulation and co-regulated modules that extend beyond transcriptional readouts."
+    },
+    {
+      "id": "e28",
+      "text": "Incorporating biological prior knowledge into multimodal singlecell foundation models can improve learning efficiency, model robustness, and interpretability—particularly in settings where purely data-driven approaches fall short due to data sparsity, noise, or limited coverage across biological contexts.",
+      "anchor": "Integrating prior knowledge",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concedes purely data-driven approaches fall short under data sparsity, noise, and limited coverage, motivating prior knowledge."
+    },
+    {
+      "id": "e29",
+      "text": "Extending uni-scale foundation models to integrate both across modalities and across biological scales will be crucial for the vision of a virtual cell.<sup>49</sup>",
+      "anchor": "Multiscale",
+      "touchpoints": [
+        {
+          "claimId": "轴 C · 空间",
+          "direction": "supports"
+        }
+      ],
+      "note": "States virtual-cell models must integrate across modalities and across biological scales (subcellular to tissue)."
+    },
+    {
+      "id": "e30",
+      "text": "Multimodal single-cell foundation models have the potential to advance our understanding of cellular states by integrating diverse molecular and spatial data.",
+      "anchor": "TOWARD MULTIMODAL SINGLE-CELL FOUNDATION MODELS",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        }
+      ],
+      "note": "Frames the goal as integrating diverse molecular and spatial data into multimodal foundation models."
+    },
+    {
+      "id": "e31",
+      "text": "Without diverse observations, even the most effective models and largest datasets will fall short of capturing the true complexity of the underlying biology.",
+      "anchor": "MULTI-MODALITY AND COMPOSITIONAL AI",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        }
+      ],
+      "note": "States that without modality diversity, even the best models and largest datasets cannot capture true biological complexity."
+    },
+    {
+      "id": "e32",
+      "text": "Cells contain diverse molecular entities such as genetic material, transcripts, proteins, and metabolites that interact to carry out biological functions. ... Each of these measurement modalities provides a unique perspective on cellular function and regulation, and together they offer a more comprehensive view of cellular states and processes than individual measurements.",
+      "anchor": "MULTI-MODALITY AND COMPOSITIONAL AI",
+      "touchpoints": [
+        {
+          "claimId": "轴 A · 模态",
+          "direction": "supports"
+        },
+        {
+          "claimId": "代谢组 / 通量",
+          "direction": "supports"
+        }
+      ],
+      "note": "States each modality (genetic material, transcripts, proteins, metabolites) gives a unique perspective and together they are more comprehensive than any single one."
+    },
+    {
+      "id": "e33",
+      "text": "Imaging techniques offer spatial and temporal context, capturing subcellular structures and live dynamics.",
+      "anchor": "Multi-modal measurements",
+      "touchpoints": [
+        {
+          "claimId": "影像 / 形态",
+          "direction": "supports"
+        },
+        {
+          "claimId": "轴 B · 时间",
+          "direction": "supports"
+        }
+      ],
+      "note": "States imaging provides spatial and temporal context, capturing subcellular structure and live dynamics."
+    },
+    {
+      "id": "e34",
+      "text": "These networks, often constructed from ChIP-seq, CUT&RUN, and CUT&- Tag experiments,<sup>63–65</sup> perturbation assays, or literature mining, represent mechanistic underpinnings of transcriptional regulation.",
+      "anchor": "Integrating prior knowledge",
+      "touchpoints": [
+        {
+          "claimId": "PTM / 蛋白状态",
+          "direction": "supports"
+        }
+      ],
+      "note": "Notes epigenetic/chromatin-state assays (ChIP-seq, CUT&RUN, CUT&Tag) underpin transcriptional regulation networks."
+    }
+  ],
+  "figuresNumbers": [
+    {
+      "item": "Table 1",
+      "contains": "Comparison of bi-encoder, cross-encoder, and language encoding approaches across architecture, processing, interaction, output, accuracy, efficiency, scalability, and typical use cases. Bi-encoder: twin-tower independent encoding, interaction after encoding via similarity metric, high efficiency/scalability with precomputable embeddings, lower fine-grained accuracy, used for large-scale retrieval and unpaired data. Cross-encoder: single encoder joint encoding, interaction during encoding via attention, higher fine-grained accuracy, low efficiency/scalability (must process each pair). Language encoding: encodes biological data as text, leverages LLM pretraining, accuracy/efficiency/scalability depend on the LLM."
+    },
+    {
+      "item": "Table 2",
+      "contains": "Overview of existing multimodal omics models by architecture and modality. Bi-encoders: scCLIP (scRNA-seq, scATAC), SCARF (scRNA-seq, scATAC), CellWhisperer (bulk RNA, scRNA-seq + text), LangCell (scRNA-seq, text), spEMO (spatial transcriptomics, spatial multi-omics, text, histopathology), OKR-Cell (scRNA-seq, text), CAPTAIN (scRNA-seq, proteomics). Cross-encoders: Nicheformer, CellPLM, scGPT-spatial (each scRNA-seq + spatial transcriptomics), Precious3GPT (transcriptomics, epigenetics, proteomics, knowledge graphs). Language encoding: GenePT, Cell2Sentence, scChat, CELLama, scELMo, CellHermes (scRNA-seq +/- spatial/text/PPI). STPath (image + spatial transcriptomics)."
+    },
+    {
+      "item": "Box 1",
+      "contains": "Four attention building blocks for multimodal transformers: fused self-attention, all-to-all self-attention, within-modality self-attention, cross-modality attention."
+    },
+    {
+      "item": "Box 2",
+      "contains": "Evaluation tasks split into expert-annotation-based (subcellular/function prediction, cell-type/state annotation, tissue/niche/spatial-domain annotation, disease-state classification, trajectory/lineage-stage labeling) and intrinsic expert-agnostic (masked feature reconstruction/denoising, cross-modality prediction/modality matching, perturbation response prediction, joint embedding of modalities)."
+    }
+  ],
+  "primarySources": [
+    {
+      "topic": "Single-cell proteomics quantifies protein levels and modifications, functional view of cellular states",
+      "citation": "ref 67: Guo, T., Steen, J.A., and Mann, M. (2025). Mass-spectrometry-based proteomics: from single cells to clinical applications. Nature 638, 901-911",
+      "refN": "67"
+    },
+    {
+      "topic": "Predicting protein abundance from transcriptomics as cross-modality evaluation / mutual information across modalities",
+      "citation": "ref 23: Richter, T., Bahrami, M., Xia, Y., Fischer, D.S., and Theis, F.J. (2024). Delineating the effective use of self-supervised learning in single-cell genomics. Nat. Mach. Intell. 7, 68-78",
+      "refN": "23"
+    },
+    {
+      "topic": "Joint probabilistic modeling of paired single-cell multi-omic (RNA + protein) data, gene-protein dependencies in a cross-encoder",
+      "citation": "ref 31: Gayoso, A., Steier, Z., Lopez, R., Regier, J., Nazor, K.L., Streets, A., and Yosef, N. (2021). Joint probabilistic modeling of single-cell multi-omic data with totalVI. Nat. Methods 18, 272-282",
+      "refN": "31"
+    },
+    {
+      "topic": "Optimal transport mapping cells through time and space (distribution alignment without cell-to-cell correspondence)",
+      "citation": "ref 113: Klein, D., Palla, G., Lange, M., Klein, M., Piran, Z., et al. (2025). Mapping cells through time and space with moscot",
+      "refN": "113"
+    },
+    {
+      "topic": "Virtual cell vision; integrate across modalities and biological scales",
+      "citation": "ref 49: Bunne, C., Roohani, Y., Rosen, Y., Gupta, A., Zhang, X., et al. (2024). How to build the virtual cell with artificial intelligence: Priorities and opportunities. Cell 187, 7045-7063",
+      "refN": "49"
+    },
+    {
+      "topic": "Towards multimodal foundation models in molecular cell biology (review framing this perspective responds to)",
+      "citation": "ref 51: Cui, H., Tejada-Lapuerta, A., Brbic, M., Saez-Rodriguez, J., Cristea, S., et al. (2025). Towards multimodal foundation models in molecular cell biology. Nature 640, 623-633",
+      "refN": "51"
+    },
+    {
+      "topic": "Transformers in single-cell omics review / encoding biological measurements as text",
+      "citation": "ref 50: Szalata, A., Hrovatin, K., Becker, S., Tejada-Lapuerta, A., Cui, H., Wang, B., and Theis, F.J. (2024). Transformers in single-cell omics: a review and new perspectives. Nat. Methods 21, 1430-1443",
+      "refN": "50"
+    },
+    {
+      "topic": "Deep Visual Proteomics maps spatial proteomics in tissue (cheap-to-add imaging-based spatial -proteomics)",
+      "citation": "ref 77: Rosenberger, F.A., Madler, S.C., Thorhauge, K.H., Steigerwald, S., et al. (2025). Deep Visual Proteomics maps proteotoxicity in a genetic liver disease. Nature 642, 484-491",
+      "refN": "77"
+    },
+    {
+      "topic": "Diverse training datasets are crucial for single-cell deep learning (training data composition)",
+      "citation": "ref 188: Nadig, A., Thoutam, A., Hughes, M., Gupta, A., Navia, A.W., et al. (2025). Consequences of training data composition for deep learning models in single-cell biology. Preprint at bioRxiv",
+      "refN": "188"
+    }
+  ],
+  "flags": [
+    "Metadata unverified: cleaned MD lacks a title/author/DOI header block. Venue inferred as 'Cell Systems' from the running header 'Cell Systems Perspective' (lines 229, 359, 497). Full author list, year, volume, pages, and the paper's own DOI are NOT present in the source and are left null/unverified.",
+    "Authors: only initials M.B., T.R., N.A.S., F.J.T. appear (Acknowledgments / Declaration of Interests). N.A.S. = N.A. Schmacke and F.J.T. = F.J. Theis can be inferred from self-citations (refs 22, 78) but full names are not asserted in the byline; kept as initials.",
+    "Year not asserted: many cited references are dated 2025, so the paper is plausibly 2025 or 2026, but no publication date is stated in the cleaned text. Left as 'unverified'.",
+    "OCR quirks preserved verbatim in excerpts and tables (e.g., 'ful potential', 'CUT&- Tag', 'mode training', 'virtua cell', 'single-cel biology', and garbled Table 1/Table 2 cells). Not corrected.",
+    "Scope note: this paper's primary thrust is modeling architecture (compositional AI / attention), which is OUT of our scope (we do not argue modeling methods). Architectural/attention content (Box 1, cross-encoder/bi-encoder mechanics, flow matching) was NOT captured except where a line doubles as evidence on a data-foundation roadmap claim.",
+    "Read at source: ref 51 (Cui et al. 2025, Nature) and ref 49 (Bunne et al. 2024, Cell) are the review/vision papers this perspective positions against and are likely worth first-hand citation. ref 67 (Guo, Steen, Mann 2025, Nature) is a strong first-hand source for single-cell proteomics' functional role.",
+    "Temporal axis (轴 B / Claim 3) is touched only lightly by this paper (imaging dynamics, time-series, lineage tracing as prior knowledge); it does not foreground the destructive-measurement / non-paired-observation constraint our thesis centers on. Captured the few relevant lines; do not over-read.",
+    "claimId 'Other' not used; all touchpoints route to context-file claim/axis ids (Claim 1-10, modality rows 转录组/蛋白质组/PTM/互作组/代谢组/调控/影像, axes 轴 A/轴 B/轴 C, standard/标准与整合)."
+  ]
+}

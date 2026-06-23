@@ -1,0 +1,398 @@
+{
+  "schemaVersion": "精练-4.0",
+  "citationKey": "26",
+  "title": "A comparison of single-cell trajectory inference methods",
+  "authors": "Wouter Saelens, Robrecht Cannoodt, Helena Todorov, Yvan Saeys",
+  "venue": "Nature Biotechnology, 2019, 37:547-554 (unverified; see flags)",
+  "year": "2019",
+  "doi": "doi:10.1038/s41587-019-0071-9",
+  "readOn": "2026-06-18",
+  "sourceFile": "/Users/augustsirius/Desktop/已清洗_260617/26_cleaned.md",
+  "oneSentence": "Benchmarks 45 single-cell trajectory inference (TI) methods on 110 real and 229 synthetic datasets for accuracy, scalability, stability and usability, finding strong complementarity between methods and that the best method depends mostly on dataset dimensions and trajectory topology.",
+  "orientation": "A methods benchmark for inferring temporal/developmental ordering (pseudotime) from single-cell snapshot data; it is the canonical empirical entry point for our Claim 3 (destructive sequencing yields only snapshots, so time must be computationally reconstructed rather than observed pairwise) and the temporal axis. It can serve as SUPPORT for our standard/comparability claims (it argues for standardization of TI input/output interfaces and demonstrates cross-method incomparability) AND as a FOIL the writer can name (the entire field substitutes inferred pseudotime for a real time course, exposing the gap our thesis names). Also feeds Claim 1 (benchmark variability, no one-size-fits-all, poor generalization across datasets) and Claim 10 (scalability trade-offs).",
+  "excerpts": [
+    {
+      "id": "e1",
+      "text": "Trajectory inference approaches analyze genome-wide omics data from thousands of single cells and computationally infer the order of these cells along developmental trajectories.",
+      "anchor": "Abstract",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "supports"
+        },
+        {
+          "claimId": "axis B (temporal)",
+          "direction": "supports"
+        }
+      ],
+      "note": "Defines TI as computational inference of cell ordering from snapshot omics data, i.e., time is reconstructed, not directly observed."
+    },
+    {
+      "id": "e2",
+      "text": "Such dynamic processes can be modeled computationally using trajectory inference (TI) methods, also called pseudotime analysis, which order cells along a trajectory based on similarities in their expression patterns",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "supports"
+        }
+      ],
+      "note": "Pseudotime ordering is derived from expression similarity among cells, not from tracking the same cell over time."
+    },
+    {
+      "id": "e3",
+      "text": "TI methods offer an unbiased and transcriptome-wide understanding of a dynamic process, thereby allowing the objective identification of new (primed) subsets of cells, delineation of a differentiation tree and inference of regulatory interactions responsible for one or more bifurcations.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "nuances"
+        }
+      ],
+      "note": "States the upside of TI for resolving dynamics from transcriptomic snapshots; a foil line showing the field treats pseudotime as a route to dynamics."
+    },
+    {
+      "id": "e4",
+      "text": "A plethora of TI methods has been developed over the past few years and even more are being created every month (Supplementary Table 1).",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Documents the proliferation of pseudotime/TI methods, all working around the lack of direct temporal observation."
+    },
+    {
+      "id": "e5",
+      "text": "Given the diversity in TI methods, it is important to quantitatively assess their performance, scalability, robustness and usability. Many attempts at tackling this issue have already been made, but a comprehensive comparison of TI methods across a large number of different datasets is still lacking.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        },
+        {
+          "claimId": "standard",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concedes a comprehensive cross-dataset benchmark of methods was lacking, a comparability/standardization gap."
+    },
+    {
+      "id": "e6",
+      "text": "We found substantial complementarity between current methods, with different sets of methods performing most optimally depending on the characteristics of the data.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Method performance is data-dependent; no single method generalizes, supporting that results hinge on data not the model alone."
+    },
+    {
+      "id": "e7",
+      "text": "To make the outputs from different methods directly comparable to each other, we developed a common probabilistic model for representing trajectories from all possible sources (Fig. 1b).",
+      "anchor": "Results — Trajectory inference methods",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        },
+        {
+          "claimId": "standard",
+          "direction": "supports"
+        }
+      ],
+      "note": "Builds a common representation because method outputs were otherwise not comparable, a standardization move."
+    },
+    {
+      "id": "e8",
+      "text": "These different priors can range from weak priors that are relatively easy to acquire, such as a start cell, to strong priors, such as a known grouping of cells, that are much harder to know a priori, and which can potentially introduce a large bias into the analysis (Fig. 2a).",
+      "anchor": "Results — Trajectory inference methods",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "challenges"
+        }
+      ],
+      "note": "TI often needs externally supplied prior information (start cell, groupings) that can bias the inferred trajectory; a limitation of reconstructing time from snapshots."
+    },
+    {
+      "id": "e9",
+      "text": "We found that method performance was very variable across datasets, indicating that there is no ‘one-size-fits-all’ method that works well on every dataset (Supplementary Fig. 3a).",
+      "anchor": "Results — Accuracy",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "No method works well on every dataset; performance is dataset-contingent, the canonical no-free-lunch finding."
+    },
+    {
+      "id": "e10",
+      "text": "The performance of a method was strongly dependent on the type of trajectory present in the data (Fig. 3b).",
+      "anchor": "Results — Accuracy",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Accuracy depends on the underlying data structure (trajectory topology), not on method quality alone."
+    },
+    {
+      "id": "e11",
+      "text": "This analysis therefore indicates that detecting the right topology is still a difficult task for most of these methods, because methods tend to be either too optimistic or too pessimistic regarding the complexity of the topology in the data.",
+      "anchor": "Results — Accuracy",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "challenges"
+        }
+      ],
+      "note": "Methods systematically misjudge trajectory topology, a conceded accuracy limitation of inferring dynamics from snapshots."
+    },
+    {
+      "id": "e12",
+      "text": "On all datasets, using one method resulted in getting a top model about 27% of the time. This increased up to 74% with the addition of six other methods (Fig. 4a).",
+      "anchor": "Results — Accuracy",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Quantifies that a single method rarely (~27%) gives a top result; needing 7 methods to reach 74% underscores model/result instability."
+    },
+    {
+      "id": "e13",
+      "text": "Altogether, this shows that there is considerable complementarity between the different methods and that users should try out a diverse set of methods on their data, especially when the topology is unclear a priori.",
+      "anchor": "Results — Accuracy",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Recommends running many methods because no one suffices; an admission that results are not robustly reproducible across methods."
+    },
+    {
+      "id": "e14",
+      "text": "While early TI methods were developed at a time where profiling more than a thousand cells was exceptional, methods now have to cope with hundreds of thousands of cells, and perhaps soon with more than ten million.",
+      "anchor": "Results — Scalability",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Notes the escalating scale of single-cell datasets that methods must handle."
+    },
+    {
+      "id": "e15",
+      "text": "Moreover, the recent application of TI methods on multi-omics single-cell data also showcases the increasing demands on the number of features.",
+      "anchor": "Results — Scalability",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        },
+        {
+          "claimId": "axis A (modality)",
+          "direction": "supports"
+        }
+      ],
+      "note": "Acknowledges TI is now being applied to multi-omics single-cell data, raising feature-count demands."
+    },
+    {
+      "id": "e16",
+      "text": "We found that the scalability of most methods was overall very poor, with most graph and tree methods not finishing within an hour on a dataset with ten thousand cells and ten thousand features (Fig. 3c), which is around the size of a typical droplet-based single-cell dataset.",
+      "anchor": "Results — Scalability",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        }
+      ],
+      "note": "Most methods fail to scale to a typical droplet dataset within an hour, a throughput/computational trade-off."
+    },
+    {
+      "id": "e17",
+      "text": "We found that more than half of all methods had a quadratic or superquadratic complexity with respect to the number of cells, which would make it difficult to apply any of these methods in a reasonable time frame on datasets with more than a thousand cells (Supplementary Fig. 4b).",
+      "anchor": "Results — Scalability",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        }
+      ],
+      "note": "Over half of methods scale quadratically or worse in cell number, limiting applicability at scale."
+    },
+    {
+      "id": "e18",
+      "text": "Critical to the broad applicability of TI methods is the standardization of the input and output interfaces of TI methods, so that users can effortlessly execute TI methods on their dataset of interest, compare different predicted trajectories and apply downstream analyses",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        },
+        {
+          "claimId": "standard",
+          "direction": "supports"
+        }
+      ],
+      "note": "Explicitly argues standardized input/output interfaces are critical so trajectories can be compared and reused; a direct standardization call."
+    },
+    {
+      "id": "e19",
+      "text": "In the future, this framework could be extended to allow additional input data, such as spatial and RNA velocity information, and easier downstream analyses.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 2",
+          "direction": "supports"
+        },
+        {
+          "claimId": "axis C (spatial)",
+          "direction": "supports"
+        }
+      ],
+      "note": "Notes spatial information is not yet part of the standard TI input and is a future extension, implying current TI ignores spatial structure."
+    },
+    {
+      "id": "e20",
+      "text": "In addition, further discussion within the field is required to arrive at a consensus concerning a common interface for trajectory models, which can include additional features such as uncertainty and gene importance.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        },
+        {
+          "claimId": "standard",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concedes the field still lacks a consensus common interface/standard for trajectory models."
+    },
+    {
+      "id": "e21",
+      "text": "We found that the performance of a method can be very variable between datasets, and therefore included a large set of both real and synthetic data within our evaluation, leading to a robust overall ranking of the different methods.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Reiterates strong cross-dataset performance variability, motivating large benchmark suites."
+    },
+    {
+      "id": "e22",
+      "text": "Real datasets were classified as ‘gold standard’ if the reference trajectory was not extracted from the expression data itself, such as via cellular sorting or cell mixing. All other real datasets were classified as ‘silver standard’.",
+      "anchor": "Results — Accuracy",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "challenges"
+        }
+      ],
+      "note": "Even the benchmark's ground truth trajectories are mostly not independently observed; only gold-standard ones come from sorting/mixing rather than from the expression data, underscoring scarcity of true temporal ground truth."
+    },
+    {
+      "id": "e23",
+      "text": "Discrete time course: for each cell a time point from which it was sampled. If available, this was directly extracted from the reference trajectory; otherwise the geodesic distance from the root milestone was used.",
+      "anchor": "Methods — Method input",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "supports"
+        },
+        {
+          "claimId": "axis B (temporal)",
+          "direction": "supports"
+        }
+      ],
+      "note": "Real per-cell sampling times are often unavailable and are substituted by a geodesic distance proxy, illustrating that true time labels are scarce and reconstructed."
+    },
+    {
+      "id": "e24",
+      "text": "Providing prior information to a TI method can be both a blessing and a curse. In one way, prior information can help the method to find the correct trajectory among many, equally likely, alternatives. On the other hand, incorrect or noisy prior information can bias the trajectory towards current knowledge.",
+      "anchor": "Methods — Method input",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "challenges"
+        }
+      ],
+      "note": "Concedes that snapshot-based trajectories are underdetermined (many equally likely alternatives) and that injected priors can bias the inferred dynamics."
+    }
+  ],
+  "figuresNumbers": [
+    {
+      "item": "Datasets / methods",
+      "contains": "45 TI methods evaluated; 110 real and 229 synthetic datasets; list of 71 TI tools gathered, 45 included after exclusions"
+    },
+    {
+      "item": "Four evaluation criteria",
+      "contains": "Accuracy (HIM topology, F1_branches, cor_dist cell positions, wcor_features), scalability, stability, usability"
+    },
+    {
+      "item": "Complementarity (Fig. 4a)",
+      "contains": "One method gives a top model (>=95% of best) ~27% of the time on all datasets; rises to 74% when six other methods are added"
+    },
+    {
+      "item": "Scalability (Fig. 3c)",
+      "contains": "Most graph/tree methods do not finish within 1 h on 10,000 cells x 10,000 features; only PAGA, PAGA Tree, Monocle DDRTree, Stemnet, GrandPrix complete within a day on 1 million cells; >half of methods quadratic or superquadratic in cell number"
+    },
+    {
+      "item": "Top all-around methods",
+      "contains": "PAGA, Slingshot and SCORPIUS performed well across the board; Slingshot and Celltrails had nearly perfect usability scores"
+    },
+    {
+      "item": "Resource limits",
+      "contains": "Execution limits: >1 h time limit, 16 GB memory limit (10 GB for scalability runs); most methods <=12 GB memory"
+    },
+    {
+      "item": "Trajectory types",
+      "contains": "Seven trajectory topology types from linear/cyclic up to connected and disconnected graphs"
+    }
+  ],
+  "primarySources": [
+    {
+      "topic": "Exponential scaling of single-cell RNA-seq dataset sizes (10k cells typical, toward 10M)",
+      "citation": "Svensson, V., Vento-Tormo, R. & Teichmann, S. A. Exponential scaling of single-cell RNA-seq in the past decade. Nat. Protoc. 13, 599-604 (2018)",
+      "refN": "37"
+    },
+    {
+      "topic": "TI applied to multi-omics single-cell data (chromatin + expression)",
+      "citation": "Cao, J. et al. Joint profiling of chromatin accessibility and gene expression in thousands of single cells. Science 361, 1380-1385 (2018)",
+      "refN": "38"
+    },
+    {
+      "topic": "Spatial and RNA velocity as future TI input",
+      "citation": "Manno, G. L. et al. RNA velocity of single cells. Nature 560, 494-498 (2018)",
+      "refN": "45"
+    },
+    {
+      "topic": "Whole-organism transcriptomic catalogs motivating scalable TI",
+      "citation": "Regev, A. et al. Science forum: the human cell atlas. eLife 6, e27041 (2017)",
+      "refN": "12"
+    }
+  ],
+  "flags": [
+    "Metadata partly unverified: cleaned MD gives DOI 10.1038/s41587-019-0071-9 (asserted) and Received 5 Apr 2018 / Accepted 13 Feb 2019 / Published online 1 Apr 2019; venue Nature Biotechnology 2019 vol/pages (37:547-554) inferred from the s41587 journal prefix and not printed verbatim in the source — treat volume/pages as inferred.",
+    "Authors carry affiliation superscripts in source (Wouter Saelens 1,2,6; Robrecht Cannoodt 1,3,4,6; Helena Todorov 1,2,5; Yvan Saeys 1,2*); recorded as plain names.",
+    "OCR quirks retained in some excerpts/figure text (e.g., 'cor_dist', subscripts, 'Te' for 'The' in references); excerpts copied verbatim from cleaned MD.",
+    "Scope note: paper's core subject (benchmarking computational TI methods) is method-side; captured chiefly because it instantiates Claim 3 (time reconstructed from snapshots, not observed) and Claim 9/standard (comparability and interface standardization). Method-internal accuracy-metric details (HIM, F1, etc.) are out of roadmap scope and not exhaustively captured.",
+    "Read at source: ref #45 (RNA velocity, La Manno 2018, Nature 560:494) and ref #38 (Cao 2018, Science 361:1380) are worth citing first-hand for temporal-inference-from-snapshots and multi-omics single-cell points."
+  ]
+}

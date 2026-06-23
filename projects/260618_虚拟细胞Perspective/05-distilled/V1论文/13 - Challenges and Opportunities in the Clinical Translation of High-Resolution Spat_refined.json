@@ -1,0 +1,536 @@
+{
+  "schemaVersion": "精练-4.0",
+  "citationKey": "13",
+  "title": "Challenges and Opportunities in the Clinical Translation of High-Resolution Spatial Transcriptomics",
+  "authors": "Tancredi Massimo Pentimalli, Nikos Karaiskos, Nikolaus Rajewsky",
+  "venue": "Annu. Rev. Pathol. Mech. Dis., 2025, 20:405-32",
+  "year": "2025",
+  "doi": "doi:10.1146/annurev-pathmechdis-111523-023417",
+  "readOn": "2026-06-18",
+  "sourceFile": "/Users/augustsirius/Desktop/已清洗_260617/13 - Challenges and Opportunities in Clinical Translation of High-Resolution Spatial Transcriptomics_cleaned.md",
+  "oneSentence": "A review of high-resolution (subcellular) spatial transcriptomics technologies, surveying how they work, their preclinical applications in disease-mechanism discovery and personalized medicine, key clinical study-design considerations, and the remaining challenges (method, data-interpretation, and implementation) for clinical translation.",
+  "orientation": "Mainly feeds the spatial axis and Claim 2 (dissociation/scRNA-seq loses spatial information) as strong support, and Claim 7 (spatial neighborhood/microenvironment shapes cell state and therapeutic response). It also supplies counter/conceded material for Claim 9 (lack of standards/best practices, cross-study incomparability), Claim 10 (measurement trade-offs across resolution/coverage/preservation), Claim 8 (multimodal integration of orthogonal layers), and Claim 3 (its own admission that ST gives only a single snapshot, conceding the destructive/temporal limitation). The paper advocates ST as the solution, so on the temporal axis it can serve as a named foil since it does not solve time-course observation.",
+  "excerpts": [
+    {
+      "id": "e1",
+      "text": "However, the spatial organization of cells in complex tissues is central to understanding how molecular phenotypes emerge, are regulated, and affect tissue function (13). While computational tools for the spatial reconstruction of single-cell data with little or no prior knowledge exist (14–16), they rely on the assumption that transcriptomic profiles in neighboring cells are more similar than those that are farther apart, which does not always hold true when tissue organization is disrupted by diseases.",
+      "anchor": "Background",
+      "touchpoints": [
+        {
+          "claimId": "Claim 2",
+          "direction": "supports"
+        },
+        {
+          "claimId": "C · spatial",
+          "direction": "supports"
+        }
+      ],
+      "note": "States spatial organization is central to molecular phenotype, and that computational spatial reconstruction of dissociated single-cell data rests on an assumption that breaks down in diseased tissue."
+    },
+    {
+      "id": "e2",
+      "text": "tissue dissociation inevitably leads to the loss of spatial information.",
+      "anchor": "Background",
+      "touchpoints": [
+        {
+          "claimId": "Claim 2",
+          "direction": "supports"
+        },
+        {
+          "claimId": "C · spatial",
+          "direction": "supports"
+        }
+      ],
+      "note": "Direct statement that tissue dissociation destroys spatial information."
+    },
+    {
+      "id": "e3",
+      "text": "Finally, local interactions in cellular neighborhoods drive coordinated cellular processes, and the loss of spatial positions following tissue dissociation prevents their mapping, limiting our mechanistic understanding of disease processes.",
+      "anchor": "Background",
+      "touchpoints": [
+        {
+          "claimId": "Claim 2",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 7",
+          "direction": "supports"
+        }
+      ],
+      "note": "Argues that loss of spatial position upon dissociation prevents mapping local neighborhood interactions that drive coordinated cellular processes."
+    },
+    {
+      "id": "e4",
+      "text": "Despite the power of single-cell technologies, the need for tissue dissociation and the lack of standardized protocols for isolating living cells have so far limited their clinical translation on a broader scale (8).",
+      "anchor": "Background",
+      "touchpoints": [
+        {
+          "claimId": "Claim 2",
+          "direction": "supports"
+        }
+      ],
+      "note": "Identifies tissue dissociation requirement and absence of standardized cell-isolation protocols as limits on single-cell clinical translation."
+    },
+    {
+      "id": "e5",
+      "text": "Furthermore, tissue dissociation can alter both cellular (e.g., depletion of specific cell types) and molecular readouts [e.g., activation of stress responses (9)], hindering the development of robust and reproducible protocols needed for clinical applications.",
+      "anchor": "Background",
+      "touchpoints": [
+        {
+          "claimId": "Claim 2",
+          "direction": "supports"
+        }
+      ],
+      "note": "States dissociation itself perturbs both which cells are recovered and their molecular state (stress responses), a known dissociation artifact."
+    },
+    {
+      "id": "e6",
+      "text": "However, current applications mostly rely on bulk readouts, which average gene expression across millions of cells from different cell types and are unable to distinguish clinically relevant disease heterogeneity.",
+      "anchor": "Background",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Notes that bulk NGS averages over millions of heterogeneous cells and cannot resolve clinically relevant heterogeneity."
+    },
+    {
+      "id": "e7",
+      "text": "In particular, high-resolution spatial transcriptomics (ST) technologies, which profile billions of individual transcripts at subcellular resolution (18), enable the systematic mapping of cell–cell interactions in clinical samples and hold great potential to advance biomedical research and patient care (19).",
+      "anchor": "Background",
+      "touchpoints": [
+        {
+          "claimId": "C · spatial",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        }
+      ],
+      "note": "Defines high-resolution ST as profiling billions of transcripts at subcellular resolution and mapping cell-cell interactions in clinical samples."
+    },
+    {
+      "id": "e8",
+      "text": "While spatial analyses are possible in individual 2D sections, cells live and communicate in 3D. Therefore, reconstructing tissue three dimensionally can improve our understanding of disease mechanisms.",
+      "anchor": "From Single Cells to Virtual Tissue Blocks",
+      "touchpoints": [
+        {
+          "claimId": "C · spatial",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Points out that single 2D sections under-capture biology because cells communicate in 3D, motivating 3D reconstruction."
+    },
+    {
+      "id": "e9",
+      "text": "While a discussion of specific computational tools is beyond the scope of this review, we would like to point out how best practices still have to be established at this stage. For example, more than 100 different tools exist to map cell–cell interactions (43), and the field still has to converge on standardized approaches, which are urgently needed for clinical applications of ST methods.",
+      "anchor": "From Single Cells to Virtual Tissue Blocks",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Standard",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concedes best practices are not yet established and that over 100 cell-cell interaction tools exist without convergence on a standard."
+    },
+    {
+      "id": "e10",
+      "text": "Although infrastructure (e.g., scalable file formats and structures) and ST-specific databases exist [e.g., STOmicsDB (42)], a unified ecosystem and a set of best practices are still lacking.",
+      "anchor": "From Transcripts to Cellular Phenotypes",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Standard",
+          "direction": "supports"
+        }
+      ],
+      "note": "States that a unified ecosystem and best practices for ST data are still lacking despite existing databases."
+    },
+    {
+      "id": "e11",
+      "text": "Similarly, spatial molecular atlases will be required to standardize the analysis and guide the interpretation of novel ST data, which are central to advancing our understanding of health and disease.",
+      "anchor": "Building Cellular and Molecular Atlases of Complex Tissues",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Standard",
+          "direction": "supports"
+        }
+      ],
+      "note": "Argues spatial molecular atlases are needed as shared references to standardize analysis and interpretation of ST data."
+    },
+    {
+      "id": "e12",
+      "text": "Cellular networks also shape the tumor microenvironment (TME), determining the balance between tumor growth and regression, immune recognition and escape, and tissue invasion or confinement (70).",
+      "anchor": "Unveiling Coordinated Cellular Responses Driving Disease Processes",
+      "touchpoints": [
+        {
+          "claimId": "Claim 7",
+          "direction": "supports"
+        }
+      ],
+      "note": "States cellular networks in the tumor microenvironment determine growth/regression, immune escape, and invasion outcomes."
+    },
+    {
+      "id": "e13",
+      "text": "Recently, Cadinu and colleagues (69) reconstructed the remodeling of cellular neighborhoods during injury, inflammation, and repair in a mouse colitis model and revealed how inflammation-associated fibroblasts orchestrate tissue remodeling through receptor–ligand interactions with neighboring epithelial, stromal, and immune cells.",
+      "anchor": "Unveiling Coordinated Cellular Responses Driving Disease Processes",
+      "touchpoints": [
+        {
+          "claimId": "Claim 7",
+          "direction": "supports"
+        }
+      ],
+      "note": "Example that spatial neighborhood remodeling and fibroblast receptor-ligand interactions with neighbors orchestrate tissue repair."
+    },
+    {
+      "id": "e14",
+      "text": "While these methods have proven powerful to identify the spatial architecture and heterogeneity of complex tissues, they were limited in either resolution or gene coverage and often required combination with scRNA-seq data (20, 21).",
+      "anchor": "Unveiling Coordinated Cellular Responses Driving Disease Processes",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 8",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Concedes earlier spatial-proteomics/low-resolution methods traded off resolution against gene coverage and often needed scRNA-seq to fill gaps."
+    },
+    {
+      "id": "e15",
+      "text": "Magen and colleagues (87) compared a subset of HCC patients with high intratumoral immune infiltration enrolled in a neoadjuvant anti-PD-1 trial showing variable responses to immunotherapy. Using a combination of MERFISH with scRNA-seq and T cell receptor (TCR) sequencing, they suggest that the local differentiation of $\\mathrm { P D - 1 ^ { + } \\ T C F { - } 1 ^ { + } \\ C D 8 ^ { + } \\ T }$ cells occurred only in responders due to their interaction with $\\mathrm { C X C L 1 3 ^ { + } ~ T }$ helper cells and dendritic cells in cellular triads.",
+      "anchor": "Leveraging Multicellular Niches as Personalized Biomarkers",
+      "touchpoints": [
+        {
+          "claimId": "Claim 7",
+          "direction": "supports"
+        }
+      ],
+      "note": "Example that spatially localized multicellular triads (T cell differentiation via local interactions) distinguish immunotherapy responders from non-responders."
+    },
+    {
+      "id": "e16",
+      "text": "PD-L1 (programmed cell death ligand 1) positivity is not sufficient to predict patient responses to anti-PD-1 agents (86). Anti-tumoral immunity is a highly coordinated response across different components of the TME, which may be only partially captured by the detection of one immune checkpoint molecule.",
+      "anchor": "Leveraging Multicellular Niches as Personalized Biomarkers",
+      "touchpoints": [
+        {
+          "claimId": "Claim 7",
+          "direction": "supports"
+        }
+      ],
+      "note": "Argues a single-molecule biomarker (PD-L1) is insufficient because response depends on coordinated multicellular TME context."
+    },
+    {
+      "id": "e17",
+      "text": "a holistic understanding of disease processes would benefit from the integrative analysis of cellular genomic, epigenomic, transcriptomic, proteomic, and metabolic layers.",
+      "anchor": "Beyond Gene Expression: Multimodal Spatial Omics",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        },
+        {
+          "claimId": "A · modality",
+          "direction": "supports"
+        }
+      ],
+      "note": "States a holistic understanding requires integrating genomic, epigenomic, transcriptomic, proteomic, and metabolic layers."
+    },
+    {
+      "id": "e18",
+      "text": "Rather than analyzing adjacent cells in consecutive sections, true multimodal profiling of the same cells would be desirable to directly relate features across modalities.",
+      "anchor": "Beyond Gene Expression: Multimodal Spatial Omics",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Standard",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Concedes that true same-cell multimodal profiling (not adjacent-section registration) is needed to directly relate features across modalities."
+    },
+    {
+      "id": "e19",
+      "text": "Similarly, a combination of ST with mass spectrometry–based proteomics and metabolomics (MALDI-MSI) has been applied to correlate neurotransmitter levels with gene expression in Parkinson’s disease (130) and to study tumor metabolic heterogeneity and immunometabolic rewiring at the invasion margin in gastric cancer (131).",
+      "anchor": "Beyond Gene Expression: Multimodal Spatial Omics",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        },
+        {
+          "claimId": "A · modality",
+          "direction": "supports"
+        }
+      ],
+      "note": "Example of integrating ST with spatial proteomics and metabolomics to relate metabolite/protein layers to gene expression in tissue."
+    },
+    {
+      "id": "e20",
+      "text": "However, the bulk nature of these gene expression measurements, which average across millions of cells in the TME, limited the prediction accuracy of these HE2RNA models. Furthermore, while advances in explainable artificial intelligence (AI) can point to which image regions are relevant for gene expression predictions (e.g., by generating explanatory heat maps) (142), the spatial agnostic nature of bulk RNA-seq limited both the interpretability and the validation of such tools, both of which are central to their clinical application and the advancement of scientific knowledge.",
+      "anchor": "Toward Affordable Molecular Digital Pathology",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        },
+        {
+          "claimId": "C · spatial",
+          "direction": "supports"
+        }
+      ],
+      "note": "Argues bulk, spatially agnostic RNA-seq labels limit accuracy, interpretability, and validation of deep-learning gene-expression-from-histology models."
+    },
+    {
+      "id": "e21",
+      "text": "First, sample preservation strategy imposes a trade-off between sample availability and depth of the molecular readouts: Formalin fixation is well established in routine workflows but inevitably results in RNA fragmentation, while snap-freezing allows the study of intact RNA molecules but requires the implementation of novel sample procedures and prevents the study of archived samples.",
+      "anchor": "Challenges Related to the Methods Themselves",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        }
+      ],
+      "note": "States a preservation trade-off: FFPE (available but fragmented RNA) versus fresh-frozen (intact RNA but new procedures, no archives)."
+    },
+    {
+      "id": "e22",
+      "text": "Second, there is currently a trade-off between the number of genes studied and their detection efficiency. On the one hand, imaging-based approaches feature higher sensitivity but are limited to predefined targeted genes, and detection efficiency decreases with increasing panel size. On the other hand, sequencing-based methods can—in principle—capture the whole polyadenylated transcriptome; however, they are biased toward the detection of highly expressed genes.",
+      "anchor": "Challenges Related to the Methods Themselves",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        }
+      ],
+      "note": "States a coverage-versus-sensitivity trade-off between targeted imaging-based (sensitive, limited genes) and unbiased sequencing-based (broad but biased to high expressers) ST."
+    },
+    {
+      "id": "e23",
+      "text": "Furthermore, scalability represents another limit to the implementation of current methods in diagnostic routines. On the one hand, imaging-based methods are largely automated, but they are limited to two to four slides per run and feature long acquisition times, especially when large tissue areas or numerous targets are imaged simultaneously. On the other hand, sequencingbased approaches can process several samples in parallel, but automated workflows are not yet commercially available.",
+      "anchor": "Challenges Related to the Methods Themselves",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        }
+      ],
+      "note": "Describes a throughput/scalability limit: imaging-based ST is slow and capped at a few slides per run; sequencing-based ST lacks commercial automation."
+    },
+    {
+      "id": "e24",
+      "text": "Finally, best practices for accurate cell segmentation, data normalization, clustering, and downstream computational data analyses are still areas of active research.",
+      "anchor": "Challenges Related to the Methods Themselves",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Standard",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concedes that best practices for segmentation, normalization, clustering, and downstream analysis are not yet standardized."
+    },
+    {
+      "id": "e25",
+      "text": "Apart from the existence of a healthy tissue reference, extracting actionable insights from ST data will require the existence of a large pool of similarly processed datasets for the tissue and disease under study.",
+      "anchor": "Challenges Related to Result Interpretation and Actionability",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Standard",
+          "direction": "supports"
+        }
+      ],
+      "note": "States actionable interpretation requires large pools of similarly (i.e., comparably) processed datasets, implying current data are not uniformly processed."
+    },
+    {
+      "id": "e26",
+      "text": "This will require standardized operating procedures controlling all steps from tissue extraction inside the operating room to the generation of the ST datasets and subsequent evaluation of the spatial biomarkers to ensure robust and reproducible readouts for clinical decision-making.",
+      "anchor": "Challenges Related to Clinical Implementation",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Standard",
+          "direction": "supports"
+        }
+      ],
+      "note": "Calls for standardized operating procedures across the full pipeline to ensure robust, reproducible ST readouts."
+    },
+    {
+      "id": "e27",
+      "text": "Even if the current challenges are overcome, ST methods will still be limited to a single snapshot, highlighting the continued need for experimental models to link clinical trials with perturbation studies to move from hypotheses generated by these high-dimensional assays to mechanistic insights.",
+      "anchor": "Outlook",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "supports"
+        },
+        {
+          "claimId": "B · temporal",
+          "direction": "challenges"
+        }
+      ],
+      "note": "Concedes ST is limited to a single (static) snapshot and cannot itself provide temporal/perturbation trajectories; the paper's own method does not solve the time axis."
+    },
+    {
+      "id": "e28",
+      "text": "At the same time, international efforts should also be directed toward the benchmarking of different sample collection and preservation protocols, the balancing of molecular readouts with costs, and the identification of personnel and infrastructure required for different experimental methods. Furthermore, the standardization of data analysis and reporting pipelines leveraging publicly available tools and large-scale atlases of healthy and disease samples will be central to the generation of robust clinical reports.",
+      "anchor": "Outlook",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Standard",
+          "direction": "supports"
+        }
+      ],
+      "note": "Calls for international benchmarking of protocols and standardization of analysis/reporting pipelines as central to robust ST clinical use."
+    },
+    {
+      "id": "e29",
+      "text": "Ultimately, the integration of ST and proteomic readouts with emerging spatial genomics, epigenomics, and metabolomics technologies will provide a holistic representation of complex tissues in 2D and 3D (151).",
+      "anchor": "Outlook",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        },
+        {
+          "claimId": "A · modality",
+          "direction": "supports"
+        }
+      ],
+      "note": "States integrating ST/proteomic with spatial genomics, epigenomics, and metabolomics is needed for a holistic multimodal tissue representation."
+    },
+    {
+      "id": "e30",
+      "text": "Recently, the availability of extensive digital imaging and transcriptomic datasets enabled the self-supervised training of large-scale AI models, such as Virchow (152) and RudolfV (153), which were trained on billions of histological images, and scGPT, which was trained on more than 33 million single-cell profiles. Fine-tuning these foundation models for several downstream applications can then improve the robustness and generalizability of deep learning predictions when limited training data are available.",
+      "anchor": "Outlook",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Notes foundation models (Virchow, RudolfV, scGPT trained on 33M+ single-cell profiles) and that fine-tuning improves robustness/generalizability when training data are limited."
+    },
+    {
+      "id": "e31",
+      "text": "While single-cell technologies reveal the extent of cell types and states across different brain regions (47, 48), they cannot accurately map the spatial organization of neuronal and nonneuronal cells into layers and circuits (49).",
+      "anchor": "Building Cellular and Molecular Atlases of Complex Tissues",
+      "touchpoints": [
+        {
+          "claimId": "Claim 2",
+          "direction": "supports"
+        },
+        {
+          "claimId": "C · spatial",
+          "direction": "supports"
+        }
+      ],
+      "note": "States that single-cell technologies cannot accurately map spatial organization of cells into tissue layers and circuits."
+    }
+  ],
+  "figuresNumbers": [
+    {
+      "item": "Table 1 (commercial methods)",
+      "contains": "Spatial resolution by platform: CosMx single molecule (FFPE); Curio Seeker 10 µm (FF); MERSCOPE 500 nm (FF and FFPE); Molecular Cartography single molecule (FF and FFPE); STOmics 0.5 µm (FF); Visium HD 2 µm (FFPE, ~18,000 genes probe-based); Xenium In-Situ single molecule (FF and FFPE)."
+    },
+    {
+      "item": "Table 2 (noncommercial methods)",
+      "contains": "DBiT-seq 10/20/50 µm (FF and FFPE); HDST 2 µm (FF); Open-ST 0.6 µm (FF); SeqFISH single molecule (FF); Seq-scope 0.6 µm (FF); STARmap 1 µm (FF)."
+    },
+    {
+      "item": "Resolution range of sequencing-based methods",
+      "contains": "Spot size varies from 0.6 µm in Open-ST to 10 µm in Curio Seeker."
+    },
+    {
+      "item": "Imaging-based throughput",
+      "contains": "Limited to two to four slides per run with long acquisition times."
+    },
+    {
+      "item": "Human body scale",
+      "contains": "Roughly 37 trillion cells compose the human body."
+    },
+    {
+      "item": "scGPT training scale",
+      "contains": "Trained on more than 33 million single-cell profiles."
+    },
+    {
+      "item": "FFPE section thickness",
+      "contains": "5-µm-thick (and even thinner) sections, mostly spanning part of a single cell along the z-axis."
+    },
+    {
+      "item": "Plaque-induced genes (Chen et al. 61)",
+      "contains": "Coexpressed genes upregulated within 100 µm from amyloid plaques."
+    }
+  ],
+  "primarySources": [
+    {
+      "topic": "Dissociation-induced gene expression artifacts (stress responses)",
+      "citation": "van den Brink SC, et al. 2017. Single-cell sequencing reveals dissociation-induced gene expression in tissue subpopulations. Nat. Methods 14(10):935–36",
+      "refN": "9"
+    },
+    {
+      "topic": "Spatial components of molecular tissue biology (spatial organization central to phenotype)",
+      "citation": "Palla G, Fischer DS, Regev A, Theis FJ. 2022. Spatial components of molecular tissue biology. Nat. Biotechnol. 40(3):308–18",
+      "refN": "13"
+    },
+    {
+      "topic": "Transitioning single-cell genomics into the clinic (dissociation limits clinical translation)",
+      "citation": "Lim J, et al. 2023. Transitioning single-cell genomics into the clinic. Nat. Rev. Genet. 24(8):573–84",
+      "refN": "8"
+    },
+    {
+      "topic": "Diversification of methods for studying cell-cell interactions (>100 tools)",
+      "citation": "Armingol E, Baghdassarian HM, Lewis NE. 2024. The diversification of methods for studying cell-cell interactions and communication. Nat. Rev. Genet. 25(6):381–400",
+      "refN": "43"
+    },
+    {
+      "topic": "Open-ST high-resolution 3D spatial transcriptomics (authors' own method)",
+      "citation": "Schott M, León-Periñán D, Splendiani E, Strenger L, Licha JR, et al. 2024. Open-ST: high-resolution spatial transcriptomics in 3D. Cell 187(15):3953–72.e26",
+      "refN": "33"
+    },
+    {
+      "topic": "Spatial multimodal map of human myocardial infarction (single-cell multiomic atlas)",
+      "citation": "Kuppe C, et al. 2022. Spatial multi-omic map of human myocardial infarction. Nature 608(7924):766–77",
+      "refN": "59"
+    }
+  ],
+  "flags": [
+    "Metadata confirmed from text: venue 'Annu. Rev. Pathol. Mech. Dis. 2025. 20:405–32', DOI doi:10.1146/annurev-pathmechdis-111523-023417, first published as Review in Advance October 30, 2024.",
+    "Scope note: This is a review/perspective on high-resolution spatial transcriptomics for clinical pathology; many disease-application examples (atlas-building, individual tumor case studies) are off-roadmap filler and were not captured except where they bear on neighborhood/microenvironment (Claim 7) or measurement trade-offs (Claim 10).",
+    "OCR quirk preserved in e15: LaTeX-style math markup ($\\mathrm{...}$) appears in the source for cell-marker phenotypes (e.g., PD-1+ TCF-1+ CD8+ T); kept verbatim.",
+    "Roadmap routing note: claimId values 'A · modality', 'B · temporal', 'C · spatial', 'Standard' correspond to the context file's four organizing axes (modality / temporal / spatial / cross-cutting standard-and-integration).",
+    "On temporal axis (Claim 3 / axis B): the paper SUPPORTS the premise that current methods give only a static snapshot (e27), but it does NOT itself solve pairwise time-course observation — usable as a named foil for the temporal gap."
+  ]
+}

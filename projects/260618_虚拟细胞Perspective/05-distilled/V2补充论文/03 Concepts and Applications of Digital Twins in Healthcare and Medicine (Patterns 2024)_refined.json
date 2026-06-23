@@ -1,0 +1,165 @@
+{
+  "schemaVersion": "精练-4.0",
+  "citationKey": "03",
+  "title": "Concepts and applications of digital twins in healthcare and medicine",
+  "authors": "Kang Zhang, Hong-Yu Zhou, Daniel T. Baptista-Hon, Yuanxu Gao, Xiaohong Liu, Eric Oermann, Sheng Xu, Shengwei Jin, Jian Zhang, Zhuo Sun, Yun Yin, Ronald M. Razmi, Alexandre Loupy, Stephan Beck, Jia Qu, Joseph Wu, and International Consortium of Digital Twins in Medicine",
+  "venue": "Patterns, 2024",
+  "year": "2024",
+  "doi": "doi:10.1016/j.patter.2024.101028",
+  "readOn": "2026-06-18",
+  "sourceFile": "/Users/jialindele/Desktop/v2补充论文 md CLEANED/03 Concepts and Applications of Digital Twins in Healthcare and Medicine (Patterns 2024)_cleaned.md",
+  "oneSentence": "A perspective from the International Consortium of Digital Twins in Medicine reviewing the concept, implementation requirements, and current/potential healthcare applications of digital twins, and proposing five hallmarks and a four-stage development roadmap for a medical DT platform.",
+  "orientation": "Operates at the patient/clinical scale (not the cell scale our thesis targets), so most of its content (metaverse, ethics, surgery, hospital administration, LLM agents) is off-roadmap. It is still useful as an adjacent-domain witness on the SAME structural data problems we raise: it concedes data acquisition is the major bottleneck, demands multi-modal integration and interoperability, names data standardization and data silos explicitly, stresses continuous-in-time (temporal) modeling, and flags generalization failure of data-driven models. These map to Claim 1, Claim 8, Claim 9, the Standard axis, and Axis B. A downstream writer can deploy it either as supporting testimony from the medical-DT community or as a foil whose remedies stay at the population/clinical level rather than the cell-level spatiotemporal standard we argue for.",
+  "excerpts": [
+    {
+      "id": "e1",
+      "text": "One of the major challenges of a medical DT is the acquisition of sufficient data to make meaningful predictions about the physical entity (the patient).",
+      "anchor": "Challenges and opportunities to DT implementation in medicine — Data acquisition",
+      "touchpoints": [
+        { "claimId": "Claim 1", "direction": "supports" }
+      ],
+      "note": "States that data acquisition, not modeling, is the major challenge for a working digital twin."
+    },
+    {
+      "id": "e2",
+      "text": "To construct a medical DT with high performance in making efficient and inclusive decisions, integrating large-scale AI models into healthcare is necessary. In addition, high-quality datasets are required to train these integrated AI modules.",
+      "anchor": "Challenges and opportunities — Building with AI and metaverse / Opportunities",
+      "touchpoints": [
+        { "claimId": "Claim 1", "direction": "supports" }
+      ],
+      "note": "Asserts that high-quality datasets are a prerequisite for training the AI models, framing input data quality as the gating factor."
+    },
+    {
+      "id": "e3",
+      "text": "In addition, to handle large amounts of data, the medical DT should be able to ensure real-time data collection, integration, and interoperability among different platforms and systems. The maintenance of data fidelity is also very important.",
+      "anchor": "Challenges and opportunities — Data acquisition",
+      "touchpoints": [
+        { "claimId": "Standard", "direction": "supports" },
+        { "claimId": "Claim 9", "direction": "supports" }
+      ],
+      "note": "Calls for integration and interoperability across platforms plus data-fidelity maintenance as requirements for a DT."
+    },
+    {
+      "id": "e4",
+      "text": "There is also a need for health data standardization to enable data integration and interoperability among different DT providers.",
+      "anchor": "Challenges and opportunities — Data acquisition",
+      "touchpoints": [
+        { "claimId": "Standard", "direction": "supports" },
+        { "claimId": "Claim 9", "direction": "supports" }
+      ],
+      "note": "Explicitly names the absence of data standardization as a barrier to integration and interoperability across data providers."
+    },
+    {
+      "id": "e5",
+      "text": "Therefore, continuous monitoring of static multi-modal health data, including clinical phenotypes and multi-omics such as genomics, metabolism, physiology, and lifestyle parameters, is required.",
+      "anchor": "Challenges and opportunities — Data acquisition",
+      "touchpoints": [
+        { "claimId": "Claim 8", "direction": "supports" }
+      ],
+      "note": "States that multi-modal data spanning genomics, metabolism, physiology and phenotype must be monitored together, treating modalities as jointly required."
+    },
+    {
+      "id": "e6",
+      "text": "The ultimate application of a medical DT is, therefore, an integration of these multiscale data to observe and predict deviations from the normal state of each individual.",
+      "anchor": "Challenges and opportunities — Data acquisition",
+      "touchpoints": [
+        { "claimId": "Claim 8", "direction": "supports" }
+      ],
+      "note": "Frames multiscale data integration as the defining goal of a medical DT."
+    },
+    {
+      "id": "e7",
+      "text": "Multi-modal LLMs, which encompass diverse input modes in addition to textual inputs within a unified framework, set the stage for a comprehensive approach to healthcare. Addressing these challenges wil require a foundation AI system that is capable of integration and interpretation of multi-modal data and will output with both holistic and specialist modes.",
+      "anchor": "Challenges and opportunities — Building with AI and metaverse / Opportunities",
+      "touchpoints": [
+        { "claimId": "Claim 8", "direction": "supports" }
+      ],
+      "note": "Argues a foundation AI system must integrate and interpret multi-modal data within a unified framework (OCR quirk: 'wil')."
+    },
+    {
+      "id": "e8",
+      "text": "Although deep learning models have played a key role in solving important problems in computational biology, they are faced with challenges such as interpretability and generalization.",
+      "anchor": "Challenges and opportunities — Challenges",
+      "touchpoints": [
+        { "claimId": "Claim 1", "direction": "supports" }
+      ],
+      "note": "Concedes that deep-learning models in biology face generalization (and interpretability) limitations."
+    },
+    {
+      "id": "e9",
+      "text": "The degradations in the performance of a model when evaluated on previously unseen data compared with data it has already seen is known as generalization.",
+      "anchor": "Challenges and opportunities — Challenges",
+      "touchpoints": [
+        { "claimId": "Claim 1", "direction": "supports" }
+      ],
+      "note": "Defines the generalization gap as performance degradation on unseen data, framing it as a core obstacle for DT models."
+    },
+    {
+      "id": "e10",
+      "text": "New rules and regulations prohibit institutions from exchanging medical data without patients’ approval, resulting in the occurrence of data silos. Therefore, creative methods are required to coordinate data retrieval while protecting privacy.",
+      "anchor": "Challenges and opportunities — Accessibility to data",
+      "touchpoints": [
+        { "claimId": "Claim 9", "direction": "supports" }
+      ],
+      "note": "Names data silos as an explicit obstacle, here attributed to privacy regulation rather than to a lack of standards."
+    },
+    {
+      "id": "e11",
+      "text": "Progressive twins integrate temporal or progressive information to construct a dynamic statistical machine learning model, which reflects the evolution of the physical entity and reliably forecasts future state transitions. Progressive twins are, therefore, in silico representations that dynamically reflect molecular, physiological, and disease states across time (e.g., aging).",
+      "anchor": "A medical DT: requirements — Development of a medical DT platform — Stage 2: Progressive twins",
+      "touchpoints": [
+        { "claimId": "Axis B", "direction": "supports" }
+      ],
+      "note": "Defines the temporal stage of DTs as requiring data that reflects molecular/physiological state evolution across time."
+    },
+    {
+      "id": "e12",
+      "text": "The classification of experimentally or clinically defined normal or healthy states differs slightly in each individual and cannot be extrapolated to large populations. Currently, treatment personalization relies on low-resolution data and a limited picture of the clinical history of a particular person.",
+      "anchor": "Potential implementations — Health and disease management — Individualized homeostasis monitoring",
+      "touchpoints": [
+        { "claimId": "Claim 1", "direction": "supports" }
+      ],
+      "note": "Concedes that current personalization is built on low-resolution, partial data, framing data resolution as the limiting input."
+    },
+    {
+      "id": "e13",
+      "text": "A medical DT platform can also play an essential role in autoimmune disorders and infectious diseases. This will require multimodal, granular, and integrated information at the molecular, cellular, tissue, organ, and body levels.",
+      "anchor": "Potential implementations — Immune responses",
+      "touchpoints": [
+        { "claimId": "Claim 8", "direction": "supports" },
+        { "claimId": "Axis C", "direction": "nuances" }
+      ],
+      "note": "States that meaningful DTs require integrated multi-modal information across molecular, cellular, tissue, organ and body scales (a multiscale/spatial hierarchy, here at the clinical rather than subcellular level)."
+    },
+    {
+      "id": "e14",
+      "text": "By combining highthroughput genetic and molecular approaches, single-cell and whole-genome sequencing, big data, cloud-based electronic medical records, and AI, DTs can deliver modern healthcare.",
+      "anchor": "Conclusions",
+      "touchpoints": [
+        { "claimId": "Claim 8", "direction": "nuances" }
+      ],
+      "note": "Lists the data sources expected to power DTs, centering single-cell and genome sequencing alongside records and AI without naming proteomic, spatial, or temporal trajectory data."
+    }
+  ],
+  "figuresNumbers": [
+    { "item": "All of Us program (ref 17)", "contains": "U.S. NIH program launched in 2018 seeking data from at least 1 million individuals to create one of the largest and most diverse health and genomics datasets." },
+    { "item": "Re-identification (ref 113)", "contains": "Cited systematic review reportedly found re-identification rates from deidentified data are high." },
+    { "item": "Figure 5 / four-stage roadmap", "contains": "DT development stages: Stage 1 Static twins (hypothesis-driven mathematical modeling); Stage 2 Progressive twins (temporal/progressive dynamic modeling); Stage 3 Operational twins (real-time closed-loop physical-virtual interaction); Stage 4 Autonomous twins (merged digital-physical, metaverse)." }
+  ],
+  "primarySources": [
+    { "topic": "All of Us research program (1 million individuals, diverse health/genomics dataset)", "citation": "All of Us Research Program Investigators, Denny J.C., Rutter J.L., et al. 2019, N. Engl. J. Med. 381:668-676", "refN": "17" },
+    { "topic": "High-throughput multi-omics profiling of transcriptome, methylome, proteome, histone PTMs, microbiome", "citation": "Subramanian I., Verma S., Kumar S., Jere A., Anamika K. 2020, Bioinf. Biol. Insights 14:1177932219899051", "refN": "18" },
+    { "topic": "Multi-modal data integration to advance precision oncology", "citation": "Boehm K.M., Khosravi P., Vanguri R., Gao J., Shah S.P. 2022, Nat. Rev. Cancer 22:114-126", "refN": "27" },
+    { "topic": "Transformer-based representation learning with unified processing of multi-modal input for clinical diagnostics", "citation": "Zhou H.Y., Yu Y., Wang C., et al. 2023, Nat. Biomed. Eng. 7:743-755", "refN": "28" },
+    { "topic": "Multimodal biomedical AI (multi-modal integration review)", "citation": "Acosta J.N., Falcone G.J., Rajpurkar P., Topol E.J. 2022, Nat. Med. 28:1773-1784", "refN": "39" },
+    { "topic": "Reconstructing training data from trained neural networks (re-identification risk)", "citation": "Haim N., Vardi G., Yehudai G., Shamir O., Irani M. 2022, Preprint at arXiv 2206.07758", "refN": "112" },
+    { "topic": "Deidentification of wearable data gives false sense of security; re-identification rates high", "citation": "Chikwetu L., Miao Y., Woldetensae M.K., Bell D., Goldenholz D.M., Dunn J. 2023, Lancet Digit. Health 5:e239-e247", "refN": "113" }
+  ],
+  "flags": [
+    "Metadata verified from text: DOI 10.1016/j.patter.2024.101028 printed at end of author block (line 486); venue is Patterns, year 2024 (article number 101028, inferred from DOI and filename). No received/accepted/published dates present in the cleaned MD; volume/issue/pages not stated, so venue recorded as 'Patterns, 2024' only.",
+    "Scope note: this is a patient/clinical-scale digital-twin perspective; the large majority of the paper (metaverse, embodied AI agents, LLMs, quantum computing, ethics, surgery, medical devices, hospital administration, synthetic biology) is off-roadmap for our cell-level spatiotemporal data thesis and was not captured. Only lines bearing on data-as-bottleneck, multi-modal integration, standardization/silos, generalization, and temporal modeling were extracted.",
+    "Routing caution: 'multi-modal' and 'multiscale' in this paper denote clinical/omics/lifestyle data integration at the patient level (genomics + physiology + EHR + wearables), NOT the intra-cell modality orthogonality (RNA vs protein vs metabolite) of Claim 4/Claim 8. Excerpts e5/e6/e7/e13/e14 support the general need for integration but do not assert modality non-substitutability; a downstream writer should not over-read them as evidence for Claim 4.",
+    "Counter/foil angle: the paper's proposed remedies (standardization, interoperability, federated learning, larger cohorts such as All of Us) target population/clinical data, leaving the spatial-disaggregation and destructive-measurement constraints our thesis centers on unaddressed at the cell scale. Can be deployed as a same-problem-different-scale foil.",
+    "OCR quirks preserved verbatim in excerpts: 'wil require' (e7); also present elsewhere in source (e.g. 'medica image', 'diabete s')."
+  ]
+}

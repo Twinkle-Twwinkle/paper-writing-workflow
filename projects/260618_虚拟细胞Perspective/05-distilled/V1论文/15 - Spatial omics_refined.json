@@ -1,0 +1,678 @@
+{
+  "schemaVersion": "精练-4.0",
+  "citationKey": "15",
+  "title": "Spatial omics: applications and utility in profiling the tumor microenvironment",
+  "authors": "Ji-Eun See, Sarah Barlow, Wani Arjumand, Hannah DuBose, Felipe Segato Dezem, Jasmine Plummer",
+  "venue": "unverified; see flags",
+  "year": "2025",
+  "doi": null,
+  "readOn": "2026-06-18",
+  "sourceFile": "/Users/augustsirius/Desktop/已清洗_260617/15 - Spatial omics - applications and utility in profiling the tumor microenvironment_cleaned.md",
+  "oneSentence": "A mini review of spatial omics (transcriptomics and proteomics) technologies, computational tools, and their applications in profiling the tumor microenvironment, covering platform trade-offs, cancer-research use cases, and challenges around resolution, multi-omics integration, standardization, and cost.",
+  "orientation": "This review is a strong reservoir for the spatial axis and the modality axis (protein vs RNA) of our thesis: it repeatedly argues that bulk/single-cell sequencing loses spatial context and that spatial omics preserves native tissue structure, and it documents multimodal spatial proteomics. It also feeds the standard/integration claim (it concedes a lack of standardized protocols, reproducibility, and clinical validation). It can serve as support for our spatial and multimodal arguments AND as a foil/nuance source where it shows imaging-based methods need predefined probe panels and data remain sparse/noisy. Note it is a TME/cancer-focused review and a secondary source.",
+  "excerpts": [
+    {
+      "id": "e1",
+      "text": "Unlike conventional bulk or single-cell sequencing approaches, spatial omics has the advantage of preserving the spatial structure of tissues, allowing researchers to directly map molecular information onto histological structures.",
+      "anchor": "Abstract",
+      "touchpoints": [
+        {
+          "claimId": "Claim 2",
+          "direction": "supports"
+        },
+        {
+          "claimId": "axis C · spatial",
+          "direction": "supports"
+        }
+      ],
+      "note": "States that spatial omics preserves tissue spatial structure that bulk and single-cell sequencing do not."
+    },
+    {
+      "id": "e2",
+      "text": "Traditional genomic approaches, such as bulk RNA sequencing, have been instrumental in analyzing RNA to infer overall tissue characteristics. However, these methods lack spatial resolution, which limits their ability to identify where specifc transcripts originate within the tissue architecture and hinders the understanding of cellular interactions in situ.",
+      "anchor": "1.1 The evolution of spatial omics technology",
+      "touchpoints": [
+        {
+          "claimId": "Claim 2",
+          "direction": "supports"
+        }
+      ],
+      "note": "Bulk RNA-seq lacks spatial resolution, limiting localization of transcripts and understanding of in situ cellular interactions."
+    },
+    {
+      "id": "e3",
+      "text": "The advent of single-cell transcriptomics marked a major advance, enabling the dissection of transcriptomes at the level of individual cells. This allowed for fner classifcation of cell states and types, and provided new insights into intercellular dynamics. Yet, despite this granularity, single-cell approaches could not defnitively resolve spatial context or confrm physical interactions between cells within native tissue environments [1, 2].",
+      "anchor": "1.1 The evolution of spatial omics technology",
+      "touchpoints": [
+        {
+          "claimId": "Claim 2",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 7",
+          "direction": "supports"
+        }
+      ],
+      "note": "Single-cell transcriptomics cannot resolve spatial context or confirm physical cell-cell interactions in native tissue."
+    },
+    {
+      "id": "e4",
+      "text": "Techniques such as multiplexed error-robust fluorescence in situ hybridization (MERFISH) allow for direct visualization of RNA transcripts within individual cells, preserving spatial integrity at subcellular resolution [6].",
+      "anchor": "1.1 The evolution of spatial omics technology",
+      "touchpoints": [
+        {
+          "claimId": "axis C · spatial",
+          "direction": "supports"
+        }
+      ],
+      "note": "MERFISH visualizes RNA transcripts within individual cells at subcellular spatial resolution."
+    },
+    {
+      "id": "e5",
+      "text": "Platforms like GeoMx Digital Spatial Profler—combining sequencing with region-specifc profling—and DBIT-seq—using fuidic delivery of the barcodes, allowing for multimodal spatial profling assays (e.g., RNA, protein and epigenomics)—further expand the utility of sequencing-based approaches [10, 11].",
+      "anchor": "1.2 Sequencing-based spatial omics",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        },
+        {
+          "claimId": "axis A · modality",
+          "direction": "supports"
+        }
+      ],
+      "note": "DBiT-seq enables multimodal spatial assays measuring RNA, protein, and epigenomics together."
+    },
+    {
+      "id": "e6",
+      "text": "Imaging-based spatial proteomics leverages similar principles to transcriptomic assays but focuses on detecting and spatially mapping protein expression across tissues.",
+      "anchor": "1.4 Imaging-based spatial proteomics",
+      "touchpoints": [
+        {
+          "claimId": "axis A · modality",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        }
+      ],
+      "note": "Imaging-based spatial proteomics spatially maps protein expression across tissues."
+    },
+    {
+      "id": "e7",
+      "text": "Sequential immunofuorescence (seqIF-COMET) and other cyclic immunofluorescence (CycIF) methods expand on traditional immunohistochemistry by performing repeated rounds of staining, imaging, and signal removal to profle up to 100 protein targets in the same tissue section [16, 17].",
+      "anchor": "1.4 Imaging-based spatial proteomics",
+      "touchpoints": [
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        }
+      ],
+      "note": "Cyclic immunofluorescence methods profile up to 100 protein targets in one tissue section."
+    },
+    {
+      "id": "e8",
+      "text": "Proteomic assays are often integrated with transcriptomic spatial data to provide a more comprehensive, multimodal view of tissue organization and cellular phenotypes. While proteomics is inherently limited by the availability and specifcity of antibodies, advances in antibody validation and new multiplexing chemistries continue to expand target panels.",
+      "anchor": "1.4 Imaging-based spatial proteomics",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        },
+        {
+          "claimId": "axis A · modality",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Spatial proteomics is integrated with transcriptomics for a multimodal view but is limited by antibody availability and specificity."
+    },
+    {
+      "id": "e9",
+      "text": "Trajectory inference methods adapted for spatial contexts (e.g., Monocle 3 with spatial anchoring or spatial pseudotime models) can reveal developmental or pathological gradients across tissue landscapes [31, 32].",
+      "anchor": "1.5 Computational methods for spatial data analysis",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "nuances"
+        },
+        {
+          "claimId": "axis B · temporal",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Spatial trajectory/pseudotime inference reconstructs developmental or pathological gradients across tissue rather than measuring real time courses."
+    },
+    {
+      "id": "e10",
+      "text": "Similarly, reference-based mapping frameworks such as Tangram and InsitutypeML depend heavily on the quality and robustness of single-cell reference atlases, potentially including biased cell-type annotation in poorly characterized tissue areas.",
+      "anchor": "1.5 Computational methods for spatial data analysis",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Reference-based mapping tools depend on single-cell reference atlas quality and can introduce biased annotation in poorly characterized tissue."
+    },
+    {
+      "id": "e11",
+      "text": "SiGra [33] and xSiGra [34] employ graph neural networks to integrate spatial transcriptomics and proteomics information, revealing latent spatial domains and higher-order cellular interactions.",
+      "anchor": "1.5 Computational methods for spatial data analysis",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        }
+      ],
+      "note": "Graph neural network methods integrate spatial transcriptomics and proteomics to reveal spatial domains and cellular interactions."
+    },
+    {
+      "id": "e12",
+      "text": "As data complexity increases—especially with 3D spatial data or multi-omics integration—scalable, interpretable, and biologically grounded computational frameworks will be vital to fully capitalize on the power of spatial omics.",
+      "anchor": "1.5 Computational methods for spatial data analysis",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        }
+      ],
+      "note": "Multi-omics integration of spatial data needs scalable, interpretable computational frameworks."
+    },
+    {
+      "id": "e13",
+      "text": "Spatial omics uniquely revealed how immune and tumor cells were organized and interacted within the PCNSL TME— specifically, the location-dependent immune suppression and signaling patterns that traditional single-cell or bulk analyses could not detect.",
+      "anchor": "2 Application of spatial omics technology to cancer research",
+      "touchpoints": [
+        {
+          "claimId": "Claim 7",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 2",
+          "direction": "supports"
+        }
+      ],
+      "note": "Spatial omics revealed location-dependent immune suppression and signaling in the tumor microenvironment that single-cell or bulk analyses could not detect."
+    },
+    {
+      "id": "e14",
+      "text": "These spatial patterning—distancebased segregation of cell clusters and EcoCellTypes enrichments—correlate with patient outcomes.",
+      "anchor": "2 Application of spatial omics technology to cancer research",
+      "touchpoints": [
+        {
+          "claimId": "Claim 7",
+          "direction": "supports"
+        }
+      ],
+      "note": "Spatial distance-based segregation of cell clusters in the TME correlates with patient outcomes."
+    },
+    {
+      "id": "e15",
+      "text": "These studies demonstrate that spatial omics goes beyond conventional bulk or single-cell analyses to understand cellular identity and interactions within the TME in a spatial context. Spatial information allows researchers to understand not only the role of each cell, but also where and how they communicate with one another, providing crucial insights for a deeper understanding of cancer behavior and treatment response.",
+      "anchor": "2 Application of spatial omics technology to cancer research",
+      "touchpoints": [
+        {
+          "claimId": "Claim 2",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 7",
+          "direction": "supports"
+        }
+      ],
+      "note": "Spatial information reveals where and how cells communicate, beyond what bulk or single-cell analyses capture."
+    },
+    {
+      "id": "e16",
+      "text": "Sun et al. mapped spatial gene expression in hypoxic and normoxic tumor regions and found that hypoxia induced signifcant changes in tumor cell subpopulations that increase resistance and promote invasion, particularly in hypoxic areas.",
+      "anchor": "2 Application of spatial omics technology to cancer research",
+      "touchpoints": [
+        {
+          "claimId": "Claim 7",
+          "direction": "supports"
+        }
+      ],
+      "note": "Spatially mapped hypoxic microenvironment regions drive tumor subpopulation changes increasing resistance and invasion."
+    },
+    {
+      "id": "e17",
+      "text": "Spatial profling further revealed that PD-L1 + endothelial cells in acinar regions contribute to immune evasion and tumor progression by inhibiting CD8 + T-cell infltration.",
+      "anchor": "2 Application of spatial omics technology to cancer research",
+      "touchpoints": [
+        {
+          "claimId": "Claim 7",
+          "direction": "supports"
+        }
+      ],
+      "note": "Spatial profiling localized PD-L1+ endothelial cells driving immune evasion via inhibition of CD8+ T-cell infiltration."
+    },
+    {
+      "id": "e18",
+      "text": "These results reveal the limitations of bulk molecular profling in these highly plastic tumors and demonstrate the value of spatial approaches in improving subtype classifcation and establishing treatment strategies.",
+      "anchor": "2 Application of spatial omics technology to cancer research",
+      "touchpoints": [
+        {
+          "claimId": "Claim 2",
+          "direction": "supports"
+        }
+      ],
+      "note": "Bulk molecular profiling is limited in highly plastic tumors; spatial approaches improve subtype classification."
+    },
+    {
+      "id": "e19",
+      "text": "Pseudotime spatial omics analysis showed that the activation of oncogenic pathways and higher copy number variations were observed in IDC, and T cells were converted to exhaustion through co-inhibitory interactions such as NECTIN2–TIGIT.",
+      "anchor": "2 Application of spatial omics technology to cancer research",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "nuances"
+        },
+        {
+          "claimId": "axis B · temporal",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Pseudotime (inferred, not measured) spatial analysis ordered breast cancer progression and T-cell exhaustion via co-inhibitory interactions."
+    },
+    {
+      "id": "e20",
+      "text": "Vahid et al. performed spatial proteomics profling of tumor and stromal compartments in 102 non-small-cell lung cancer (NSCLC) patients to identify protein signatures associated with overall survival rates [51]. This study has shown that stromal CD56 expression correlates with better survival, whereas tumoral B-cell lymphoma extra large (BCLXL) and B7-H3 were linked to poorer outcomes.",
+      "anchor": "2 Application of spatial omics technology to cancer research",
+      "touchpoints": [
+        {
+          "claimId": "Claim 5",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        }
+      ],
+      "note": "Spatial proteomics of 102 NSCLC patients found protein signatures (stromal CD56, tumoral BCLXL, B7-H3) prognostic for survival."
+    },
+    {
+      "id": "e21",
+      "text": "As these technologies evolve beyond simple mapping tools into integrated platforms, they are revealing that core functional characteristics of tumor biology such as subclonal evolution, immune evasion, metabolic adaptation, and therapeutic resistance are intimately linked to spatial organization.",
+      "anchor": "2 Application of spatial omics technology to cancer research",
+      "touchpoints": [
+        {
+          "claimId": "Claim 7",
+          "direction": "supports"
+        }
+      ],
+      "note": "Functional tumor characteristics including subclonal evolution and metabolic adaptation are intimately linked to spatial organization."
+    },
+    {
+      "id": "e22",
+      "text": "A major technical challenge with current spatial omics platforms is their limited resolution, especially when it comes to distinguishing individual cells. For these applications, because it is not assigned at an individual cell level, it becomes computationally challenging to separate gene activity accurately and restricts the analysis of cellular heterogeneity, which is important for cancer research.",
+      "anchor": "3 Unanswered questions and challenges",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        },
+        {
+          "claimId": "axis C · spatial",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Limited single-cell resolution of current spatial platforms restricts accurate separation of gene activity and heterogeneity analysis."
+    },
+    {
+      "id": "e23",
+      "text": "High-resolution imagingbased transcriptomic approaches ofer greater resolution but are limited in scale and gene coverage and require predefned probe panels, which may limit the discovery of novel transcripts or rare cell populations.",
+      "anchor": "3 Unanswered questions and challenges",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        },
+        {
+          "claimId": "axis A · modality",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Imaging-based approaches gain resolution but are limited in scale, gene coverage, and require predefined probe panels (the resolution-throughput trade-off)."
+    },
+    {
+      "id": "e24",
+      "text": "Developing platforms that balance high resolution, comprehensive transcriptome coverage (which was recently launched by the CosMX platform) and scalability is still a signifcant challenge, particularly when studying tumors where the spatial distribution of rare cell populations is important.",
+      "anchor": "3 Unanswered questions and challenges",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        }
+      ],
+      "note": "Balancing high resolution, transcriptome coverage, and scalability simultaneously remains a significant unsolved trade-off."
+    },
+    {
+      "id": "e25",
+      "text": "Tumors are formed for various reasons, including gene expression, mutations, chromatin state, protein expression, and metabolic state, each of which has its own impact on cancer progression and treatment resistance. Integrating spatial omics with multiomics data can provide a more comprehensive understanding of cancer biology.",
+      "anchor": "3 Unanswered questions and challenges",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        }
+      ],
+      "note": "Distinct modalities (gene expression, mutations, chromatin, protein, metabolic state) each independently impact cancer; integrating them gives a more comprehensive understanding."
+    },
+    {
+      "id": "e26",
+      "text": "However, spatial omics data tend to be sparse and noisy, and in certain cases, genes can be under-detected due to molecular capture limitations, which limit biological interpretability and reduce the accuracy of integration with other modalities at single-cell resolution [52].",
+      "anchor": "3 Unanswered questions and challenges",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 8",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Spatial omics data are sparse and noisy with under-detected genes, limiting interpretability and cross-modality integration accuracy."
+    },
+    {
+      "id": "e27",
+      "text": "Moreover, spatial datasets may contain novel or rare cell types that are not present in scRNA-seq references, and assuming complete overlap in cell populations during data integration can introduce bias or misinterpretation [53].",
+      "anchor": "3 Unanswered questions and challenges",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Integration assuming complete cell-population overlap between spatial and scRNA-seq references can introduce bias when rare cell types are absent from references."
+    },
+    {
+      "id": "e28",
+      "text": "Few standardized protocols and analytical frameworks exist for integrating multi-modal datasets, which hinder efective data alignment among data sets.",
+      "anchor": "3 Unanswered questions and challenges",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        },
+        {
+          "claimId": "axis · standard",
+          "direction": "supports"
+        }
+      ],
+      "note": "Few standardized protocols/frameworks exist for multi-modal integration, hindering data alignment across datasets."
+    },
+    {
+      "id": "e29",
+      "text": "There is a need for robust and generalizable algorithms and integration tools capable of handling multiomics data at the single-cell level across diferent experimental settings and biological contexts [56].",
+      "anchor": "3 Unanswered questions and challenges",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        },
+        {
+          "claimId": "axis · standard",
+          "direction": "supports"
+        }
+      ],
+      "note": "Robust, generalizable multi-omics integration tools that work across experimental settings are still needed."
+    },
+    {
+      "id": "e30",
+      "text": "The absence of these standardized protocols reduces reproducibility across platforms and laboratories, preventing spatial omics from being efectively implemented in the clinical area [57].",
+      "anchor": "3 Unanswered questions and challenges",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        },
+        {
+          "claimId": "axis · standard",
+          "direction": "supports"
+        }
+      ],
+      "note": "Absence of standardized protocols reduces cross-platform and cross-laboratory reproducibility."
+    },
+    {
+      "id": "e31",
+      "text": "Moreover, the clinical predictive or prognostic utility of spatial omics has not been sufciently validated through large-scale clinical trials to date. For spatial omics to be a routine part of precision oncology, further studies are essential to link spatial gene expression patterns with clinical outcomes across various cancer types and patient populations.",
+      "anchor": "3 Unanswered questions and challenges",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Clinical predictive/prognostic utility of spatial omics is not yet validated by large-scale trials; cross-cohort comparability is lacking."
+    },
+    {
+      "id": "e32",
+      "text": "In addition, the high cost of spatial omics experiments is a hurdle to clinical translation. It requires infrastructure such as specialized equipment, consumables, and data storage solutions, as well as personnel trained in sample preparation, imaging, and data analysis. These economic constraints limit the scale of studies that include heterogeneous patient cohorts and ultimately slow the clinical translation of spatial omics in cancer research.",
+      "anchor": "3 Unanswered questions and challenges",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        }
+      ],
+      "note": "High cost and infrastructure demands of spatial omics limit study scale and slow clinical translation."
+    },
+    {
+      "id": "e33",
+      "text": "To move toward clinical translation, spatial omics assays must meet stringent regulatory and technical standards akin to those that facilitated the clinical adoption of next-generation sequencing (e.g., MACQC guidelines).",
+      "anchor": "3 Unanswered questions and challenges",
+      "touchpoints": [
+        {
+          "claimId": "axis · standard",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Spatial omics needs stringent regulatory and technical standards (like NGS QC guidelines) for clinical adoption."
+    },
+    {
+      "id": "e34",
+      "text": "However, spatial proteomics has a clear path to clinical practice because it is uniquely positioned with current diagnostic use antibodybased panels.",
+      "anchor": "3 Unanswered questions and challenges",
+      "touchpoints": [
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        }
+      ],
+      "note": "Spatial proteomics has a clearer clinical path due to existing antibody-based diagnostic panels."
+    },
+    {
+      "id": "e35",
+      "text": "Foundation models like CellLM and scFoundation link cellular states to drug response and metastatic potential, highlighting the increasingly important role AI and ML play as predictive engines for precision oncology [58] (Table 2).",
+      "anchor": "3 Unanswered questions and challenges",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Foundation models (CellLM, scFoundation) link cellular states to drug response and metastatic potential as predictive engines."
+    },
+    {
+      "id": "e36",
+      "text": "A major frontier lies in the development of standardized protocols for integrating multi-omics modalities— such as spatial transcriptomics, proteomics, epigenomics, and metabolomics—which would allow for a more holistic understanding of tumor biology and disease progression.",
+      "anchor": "4 Conclusion and future perspectives",
+      "touchpoints": [
+        {
+          "claimId": "axis · standard",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        },
+        {
+          "claimId": "axis A · modality",
+          "direction": "supports"
+        }
+      ],
+      "note": "Standardized protocols for integrating spatial transcriptomics, proteomics, epigenomics, and metabolomics are a major frontier for holistic tumor understanding."
+    },
+    {
+      "id": "e37",
+      "text": "Ultimately, the convergence of high-resolution spatial measurements, multi-modal integration, and advanced computational tools will redefne how we study human disease—bringing spatial biology from bench to bedside.",
+      "anchor": "4 Conclusion and future perspectives",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        },
+        {
+          "claimId": "axis C · spatial",
+          "direction": "supports"
+        }
+      ],
+      "note": "Convergence of high-resolution spatial measurement and multimodal integration is framed as the future of disease study."
+    }
+  ],
+  "figuresNumbers": [
+    {
+      "item": "Table 1 (Stereo-seq)",
+      "contains": "Sequencing-based, ~0.5-2 μm spot (single-cell, subcellular); whole transcriptome; FFPE, FF; high spatial resolution, large area capture; limitations: limited instrument access, complex data analysis."
+    },
+    {
+      "item": "Table 1 (Visium)",
+      "contains": "Sequencing-based, ~55 μm spot (10-20 cells); whole transcriptome; not single-cell resolution, coarse spatial context."
+    },
+    {
+      "item": "Table 1 (Visium HD)",
+      "contains": "Sequencing-based, ~2 μm pixel (single-cell, subcellular); whole transcriptome; limitation: large data size."
+    },
+    {
+      "item": "Table 1 (GeoMx)",
+      "contains": "Sequencing-based, resolution dependent on ROI size (20-300 cells); whole transcriptome + proteins; non-destructive (slides reusable); not single-cell resolution."
+    },
+    {
+      "item": "Table 1 (DBiT-seq)",
+      "contains": "Sequencing-based, ~10 μm pixel (single-cell); whole transcriptome + proteins + epigenetic marks; multi-omics (RNA + protein); limitation: complex microfluidic setup."
+    },
+    {
+      "item": "Table 1 (Xenium)",
+      "contains": "Imaging-based, ~200 nm pixel (single-cell, subcellular); targeted panels (~5000 genes); limitations: not whole-transcriptome, high cost."
+    },
+    {
+      "item": "Table 1 (MERSCOPE)",
+      "contains": "Imaging-based, ~100-200 nm localization precision (subcellular); targeted panels (~10,000 genes); limitations: complex imaging and analysis, high cost."
+    },
+    {
+      "item": "Table 1 (CosMx)",
+      "contains": "Imaging-based, ~0.5-1.2 μm pixel (single-cell, subcellular); targeted panels (~1000-whole transcriptome+proteins); limitations: limited gene count, long imaging time."
+    },
+    {
+      "item": "Cyclic immunofluorescence protein count",
+      "contains": "seqIF-COMET / CycIF profile up to 100 protein targets in the same tissue section."
+    },
+    {
+      "item": "Vahid et al. NSCLC cohort",
+      "contains": "Spatial proteomics of tumor and stromal compartments in 102 NSCLC patients; stromal CD56 correlates with better survival, tumoral BCLXL and B7-H3 with poorer outcomes."
+    },
+    {
+      "item": "Wang et al. TNBC cohort",
+      "contains": "Spatial omics on 92 triple-negative breast cancer patients identified nine spatial archetypes linked to clinical outcomes."
+    },
+    {
+      "item": "Coutant et al. breast cancer",
+      "contains": "Spatial omics on 11 triple-negative tumors (3 claudin-low, 4 metaplastic breast carcinoma) identified tumor-specific markers BMPER, POPDC3, SH3RF3 despite stromal contamination."
+    }
+  ],
+  "primarySources": [
+    {
+      "topic": "Single-cell transcriptomics cannot resolve spatial context",
+      "citation": "Tang F, et al. 2009, Nature Methods 6:377-382; Macosko EZ, et al. 2015, Cell 161:1202-1214",
+      "refN": "1, 2"
+    },
+    {
+      "topic": "MERFISH spatially resolved highly multiplexed RNA profiling at subcellular resolution",
+      "citation": "Chen KH, et al. 2015, Science 348:aaa6090",
+      "refN": "6"
+    },
+    {
+      "topic": "GeoMx multiplex digital spatial profiling of proteins and RNA",
+      "citation": "Merritt CR, et al. 2020, Nature Biotechnology 38:586-599",
+      "refN": "10"
+    },
+    {
+      "topic": "DBiT-seq high-spatial-resolution multi-omics (RNA + protein + epigenome) sequencing",
+      "citation": "Liu Y, et al. 2020, Cell 183:1665-1681.e18",
+      "refN": "11"
+    },
+    {
+      "topic": "CODEX multiplexed protein imaging",
+      "citation": "Goltsev Y, et al. 2018, Cell 174:968-981.e15",
+      "refN": "18"
+    },
+    {
+      "topic": "PCNSL tumor microenvironment spatial single-cell analysis",
+      "citation": "Xia Y, et al. 2023, Leukemia 37:1499-1510",
+      "refN": "39"
+    },
+    {
+      "topic": "Spatial landscape of immunosuppressive FAP+ CAFs / EcoCellTypes in breast cancer",
+      "citation": "Croizer H, et al. 2024, Nature Communications 15:2806",
+      "refN": "40"
+    },
+    {
+      "topic": "Hypoxic microenvironment-induced spatial transcriptome changes in pancreatic cancer",
+      "citation": "Sun H, et al. 2021, Cancer Biology & Medicine 18:616-630",
+      "refN": "42"
+    },
+    {
+      "topic": "Spatial proteomics of tumor/stromal compartments in NSCLC (survival signatures)",
+      "citation": "YaghoubiNaei V, et al. 2024, Clinical and Translational Immunology 13:e1522",
+      "refN": "51"
+    },
+    {
+      "topic": "Gene representation bias / under-detection in spatial transcriptomics",
+      "citation": "Li X, Qiu P 2024, Journal of Bioinformatics and Computational Biology 22:2450007",
+      "refN": "52"
+    },
+    {
+      "topic": "Bias when assuming complete cell-population overlap in integration (SPANN)",
+      "citation": "Yuan M, et al. 2024, Briefings in Bioinformatics, doi:10.1093/bib/bbad533",
+      "refN": "53"
+    },
+    {
+      "topic": "SPIRAL batch integration across spatial technologies and its remaining limitations",
+      "citation": "Guo T, et al. 2023, Genome Biology 24:241",
+      "refN": "54"
+    },
+    {
+      "topic": "SpatialScope deep generative integration; neighboring-cell-same-type assumption not always valid",
+      "citation": "Wan X, et al. 2023, Nature Communications 14:7848",
+      "refN": "55"
+    },
+    {
+      "topic": "Need for generalizable multiomics integration / principles of modeling temporal and spatial omics",
+      "citation": "Velten B, Stegle O 2023, Nature Methods 20:1462-1474",
+      "refN": "56"
+    },
+    {
+      "topic": "Lack of standardization / GESTALT global alliance for spatial technologies",
+      "citation": "Plummer JT, et al. 2025, Nature Genetics 57:275-279",
+      "refN": "57"
+    }
+  ],
+  "flags": [
+    "Metadata unverified: venue/journal name not printed in the cleaned source body; header reads 'MINI REVIEW' only. Year 2025 from 'Received: 10 August 2025 / Accepted: 21 November 2025 © The Author(s) 2025'. Likely a Springer Nature journal (Publisher's Note: 'Springer Nature remains neutral...') but exact journal title and volume/issue/pages not confirmable from text; left as 'unverified; see flags'.",
+    "DOI: no article-level DOI present in the source body; all '10.xxxx/' matches are reference DOIs. doi set to null.",
+    "Author list discrepancy in source: body Author contribution names initials J.S./J.T.P./S.B./A.W./H.C., while the Authors block lists 'Ji-Eun See, Sarah Barlow, Wani Arjumand, Hannah DuBose, Felipe Segato Dezem, Jasmine Plummer' (with superscript affiliation markers). 'authors' field copies the printed Authors block names; initials in the contribution paragraph not fully reconciled.",
+    "Secondary source: this is a review; most quantitative TME findings are attributable to the primary studies resolved in primarySources. Writer should cite first-hand where used.",
+    "Scope note: temporal-axis touchpoints (e9, e19) reflect INFERRED pseudotime/trajectory across tissue, not paired/destructive-measurement time course; tagged 'nuances' on Claim 3 / temporal axis accordingly. The paper does not directly address destructive-measurement pairing.",
+    "OCR quirks preserved verbatim in excerpts (e.g., 'profling', 'fuorescence', 'ofering', 'distancebased', 'imagingbased', 'antibodybased', 'predefned', 'MACQC')."
+  ]
+}

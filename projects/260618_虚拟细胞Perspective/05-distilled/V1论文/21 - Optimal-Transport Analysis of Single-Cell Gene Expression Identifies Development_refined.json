@@ -1,0 +1,274 @@
+{
+  "schemaVersion": "精练-4.0",
+  "citationKey": "21",
+  "title": "Optimal-Transport Analysis of Single-Cell Gene Expression Identifies Developmental Trajectories in Reprogramming",
+  "authors": "Geoffrey Schiebinger, Jian Shu, Marcin Tabaka, Brian Cleary, Vidya Subramanian, Aryeh Solomon, Joshua Gould, Siyan Liu, Stacie Lin, Peter Berube, Lia Lee, Jenny Chen, Justin Brumbaugh, Philippe Rigollet, Konrad Hochedlinger, Rudolf Jaenisch, Aviv Regev, Eric S. Lander",
+  "venue": "Cell, 2019, 176(4):928-943",
+  "year": "2019",
+  "doi": "doi:10.1016/j.cell.2019.01.006",
+  "readOn": "2026-06-18",
+  "sourceFile": "/Users/augustsirius/Desktop/已清洗_260617/21 - Waddington-OT - Optimal-Transport Analysis Developmental Trajectories in Reprogramming_cleaned.md",
+  "oneSentence": "The paper introduces Waddington-OT, an optimal-transport method that infers ancestor-descendant couplings and developmental trajectories from a dense time course of 315,000 scRNA-seq profiles of iPSC reprogramming, and uses it to predict and experimentally validate that the TF Obox6 and cytokine GDF9 enhance reprogramming efficiency.",
+  "orientation": "Primarily feeds Claim 3 (destructive sequencing cannot pair-observe the same cell over time, so trajectories must be inferred computationally from distributions): the paper states this constraint explicitly and is itself a canonical example of the trajectory-inference/OT class the context file names. It also touches Claim 10 (resolution x throughput x destructiveness trade-off) by motivating large dense time courses and modeling growth/death, and Claim 1 (data-driven trajectory methods generalize poorly) via its benchmark showing most existing methods fail on time-course data. It can serve as BOTH support (concedes the destructive-measurement / no-paired-observation fact our thesis builds on) and as a foil (it is a model/method advance that distribution-level inference can partly compensate, which our thesis frames as not equivalent to true temporal tracking).",
+  "excerpts": [
+    {
+      "id": "e1",
+      "text": "Because scRNA-seq destroys cells in the course of recording their profiles, one cannot follow expression of the same cell and its direct descendants across time. While various approaches can record information about cell lineage, they currently provide only very limited information about a cell’s state at earlier time points (Kester and van Oudenaarden, 2018).",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "supports"
+        }
+      ],
+      "note": "States that scRNA-seq is destructive so the same cell cannot be followed over time, and that lineage methods give only very limited information about a cell's earlier state."
+    },
+    {
+      "id": "e2",
+      "text": "Comprehensive studies of cell trajectories thus rely heavily on computational approaches to connect discrete ‘‘snapshots’’ into continuous ‘‘movies.’’",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "supports"
+        }
+      ],
+      "note": "Because cells cannot be tracked directly, temporal information must be reconstructed computationally from independent snapshots."
+    },
+    {
+      "id": "e3",
+      "text": "First, with few exceptions, most methods do not explicitly leverage temporal information (Table S6). Historically, most were designed to extract information about stationary processes, such as adult stem cell differentiation, in which all stages exist simultaneously. However, time courses are becoming commonplace.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "nuances"
+        },
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Notes that most existing trajectory-inference methods ignore explicit temporal information and were built for stationary processes."
+    },
+    {
+      "id": "e4",
+      "text": "Third, few methods account for cellular growth and death during development (Table S6).",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Identifies a gap that few trajectory methods model cell growth and death over time."
+    },
+    {
+      "id": "e5",
+      "text": "Here, we describe a conceptual framework, implemented in a method called Waddington-OT, that aims to capture the notion that cells at any time are drawn from a probability distribution in gene-expression space, and each cell has a distribution of both probable origins and probable fates (Figure 1). It uses scRNA-seq data collected across a time course to infer how these probability distributions evolve over time, by using the mathematical approach of optimal transport (OT).",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "challenges"
+        }
+      ],
+      "note": "Describes Waddington-OT, which infers each cell's distribution of probable origins and fates from time-course snapshots rather than from direct tracking."
+    },
+    {
+      "id": "e6",
+      "text": "By sampling this probability distribution P<sub>t</sub> at various time points t, we wish to infer how the differentiation process evolves over time (Figure 1A). From a large number of cells at a given time point (Figure 1B), we can approximate the distribution at that time point, but, because different cells are sampled independently at different time points, we lose the joint distribution of expression between pairs of time points, called temporal coupling.",
+      "anchor": "Results: Reconstruction of Probabilistic Trajectories by Optimal Transport",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "supports"
+        }
+      ],
+      "note": "Because cells are sampled independently at each time point, the joint distribution (temporal coupling) between time points is lost and must be inferred."
+    },
+    {
+      "id": "e7",
+      "text": "Absent any constraint on cellular transitions, we cannot infer the temporal coupling, but if we assume that cells move short distances over short time periods, then we can infer the temporal coupling by using the mathematical technique of optimal transport (Figure 1A; Methods S1).",
+      "anchor": "Results: Reconstruction of Probabilistic Trajectories by Optimal Transport",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Temporal coupling is unidentifiable without assumptions; OT recovers it only under an assumption that cells move short distances over short times."
+    },
+    {
+      "id": "e8",
+      "text": "The optimal-transport calculation (1) implicitly assumes that a cell’s fate depends on its current position but not on its previous history (i.e., the stochastic process is Markov), and (2) captures only the timevarying components of the distribution (see Discussion).",
+      "anchor": "Results: Reconstruction of Probabilistic Trajectories by Optimal Transport",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Author-conceded modeling assumptions: the inferred trajectories assume a memoryless (Markov) process and capture only time-varying components."
+    },
+    {
+      "id": "e9",
+      "text": "Because current experimental approaches for tracing cell lineage do not describe the transcriptional profile of a cell set’s ancestors, we developed a computational approach to validate the model.",
+      "anchor": "Results: The Model Is Predictive and Robust",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concedes that current lineage-tracing experiments do not recover the transcriptional profile of ancestor cells, so validation must itself be computational."
+    },
+    {
+      "id": "e10",
+      "text": "Optimal-transport analysis is only intended to capture the time-varying components of a distribution $\\mathbb { P } _ { t } .$ For systems in dynamic equilibrium, $\\mathbb { P } _ { t }$ does not change over time and optimal transport would infer that each cell is stationary. (An example would be cells that are asynchronously undergoing cell division. Although each cell is changing, the overall distribution $\\mathbb { P } _ { t }$ is constant across time.)",
+      "anchor": "Discussion: An Optimal Transport Framework to Model Cell Differentiation",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Author-conceded limitation: distribution-level inference cannot detect change in cells whose population distribution is at equilibrium even though individual cells change."
+    },
+    {
+      "id": "e11",
+      "text": "To set Waddington-OT in context, we comprehensively reviewed 62 other approaches (Table S6), which fall into three classes: category 1 (33 tools) is not applicable to developmental time courses with scRNA-seq, category 2 (25 tools) is applicable but does not incorporate time information, and category 3 (4 tools) leverages time information, but does not model cell growth rates over time.",
+      "anchor": "Discussion: An Optimal Transport Framework to Model Cell Differentiation",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        }
+      ],
+      "note": "Of 62 reviewed trajectory methods, none both incorporate time and model cell growth; most ignore temporal information entirely."
+    },
+    {
+      "id": "e12",
+      "text": "Category 2 methods produced trajectories that are completely inconsistent with the time course—making huge leaps across time points and, in some cases, going backward in time. For example, Monocle2 produced trajectories in which day 0 cells give rise to day 18 cells, which then give rise to day 8 cells.",
+      "anchor": "Discussion: An Optimal Transport Framework to Model Cell Differentiation",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Benchmark shows widely used trajectory methods that ignore time produce trajectories inconsistent with the actual time course, even reversing temporal order."
+    },
+    {
+      "id": "e13",
+      "text": "Category 3 methods encounter a distinct challenge, as they do not account for the higher growth of iPSCs and consequently infer that many apoptotic stromal cells must transition to iPSCs.",
+      "anchor": "Discussion: An Optimal Transport Framework to Model Cell Differentiation",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 10",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Methods that ignore differential cell growth and death infer biologically impossible transitions (apoptotic stromal cells becoming iPSCs)."
+    },
+    {
+      "id": "e14",
+      "text": "Waddington-OT is the only approach that incorporates temporal information and models cell growth over time (that we can consider a new category 4). It is the only approach that produced reasonable trajectories on our data, suggesting that these features are critical for robust analysis of developmental processes.",
+      "anchor": "Discussion: An Optimal Transport Framework to Model Cell Differentiation",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Claims Waddington-OT alone produced reasonable trajectories, arguing that using time and modeling growth are critical for robust trajectory analysis."
+    },
+    {
+      "id": "e15",
+      "text": "Third, various methods exist for obtaining lineage information about cells, based on the introduction of barcodes at discrete time points or continuously (Kester and van Oudenaarden, 2018). Barcodes can be used to recognize cells that descend from a recent common ancestor cell but do not currently directly reveal the full gene-expression state of the ancestral cell.",
+      "anchor": "Discussion: Future Prospects for Models and Studies of Differentiation and Development",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concedes that lineage barcoding identifies common descent but does not recover the full gene-expression state of the ancestral cell."
+    },
+    {
+      "id": "e16",
+      "text": "We model a differentiating population of cells as a time-varying probability distribution (i.e., stochastic process) on a high-dimensional expression space.",
+      "anchor": "Results: Reconstruction of Probabilistic Trajectories by Optimal Transport",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "challenges"
+        }
+      ],
+      "note": "Frames the supervision/inference signal as distribution-to-distribution over a population rather than paired single-cell observation."
+    }
+  ],
+  "figuresNumbers": [
+    {
+      "item": "Dataset scale",
+      "contains": "315,000 (>315,000) single-cell RNA-seq profiles total; experiment 1: 65,781 cells over 10 time points across 16 days, sampled every 48 h; experiment 2: 259,155 cells over 39 time points across 18 days, sampled every 12 h (every 6 h between days 8 and 9); 251,203 high-quality cells retained from experiment 2."
+    },
+    {
+      "item": "Table S6 / methods benchmark",
+      "contains": "62 reviewed trajectory-inference approaches: category 1 = 33 tools (not applicable), category 2 = 25 tools (applicable, no time), category 3 = 4 tools (time, but no growth modeling); Waddington-OT proposed as a new category 4."
+    },
+    {
+      "item": "iPSC bottleneck",
+      "contains": "iPSC trajectory encompasses 40% of cells at day 8.5, but only 10% at day 10 (2i) and 1% at day 11 (serum); pluripotency signature in 80%-90% of cells days 15-18 in 2i vs peak 10%-15% in serum."
+    },
+    {
+      "item": "Fig. 7 / validation",
+      "contains": "Obox6 and Zfp42 increased reprogramming efficiency ~2-fold in 2i (more in serum); GDF9 increased efficiency ~4- to 5-fold at highest dose, dose-dependent, confirmed by Oct4-GFP colony counts, bulk RNA-seq, and scRNA-seq."
+    },
+    {
+      "item": "Genomic aberrations (Fig. 5D, 5E)",
+      "contains": "Whole-chromosome aneuploidy in 4.0% of trophoblast and 2.1% of stromal cells vs 1.1% of others; sub-chromosomal events in 6.9% of trophoblasts and 3.2% of stromal cells vs 1.2% others and 0.4% neural."
+    }
+  ],
+  "primarySources": [
+    {
+      "topic": "scRNA-seq is destructive so the same cell cannot be tracked over time; lineage tracing gives limited earlier-state information",
+      "citation": "Kester L. and van Oudenaarden A. 2018, Cell Stem Cell 23:166-179",
+      "refN": null
+    },
+    {
+      "topic": "Comparison/benchmark of single-cell trajectory inference methods",
+      "citation": "Saelens W., Cannoodt R., Todorov H., Saeys Y. 2018, bioRxiv doi:10.1101/276907",
+      "refN": null
+    },
+    {
+      "topic": "Single-cell genomics scales phenomenology to mechanism (scRNA-seq solves cell-class discovery)",
+      "citation": "Tanay A. and Regev A. 2017, Nature 541:331-338",
+      "refN": null
+    },
+    {
+      "topic": "Unbalanced optimal transport used to model cell growth and death",
+      "citation": "Chizat L., Peyre G., Schmitzer B., Vialard F.-X. 2018, Math. Comp. 87:2563-2609",
+      "refN": null
+    },
+    {
+      "topic": "Kantorovich relaxation of optimal transport as coupling of probability distributions",
+      "citation": "Kantorovich L. 1942, Comptes Rendus (Doklady) de l'Academie des Sciences de l'URSS 37:199-201",
+      "refN": null
+    }
+  ],
+  "flags": [
+    "Metadata: venue 'Cell, 2019, 176(4):928-943' uses standard Cell volume/issue/pages for this DOI; the cleaned MD itself confirms only journal=Cell, year=2019 and DOI 10.1016/j.cell.2019.01.006 (Received July 3, 2018; Accepted January 2, 2019; Published January 31, 2019). Volume/issue/page numbers inferred from the DOI, not printed verbatim in the source.",
+    "Authors expanded to full names from the Author Contributions/Acknowledgments initials and known authorship of this paper; the cleaned MD body does not print a full verbatim author byline, so initials-only is the literal source state.",
+    "Scope note: Most of the paper (trophoblast/neural/stromal subtype biology, TF regulatory predictions, paracrine signaling, Obox6/GDF9 validation) is off the context-file roadmap and was NOT captured; on-roadmap value is concentrated in the destructive-measurement / temporal-coupling argument (Claim 3) and the method-benchmark / growth-modeling points (Claims 1, 10).",
+    "Read at source: ref Kester and van Oudenaarden 2018 (Cell Stem Cell 23:166-179) is the primary citation behind the destructive-measurement / no-paired-observation point and is worth citing first-hand for Claim 3."
+  ]
+}

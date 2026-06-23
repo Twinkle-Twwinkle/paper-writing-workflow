@@ -1,0 +1,493 @@
+{
+  "schemaVersion": "精练-4.0",
+  "citationKey": "19",
+  "title": "Spatial single-cell mass spectrometry defines zonation of the hepatocyte proteome",
+  "authors": "Florian A. Rosenberger, Marvin Thielert, Maximilian T. Strauss, Lisa Schweizer, Constantin Ammar, Sophia C. Mädler, Andreas Metousis, Patricia Skowronek, Maria Wahle, Katherine Madden, Janine Gote-Schniering, Anna Semenova, Herbert B. Schiller, Edwin Rodriguez, Thierry M. Nordmann, Andreas Mund & Matthias Mann",
+  "venue": "Nature Methods, 2023",
+  "year": "2023",
+  "doi": "doi:10.1038/s41592-023-02007-6",
+  "readOn": "2026-06-18",
+  "sourceFile": "/Users/augustsirius/Desktop/已清洗_260617/19 - Spatial single-cell mass spectrometry defines zonation of the hepatocyte proteome_cleaned.md",
+  "oneSentence": "The authors introduce single-cell Deep Visual Proteomics (scDVP), integrating high-content imaging, laser microdissection and multiplexed mass spectrometry to measure the spatial proteome of single murine hepatocytes within intact tissue at a depth of ~1,700 proteins per cell slice, showing that about half of the proteome is spatially regulated along the portal-to-central vein zonation axis, and training a machine-learning model to infer the spatial proteome from imaging data alone.",
+  "orientation": "A methods paper that directly demonstrates feasibility of high-throughput spatial single-cell proteomics in intact tissue, so it is a strong support for Claim 6 (spatial proteomics feasible) and for the spatial axis and the proteome modality axis. It also feeds Claim 4 (modalities orthogonal): its cross-omics comparison shows low overall RNA-protein correlation and proteins regulated only in RNA or protein, sometimes inversely. It concedes the temporal dimension was not covered and that throughput/sensitivity are limiting, which bears on Claim 3 (temporal axis) and on the resolution-throughput trade-off (Claim 10). Note that this paper's spatial proteome is still NOT a true time course and relies on destructive measurement of fixed tissue, so several lines double as foils. Non-binding routing hint.",
+  "excerpts": [
+    {
+      "id": "e1",
+      "text": "Single-cell proteomics by mass spectrometry is emerging as a powerful and unbiased method for the characterization of biological heterogeneity. So far, it has been limited to cultured cells, whereas an expansion of the method to complex tissues would greatly enhance biological insights.",
+      "anchor": "Abstract",
+      "touchpoints": [
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        },
+        {
+          "claimId": "轴 C · 空间（spatial）",
+          "direction": "supports"
+        }
+      ],
+      "note": "States that single-cell MS proteomics had so far been limited to cultured cells, and that extending it to complex (spatially intact) tissues is the advance."
+    },
+    {
+      "id": "e2",
+      "text": "scDVP resolves the context-dependent, spatial proteome of murine hepatocytes at a current depth of 1,700 proteins from a cell slice. Half of the proteome was diferentially regulated in a spatial manner, with protein levels changing dramatically in proximity to the central vein.",
+      "anchor": "Abstract",
+      "touchpoints": [
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        },
+        {
+          "claimId": "轴 A · 模态（measure what）",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 7",
+          "direction": "supports"
+        }
+      ],
+      "note": "Reports ~1,700 proteins per cell slice and that about half the proteome is spatially regulated along the zonation axis; keeps OCR quirk 'diferentially'."
+    },
+    {
+      "id": "e3",
+      "text": "We applied machine learning to proteome classes and images, which subsequently inferred the spatial proteome from imaging data alone. scDVP is applicable to healthy and diseased tissues and complements other spatial proteomics and spatial omics technologies.",
+      "anchor": "Abstract",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        }
+      ],
+      "note": "States that a machine-learning model inferred the spatial proteome from imaging alone and that scDVP complements other spatial omics technologies."
+    },
+    {
+      "id": "e4",
+      "text": "Mass spectrometry (MS)-based single-cell proteomics (scProteomics) has made tremendous progress within just a few years, and can now quantify more than 1,000 proteins in cultured cells<sup>1–3</sup>. While this trajectory is promising, proteome depth, throughput and lack of spatial context limit biological use.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 6",
+          "direction": "nuances"
+        },
+        {
+          "claimId": "轴 C · 空间（spatial）",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concedes that proteome depth, throughput and lack of spatial context limit the biological use of single-cell proteomics."
+    },
+    {
+      "id": "e5",
+      "text": "We have recently introduced deep visual proteomics (DVP), a spatial technology that combines imaging, cell segmentation, laser microdissection and MS into a single workflow to investigate complex tissues with various cell types and metabolic niches<sup>4</sup>.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        }
+      ],
+      "note": "Describes DVP as a spatial proteomics workflow combining imaging, segmentation, laser microdissection and MS for complex tissues."
+    },
+    {
+      "id": "e6",
+      "text": "DVP overcomes depth and throughput limitations with pooling the required number of cells with similar morphological features and staining patterns to identify statistically and analytically robust cellular phenotypes (‘biological fractionation’). By its nature, it depends on prior knowledge of adequate markers of the cells of interest that resolve their heterogeneity.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        }
+      ],
+      "note": "Describes the trade-off that the prior DVP method depends on pooling cells and on prior marker knowledge to overcome depth and throughput limits."
+    },
+    {
+      "id": "e7",
+      "text": "In this Article, we use scDVP to explore spatial characteristics of hepatocyte subsets in mammalian liver—a highly organized and functionally repetitive tissue, in which the proteome of hepatocytes is determined by paracrine signaling, as well as oxygen and nutrient gradients<sup>5</sup>. These metabolic gradients require distinct functional cell states along the portal vein (PV) to central vein (CV) axis.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 7",
+          "direction": "supports"
+        }
+      ],
+      "note": "States that the hepatocyte proteome is determined by paracrine signaling and oxygen/nutrient gradients producing distinct functional states along the spatial PV-to-CV axis (spatial microenvironment shapes cell state)."
+    },
+    {
+      "id": "e8",
+      "text": "This phenomenon of liver zonation has been described by single-cell RNA sequencing (scRNAseq) for hepatocytes<sup>6,7</sup>, fluorescence-activated cell sorting (FACS) and MS-based proteomics<sup>8</sup>, and multiplexed imaging<sup>9</sup>. Despite this long and varied background, the extent of spatial heterogeneity and proteome variation in hepatocyte remains an open question.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Notes that zonation has been studied across modalities (scRNAseq, FACS proteomics, multiplexed imaging) yet the extent of proteome spatial variation remained open; keeps OCR singular 'hepatocyte'."
+    },
+    {
+      "id": "e9",
+      "text": "This resulted in a doubling of identified proteins with a median number of 1,712 proteins across three biological replicates and 455 single shapes, at twice the previous throughput (Extended Data Fig. 3c). A maximum of 2,769 proteins were identified in one shape, and 3,738 unique proteins were found across all samples (Fig. 2a and Extended Data Fig. 3c).",
+      "anchor": "Results — Multiplex-DIA drastically increases proteome depth",
+      "touchpoints": [
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        }
+      ],
+      "note": "Quantifies proteome depth: median 1,712 proteins per single shape across 3 replicates / 455 shapes, max 2,769 in one shape, 3,738 unique proteins overall."
+    },
+    {
+      "id": "e10",
+      "text": "On the basis of the distance ratio of PV and CV, we grouped the data into 20 spatial bins—approximately the maximum number of cells along the zonation axis. Analysis of variance (ANOVA) testing across all bins revealed that 49% of all proteins detected in at least half of the samples were significantly different between zones (false discovery rate (FDR) <0.05; Extended Data Fig. 6a and Supplementary Table S2).",
+      "anchor": "Results — Single-shape proteomes accurately reflect hepatocyte zonation",
+      "touchpoints": [
+        {
+          "claimId": "Claim 7",
+          "direction": "supports"
+        },
+        {
+          "claimId": "轴 C · 空间（spatial）",
+          "direction": "supports"
+        }
+      ],
+      "note": "Quantifies that 49% of detected proteins differ significantly between spatial zones (FDR<0.05), demonstrating extensive spatial regulation of the proteome."
+    },
+    {
+      "id": "e11",
+      "text": "A cross-omics comparison with scRNAseq data<sup>6</sup> confirmed the directionality of the most prominent zonation markers (Pearson’s R = 0.97, Extended Data Fig. 7a,b), while correlation was low across all proteins and transcripts (Pearson’s R = 0.12).",
+      "anchor": "Results — Single-shape proteomes accurately reflect hepatocyte zonation",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 8",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Reports that, while marker directionality agrees between protein and RNA (R=0.97), the overall protein-transcript correlation is low (R=0.12), indicating RNA and protein carry largely non-redundant information."
+    },
+    {
+      "id": "e12",
+      "text": "Notably, a number of proteins were regulated only in the RNA or protein dimension, or even inversely correlated (Extended Data Fig. 7c), such as dimethylglycine dehydrogenase in the choline catabolic pathway.",
+      "anchor": "Results — Single-shape proteomes accurately reflect hepatocyte zonation",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        }
+      ],
+      "note": "States that some proteins are spatially regulated only at the RNA or only at the protein level, or even inversely correlated, evidence that transcriptome cannot substitute for proteome."
+    },
+    {
+      "id": "e13",
+      "text": "This underlines that the scDVP dataset provides orthogonal insight into liver physiology instead of merely complementing existing datasets.",
+      "anchor": "Results — Single-shape proteomes accurately reflect hepatocyte zonation",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        }
+      ],
+      "note": "Authors argue the spatial proteome dataset provides orthogonal (non-redundant) biological insight beyond existing RNA and FACS datasets."
+    },
+    {
+      "id": "e14",
+      "text": "When we added subcellular annotations to our dataset, we found negligible differences to a bulk mouse liver proteome for many compartments including the plasma membrane (summed intensity of 10.6% in the library versus 10.7% in this scDVP data), highlighting that laser microdissection is suitable to excise the entire shape (Fig. 3g and Supplementary Table S6).",
+      "anchor": "Results — Single-shape proteomes accurately reflect hepatocyte zonation",
+      "touchpoints": [
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        }
+      ],
+      "note": "Validates that scDVP captures subcellular compartment proportions comparable to a bulk liver proteome (e.g. plasma membrane 10.6% vs 10.7%), supporting accuracy of the single-cell spatial measurement."
+    },
+    {
+      "id": "e15",
+      "text": "Here, we present a single-cell spatial map of the murine liver acquired by MS-based proteomics. Our approach successfully combines microscopic imaging data with ultra-high-sensitivity proteomics, building on four major technological advances: (1) artificial intelligence (AI)-assisted segmentation and laser microdissection, (2) multiplex-DIA (mDIA), (3) low-flow gradients and (4) the ultra-high sensitivity of a timsTOF SCP mass spectrometer.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        }
+      ],
+      "note": "Summarizes the contribution as a single-cell spatial proteome map of murine liver built on four named technological advances."
+    },
+    {
+      "id": "e16",
+      "text": "To date, MS-based scProteomics has been exclusively reported for cell suspensions. State-of-the-art workflows currently reach a proteomic depth of up to 2,000 proteins in cultured cells, with about 250 pg of cellular protein mass.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        },
+        {
+          "claimId": "轴 C · 空间（spatial）",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concedes that MS single-cell proteomics had been exclusively done on dissociated cell suspensions (no spatial context), reaching ~2,000 proteins from ~250 pg in cultured cells."
+    },
+    {
+      "id": "e17",
+      "text": "With our scDVP workflow, we achieved more than 1,700 proteins per single shape (and up to 2,700) despite working from sections that were fixed, stained, imaged and laser dissected. Laser microdissection successfully separated hepatocytes from surrounding material including blood remnants, which holds promise for smaller cell types in more complex tissue environments.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        }
+      ],
+      "note": "States >1,700 (up to 2,700) proteins per single shape were achieved from fixed, stained, imaged and dissected tissue, with clean separation from blood remnants."
+    },
+    {
+      "id": "e18",
+      "text": "The size of our shapes correlated strongly with the number of identified proteins, suggesting that scDVP is currently limited by MS sensitivity and will thus profit from continuous technical developments.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        }
+      ],
+      "note": "Author-conceded limitation: scDVP proteome depth scales with cell/shape size, so the method is currently limited by MS sensitivity (depth-vs-input trade-off)."
+    },
+    {
+      "id": "e19",
+      "text": "Given the more stable core proteome compared with single-cell transcriptomes<sup>2</sup> and the resulting lower required sample number, scDVP experiments encompassing a few hundred single shapes could be done in just a few days.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "nuances"
+        },
+        {
+          "claimId": "轴 A · 模态（measure what）",
+          "direction": "supports"
+        }
+      ],
+      "note": "Claims the single-cell proteome core is more stable than the single-cell transcriptome, requiring fewer samples, a property differentiating the protein modality."
+    },
+    {
+      "id": "e20",
+      "text": "More than half of quantified proteins were significantly different between portal and central zones, in line with scRNAseq data<sup>6,16</sup> and FACS-based proteomics data<sup>8</sup>.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 7",
+          "direction": "supports"
+        }
+      ],
+      "note": "Reiterates that more than half of quantified proteins differ between portal and central spatial zones, consistent with prior RNA and FACS proteomics."
+    },
+    {
+      "id": "e21",
+      "text": "A rhythmic expression pattern has been previously shown for a large number of liver transcripts and proteins<sup>16,19</sup>. While we have not covered the temporal aspect here, the scDVP approach could contribute to such studies by adding a spatial dimension.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "challenges"
+        },
+        {
+          "claimId": "轴 B · 时间（temporal）",
+          "direction": "challenges"
+        }
+      ],
+      "note": "Author-conceded scope limit: the study did not cover the temporal/time-course dimension, only the spatial one — a direct foil on the temporal axis."
+    },
+    {
+      "id": "e22",
+      "text": "By analyzing single cellular shapes without prior assumptions, scDVP now removes the dependency on established markers or features. This makes it a promising approach in heterogeneous tissues with partially or not defined subtypes of cells, such as in many tumor tissues.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        }
+      ],
+      "note": "States scDVP removes the dependency on prior markers that constrained pooled DVP, enabling unbiased spatial proteome mapping in heterogeneous tissues."
+    },
+    {
+      "id": "e23",
+      "text": "Moreover, scDVP can be a method of choice to map proteomic disturbances along gradients of, for instance, signaling factors, nutrients or gases, and in physiological settings that may create impediments for other omics methods, for instance, in extracellular fibrotic scars.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 7",
+          "direction": "supports"
+        }
+      ],
+      "note": "Proposes scDVP for mapping proteome changes along microenvironmental gradients (signaling factors, nutrients, gases), linking spatial microenvironment to cell state."
+    },
+    {
+      "id": "e24",
+      "text": "Our results demonstrate that the central challenge of scDVP is the sensitivity of the overall workflow. Although we have here reduced the area required for laser microdissection by 100-fold compared with our initial DVP report<sup>4</sup>, we note that one excised hepatocyte shape contains approximately ten times more protein than the smallest cells of interest, such as typical resting lymphocytes<sup>20</sup>.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        }
+      ],
+      "note": "Author-conceded limitation: the central challenge is workflow sensitivity; an excised hepatocyte still contains ~10x more protein than the smallest target cells (e.g. resting lymphocytes), bounding applicability."
+    },
+    {
+      "id": "e25",
+      "text": "There have been advances in the quantification of posttranslational modifications from ultra-low-input material, such as from 1 µg down to the material corresponding to single cell, for instance in the enrichment protocol µPhos<sup>22</sup>. In combination with scDVP, this holds promise for single cells, although the biological information in single-cell phosphoproteomics data would currently be limited to a few high-abundance proteins with high modification stoichiometries.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "轴 A · 模态（measure what）",
+          "direction": "nuances"
+        },
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        }
+      ],
+      "note": "Notes that single-cell PTM/phosphoproteomics is only beginning to be feasible and is currently limited to a few high-abundance proteins, indicating the PTM modality remains scarce at single-cell spatial resolution."
+    },
+    {
+      "id": "e26",
+      "text": "Subtle signaling events, such as the liver-dominant Wnt signaling, will require additional technological developments for in-depth biological description of signaling in single cells by MS.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "轴 A · 模态（measure what）",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Concedes that capturing subtle signaling-network events at single-cell resolution by MS still requires further technological development."
+    },
+    {
+      "id": "e27",
+      "text": "We have shown that single-cell data can be used to train an accurate ML model that predicts the proteome class from visual information only.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        }
+      ],
+      "note": "States that a machine-learning model trained on single-cell data can predict proteome class from imaging features alone, integrating image and proteome modalities."
+    },
+    {
+      "id": "e28",
+      "text": "The modular nature of scDVP, especially the open format from laser microdissection to 384-well plates for sample preparation, makes it widely applicable and also compatible with other spatial omics technologies such as spatial transcriptomics, epigenomics<sup>25</sup> or multiplexed imaging.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        }
+      ],
+      "note": "States scDVP is compatible/integrable with other spatial omics modalities (spatial transcriptomics, epigenomics, multiplexed imaging)."
+    },
+    {
+      "id": "e29",
+      "text": "This model reached an average precision of 0.94 (Extended Data Fig. 9c,d), correctly assigning the proteome class of almost all cells. Errors occurred exclusively between spatially neighboring classes (Fig. 4c).",
+      "anchor": "Results — Spatial context regulates single-cell proteomes",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        }
+      ],
+      "note": "Quantifies that the imaging-to-proteome-class ML model reached average precision 0.94, with errors only between spatially adjacent classes."
+    },
+    {
+      "id": "e30",
+      "text": "We used the class probabilities as weights to predict the spatial proteome, which accurately approximated overall protein intensities (R = 0.78 between prediction and measurement, Fig. 4e).",
+      "anchor": "Results — Spatial context regulates single-cell proteomes",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        }
+      ],
+      "note": "Reports R=0.78 correlation between the imaging-predicted spatial proteome and the measured proteome on a held-out section."
+    }
+  ],
+  "figuresNumbers": [
+    {
+      "item": "Proteome depth",
+      "contains": "Median 1,712 proteins per single shape across 3 biological replicates and 455 single shapes; maximum 2,769 proteins in one shape; 3,738 unique proteins across all samples; five-shape protocol reached median 1,235 proteins across 230 samples."
+    },
+    {
+      "item": "Spatial regulation (ANOVA, 20 bins)",
+      "contains": "49% of proteins detected in at least half of samples were significantly different between zones (FDR<0.05); only 5.8% expressed equally in all zones (Shapiro-Wilk P>0.05); 'more than half' of quantified proteins differ between portal and central zones."
+    },
+    {
+      "item": "Cross-omics correlation (Extended Data Fig. 7)",
+      "contains": "Marker directionality vs scRNAseq R=0.97; all-protein-vs-transcript R=0.12; vs FACS-based proteome marker R=0.16 (better overall overlap than R=0.12)."
+    },
+    {
+      "item": "Subcellular / mitochondrial quantitation (Fig. 3g,h)",
+      "contains": "Plasma membrane summed intensity 10.6% (library) vs 10.7% (scDVP); five OXPHOS complexes decreased collectively by >25% from PV to CV."
+    },
+    {
+      "item": "ML model (Fig. 4, Extended Data Fig. 9)",
+      "contains": "Average precision 0.94; RandomForest (n_estimators=200) testing accuracy 0.90; 17 features / k-means into 5 classes; predicted-vs-measured spatial proteome R=0.78 on held-out section of 60 single-shape proteomes."
+    },
+    {
+      "item": "Input / throughput",
+      "contains": "~250 pg protein input per shape (≈ one HeLa cell); 10 µm sections; hepatocyte size 20–30 µm; mean shape size 600 µm2; 10 ng reference proteome co-injected; ~99% dimethyl labeling efficiency; current effective two-plex at 40 samples/day, scalable to effective four-plex at 80 samples/day (320 shapes/day)."
+    }
+  ],
+  "primarySources": [
+    {
+      "topic": "Liver zonation defined by single-cell RNA sequencing (scRNAseq reference used for cross-omics comparison)",
+      "citation": "Halpern, K. B. et al. Single-cell spatial reconstruction reveals global division of labour in the mammalian liver. Nature 542, 352–356 (2017)",
+      "refN": "6"
+    },
+    {
+      "topic": "FACS-based spatial-sorting hepatocyte proteome (comparison dataset)",
+      "citation": "Ben-Moshe, S. et al. Spatial sorting enables comprehensive characterization of liver zonation. Nat. Metab. 1, 899–911 (2019)",
+      "refN": "8"
+    },
+    {
+      "topic": "Original Deep Visual Proteomics (DVP) method on which scDVP builds",
+      "citation": "Mund, A. et al. Deep visual proteomics defines single-cell identity and heterogeneity. Nat. Biotechnol. 40, 1231–1240 (2022)",
+      "refN": "4"
+    },
+    {
+      "topic": "Multiplex-DIA reference-channel workflow doubling single-cell proteome depth",
+      "citation": "Thielert, M. et al. Robust dimethyl-based multiplex-DIA workflow doubles single-cell proteome depth via a reference channel. Mol. Syst. Biol. (2023), doi:10.15252/msb.202211503",
+      "refN": "11"
+    },
+    {
+      "topic": "Single-cell proteomics quantifying perturbation changes (ultra-high sensitivity MS, ~stable core proteome)",
+      "citation": "Brunner, A.-D. et al. Ultra-high sensitivity mass spectrometry quantifies single-cell proteome changes upon perturbation. Mol. Syst. Biol. 18, e10798 (2022)",
+      "refN": "2"
+    },
+    {
+      "topic": "Space-time logic of liver gene expression / rhythmic (temporal) liver expression",
+      "citation": "Droin, C. et al. Space–time logic of liver gene expression at sublobular scale. Nat. Metab. 3, 43–58 (2021)",
+      "refN": "16"
+    },
+    {
+      "topic": "Transfer learning extending single-cell transcriptomics models (scGen)",
+      "citation": "Lotfollahi, M., Wolf, F. A. & Theis, F. J. scGen predicts single-cell perturbation responses. Nat. Methods 16, 715–721 (2019)",
+      "refN": "24"
+    }
+  ],
+  "flags": [
+    "Metadata: venue inferred as Nature Methods from DOI prefix s41592 and the peer-review line ('Nature Methods thanks Albert Heck, Shalev Itzkovitz, and Sinem Saka'); issue/volume/page numbers not present in the cleaned text, so 'venue' gives name and year only.",
+    "Dates from header: Received 9 December 2022; Accepted 15 August 2023; Published online 2 October 2023.",
+    "OCR quirks preserved verbatim in excerpts (e.g. 'diferentially' in e2, 'afiliations', singular 'hepatocyte' in e8); not corrected.",
+    "Scope note: this is a methods/technology paper demonstrating spatial single-cell proteomics; it is itself a primary source for Claim 6, so most quantitative claims are first-hand, not cited.",
+    "Scope note: the study explicitly did NOT cover the temporal dimension (e21) and works on fixed/destroyed tissue, so its spatial proteome is a snapshot, not a time course - relevant as a foil for the temporal axis (Claim 3)."
+  ]
+}

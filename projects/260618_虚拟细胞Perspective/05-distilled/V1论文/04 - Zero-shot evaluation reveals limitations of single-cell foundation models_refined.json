@@ -1,0 +1,358 @@
+{
+  "schemaVersion": "精练-4.0",
+  "citationKey": "04",
+  "title": "Zero-shot evaluation reveals limitations of single-cell foundation models",
+  "authors": "Kasia Z. Kedzierska, Lorin Crawford, Ava P. Amini, Alex X. Lu",
+  "venue": "Genome Biology, 2025 (unverified; see flags)",
+  "year": "2025",
+  "doi": "doi:10.1186/s13059-025-03574-x",
+  "readOn": "2026-06-18",
+  "sourceFile": "/Users/augustsirius/Desktop/已清洗_260617/04 - Zero-shot evaluation reveals limitations of single-cell foundation models_cleaned.md",
+  "oneSentence": "The authors perform zero-shot evaluations of two popular single-cell foundation models (Geneformer and scGPT) and find that, even under the most favorable conditions, both underperform simpler baselines (HVG, scVI, Harmony) at cell-type clustering and batch integration, and reconstruct gene expression poorly.",
+  "orientation": "Strong support for our Claim 1 (data/evaluation is the bottleneck; pure data-driven foundation models generalize poorly): a direct empirical demonstration that scaled single-cell foundation models fail to beat simple methods zero-shot. Also feeds Claim 9 (cross-paper non-comparability, need for standardized held-out benchmarks) via its call for reserved benchmark datasets, and modality axis A (RNA-only narrowness) via its self-conceded transcriptomics-only scope. Can serve as both an ally (foundation-model skepticism) and a foil (it still frames the fix as better models/benchmarks, not richer multimodal spatiotemporal data).",
+  "excerpts": [
+    {
+      "id": "e1",
+      "text": "Our evaluation of the zero-shot performance of Geneformer and scGPT suggests that, in some cases, these models may face reliability challenges and could be outperformed by simpler methods.",
+      "anchor": "Abstract",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "States the paper's headline finding that the two foundation models can be beaten by simpler methods in zero-shot settings."
+    },
+    {
+      "id": "e2",
+      "text": "In our work, we test this claim and show that even with a set of benchmarks representing the most favorable setting where datasets consist of tissues and are generated using technologies similar to those used to pretrain these models (Additional fle 2: Figs. S1 and S2), both Geneformer and scGPT underperform simpler methods.",
+      "anchor": "Background",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Emphasizes that the underperformance holds even under conditions deliberately favorable to the foundation models."
+    },
+    {
+      "id": "e3",
+      "text": "Both models perform worse than selecting highly variable genes (HVG) and using more established methods such as Harmony and scVI in cell type clustering, as measured by average BIO (AvgBio) score (Fig. 1B, Additional fle 1: Table S1).",
+      "anchor": "Results and discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Quantifies the cell-type clustering result: both foundation models trail HVG, Harmony, and scVI on AvgBIO."
+    },
+    {
+      "id": "e4",
+      "text": "Notably, HVG outperforms Geneformer and scGPT across all metrics (Additional fle 2: Fig. S4, Additional fle 1: Tables S1 and S2).",
+      "anchor": "Results and discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "States that simple highly-variable-gene selection beats both foundation models on every metric."
+    },
+    {
+      "id": "e5",
+      "text": "However, scGPT and Geneformer do not consistently outperform baselines on datasets already seen during pretraining, and the only dataset not seen during pretraining where scGPT outperforms both baselines is the the PBMC 12k study.",
+      "anchor": "Results and discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Notes the models fail to beat baselines even on data they were pretrained on, weakening the generalization claim."
+    },
+    {
+      "id": "e6",
+      "text": "Evaluating variants of the scGPT model highlights that while pretraining confers some beneft, beyond a certain limit, larger and more diverse datasets may no longer confer additional benefts.",
+      "anchor": "Results and discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Reports diminishing returns: scaling pretraining data past a point yields no further benefit."
+    },
+    {
+      "id": "e7",
+      "text": "Surprisingly, scGPT human slightly underperforms scGPT blood, even for datasets involving tissue types beyond blood and bone marrow cells (Additional fle  2: Fig. S5, Additional fle 1: Table S4).",
+      "anchor": "Results and discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Observes that the larger, more diverse 33M-cell model is beaten by a smaller blood-only model, complicating the scaling narrative."
+    },
+    {
+      "id": "e8",
+      "text": "While Geneformer and scGPT-human can integrate diferent experiments conducted with the same experimental technique, they generally fail to correct for batch efects between techniques.",
+      "anchor": "Results and discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Finds the foundation models fail at cross-technique batch integration, i.e. cannot reconcile data produced by different platforms."
+    },
+    {
+      "id": "e9",
+      "text": "Qualitatively, Geneformer’s cell embedding space fails to retain information about cell type, and any clustering is primarily driven by batch efects.",
+      "anchor": "Results and discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "States Geneformer's embeddings are dominated by batch (technical) signal rather than biological cell-type signal."
+    },
+    {
+      "id": "e10",
+      "text": "Surprisingly, the best batch integration scores for all datasets were achieved by selecting HVG (Additional fle 1: Table S2).",
+      "anchor": "Results and discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Reports the simplest baseline (HVG) achieves the best batch-integration scores across all datasets."
+    },
+    {
+      "id": "e11",
+      "text": "Notably, scGPT without embeddings underperforms against a naive baseline of predicting the mean, and only marginally improves with the cell embeddings (Fig. 2D).",
+      "anchor": "Results and discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Shows scGPT does worse than a trivial mean-prediction baseline on its own gene-expression reconstruction task."
+    },
+    {
+      "id": "e12",
+      "text": "Geneformer’s gene ranking exhibits modest correlations with the actual true rankings, with median and best correlations of 0.56 and 0.95, respectively, across datasets (Fig. 2E, Additional fle 2: Fig. S7).",
+      "anchor": "Results and discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Quantifies Geneformer's reconstruction fidelity as only modest (median Pearson 0.56) on its own pretraining task."
+    },
+    {
+      "id": "e13",
+      "text": "Our fndings indicate that both models, in their current form, do not consistently outperform simpler baselines and face challenges in dealing with batch efects. Tis is in spite of these models reporting strong performance when fne-tuned, as exhibited in their original papers, demonstrating that zero-shot evaluation can reveal vulnerabilities that are not evident if models are exclusively evaluated with fne-tuning.",
+      "anchor": "Conclusions",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concludes that fine-tuned performance overstates capability and zero-shot evaluation exposes hidden weaknesses."
+    },
+    {
+      "id": "e14",
+      "text": "Our fndings raise questions about the general suitability of MLM for learning single-cell embeddings.",
+      "anchor": "Conclusions",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Questions whether the masked-language-model pretraining objective is even appropriate for single-cell data."
+    },
+    {
+      "id": "e15",
+      "text": "Additionally, we demonstrate that larger pretraining datasets do not always increase the performance of scGPT, and that datasets seen in pretraining still have poor cell type clustering performance.",
+      "anchor": "Conclusions",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Restates that more pretraining data does not guarantee better performance and that even seen data clusters poorly."
+    },
+    {
+      "id": "e16",
+      "text": "We concentrated on specifc models and selected a limited array of datasets that do not exhaustively represent all applications of single-cell analysis (for example, our datasets only include transcriptomic data).",
+      "anchor": "Conclusions",
+      "touchpoints": [
+        {
+          "claimId": "axis A · modality",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Author-conceded scope limitation: the evaluation datasets are transcriptomic-only, reflecting the RNA-centric state of the field."
+    },
+    {
+      "id": "e17",
+      "text": "In fact, some more recent advances occurring at time of our work have already sought to address limitations exposed by our analysis, for example, in improving the representation of genes by transferring knowledge from proteins [11]. However, in many cases methods do not make their pretraining code publicly available [11, 12].",
+      "anchor": "Conclusions",
+      "touchpoints": [
+        {
+          "claimId": "axis A · modality",
+          "direction": "supports"
+        }
+      ],
+      "note": "Notes that addressing the exposed limitations is being pursued by transferring knowledge from proteins, pointing beyond RNA-only inputs."
+    },
+    {
+      "id": "e18",
+      "text": "One limitation of our analyses was that some of our evaluation datasets were used in pretraining, confounding our ability to say if performance trends are general or due to prior exposure to specifc datasets.",
+      "anchor": "Conclusions",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concedes that train/test data overlap confounds the evaluation, an instance of the comparability/standardization problem."
+    },
+    {
+      "id": "e19",
+      "text": "To tackle this, we propose the creation of benchmark tasks and datasets reserved exclusively for model evaluation that should never be used to pretrain any future model, as has been done for large language models (LLMs) [26–29].",
+      "anchor": "Conclusions",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Calls for standardized held-out benchmark datasets to enable unbiased, comparable model evaluation."
+    },
+    {
+      "id": "e20",
+      "text": "Te curation of biologically grounded, standalone benchmark datasets would provide a substantial advancement towards more reliable and robust evaluation methods.",
+      "anchor": "Conclusions",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Argues curated standalone benchmark datasets would substantially improve evaluation reliability and comparability."
+    },
+    {
+      "id": "e21",
+      "text": "We believe that more focused evaluations, particularly in zero-shot contexts, will be instrumental to the methodological development and deployment of foundation models in single-cell research.",
+      "anchor": "Conclusions",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "challenges"
+        }
+      ],
+      "note": "Frames the remedy as better evaluation/methods for foundation models, locating the problem in models/benchmarks rather than in the underlying data being spatiotemporally and modally impoverished."
+    },
+    {
+      "id": "e22",
+      "text": "We chose these models because they ofer pretrained weights and have been trained using unsupervised objectives on extensive datasets (ca. 30M single-cell transcriptomes).",
+      "anchor": "Methods — Models and baselines",
+      "touchpoints": [
+        {
+          "claimId": "axis A · modality",
+          "direction": "supports"
+        }
+      ],
+      "note": "States the evaluated foundation models were pretrained on roughly 30M single-cell transcriptomes, i.e. RNA-only data at scale."
+    }
+  ],
+  "figuresNumbers": [
+    {
+      "item": "Fig. 1B (AvgBIO)",
+      "contains": "Cell-type clustering benchmark: HVG outperforms Geneformer and scGPT across all metrics; both foundation models score worse than HVG, Harmony, and scVI on average AvgBIO across five datasets."
+    },
+    {
+      "item": "Fig. 1E (Average batch score)",
+      "contains": "Batch integration: Geneformer consistently ranks last across all metrics; scVI and Harmony outperform scGPT on Pancreas and PBMC (technical batch only) but scGPT beats them on the more complex Tabula Sapiens and Immune datasets (which were in scGPT pretraining)."
+    },
+    {
+      "item": "Fig. 2D (MSE)",
+      "contains": "scGPT without cell embeddings underperforms a naive mean-prediction baseline on gene-expression reconstruction; conditioning on cell embeddings yields only marginal improvement."
+    },
+    {
+      "item": "Fig. 2E (Pearson correlation)",
+      "contains": "Geneformer gene-ranking reconstruction has median correlation 0.56 and best 0.95 with true rankings across datasets."
+    },
+    {
+      "item": "scGPT variants",
+      "contains": "Tested four scGPT variants: randomly initialized; scGPT kidney (814,000 kidney cells); scGPT blood (10.3 million blood and bone marrow cells); scGPT human (33 million non-cancerous human cells)."
+    },
+    {
+      "item": "Pretraining scale",
+      "contains": "Geneformer pretrained on 27.4M human single-cell transcriptomes (excluding malignant and immortalized cells); both models ca. 30M single-cell transcriptomes; scGPT has 3x Geneformer's parameters (12 Transformer layers, 8 attention heads vs 6 layers, 4 heads)."
+    }
+  ],
+  "primarySources": [
+    {
+      "topic": "Geneformer foundation model (one of the two models evaluated and critiqued)",
+      "citation": "Theodoris CV, et al. 2023, Nature 618(7965):616-624",
+      "refN": "6"
+    },
+    {
+      "topic": "scGPT foundation model (one of the two models evaluated and critiqued)",
+      "citation": "Cui H, et al. 2024, Nat Methods 21(8):1470-1480",
+      "refN": "7"
+    },
+    {
+      "topic": "scVI deep generative baseline that outperforms the foundation models",
+      "citation": "Lopez R, Regier J, Cole MB, Jordan MI, Yosef N 2018, Nat Methods 15(12):1053-1058",
+      "refN": "20"
+    },
+    {
+      "topic": "Harmony batch-integration baseline that outperforms the foundation models",
+      "citation": "Korsunsky I, et al. 2019, Nat Methods 16(12):1289-1296",
+      "refN": "21"
+    },
+    {
+      "topic": "Benchmarking framework and metrics (scib) for atlas-level single-cell integration",
+      "citation": "Luecken MD, et al. 2022, Nat Methods 19(1):41-50",
+      "refN": "25"
+    },
+    {
+      "topic": "Transfer learning shortcuts can inflate apparent gains in protein language models",
+      "citation": "Li FZ, Amini AP, Yue Y, Yang KK, Lu AX 2024, bioRxiv 2024.02.05.578959",
+      "refN": "17"
+    },
+    {
+      "topic": "Universal cell embeddings improving gene representation by transferring knowledge from proteins",
+      "citation": "Rosen Y, et al. 2023, bioRxiv 2023.11.28.568918",
+      "refN": "11"
+    }
+  ],
+  "flags": [
+    "Metadata unverified: venue 'Genome Biology' inferred from DOI prefix (10.1186/s13059, the BMC/Genome Biology series; ref #18 confirms 's13059' = Genome Biol) and from the BMC peer-review/editorial boilerplate; the venue name is not printed verbatim in the cleaned body. Volume/issue/article number not present in source.",
+    "Dates confirmed from source: Received 23 February 2024; Accepted 9 April 2025; Published online 18 April 2025.",
+    "Authors printed with full given names (not initials): Kasia Z. Kedzierska (Univ. of Oxford), Lorin Crawford, Ava P. Amini, Alex X. Lu (Microsoft Research, Cambridge, MA).",
+    "OCR quirks preserved verbatim in excerpts (e.g. 'fndings', 'efects', 'fne-tune', 'beneft', 'diferent', 'the the PBMC'). Not corrected per skill rules.",
+    "Scope note: this paper is a benchmark/evaluation of RNA-only single-cell foundation models; it bears most directly on Claim 1 (model generalization / data-as-bottleneck) and Claim 9 (held-out benchmarks, comparability). It does NOT directly treat spatial (axis C) or temporal (axis B) data gaps; the modality (axis A) touch is limited to its self-conceded transcriptomic-only scope (e10/e16).",
+    "Read at source: refs #6 (Geneformer, Nature 2023) and #7 (scGPT, Nat Methods 2024) are the primary papers being critiqued and are worth citing first-hand for the foundation-model claims they make."
+  ]
+}

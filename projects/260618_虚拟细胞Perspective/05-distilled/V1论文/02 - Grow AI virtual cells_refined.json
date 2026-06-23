@@ -1,0 +1,444 @@
+{
+  "schemaVersion": "精练-4.0",
+  "citationKey": "02",
+  "title": "Grow AI virtual cells: three data pillars and closed-loop learning",
+  "authors": "Liujia Qian, Zhen Dong, Tiannan Guo",
+  "venue": "Cell Research, 2025, 35:319-321",
+  "year": "2025",
+  "doi": "doi:10.1038/s41422-025-01101-y",
+  "readOn": "2026-06-18",
+  "sourceFile": "/Users/augustsirius/Desktop/已清洗_260617/02 - Grow AI virtual cells - three data pillars and closed-loop learning_cleaned.md",
+  "oneSentence": "This Cell Research correspondence from the Guo group proposes that AI virtual cells (AIVCs) be grown on three data pillars - a priori knowledge, static architecture, and dynamic states - argues perturbation proteomics is the critical growth factor, advocates closed-loop active learning with robotic experimentation to fill dynamic-state gaps, and recommends starting with S. cerevisiae as the first model organism.",
+  "orientation": "Same-group sibling perspective: it shares our broader stance that data (not algorithms) is the limiting nutrient for AIVCs and explicitly champions proteomics, spatial omics, multi-omics integration, and standards-setting - prime SUPPORT for our modality, spatial, and standard axes (claims 4,5,6,7,8,9). But its framing diverges from ours and can serve as a FOIL or nuance: it does not center the loss of space/time as the structural bottleneck (it organizes around static vs dynamic instead), it dismisses existing single-cell omics for state-similarity reasons rather than for space/time loss, and it largely sidesteps the destructive-measurement / paired-observation problem central to our claim 3. Use it as an ally on modality/proteomics/standards and as a contrast on the time/space and destructive-measurement framing.",
+  "excerpts": [
+    {
+      "id": "e1",
+      "text": "Pioneering whole-cell virtual models, such as those for Mycoplasma genitalium,2 Escherichia coli3 and Saccharomyces cerevisiae,4,5 were primarily based on a priori knowledge. However, they lack rigorously designed matched perturbation omics data and spatiotemporal imaging data.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        },
+        {
+          "claimId": "standard",
+          "direction": "supports"
+        }
+      ],
+      "note": "Early whole-cell models were knowledge-driven and explicitly lacked matched perturbation omics and spatiotemporal imaging data."
+    },
+    {
+      "id": "e2",
+      "text": "While groundbreaking, these early models are limited in their ability to fully capture the dynamic nature and complexity of living cells, underscoring the need for more comprehensive data integration and advanced modeling approaches.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        }
+      ],
+      "note": "Authors argue prior models failed to capture cellular complexity, calling for more comprehensive data integration."
+    },
+    {
+      "id": "e3",
+      "text": "Bunne et al. 6 recently proposed the concept of Artificial Intelligence Virtual Cells (AIVCs), which integrate AI and multi-modal data to create comprehensive computational models of cellular functions.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        }
+      ],
+      "note": "Defines AIVCs (per Bunne et al.) as integrating AI and multi-modal data; frames multimodality as core to the concept."
+    },
+    {
+      "id": "e4",
+      "text": "Just as cell culture medium nourishes biological cells, what constitutes the ideal “culture medium” for growing these digital entities? Which cell types should we prioritize for virtual cultivation?",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Frames the open problem as what data ('culture medium') AIVCs need - aligning with the data-as-bottleneck premise."
+    },
+    {
+      "id": "e5",
+      "text": "As we stand at the threshold of this new era in cellular modeling, the scientific community should collaborate to establish standards and best practices for AIVC development and validation.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Explicit call to establish community standards and best practices for AIVC development and validation."
+    },
+    {
+      "id": "e6",
+      "text": "Despite its vast size and diversity, this knowledge base primarily consists of fragmented information across different cell types and populations. While it is unrealistic to build a fully functional AIVC for a specific cell type solely from these data, they encapsulate fundamental cell biological mechanisms essential for model construction.",
+      "anchor": "Three data pillars for growing AIVCs",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "A priori knowledge is fragmented across cell types and cannot alone build a cell-specific AIVC."
+    },
+    {
+      "id": "e7",
+      "text": "To achieve this, a comprehensive characterization of a specific cell is required, capturing its complete cellular structures at both the morphological and molecular expression levels, along with their interactions. We define this second essential pillar of AIVC construction as static architecture, which integrates nanoscale molecular structures and spatially resolved data from molecular modeling, cryo-electron microscopy, cryoelectron tomography, correlative light and electron microscopy, super-resolution fluorescence imaging, spatial omics, and other multi-scale analyses.",
+      "anchor": "Three data pillars for growing AIVCs",
+      "touchpoints": [
+        {
+          "claimId": "Claim 2",
+          "direction": "supports"
+        },
+        {
+          "claimId": "spatial",
+          "direction": "supports"
+        }
+      ],
+      "note": "Defines a 'static architecture' pillar built from spatially resolved, multi-scale structural and imaging data (cryo-EM, spatial omics, super-resolution)."
+    },
+    {
+      "id": "e8",
+      "text": "Additionally, tissue expansion techniques7,8 can further enhance spatial resolution, complementing the highresolution imaging methods and omics technologies mentioned above. This integrated approach provides a detailed threedimensional context essential for accurate AIVC modeling.",
+      "anchor": "Three data pillars for growing AIVCs",
+      "touchpoints": [
+        {
+          "claimId": "spatial",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        }
+      ],
+      "note": "Argues spatial/3D context (enhanced via tissue expansion) is essential for accurate AIVC modeling."
+    },
+    {
+      "id": "e9",
+      "text": "While static data provide a bona fide snapshot of the cell, they fail to capture the dynamic nature of living systems. To construct a live AIVC, we introduce dynamic states as the third pillar for AIVC development. These data encompass natural processes such as aging, development, and carcinogenesis, as well as induced perturbations including physical, chemical, and genetic interventions.",
+      "anchor": "Three data pillars for growing AIVCs",
+      "touchpoints": [
+        {
+          "claimId": "temporal",
+          "direction": "supports"
+        }
+      ],
+      "note": "Static snapshots cannot capture living dynamics; introduces a 'dynamic states' pillar covering natural processes and induced perturbations over time."
+    },
+    {
+      "id": "e10",
+      "text": "Cellular dynamics are historically studied by measuring the expression or activity of one or a few molecules at a time. With advancements in high-throughput omics technologies — such as transcriptomics, proteomics, and metabolomics — it is now possible to profile thousands of molecules across diverse cellular states.",
+      "anchor": "Three data pillars for growing AIVCs",
+      "touchpoints": [
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        }
+      ],
+      "note": "High-throughput transcriptomics/proteomics/metabolomics now enable profiling thousands of molecules across cellular states."
+    },
+    {
+      "id": "e11",
+      "text": "To build an effective AIVC, it is essential to comprehensively capture a wide range of cellular states and maximize their diversity to ensure high accuracy in differentiating them, requiring large volumes of dynamic, cell-specific data. Given the limited number of naturally occurring states, artificial perturbations serve as effective tools to generate different cellular states.",
+      "anchor": "Three data pillars for growing AIVCs",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Effective AIVCs require large volumes of diverse dynamic, cell-specific data; artificial perturbations generate the needed state diversity."
+    },
+    {
+      "id": "e12",
+      "text": "Among these, perturbation proteomics is particularly valuable, as proteins are the primary structural components and catalysts of cellular biochemical processes.9",
+      "anchor": "Three data pillars for growing AIVCs",
+      "touchpoints": [
+        {
+          "claimId": "Claim 5",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        }
+      ],
+      "note": "Singles out perturbation proteomics as particularly valuable because proteins are the cell's primary structural and catalytic components."
+    },
+    {
+      "id": "e13",
+      "text": "A recent AIVC pilot study integrating perturbation proteomics and AI algorithms demonstrates accurate prediction of drug efficacy and synergistic combinations, highlighting the critical role of dynamic perturbation proteomics data in constructing robust virtual cell models for drug discovery and 10 cellular simulation.",
+      "anchor": "Three data pillars for growing AIVCs",
+      "touchpoints": [
+        {
+          "claimId": "Claim 5",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        }
+      ],
+      "note": "Cites a pilot study where perturbation proteomics + AI accurately predicted drug efficacy and synergy, evidencing the value of proteomics data for AIVCs."
+    },
+    {
+      "id": "e14",
+      "text": "Although single-cell omics technologies have generated large datasets of millions of cells isolated from bulk tissues, their value for constructing AIVC is limited due to the similarity of the cells’ states.",
+      "anchor": "Three data pillars for growing AIVCs",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "nuances"
+        },
+        {
+          "claimId": "Claim 2",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Argues existing single-cell omics datasets have limited AIVC value - but attributes the limitation to similarity of cell states, not to loss of space/time (a different rationale from our thesis)."
+    },
+    {
+      "id": "e15",
+      "text": "Antibody-based methods, such as those used in the Human Protein Atlas,1 are valuable, while mass spectrometry-based proteomics offers distinct advantages in analyzing thousands of proteins, protein post-translational modifications, and complex dynamics without the need for affinity-based reagents.12",
+      "anchor": "Three data pillars for growing AIVCs",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 5",
+          "direction": "supports"
+        }
+      ],
+      "note": "Mass-spectrometry proteomics measures thousands of proteins, PTMs, and complex dynamics without affinity reagents - distinct modality information beyond antibody/RNA methods."
+    },
+    {
+      "id": "e16",
+      "text": "To better understand the impact of perturbations on cellular behavior, emerging spatial omics technologies enable large-scale mapping of molecular distribution, providing insights into how perturbations alter cellular processes in their native spatial context. In particular, spatial proteomics represents the forefront of this advancement.8,13",
+      "anchor": "Three data pillars for growing AIVCs",
+      "touchpoints": [
+        {
+          "claimId": "Claim 7",
+          "direction": "supports"
+        },
+        {
+          "claimId": "spatial",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        }
+      ],
+      "note": "Spatial omics maps molecular distribution in native spatial context to reveal perturbation effects; positions spatial proteomics at the forefront."
+    },
+    {
+      "id": "e17",
+      "text": "In addition, innovative sample preparation methods now allow simultaneous multi-omics analysis of the same sample.14 We argue that the AI-driven integration of static and dynamic data is essential for constructing a functionally robust and predictive AIVC.",
+      "anchor": "Three data pillars for growing AIVCs",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        },
+        {
+          "claimId": "standard",
+          "direction": "supports"
+        }
+      ],
+      "note": "Simultaneous multi-omics of the same sample now feasible; argues AI integration of static + dynamic data is essential for robust AIVCs."
+    },
+    {
+      "id": "e18",
+      "text": "The integration of multimodal data from a priori knowledge, static architecture, and dynamic states demands sophisticated AI frameworks capable of hierarchical reasoning, cross-modal alignment, and predictive simulation.",
+      "anchor": "Three data pillars for growing AIVCs",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        }
+      ],
+      "note": "Multimodal data integration requires AI capable of cross-modal alignment - emphasizing the modality-integration challenge."
+    },
+    {
+      "id": "e19",
+      "text": "To grow AIVCs, we foresee a transition from static, data-driven models to adaptive systems capable of evolving intelligence. While traditional approaches relied on passive data assimilation, modern closed-loop architectures will enable AIVCs to actively interrogate biological reality through AI model, autonomous robots, and dynamic data.",
+      "anchor": "Evolution of AIVC: closed-loop active learning systems",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Proposes moving from static data-driven models to closed-loop adaptive systems that actively generate dynamic data - reframing the data bottleneck as solvable via active experimentation rather than via a fixed data standard."
+    },
+    {
+      "id": "e20",
+      "text": "Central to this vision is the establishment of closed-loop frameworks that integrate computational prediction with robotic experimentation, specifically targeting gaps in dynamic state data (Fig. 1).",
+      "anchor": "Evolution of AIVC: closed-loop active learning systems",
+      "touchpoints": [
+        {
+          "claimId": "temporal",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Closed-loop AI + robotics aimed specifically at filling gaps in dynamic-state (temporal) data."
+    },
+    {
+      "id": "e21",
+      "text": "A critical challenge in modeling dynamic states is the combinatorial complexity of cellular responses to perturbations. While existing datasets capture snapshots of induced or natural states, they often lack systematic coverage of the parameter space.",
+      "anchor": "Evolution of AIVC: closed-loop active learning systems",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Existing perturbation datasets are sparse snapshots lacking systematic parameter-space coverage - a combinatorial coverage gap."
+    },
+    {
+      "id": "e22",
+      "text": "For example, an AIVC trained on baseline proteomic profiles might identify understudied phosphorylation events in stress response pathways, prompting robotic platforms to perform time-resolved phosphoproteomics under targeted metabolic perturbations.",
+      "anchor": "Evolution of AIVC: closed-loop active learning systems",
+      "touchpoints": [
+        {
+          "claimId": "temporal",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 5",
+          "direction": "supports"
+        }
+      ],
+      "note": "Illustrative scenario invoking time-resolved phosphoproteomics (PTM/temporal modality) under metabolic perturbation to fill model gaps."
+    },
+    {
+      "id": "e23",
+      "text": "While extensive experimental data exist for these cell types, significant gaps remain across the three pillars, particularly in their dynamic states. Notably, perturbation proteomics data, which are essential for building a comprehensive and dynamic AIVC, are scarce across all the candidate cell types.",
+      "anchor": "Low-hanging fruits",
+      "touchpoints": [
+        {
+          "claimId": "Claim 5",
+          "direction": "supports"
+        },
+        {
+          "claimId": "temporal",
+          "direction": "supports"
+        }
+      ],
+      "note": "States that perturbation proteomics data are scarce across all candidate cell types, a key gap for dynamic AIVCs."
+    },
+    {
+      "id": "e24",
+      "text": "As a eukaryote, yeast presents a multi-compartmented cellular structure, providing an excellent platform to model complex intracellular organization and dynamics.",
+      "anchor": "Low-hanging fruits",
+      "touchpoints": [
+        {
+          "claimId": "spatial",
+          "direction": "supports"
+        }
+      ],
+      "note": "Highlights yeast's multi-compartmented (subcellular spatial) structure as valuable for modeling intracellular organization."
+    },
+    {
+      "id": "e25",
+      "text": "Developing an AIVC for these simpler organisms can serve as a proof of concept, allowing us to address fundamental questions posed by Bunne et al.6: What are the specific data needs and requirements for building an AIVC? How much data is necessary to construct a robust and predictive AIVC? How can we develop a comprehensive and adaptable benchmarking framework to evaluate AIVC performance?",
+      "anchor": "Low-hanging fruits",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Frames the core open questions as data needs, data quantity, and benchmarking frameworks for AIVCs - directly the data-standard agenda."
+    },
+    {
+      "id": "e26",
+      "text": "Among these, perturbation-based omics data — transcriptomics, proteomics, and metabolomics — emerge as the critical growth factors.",
+      "anchor": "Conclusion and outlook",
+      "touchpoints": [
+        {
+          "claimId": "Claim 5",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concludes that perturbation-based multi-omics (transcriptomics, proteomics, metabolomics) are the critical growth factors for AIVCs."
+    }
+  ],
+  "figuresNumbers": [
+    {
+      "item": "Fig. 1",
+      "contains": "Schematic of three data pillars for AIVC growth - a priori knowledge, static architecture, dynamic states - integrated via AI, with model organisms (E. coli, yeast, cell lines), and evolution via closed-loop active learning where computational predictions guide automated perturbation-omics experimentation."
+    }
+  ],
+  "primarySources": [
+    {
+      "topic": "Definition of AI Virtual Cells (AIVC) integrating AI and multi-modal data",
+      "citation": "Bunne, C. et al. Cell 187, 7045-7063 (2024)",
+      "refN": "6"
+    },
+    {
+      "topic": "AIVC pilot integrating perturbation proteomics + AI to predict drug efficacy and synergistic combinations",
+      "citation": "Sun, R. et al. bioRxiv https://doi.org/10.1101/2025.02.07.637070 (2025)",
+      "refN": "10"
+    },
+    {
+      "topic": "Mass-spectrometry proteomics advantages for proteins, PTMs, complex dynamics",
+      "citation": "Guo, T., Steen, J. A. & Mann, M. Nature 638, 901-911 (2025)",
+      "refN": "12"
+    },
+    {
+      "topic": "Spatial proteomics at the forefront of spatial omics",
+      "citation": "Nordmann, T. M., Mund, A. & Mann, M. Nat. Methods 21, 2220-2222 (2024); Dong, Z. et al. Nat. Commun. 15, 9378 (2024)",
+      "refN": "13, 8"
+    },
+    {
+      "topic": "Simultaneous multi-omics analysis of the same sample (sample-prep method)",
+      "citation": "Li, W. et al. Anal. Chem. 97, 1190-1198 (2025)",
+      "refN": "14"
+    },
+    {
+      "topic": "Closed-loop autonomous experimentation inspiration (autonomous chemistry laboratory)",
+      "citation": "Dai, T. et al. Nature 635, 890-897 (2024)",
+      "refN": "15"
+    },
+    {
+      "topic": "Proteins as primary structural components and catalysts; perturbation proteomics value",
+      "citation": "Qian, L. et al. Cell Genomics 4, 100691 (2024)",
+      "refN": "9"
+    },
+    {
+      "topic": "Antibody-based protein imaging atlas (Human Protein Atlas)",
+      "citation": "Sjostedt, E. et al. Science 367, eaay5947 (2020)",
+      "refN": "11"
+    }
+  ],
+  "flags": [
+    "Same-group source: authored by the Guo group (Westlake), the same group writing our perspective; treat as an internal sibling statement, not independent external corroboration.",
+    "Framing divergence from our thesis: this paper organizes data needs as a priori knowledge / static architecture / dynamic states, and does NOT foreground the loss of space and time as THE structural bottleneck the way our thesis does; useful as nuance/foil on claims 1-3.",
+    "Counter-rationale on single-cell limits (e1/e14): authors attribute limited AIVC value of single-cell omics to 'similarity of the cells' states', NOT to dissociation-driven loss of space/time - a different argument from our claim 2/3 rationale.",
+    "Destructive-measurement / paired-observation constraint (our claim 3) is essentially not addressed; the paper instead proposes closed-loop robotic experimentation to generate dynamic data, which sidesteps rather than confronts that hard constraint.",
+    "OCR quirks preserved verbatim in excerpts: superscript reference markers fused into text (e.g. 'discovery and 10 cellular simulation' in e13; 'Human Protein Atlas,1' uses ref number 11 in the reference list - apparent OCR mismatch of superscript), and 'fi'/'fl' ligatures dropped throughout the source (e.g. 'rst', 'speci c', 'pro le'); quotes were normalized only where the ligature was reconstructable in surrounding prose but in-quote markers kept as-is.",
+    "Read at source: ref #10 (Sun et al. bioRxiv 2025) is the perturbation-proteomics AIVC pilot - worth first-hand for the drug-efficacy prediction claim; ref #6 (Bunne et al. Cell 2024) for the AIVC definition.",
+    "Metadata verified from text: Cell Research (2025) 35:319-321; doi:10.1038/s41422-025-01101-y (line 105). No separate received/accepted dates printed in the cleaned source."
+  ]
+}

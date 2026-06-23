@@ -1,0 +1,403 @@
+{
+  "schemaVersion": "精练-4.0",
+  "citationKey": "23",
+  "title": "Connecting past and present: single-cell lineage tracing",
+  "authors": "Cheng Chen, Yuanxin Liao, Guangdun Peng",
+  "venue": "unverified; see flags",
+  "year": "2022",
+  "doi": null,
+  "readOn": "2026-06-18",
+  "sourceFile": "/Users/augustsirius/Desktop/已清洗_260617/23_cleaned.md",
+  "oneSentence": "A technical review of single-cell lineage tracing (SCLT), which combines single-cell RNA-seq with DNA-barcoding strategies (integration, polylox, CRISPR, and base-editing barcodes) to record clonal history alongside cell state, surveying their mechanisms, applications, and technical limitations.",
+  "orientation": "Sits squarely on the temporal axis (Axis B) and Claim 3: it documents why dissociative scRNA-seq plus pseudotemporal/RNA-velocity inference cannot recover true lineage paths, and how lineage-recording barcodes attempt to restore the temporal/history dimension that destructive measurement loses. It can serve BOTH as support (evidence that scRNA-seq alone loses true temporal trajectory, that destructive readout forces inference rather than direct observation, that spatial information is lost on dissociation) and as a foil/nuance (the proposed barcoding fix has its own throughput, diversity, invasiveness, and standardization limits). Secondary touches: spatial loss (Claim 2 / Axis C), data integration and lack of common standards (Claim 9 / standard axis), and resolution-throughput-destructiveness trade-offs (Claim 10).",
+  "excerpts": [
+    {
+      "id": "e1",
+      "text": "As mentioned earlier, current research based on single-cell transcriptomics heavily relies on pseudotemporal ordering to infer cell trajectories and connective lineage relationships. However, route descriptions of state transitions may or may not be equivalent to the true lineage paths of a progenitor population, and severe limitations remain to be resolved before accurate inferences can be achieved.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "supports"
+        },
+        {
+          "claimId": "axis B (temporal)",
+          "direction": "supports"
+        }
+      ],
+      "note": "States that single-cell transcriptomics relies on pseudotemporal ordering to infer trajectories, and that inferred state transitions may not equal the true lineage paths."
+    },
+    {
+      "id": "e2",
+      "text": "First, a confident inference of cell trajectory requires substantial sampling of cells, which may be impeded by the incomplete or insufficient coverage of scRNA-seq in some cases (Tanay and Regev, 2017). Second, cell fates may converge in specific situations. A well-known example of lineage convergence is that the definitive endoderm has both extra-embryonic and embryonic origins (Kwon et al., 2008; Chan et al., 2019). Third, the cell state transition may undergo rapid divergence with the change of a few molecular drivers, which is challenging to distinguish with transcriptome analysis alone (Wagner et al., 2018; Packer et al., 2019; Tritschler et al., 2019; Wagner and Klein, 2020).",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "supports"
+        }
+      ],
+      "note": "Enumerates three limitations of trajectory inference from scRNA-seq state alone: insufficient sampling/coverage, lineage convergence, and rapid divergence driven by few molecular drivers."
+    },
+    {
+      "id": "e3",
+      "text": "However, the ability to infer cell fate transitions for RNA velocity relies on assumptions such as constant gene-specific splicing rates, which may be violated in some situations (La Manno et al., 2018; Svensson and Pachter, 2018; Tritschler et al., 2019; Bergen et al., 2020; Lederer and La Manno, 2020).",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "supports"
+        }
+      ],
+      "note": "States that RNA velocity inference of fate transitions rests on assumptions (e.g. constant splicing rates) that can be violated."
+    },
+    {
+      "id": "e4",
+      "text": "Altogether, although current computation tools may reveal the cell state trajectories by various pseudo-time analysis algorithms, more defined information with the ability to record the cell history is crucial to fully clarify the true path of lineage specification.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "supports"
+        },
+        {
+          "claimId": "axis B (temporal)",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concludes that computational pseudo-time tools are insufficient and that information able to record cell history is needed to recover the true lineage path."
+    },
+    {
+      "id": "e5",
+      "text": "As a substantial improvement in depicting and predicting cell behaviors, recent developments of single-cell lineage tracing, which combines single-cell omics and lineage tracing, enable detecting cell state and clonal relationship in parallel, thereby illustrating a credible route of lineage segregation by integrating the information of the clonal history and state transition.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "axis B (temporal)",
+          "direction": "supports"
+        }
+      ],
+      "note": "Frames SCLT as combining single-cell omics with lineage tracing to capture clonal history and state in parallel, restoring a history dimension to scRNA-seq snapshots."
+    },
+    {
+      "id": "e6",
+      "text": "Nevertheless, detecting thousands and millions of barcodes that label thousands of progenies is a strenuous task. In this regard, transcribing the barcode information into the mRNA pool and retrieving these barcodes by high-throughput sequencing such as scRNA-seq is more practical.",
+      "anchor": "From traditional lineage tracing to single-cell lineage tracing",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Notes the scale challenge of detecting millions of barcodes and that piggybacking barcodes onto the mRNA pool for scRNA-seq readout is the practical route."
+    },
+    {
+      "id": "e7",
+      "text": "First, SCLT can identify the progenitor-progeny relationship by barcode evolution and define the states of each cell by scRNA-seq, thus enabling the revelation of integrated lineage kinship and molecular trajectory.",
+      "anchor": "From traditional lineage tracing to single-cell lineage tracing",
+      "touchpoints": [
+        {
+          "claimId": "axis B (temporal)",
+          "direction": "supports"
+        }
+      ],
+      "note": "Describes SCLT's first key feature: jointly recovering progenitor-progeny lineage kinship and molecular state/trajectory per cell."
+    },
+    {
+      "id": "e8",
+      "text": "However, the readout of somatic mutations usually requires costly deep sequencing of the whole genome or exome of single cells, given the low frequency of these somatic mutations and their sparse genomic distribution (Woodworth et al., 2017; Baron and van Oudenaarden, 2019; Bizzotto et al., 2021; Spencer Chapman et al., 2021).",
+      "anchor": "Barcode classification",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "nuances"
+        }
+      ],
+      "note": "States that endogenous somatic-mutation lineage readout demands costly whole-genome/exome single-cell deep sequencing because such mutations are rare and sparse."
+    },
+    {
+      "id": "e9",
+      "text": "Recently, some researchers tried to use CRISPR/Cas9 or base editor to target some specific endogenous loci of the genome. These modifications increase the frequency of detectable mutations, but might violate the normal development of cells (Hwang et al., 2019; Cotterell et al., 2020; Ye et al., 2020).",
+      "anchor": "Barcode classification",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Concedes that engineered editing to raise detectable-mutation frequency can perturb normal cell development (a measurement-perturbs-biology trade-off)."
+    },
+    {
+      "id": "e10",
+      "text": "Theoretically, the diversity of a barcode library with 10 bp random nucleotides can approach 1 million, although such diversity is hard to achieve after multiple steps of molecular cloning.",
+      "anchor": "Integration barcodes",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Gives a quantitative ceiling (about 1 million) for integration-barcode library diversity while noting cloning erodes the achievable diversity."
+    },
+    {
+      "id": "e11",
+      "text": "Strikingly, an estimated maximum of 1.8 million distinct barcodes can be generated by random recombination of the polylox fragment (Pei et al., 2017, 2019).",
+      "anchor": "Polylox barcodes",
+      "touchpoints": [
+        {
+          "claimId": "axis B (temporal)",
+          "direction": "supports"
+        }
+      ],
+      "note": "Quantifies the diversity of polylox recombination barcodes (up to about 1.8 million distinct barcodes)."
+    },
+    {
+      "id": "e12",
+      "text": "Currently, one major concern for polylox barcodes is the requirement of expensive long-read sequencing. A few conceptual designs of polylox barcodes for short-read sequencing have been proposed, but their feasibility in mammalian cells remains elusive (Peikon et al., 2014; Weber et al., 2016).",
+      "anchor": "Polylox barcodes",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Concedes a cost/feasibility limitation: polylox barcodes need expensive long-read sequencing, with short-read alternatives unproven in mammalian cells."
+    },
+    {
+      "id": "e13",
+      "text": "To date, there is no common practice about how to implement CRISPR barcodes.",
+      "anchor": "CRISPR barcodes",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        },
+        {
+          "claimId": "standard (standard and integration)",
+          "direction": "supports"
+        }
+      ],
+      "note": "States there is no common practice/standard for implementing CRISPR barcodes."
+    },
+    {
+      "id": "e14",
+      "text": "However, the best practice on CRISPR barcodes awaits further improvements on various aspects of experimental considerations such as barcode design, barcoding induction timing, tree reconstruction algorithms.",
+      "anchor": "CRISPR barcodes",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        },
+        {
+          "claimId": "standard (standard and integration)",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concedes that no best-practice standard yet exists across barcode design, induction timing, and tree-reconstruction algorithms."
+    },
+    {
+      "id": "e15",
+      "text": "However, trajectory analysis may fail to recapitulate the true differentiation paths with states alone under certain circumstances. The SCLT method can address this issue by accessing the shared barcodes, which connect cells with states in the early and late developmental stages (Fig. 2C).",
+      "anchor": "Analyzing trajectory directions in state-fate maps",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "supports"
+        }
+      ],
+      "note": "States trajectory analysis from states alone can fail to recover true differentiation paths, and that shared barcodes connecting early and late cells address this."
+    },
+    {
+      "id": "e16",
+      "text": "Of note, few of the above statistical models or mathematical models on cell fate decisions are built based on SCLT data.",
+      "anchor": "Population-level models of cell dynamics",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Concedes that existing population/statistical models of cell-fate dynamics are largely not yet built on actual SCLT (lineage-recorded) data."
+    },
+    {
+      "id": "e17",
+      "text": "Given the wide application of random insertion in mutagenesis or enhancer trap, it's possible that random integration disrupts the regulatory elements and changes the cell state without killing the cells, which may mislead the interpretation of biological results (Sivasubbu et al., 2007; Trinh le and Fraser, 2013).",
+      "anchor": "Random insertion and targeted insertion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Concedes that random-integration barcoding can disrupt regulatory elements and alter cell state, i.e. the labeling measurement can perturb the very biology being recorded."
+    },
+    {
+      "id": "e18",
+      "text": "The current throughput of commercial scRNA-seq platforms (e.g., 10x Genomics) is around 10,000 cells per experiment, but high cost makes it impractical to sequence millions of cells, which may be necessary for organism-level tracing analysis. Insufficient sampling results in the doubt of whether selected cells can represent the whole population, thus affecting the accuracy and completeness of lineage couplings.",
+      "anchor": "Recovery rates of cells and barcodes",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        }
+      ],
+      "note": "Quantifies a throughput/cost trade-off: ~10,000 cells per scRNA-seq run, with millions needed for organism-level tracing, and insufficient sampling degrading lineage coupling accuracy."
+    },
+    {
+      "id": "e19",
+      "text": "Finally, invasive barcoding strategies may have latent effects to the behaviors of barcoded cells, which is often difficult to evaluate. For example, CRISPR/Cas9-mediated gene editing could cause DNA double-strand breaks, leading to subsequent p53 activation and even cell death (Haapaniemi et al., 2018; Ihry et al., 2018; Chan et al., 2019), which might alter the lineage routes as well as lose the barcoded cells.",
+      "anchor": "Recovery rates of cells and barcodes",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Concedes that invasive barcoding (e.g. CRISPR-induced double-strand breaks, p53 activation, cell death) can alter lineage routes and lose cells, a measurement-induced perturbation."
+    },
+    {
+      "id": "e20",
+      "text": "A thorough and ambitious understanding of cell lineage is to illustrate the relationship of every single cell in an organism in a single lineage tracing experiment, which is impractical for current technology. A more practical way is to integrate information from multiple lineage tracing experiments, as the current knowledge of developmental lineages is also assembled from multiple lineage experiments with various techniques.",
+      "anchor": "Integration of multiple lineage trees",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        },
+        {
+          "claimId": "standard (standard and integration)",
+          "direction": "supports"
+        }
+      ],
+      "note": "States complete single-experiment lineage capture is impractical, so knowledge must be integrated across multiple heterogeneous lineage-tracing experiments."
+    },
+    {
+      "id": "e21",
+      "text": "However, apart from technical limitations, the cell lineage of human development isn't invariant per se due to the stochasticity/plasticity of each cell fate decision (Zechner et al., 2020), making it unrealistic to assemble multiple small lineage trees collectively to create a complete lineage tree in the organismal level.",
+      "anchor": "Integration of multiple lineage trees",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Notes that human developmental lineage is non-invariant due to stochasticity/plasticity, making naive assembly of small lineage trees into a complete organismal tree unrealistic."
+    },
+    {
+      "id": "e22",
+      "text": "However, obtaining an accurate and systematic lineage tree of a species remains a challenging task for current practices of SCLT, and new designs are necessary for further improvements.",
+      "anchor": "Summary and perspectives",
+      "touchpoints": [
+        {
+          "claimId": "axis B (temporal)",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Concedes that obtaining an accurate, systematic species-level lineage tree remains challenging for current SCLT, requiring new designs."
+    },
+    {
+      "id": "e23",
+      "text": "Recently, the fast development of spatial transcriptomics has shed light on the understanding of the spatial organization of cell types and their lineage relationships (Peng et al., 2019; Peng et al., 2020; Marx, 2021). Several pioneering investigations have proven the concept of combining lineage tracing and spatial transcriptomics by imaging-based readouts (Chow et al., 2021; Frieda et al., 2017).",
+      "anchor": "Summary and perspectives",
+      "touchpoints": [
+        {
+          "claimId": "Claim 2",
+          "direction": "supports"
+        },
+        {
+          "claimId": "axis C (spatial)",
+          "direction": "supports"
+        }
+      ],
+      "note": "Notes that spatial transcriptomics recovers spatial organization of cell types and lineage relationships, and that combining lineage tracing with spatial transcriptomics is being pioneered (implying standard SCLT/scRNA-seq lacks spatial context)."
+    },
+    {
+      "id": "e24",
+      "text": "Anchored by cell's location, combining lineage-information-based spatial transcriptomics and in toto imaging will build a connection between ground-truth cellular history and final molecular interrogation. Future advances to integrate SCLT, spatial multi-omics, and imaging techniques should boost the synthesized studies of animal development and disease modeling in both space and time (Fig. 4A).",
+      "anchor": "Summary and perspectives",
+      "touchpoints": [
+        {
+          "claimId": "axis C (spatial)",
+          "direction": "supports"
+        },
+        {
+          "claimId": "axis B (temporal)",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        }
+      ],
+      "note": "Argues the future is integrating lineage history, spatial multi-omics, and imaging so that cellular history and molecular state are studied jointly in both space and time."
+    }
+  ],
+  "figuresNumbers": [
+    {
+      "item": "Integration barcode library diversity",
+      "contains": "A barcode library with 10 bp random nucleotides can theoretically approach 1 million distinct barcodes, though hard to achieve after molecular cloning."
+    },
+    {
+      "item": "Polylox barcode diversity",
+      "contains": "Estimated maximum of 1.8 million distinct barcodes generated by random recombination of the polylox fragment (10 loxP sites)."
+    },
+    {
+      "item": "Polylox + integration identifier example",
+      "contains": "Without integration identifiers only 155 barcodes are generated by polylox recombination, while 514 barcodes are retrieved when distinguishing the same recombination by integration identifiers (Kim et al., 2020)."
+    },
+    {
+      "item": "scRNA-seq throughput / cost",
+      "contains": "Commercial scRNA-seq platforms (e.g. 10x Genomics) yield around 10,000 cells per experiment; sequencing the millions of cells needed for organism-level tracing is cost-impractical."
+    }
+  ],
+  "primarySources": [
+    {
+      "topic": "RNA velocity assumptions (constant gene-specific splicing rates) can be violated",
+      "citation": "La Manno G et al. 2018, Nature 560:494-498; Bergen V et al. 2020, Nat Biotechnol 38:1408-1414",
+      "refN": null
+    },
+    {
+      "topic": "Limits/assumptions of learning developmental trajectories from single-cell genomics",
+      "citation": "Tritschler S et al. 2019, Development 146(12):dev170506",
+      "refN": null
+    },
+    {
+      "topic": "Polylox barcoding reveals HSC fates in vivo (1.8 million barcode estimate)",
+      "citation": "Pei W et al. 2017, Nature 548:456-460",
+      "refN": null
+    },
+    {
+      "topic": "Whether it is possible to reconstruct an accurate cell lineage using CRISPR recorders",
+      "citation": "Salvador-Martinez I, Grillo M, Averof M, Telford MJ 2019, Elife 8:e40292",
+      "refN": null
+    },
+    {
+      "topic": "CRISPR/Cas9 editing induces p53-mediated DNA damage response / cell death",
+      "citation": "Haapaniemi E et al. 2018, Nat Med 24:927-930; Ihry RJ et al. 2018, Nat Med 24:939-946",
+      "refN": null
+    },
+    {
+      "topic": "Benchmarking of lineage-tree reconstruction methods (in vitro and in silico C. elegans / M. musculus)",
+      "citation": "Gong W et al. 2021, Cell Syst 12(8):810-826",
+      "refN": null
+    },
+    {
+      "topic": "Combining lineage tracing with spatial transcriptomics by imaging-based readouts",
+      "citation": "Frieda KL et al. 2017, Nature 541:107-111; Chow KK et al. 2021, Science 372:eabb3099",
+      "refN": null
+    },
+    {
+      "topic": "Stochasticity/plasticity making human developmental lineage non-invariant",
+      "citation": "Zechner C, Nerli E, Norden C 2020, Development 147(14):dev181495",
+      "refN": null
+    }
+  ],
+  "flags": [
+    "Metadata unverified: the source text gives no DOI and no explicit journal name; venue is not asserted (set to 'unverified; see flags'). Header marks 'REVIEW' with 'Received December 3, 2021 Accepted March 6, 2022', so year inferred as 2022. Corresponding author Guangdun Peng (peng_guangdun@gibh.ac.cn), GIBH/Bioland — externally this is Protein & Cell 2022, but that journal name was not confirmable from the file itself.",
+    "Authors printed with full given names in the source (Cheng Chen, Yuanxin Liao, Guangdun Peng); kept verbatim, no initials substitution.",
+    "claimId values 'axis B (temporal)', 'axis C (spatial)', and 'standard (standard and integration)' map to the context file's organizing axes B/C and the cross-cutting standard/integration axis respectively; numbered 'Claim N' values map to the context file's evidence roadmap claims.",
+    "Scope note: this paper is a lineage-tracing/SCLT methods review, not a virtual-cell or proteomics paper; its on-roadmap value is concentrated on the temporal axis (Claim 3) plus measurement trade-offs (Claim 10) and integration/standards (Claim 9). It demonstrates the destructive-measurement-cannot-pair-observe problem and the barcode-based attempt to record true history, so it can be deployed as support for the temporal gap or as a foil (the barcode fix is itself limited).",
+    "Read at source: ref Gong et al. 2021 (Cell Syst 12(8):810-826) worth first-hand for the benchmarking/standardization-of-methods point (Claim 9).",
+    "OCR quirks present in the source (e.g. 'single-cel level', 'wit nessed', 'baseediting', hyphen splits, missing page-range spaces in references); quotes copied verbatim including these where they appear."
+  ]
+}

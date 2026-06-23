@@ -1,0 +1,402 @@
+{
+  "schemaVersion": "精练-4.0",
+  "citationKey": "16",
+  "title": "Integration of imaging-based and sequencing-based spatial omics mapping on the same tissue section via DBiTplus",
+  "authors": "A. Enninful et al. (initials not fully printed in cleaned source; corresponding lab: R. Fan; first/last author full given names not in body)",
+  "venue": "Nature Methods, 2025 (online; © The Author(s) 2026)",
+  "year": "2025",
+  "doi": "doi:10.1038/s41592-025-02948-0",
+  "readOn": "2026-06-18",
+  "sourceFile": "/Users/augustsirius/Desktop/已清洗_260617/16 - DBiTplus - imaging-based and sequencing-based spatial omics on the same tissue section_cleaned.md",
+  "oneSentence": "Presents DBiTplus, a method that runs sequencing-based spatial transcriptomics and multiplexed protein imaging (CODEX/CellScape) on the SAME tissue section via RNase H-mediated cDNA retrieval, plus a computational pipeline that uses the imaging data to deconvolve spatial-transcriptomics spots into single-cell-resolved transcriptome atlases, demonstrated on mouse embryos and human lymph node / lymphoma FFPE samples.",
+  "orientation": "Strong ammunition for the spatial axis and Claim 6 (high-throughput spatial multi-omics is now feasible) and Claim 8 (same-section multimodal integration). Its 'Evaluating RNA-protein concordance' section is a high-value FOIL/support for Claim 4 (modalities are non-substitutable: it measures near-zero mRNA-protein correlation). Its motivation paragraph concedes Claim 9 (computational integration of adjacent/serial sections is suboptimal because perfect concordance between sections is unattainable). Can serve as both an ally (a concrete spatially-resolved multimodal data-production method) and, via its conceded limitations (low capture depth, dropout, panel-bound protein side), as a nuancing voice on the resolution-throughput-destructiveness trade-off (Claim 10).",
+  "excerpts": [
+    {
+      "id": "e1",
+      "text": "The advent of high-throughput single-cell technologies has revolutionized our understanding of biological systems, enabling comprehensive analyses at the molecular level across diverse biological contexts. These approaches lack spatial context, limiting our understanding of intercellular interactions within tissues.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 2",
+          "direction": "supports"
+        },
+        {
+          "claimId": "axis C · spatial",
+          "direction": "supports"
+        }
+      ],
+      "note": "States that high-throughput single-cell (dissociation-based) technologies lack spatial context, limiting understanding of intercellular interactions within tissues."
+    },
+    {
+      "id": "e2",
+      "text": "Broadly, in situ sequencing or imaging techniques offer higher spatial resolution and sensitivity but may lack transcriptome-wide coverage, whereas sequencing-based methods provide transcriptome-wide coverage, often at the expense of high spatial resolution.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        },
+        {
+          "claimId": "axis C · spatial",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Articulates a spatial-resolution vs transcriptome-coverage trade-off across spatial omics platform families (imaging-based high resolution but limited coverage; sequencing-based wide coverage but lower resolution)."
+    },
+    {
+      "id": "e3",
+      "text": "Currently, most spatial multi-omic technologies involve running single spatial omics assays separately on adjacent or serial tissue sections, followed by computational data integration of the multimodal datasets. Due to heterogeneity in cellular composition and tissue architecture, even between adjacent sections from the same block, integrating multimodal data computationally may be suboptimal, as perfect concordance between tissue sections is almost unattainable. Thus, new methods for spatially resolved multimodal and multi-omics measurements on the same tissue sections are necessary.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        },
+        {
+          "claimId": "axis standard",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concedes that computational integration of separate assays on adjacent/serial sections is suboptimal because perfect concordance between sections is unattainable, motivating same-section multimodal measurement."
+    },
+    {
+      "id": "e4",
+      "text": "Here, we developed DBiTplus, which combines spatially resolved transcriptomics sequencing with multiplexed immunofluorescence (mxIF) imaging for the unbiased co-profiling of the wholetranscriptome and protein markers on the same tissue section.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        },
+        {
+          "claimId": "axis A · modality",
+          "direction": "supports"
+        }
+      ],
+      "note": "Defines DBiTplus as same-section co-profiling of whole transcriptome (RNA) plus protein markers, a concrete spatially resolved multimodal measurement method."
+    },
+    {
+      "id": "e5",
+      "text": "We developed computational pipelines to integrate these modalities, allowing imaging-guided deconvolution to generate single-cell-resolved spatial transcriptome atlases.",
+      "anchor": "Abstract",
+      "touchpoints": [
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        },
+        {
+          "claimId": "axis C · spatial",
+          "direction": "supports"
+        }
+      ],
+      "note": "Claims imaging-guided deconvolution turns sequencing-based spatial transcriptomic spots into single-cell-resolved spatial transcriptome atlases."
+    },
+    {
+      "id": "e6",
+      "text": "This is important because the relationship between protein levels and their coding transcripts can be discordant, influenced by spatial and temporal mRNA variations and the protein biosynthesis machinery.",
+      "anchor": "Evaluating RNA–protein concordance in DBiTplus",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        },
+        {
+          "claimId": "axis A · modality",
+          "direction": "supports"
+        }
+      ],
+      "note": "States that protein levels and their coding transcripts can be discordant, influenced by spatial and temporal mRNA variation and protein biosynthesis machinery."
+    },
+    {
+      "id": "e7",
+      "text": "Given the documented discrepancies between transcript and protein expression in immune cells, we evaluated the correlation between average normalized mRNA and protein levels in our dataset. As expected, we observed minimal correlation (R = 0.23, P = 0.18), consistent with prior findings in peripheral blood mononuclear cells, particularly for T cell markers such as CD4.",
+      "anchor": "Evaluating RNA–protein concordance in DBiTplus",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        },
+        {
+          "claimId": "axis A · modality",
+          "direction": "supports"
+        }
+      ],
+      "note": "Reports minimal measured correlation (R = 0.23, P = 0.18) between average normalized mRNA and protein levels in the same tissue, with the discordance especially pronounced for T cell markers such as CD4 — direct evidence that RNA does not predict protein."
+    },
+    {
+      "id": "e8",
+      "text": "Of the 35 markers in the human lymph node CODEX panel, CD68 was the only gene transcript missing (Extended Data Fig. 6a).",
+      "anchor": "Evaluating RNA–protein concordance in DBiTplus",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Notes a protein (CD68) detected by imaging whose transcript was missing in the matched transcriptomic data, illustrating modality-specific detection gaps (protein detected where RNA is not)."
+    },
+    {
+      "id": "e9",
+      "text": "These findings underscore the strength of DBiTplus in co-mapping RNAs and proteins on the same tissue section, allowing for cross-validation and enhancing confidence in cell-type annotation and spatial localization.",
+      "anchor": "Evaluating RNA–protein concordance in DBiTplus",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        }
+      ],
+      "note": "Argues that same-section co-mapping of RNA and protein enables cross-validation and more confident cell-type annotation and spatial localization."
+    },
+    {
+      "id": "e10",
+      "text": "Joint embedding of DBiTplus and CODEX (Fig. 3g) and violin plots of the cell-type-specific modality weights from WNN analysis, showed that the CODEX (protein) contributed more for T cell-subtype identification, relative to DBiTplus (transcriptome), and the converse was observed for B cell subtypes such as GCB and plasma B cells (Fig. 3h).",
+      "anchor": "Multimodal mapping of normal human lymph nodes",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        }
+      ],
+      "note": "Shows that protein and transcriptome modalities carry complementary, non-redundant information — protein weighted more for T cell subtyping, transcriptome more for B cell subtypes — so each modality identifies cell types the other cannot."
+    },
+    {
+      "id": "e11",
+      "text": "DBiTplus further enables spatial profiling of small noncoding RNAs such as microRNAs (miRNAs), which regulate mRNA synthesis and gene expression.",
+      "anchor": "Investigating the role of miRNAs in Richter’s transformation",
+      "touchpoints": [
+        {
+          "claimId": "axis A · modality",
+          "direction": "supports"
+        }
+      ],
+      "note": "Claims DBiTplus can spatially profile small noncoding RNAs (miRNAs) in addition to mRNA, broadening the measurable molecular layers."
+    },
+    {
+      "id": "e12",
+      "text": "While Xenium and CosMx achieve single-cell spatial resolution through direct imaging of transcripts, DBiTplus even allows for unbiased profiling of total RNAs including small noncoding RNAs (that is, miRNAs), which is unique for discovery of new RNA biological mechanisms.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "nuances"
+        },
+        {
+          "claimId": "axis A · modality",
+          "direction": "supports"
+        }
+      ],
+      "note": "Contrasts panel-bound imaging platforms (Xenium, CosMx; single-cell resolution but targeted transcripts) with DBiTplus's unbiased total-RNA profiling — a resolution-vs-coverage trade-off framing."
+    },
+    {
+      "id": "e13",
+      "text": "DBiTplus shares common limitations with sequencing-based spatial transcriptomics approaches; low capture depth can lead to dropout of low-abundance transcripts, which may be exacerbated by the lower transcript recovery rate of DBiTplus, compared to the standard DBiT-seq workflow, an important consideration when profiling rare cell populations.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 6",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Author-conceded limitation: low capture depth causes dropout of low-abundance transcripts, worsened by DBiTplus's lower transcript recovery than standard DBiT-seq — a sensitivity cost of the same-section multimodal approach."
+    },
+    {
+      "id": "e14",
+      "text": "Further, the tight clamping of the tissue during the DBiTplus workflow may disrupt tissue architecture outside the clamped region and may lead to reduced imaging signal.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        },
+        {
+          "claimId": "axis C · spatial",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Author-conceded limitation: physical clamping during the workflow can disrupt tissue architecture and reduce downstream imaging signal."
+    },
+    {
+      "id": "e15",
+      "text": "Nonetheless, these limitations are counterbalanced by several strengths: DBiTplus enables whole-transcriptome spatial profiling without being constrained by predesigned panels, can be integrated with high-plex protein imaging on the same tissue section, and is flexible and cost-effective for broad adoption.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        }
+      ],
+      "note": "States strengths: panel-free whole-transcriptome spatial profiling integrated with high-plex protein imaging on the same section, framed as flexible and cost-effective for broad adoption."
+    },
+    {
+      "id": "e16",
+      "text": "Spatial multi-omics integrates genomics, transcriptomics, proteomics and metabolomics while preserving spatial context, providing a comprehensive view of molecular processes in tissues. Traditional approaches utilize separate assays on adjacent tissue sections limiting alignment and multimodal integration accuracy due to tissue heterogeneity.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        },
+        {
+          "claimId": "axis C · spatial",
+          "direction": "supports"
+        }
+      ],
+      "note": "Frames the value of spatial multi-omics (preserving spatial context across molecular layers) and reiterates that adjacent-section approaches limit alignment and integration accuracy due to tissue heterogeneity."
+    },
+    {
+      "id": "e17",
+      "text": "Thus, leveraging mxIF data to guide the splitting of DBiT spatial transcriptomes can enable the creation of truly single-cell-level spatially resolved transcriptome atlases.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        }
+      ],
+      "note": "Claims imaging-guided spot splitting enables truly single-cell-level spatially resolved transcriptome atlases from a spot-based sequencing assay."
+    },
+    {
+      "id": "e18",
+      "text": "Single-cell spatial multimodal metabolomics approaches such as REDCAT combine protein and metabolite measurements in the same tissue section. IN-DEPTH was also recently developed for same-slide spatial multi-omics integration.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        },
+        {
+          "claimId": "axis A · modality",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Cites prior same-section multimodal methods (REDCAT combining protein + metabolite; IN-DEPTH for same-slide multi-omics), situating DBiTplus among emerging same-section multimodal efforts."
+    }
+  ],
+  "figuresNumbers": [
+    {
+      "item": "RNA-protein correlation (Extended Data Fig. 6d)",
+      "contains": "Average normalized mRNA vs protein correlation R = 0.23, P = 0.18 (minimal correlation) in human lymph node; discordance most pronounced for T cell markers such as CD4."
+    },
+    {
+      "item": "CODEX panel transcript coverage (Extended Data Fig. 6a)",
+      "contains": "Of 35 markers in human lymph node CODEX panel, CD68 was the only gene transcript missing in the matched transcriptomic data."
+    },
+    {
+      "item": "Reference-dataset concordance (Extended Data Fig. 6b,c)",
+      "contains": "Normalized gene expression vs Bai et al. Patho-DBiT lymph node reference: R = 0.89, P < 2.2 x 10^-16, consistent especially for abundant transcripts (PTPRC, ACTB, HLA.DRA)."
+    },
+    {
+      "item": "E11 mouse embryo concordance (Fig. 2b-d)",
+      "contains": "DBiTplus correlated R = 0.99 with standard DBiT-seq on adjacent section; 27,884 overlapping genes; ~1,200 genes and ~3,300 UMIs captured per spot."
+    },
+    {
+      "item": "E13 embryo gene detection (Extended Data Fig. 2a)",
+      "contains": "Sequencing detected 24,102 genes (proteinase K control) and 20,973 genes (RNase H test); test/control replicate correlations R = 0.87 (within), R = 0.72 (between), R = 0.84 (between test replicates); 1,109 overlapping genes between matched clusters."
+    },
+    {
+      "item": "Deconvolution benchmark (Fig. 3i-k)",
+      "contains": "Against CODEX-informed ground truth, TACCO performed best with 50% of spots Pearson > 0.6 vs 36% for Cell2location; ASW with vs without CODEX 0.47 vs 0.46 (similar)."
+    },
+    {
+      "item": "cDNA size (Supplementary Fig. 1a-c)",
+      "contains": "Recovered cDNA size ranged from 200 to 800 base pairs in human cerebellum and lymph node FFPE."
+    },
+    {
+      "item": "CODEX staining concordance (Supplementary Figs. 6a,b)",
+      "contains": "DBiTplus CODEX staining quality vs control lymph node sections: Pearson > 0.85 for key markers CD3e, CD20, podoplanin."
+    },
+    {
+      "item": "TME composition (Fig. 4d,e; Fig. 5f)",
+      "contains": "MZL tumor microenvironment ~55% malignant B cells (large+small) and ~30% T cells; in CLL/DLBCL case B cells ~60% of all cells; large B cells largest diameters ~20 um."
+    }
+  ],
+  "primarySources": [
+    {
+      "topic": "mRNA-protein dependency / discordance (rationale for RNA-protein concordance analysis)",
+      "citation": "Liu, Y., Beyer, A. & Aebersold, R. On the dependency of cellular protein levels on mRNA abundance. Cell 165, 535-550 (2016)",
+      "refN": "19"
+    },
+    {
+      "topic": "Discrepant mRNA and protein expression in immune cells",
+      "citation": "Li, J., Zhang, Y., Yang, C. & Rong, R. Discrepant mRNA and protein expression in immune cells. Curr. Genomics 21, 560-563 (2020)",
+      "refN": "20"
+    },
+    {
+      "topic": "Original DBiT-seq (deterministic barcoding in tissue, basis method)",
+      "citation": "Liu, Y. et al. High-spatial-resolution multi-omics sequencing via deterministic barcoding in tissue. Cell 183, 1665-1681.e18 (2020)",
+      "refN": "3"
+    },
+    {
+      "topic": "Spatial CITE-seq (high-plex protein + transcriptome co-mapping at cellular resolution)",
+      "citation": "Liu, Y. et al. High-plex protein and whole transcriptome co-mapping at cellular resolution with spatial CITE-seq. Nat. Biotechnol. 41, 1405-1409 (2023)",
+      "refN": "4"
+    },
+    {
+      "topic": "Slide-seq (array-based spatial transcriptomics)",
+      "citation": "Rodriques, S. G. et al. Slide-seq: a scalable technology for measuring genome-wide expression at high spatial resolution. Science 363, 1463-1467 (2019)",
+      "refN": "2"
+    },
+    {
+      "topic": "MERFISH (imaging-based subcellular-resolution spatial transcriptomics)",
+      "citation": "Xia, C. et al. Spatial transcriptome profiling by MERFISH reveals subcellular RNA compartmentalization and cell cycle-dependent gene expression. Proc. Natl Acad. Sci. USA 116, 19490-19499 (2019)",
+      "refN": "6"
+    },
+    {
+      "topic": "CODEX multiplexed protein imaging",
+      "citation": "Black, S. et al. CODEX multiplexed tissue imaging with DNA-conjugated antibodies. Nat. Protoc. 16, 3802-3835 (2021)",
+      "refN": "8"
+    },
+    {
+      "topic": "REDCAT same-section protein + metabolite multimodal",
+      "citation": "Li, Y. et al. All-optical multimodal mapping of single cell-type-specific metabolic activities via REDCAT. Preprint at bioRxiv https://doi.org/10.1101/2024.11.07.622511 (2024)",
+      "refN": "9"
+    },
+    {
+      "topic": "IN-DEPTH same-slide spatial multi-omics integration",
+      "citation": "Yeo, Y. Y. et al. Same-slide spatial multi-omics integration reveals tumor virus-linked spatial reorganization of the tumor microenvironment. Preprint at bioRxiv https://doi.org/10.1101/2024.12.20.629650 (2024)",
+      "refN": "10"
+    },
+    {
+      "topic": "MaxFuse cross-modality integration of weakly linked features (computational backbone)",
+      "citation": "Chen, S. et al. Integration of spatial and single-cell data across modalities with weakly linked features. Nat. Biotechnol. 42, 1096-1106 (2024)",
+      "refN": "11"
+    },
+    {
+      "topic": "RCTD robust cell-type decomposition for spatial transcriptomics",
+      "citation": "Cable, D. M. et al. Robust decomposition of cell type mixtures in spatial transcriptomics. Nat. Biotechnol. 40, 517-526 (2022)",
+      "refN": "12"
+    }
+  ],
+  "flags": [
+    "Metadata: venue (Nature Methods) inferred from DOI prefix s41592 and peer-review note ('Nature Methods thanks...'); volume/issue/pages not printed in cleaned source ('Published online: xx xx xxxx'). DOI 10.1038/s41592-025-02948-0 confirmed verbatim in text.",
+    "Metadata: cleaned source header does not print the author list; first author A. Enninful and corresponding lab R. Fan inferred from data-availability/Zenodo deposit references (refs 52-54) and DBiT lineage. Full author list and initials unverified — treat 'authors' field as approximate.",
+    "Date inconsistency: Received 5 November 2024, Accepted 27 October 2025; copyright line reads '© The Author(s) 2026'. Year recorded as 2025 (acceptance/online year); citing as 2026 also defensible.",
+    "OCR quirks preserved verbatim in excerpts: 'wholetranscriptome' (e4/e5 source spelling), 'formalin-fxed' / 'parafn' in abstract; numbers like '~1,200' and '~3,300' rendered with tilde.",
+    "Scope note: large portions (MZL/CLL-DLBCL lymphoma biology, miRNA disease mechanisms, specific gene/pathway findings) are oncology application detail that is off-roadmap for the virtual-cell-data thesis and were NOT captured as excerpts; only the methodological/multimodal/spatial/RNA-protein-discordance claims bearing on roadmap claims were extracted.",
+    "Read at source: ref #19 (Liu, Beyer & Aebersold 2016, Cell) and ref #20 (Li et al. 2020) are the primary sources behind the RNA-protein discordance claim (Claim 4 ammunition) — worth citing first-hand."
+  ]
+}

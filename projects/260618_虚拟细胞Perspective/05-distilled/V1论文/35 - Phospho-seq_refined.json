@@ -1,0 +1,458 @@
+{
+  "schemaVersion": "精练-4.0",
+  "citationKey": "35",
+  "title": "Phospho-seq: integrated, multi-modal profiling of intracellular protein dynamics in single cells",
+  "authors": "John D. Blair, Austin Hartman, Fides Zenk, Philipp Wahle, Giovanna Brancati, Carol Dalgarno, Barbara Treutlein, Rahul Satija",
+  "venue": "Nature Communications, 2025",
+  "year": "2025",
+  "doi": "doi:10.1038/s41467-025-56590-7",
+  "readOn": "2026-06-18",
+  "sourceFile": "/Users/augustsirius/Desktop/已清洗_260617/35 - Phospho-seq - integrated multi-modal profiling of intracellular protein dynamics in single cells_cleaned.md",
+  "oneSentence": "Phospho-seq is a single-cell multimodal workflow that quantifies cytoplasmic, nuclear, and phosphorylated proteins (via custom benchtop-conjugated antibody panels) together with chromatin accessibility and, through experimental or computational integration, transcriptomes, and applies this to cell lines and retinal/brain organoids to link signaling states to gene regulation.",
+  "orientation": "A single-cell multimodal METHOD paper that strongly supports our roadmap claims that modalities are orthogonal/non-substitutable (Claim 4/5) and that protein, PTM/phospho, and protein-state layers carry information RNA and genome-wide assays cannot recover (modality axis: proteome, PTM). It also supplies first-hand evidence of the multimodal resolution-vs-quality trade-off (Claim 10) and of cross-technology benchmarking/standardization (Claim 9, standard axis). It can ALSO serve as a foil on the spatial axis: it relies on dissociation (cells are dissociated into single cells), discards spatial context, and only proposes spatial profiling as future work; temporally it reconstructs trajectories computationally from destructive snapshots rather than tracking real cells over time.",
+  "excerpts": [
+    {
+      "id": "e1",
+      "text": "This re<sup>fl</sup>ects a biological context where phosphorylation measurements are highly informative for distinguishing cellular states even when genome-wide modalities cannot.",
+      "anchor": "Results — Phospho-seq simultaneously quantifies phosphorylated, cytoplasmic, and nuclear proteins",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        },
+        {
+          "claimId": "modality",
+          "direction": "supports"
+        }
+      ],
+      "note": "Phosphorylation (protein-state) measurements distinguish cell states in cases where chromatin/genome-wide modalities cannot."
+    },
+    {
+      "id": "e2",
+      "text": "We also observed higher phosphorylation of the nuclear transcription factor STAT3 in iPSCs compared to K562 cells, and found that only pSTAT3 levels (as opposed to total protein levels) correlated with STAT3 transcription factor activities (Fig S1L). We conclude that we can therefore measure phosphorylation states for both cytoplasmic and nuclear activities, and that phosphorylated protein levels are more re<sup>fl</sup>ective of cellular state and transcription factor activities compared to total protein levels.",
+      "anchor": "Results — Phospho-seq simultaneously quantifies phosphorylated, cytoplasmic, and nuclear proteins",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 5",
+          "direction": "supports"
+        },
+        {
+          "claimId": "modality",
+          "direction": "supports"
+        }
+      ],
+      "note": "Only the phosphorylated (PTM) state, not total protein level, tracks TF activity; PTM carries information neither total protein nor RNA recovers."
+    },
+    {
+      "id": "e3",
+      "text": "We identi<sup>fi</sup>ed a speci<sup>fi</sup>c stage of the developmental trajectory where protein and RNA levels were discordant and con<sup>fi</sup>rmed that in these cells, only SOX2 protein levels (and not RNA levels) were correlated with chromVAR scores (Fig. S7C).",
+      "anchor": "Results — Intracellular protein staining highlights cell type differences in human brain organoids",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        }
+      ],
+      "note": "Protein and RNA levels diverge during differentiation; protein (not RNA) tracks TF activity, evidencing RNA-protein non-substitutability."
+    },
+    {
+      "id": "e4",
+      "text": "While  gene expression decreased at the <sup>SOX2</sup>initial stages of differentiation, we observed a developmental lag in the decrease of downstream modalities including SOX2 ADT levels and SOX2 transcription factor activity as estimated by chromVAR (Fig. S7B).",
+      "anchor": "Results — Intracellular protein staining highlights cell type differences in human brain organoids",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        },
+        {
+          "claimId": "temporal",
+          "direction": "nuances"
+        }
+      ],
+      "note": "SOX2 protein and TF activity lag behind RNA changes during differentiation, so RNA does not predict downstream protein-layer timing."
+    },
+    {
+      "id": "e5",
+      "text": "While pRPS6 is often utilized as an indicator for mTOR pathway activity, RPS6 can actually be phosphorylated by multiple kinases from different pathways—including the ERK pathway via RPS6KA1 or the mTOR pathway via RPS6KB1<sup>44</sup> (Fig. 4G).",
+      "anchor": "Results — Observing signaling network activity with Phospho-seq",
+      "touchpoints": [
+        {
+          "claimId": "Claim 5",
+          "direction": "supports"
+        }
+      ],
+      "note": "A single phospho-state can be produced by distinct signaling pathways, so functional interpretation requires the protein-state layer plus regulatory context."
+    },
+    {
+      "id": "e6",
+      "text": "no existing approaches can quantify intracellular proteins (including phosphorylation states), transcriptional output, and chromatin pro<sup>fi</sup>ling in the same biological system.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        },
+        {
+          "claimId": "modality",
+          "direction": "supports"
+        }
+      ],
+      "note": "Before this work, no single assay jointly captured intracellular/phospho protein, transcription, and chromatin in one system, motivating multimodal integration."
+    },
+    {
+      "id": "e7",
+      "text": "While powerful, these technologies focus exclusively on the pro<sup>fi</sup>ling of cell surface proteins. They are therefore widely applied to analyze hematopoietic samples, where well-characterized panels of cell surface proteins are associated with distinct cell states, but have limited utility in other contexts, including neurodevelopment.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "modality",
+          "direction": "supports"
+        }
+      ],
+      "note": "Existing single-cell protein methods (CITE-seq etc.) measure only surface proteins, leaving intracellular and phospho protein states unmeasured in most tissues."
+    },
+    {
+      "id": "e8",
+      "text": "While each of these methods addresses key challenges, they perform pro<sup>fi</sup>ling of small (3–7) intracellular panels due to a reliance on commercially conjugated antibodies. QuRIE-seq aims to pro<sup>fi</sup>le larger panels, but requires custom instrumentation and is not compatible with primary cell samples<sup>17</sup>.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 6",
+          "direction": "nuances"
+        },
+        {
+          "claimId": "modality",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Prior intracellular single-cell protein methods were limited to very small panels or required custom instrumentation, a feasibility constraint this work aims to relax."
+    },
+    {
+      "id": "e9",
+      "text": "By optimizing a broadly accessible antibody conjugation strategy<sup>24</sup>, we designed custom panels to pro<sup>fi</sup>le up to 64 intracellular proteins (including 20 phospho-states), and applied this work<sup>fl</sup>ow to both retinal organoids and brain organoids.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        },
+        {
+          "claimId": "modality",
+          "direction": "supports"
+        }
+      ],
+      "note": "High-throughput intracellular protein/phospho profiling (up to 64 proteins, 20 phospho-states) is demonstrated as feasible at single-cell scale."
+    },
+    {
+      "id": "e10",
+      "text": "While Phospho-seq exhibited a higher SI on average (mean SI = 1.26 vs. 0.74. for <sup>fl</sup>ow cytometry), we did not identify a statistically signi<sup>fi</sup>cant difference between the two ( = 0.375; <sup>p</sup>Fig. S2C), suggesting that our Phospho-seq data is comparable to goldstandard approaches.",
+      "anchor": "Results — Phospho-seq simultaneously quantifies phosphorylated, cytoplasmic, and nuclear proteins",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        },
+        {
+          "claimId": "standard",
+          "direction": "supports"
+        }
+      ],
+      "note": "Quantitative benchmarking (staining index) shows sequencing-based protein quantification is statistically comparable to gold-standard flow cytometry."
+    },
+    {
+      "id": "e11",
+      "text": "Comparing the mean expression of pRPS6 between gated populations in Phosphoseq, we observed quantitative agreement ( <sup>2</sup> = 0.90), highlighting the <sup>R</sup>consistency of Phospho-seq with ground truth measurements (Fig. S2L). With ASAP-seq, we observed a weaker correlation ( <sup>2</sup> = 0.12; <sup>R</sup>(Fig. S2K).",
+      "anchor": "Results — Phospho-seq simultaneously quantifies phosphorylated, cytoplasmic, and nuclear proteins",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        },
+        {
+          "claimId": "standard",
+          "direction": "supports"
+        }
+      ],
+      "note": "Head-to-head against flow-cytometry ground truth, Phospho-seq (R2=0.90) outperforms the comparable technology ASAP-seq (R2=0.12), a cross-technology comparability metric."
+    },
+    {
+      "id": "e12",
+      "text": "While this dataset was informative and enabled cell type identi<sup>fi</sup>- cation from transcriptomic pro<sup>fi</sup>les, the simultaneous acquisition of multiple modalities came at a substantial cost in data quality and throughput when compared to either our existing Phospho-seq data, or scRNA-seq on retinal organoids<sup>32</sup>. Speci<sup>fi</sup>cally, we observed a 70% reduction in molecular sensitivity for scATAC-seq pro<sup>fi</sup>les and a 91% reduction for gene expression pro<sup>fi</sup>les (Fig. S4C, D).",
+      "anchor": "Results — Extending Phospho-seq to incorporate transcriptomic measurements",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        },
+        {
+          "claimId": "standard",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Author-conceded trade-off: experimentally acquiring more modalities at once cuts per-modality sensitivity sharply (70% ATAC, 91% RNA), evidencing the throughput-vs-quality tension."
+    },
+    {
+      "id": "e13",
+      "text": "Regardless, these data are consistent with previous studies<sup>20</sup> that exhibit lower permodality molecular sensitivity when using the 10x multiome kit, and demonstrate the inherent challenges for multimodal technologies to generate high-quality data from each measurement type.",
+      "anchor": "Results — Extending Phospho-seq to incorporate transcriptomic measurements",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        }
+      ],
+      "note": "Authors generalize the trade-off: multimodal assays inherently struggle to produce high-quality data for every measured modality simultaneously."
+    },
+    {
+      "id": "e14",
+      "text": "Although this approach requires running additional experiments, we and others have found that simultaneous pro<sup>fi</sup>ling of ATAC and RNA in cells or nuclei reduces the data quality associated with each modality<sup>49</sup>.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 8",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Conceded again in Discussion: joint ATAC+RNA profiling degrades each modality's quality, motivating computational integration over simultaneous measurement."
+    },
+    {
+      "id": "e15",
+      "text": "We, therefore, explored an alternative approach aiming to integrate Phospho-seq and scRNA-seq reference datasets using our recently introduced ‘bridge integration’ procedure (Fig. 3D)<sup>23</sup>. We have previously shown that this work<sup>fl</sup>ow can successfully integrate distinct modalities collected in different experiments by leveraging a separately obtained multiomic dataset as a ‘bridge’, even if the bridge dataset has reduced technical quality.",
+      "anchor": "Results — Extending Phospho-seq to incorporate transcriptomic measurements",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        },
+        {
+          "claimId": "standard",
+          "direction": "supports"
+        }
+      ],
+      "note": "Computational bridge integration is used to harmonize modalities collected in separate experiments via a shared multiomic reference."
+    },
+    {
+      "id": "e16",
+      "text": "The bridge integration procedure can successfully integrate data for both discrete cell types as well as continuous developmental trajectories, but requires that the multiomic dataset is biologically representative (i.e. inclusive of all cell types and states) of the single-modality datasets.",
+      "anchor": "Results — Extending Phospho-seq to incorporate transcriptomic measurements",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "nuances"
+        },
+        {
+          "claimId": "standard",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Cross-experiment multimodal integration requires a biologically representative multiomic bridge, a precondition (standardization constraint) for combining datasets."
+    },
+    {
+      "id": "e17",
+      "text": "we used bridge integration to link these peaks to transcription factors (TF) that regulate their accessibility.",
+      "anchor": "Results — Using Phospho-seq data to identify gene regulatory networks in early neurodevelopment",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        }
+      ],
+      "note": "Cross-modal integration (protein + chromatin + RNA) reconstructs gene regulatory networks beyond what any single modality could yield."
+    },
+    {
+      "id": "e18",
+      "text": "We reasoned that we could extend this analysis using protein measurements from our Phospho-seq panel, which may be more re<sup>fl</sup>ective of TF levels, rather than RNA measurements.",
+      "anchor": "Results — Using Phospho-seq data to identify gene regulatory networks in early neurodevelopment",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        }
+      ],
+      "note": "Protein measurements are argued to reflect transcription-factor levels better than RNA, motivating the protein modality for regulatory inference."
+    },
+    {
+      "id": "e19",
+      "text": "Strikingly, we found that our Phospho-seq data for GLI3 could help predict which genomic regions would respond to perturbation. Examining the 5108 DARs identi<sup>fi</sup>ed in the perturbation experiment, we found that the accessibility of these sites was correlated to GLI3 protein levels in our Phospho-seq data, in contrast to >300,000 non-DAR ( -value = <0.001)(Fig. 5G).",
+      "anchor": "Results — Identification of transcriptional co-factors through ADT-motif correlation",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 5",
+          "direction": "supports"
+        }
+      ],
+      "note": "GLI3 protein levels predict which regions respond to functional perturbation, demonstrating the protein modality carries functional/causal information."
+    },
+    {
+      "id": "e20",
+      "text": "These <sup>fi</sup>ndings suggest that GLI3-binding alone is insuf<sup>fi</sup>cient to regulate chromatin accessibility and gene expression, and therefore, that CUT&Tag data is a poor predictor of which genomic regions will respond to  perturbation.",
+      "anchor": "Results — Identification of transcriptional co-factors through ADT-motif correlation",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        }
+      ],
+      "note": "A binding-only modality (CUT&Tag) poorly predicts functional regulatory response, arguing that complementary modalities are needed to capture function."
+    },
+    {
+      "id": "e21",
+      "text": "Photoreceptors are among the most metabolically demanding cell types in the body, requiring high levels of mTOR signaling, which in turn phosphorylates RPS6, to properly function<sup>34</sup>. Among photoreceptors, cones require more energy than rods due to their more consistent depolarized state<sup>35</sup> and the relative levels of pRPS6 we observe between these two cell types re<sup>fl</sup>ect this.",
+      "anchor": "Results — Intracellular protein staining highlights cell type differences in human retinal organoids",
+      "touchpoints": [
+        {
+          "claimId": "Claim 5",
+          "direction": "supports"
+        }
+      ],
+      "note": "Cell-type differences in metabolic/signaling state (rods vs cones) are read out via a phospho-protein (pRPS6), a functional state not captured by transcriptome alone."
+    },
+    {
+      "id": "e22",
+      "text": "Finally, applying Phospho-seq in concert with spatially-resolved pro<sup>fi</sup>ling technologies<sup>77</sup> may shed light on both intercellular and intracellular signaling networks.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "spatial",
+          "direction": "challenges"
+        }
+      ],
+      "note": "Authors concede spatial resolution is absent and only a future extension; the current dissociated assay discards spatial/microenvironment context."
+    },
+    {
+      "id": "e23",
+      "text": "In brief, samples are dissociated into single-cells, <sup>fi</sup>xed, permeabilized, hashed, stained for intracellular proteins with self-conjugated DNA-bound antibodies, and run through the 10X Genomics single-cell ATAC-seq protocol (Fig. 1A and Methods).",
+      "anchor": "Results — Benchtop conjugation enables antibody panel customization in Phospho-seq",
+      "touchpoints": [
+        {
+          "claimId": "spatial",
+          "direction": "challenges"
+        }
+      ],
+      "note": "The workflow begins by dissociating tissue into single cells, removing spatial organization before measurement."
+    },
+    {
+      "id": "e24",
+      "text": "Future in-vivo experiments will reveal whether these signaling differences replicate in vivo, and how they in<sup>fl</sup>uence cellular decision-making and fate.",
+      "anchor": "Results — Observing signaling network activity with Phospho-seq",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Author caveat that observations in dissociated in-vitro organoids may not replicate in vivo, an in-vitro-vs-in-vivo trade-off."
+    },
+    {
+      "id": "e25",
+      "text": "We conclude that, while it is possible to use the Phosphoseq work<sup>fl</sup>ow to perform experimental trimodal pro<sup>fi</sup>ling, this comes with a cost in data quality and thus integrated analysis may result in improved data quality for multiple modalities.",
+      "anchor": "Results — Extending Phospho-seq to incorporate transcriptomic measurements",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        }
+      ],
+      "note": "Authors conclude experimental trimodal measurement trades off data quality, so computational integration of separately collected modalities is preferable."
+    }
+  ],
+  "figuresNumbers": [
+    {
+      "item": "Panel size",
+      "contains": "Custom panels profiling up to 64 intracellular proteins including 20 phospho-states; retinal organoid panel = 46 antibodies; brain organoid panel = 64 antibodies with 40 paired cell-signaling antibodies."
+    },
+    {
+      "item": "Staining-index benchmark vs flow cytometry",
+      "contains": "Phospho-seq mean SI = 1.26 vs 0.74 for flow cytometry; difference not statistically significant (p = 0.375)."
+    },
+    {
+      "item": "Ground-truth correlation (FACS-gated pRPS6)",
+      "contains": "Phospho-seq vs flow-cytometry ground truth R2 = 0.90; ASAP-seq vs ground truth R2 = 0.12."
+    },
+    {
+      "item": "Multiome (trimodal) sensitivity cost",
+      "contains": "70% reduction in scATAC-seq molecular sensitivity and 91% reduction in gene-expression sensitivity vs single-modality data; 45-70% reduction in ADT staining index across three cell-type pairs."
+    },
+    {
+      "item": "Phospho-seq-multi yield",
+      "contains": "1474 cells recovered from 5000 input; median 866 RNA UMIs, 8326 ATAC fragments, 39 ADT UMIs per cell."
+    },
+    {
+      "item": "Dataset sizes",
+      "contains": "Retinal organoid Phospho-seq: 8136 cells (34-week organoids). Brain organoid Phospho-seq: 9028/9034 cells (3-month, four iPS donors); scRNA reference 19,280 cells, multiome bridge 4958 cells."
+    },
+    {
+      "item": "Brain organoid differential proteins",
+      "contains": "45 of 64 proteins differentially expressed between at least one pair of clusters; 50% of ADTs above 80th-percentile rank-correlation with imputed RNA."
+    },
+    {
+      "item": "GLI3 perturbation analysis",
+      "contains": "CUT&Tag found 331,131 GLI3 binding sites; only 5108 (1.5%) showed differential accessibility on GLI3 perturbation; DARs enriched for GLI3 motifs (fold 2.11) and more strongly for HD/2 motifs (median fold 3.02); DAR-adjacent genes log2FC -0.22 vs 0.04 for non-DAR (p<0.001)."
+    },
+    {
+      "item": "Conjugation cost/parameters",
+      "contains": "Benchtop click-chemistry conjugation ~$8/conjugation; optimal 15 pmol oligonucleotide per ug antibody (2-4 oligo copies per antibody)."
+    }
+  ],
+  "primarySources": [
+    {
+      "topic": "Bridge integration / dictionary learning for multimodal single-cell integration",
+      "citation": "Hao Y. et al. 2024, Nat. Biotechnology 42:293-304",
+      "refN": "23"
+    },
+    {
+      "topic": "ASAP-seq scalable multimodal chromatin/expression/protein profiling (benchmark comparator)",
+      "citation": "Mimitou E. P. et al. 2021, Nat. Biotechnol. 39:1246-1258",
+      "refN": "18"
+    },
+    {
+      "topic": "NEAT-seq intranuclear protein + chromatin + expression profiling",
+      "citation": "Chen A. F. et al. 2022, Nat. Methods (doi:10.1038/s41592-022-01461-y)",
+      "refN": "16"
+    },
+    {
+      "topic": "CITE-seq simultaneous epitope and transcriptome measurement; digital sequencing-based protein dynamic range",
+      "citation": "Stoeckius M. et al. 2017, Nat. Methods 14:865-868",
+      "refN": "15"
+    },
+    {
+      "topic": "TEA-seq trimodal single-cell measurement; lower per-modality sensitivity in multiome",
+      "citation": "Swanson E. et al. 2021, Elife 10:e63632",
+      "refN": "20"
+    },
+    {
+      "topic": "Lower data quality of simultaneous ATAC+RNA profiling",
+      "citation": "(ref 49, not resolvable from provided reference excerpt)",
+      "refN": "49"
+    },
+    {
+      "topic": "Reduced multiome per-modality molecular sensitivity (consistency citation)",
+      "citation": "Swanson E. et al. 2021, Elife 10:e63632",
+      "refN": "20"
+    }
+  ],
+  "flags": [
+    "Metadata verified from text: DOI 10.1038/s41467-025-56590-7 (Additional information and footer), venue Nature Communications (peer review note line 491), year 2025 (copyright line 499). Volume/issue/page numbers not printed in cleaned text, so venue given as 'Nature Communications, 2025' without Vol(Issue):Pages.",
+    "OCR quirks pervasive: <sup>fi</sup>/<sup>fl</sup> ligature tags, displaced superscripts (e.g. SOX2/RPS6KA1 gene names rendered out of order), and broken inline stats (R2, p-values). Excerpts copied verbatim including these artifacts.",
+    "Scope note: this is a single-cell DISSOCIATED method (no spatial resolution); spatial profiling appears only as proposed future work (e2 e22 e23). Captured as spatial-axis counter/foil evidence rather than spatial support.",
+    "Scope note: 'temporal' here is computational developmental-trajectory/pseudotime inference from destructive snapshots (e4, pseudotime Methods), not paired real-time tracking of the same cells; relevant to Claim 3 (destructive measurement cannot pair observations over time) as a methodological illustration.",
+    "Read at source: ref 49 (lower data quality of simultaneous ATAC+RNA) is load-bearing for the multimodal trade-off (e14) but its full citation is not present in the provided reference excerpt; worth first-hand lookup.",
+    "Cell-count inconsistency in source: brain organoid final dataset stated as both 9,028 (Results) and 9,034 (Methods) cells; retinal pilot/benchmark text states 14,931 singlet cells."
+  ]
+}

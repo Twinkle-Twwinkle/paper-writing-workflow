@@ -1,0 +1,295 @@
+{
+  "schemaVersion": "精练-4.0",
+  "citationKey": "25",
+  "title": "Generalizing RNA velocity to transient cell states through dynamical modeling",
+  "authors": "Volker Bergen, Marius Lange, Stefan Peidli, F. Alexander Wolf, Fabian J. Theis",
+  "venue": "Nature Biotechnology, 2020 (volume/issue/pages not present in cleaned source; see flags)",
+  "year": "2020",
+  "doi": "doi:10.1038/s41587-020-0591-3",
+  "readOn": "2026-06-18",
+  "sourceFile": "/Users/augustsirius/Desktop/已清洗_260617/25_cleaned.md",
+  "oneSentence": "Presents scVelo, a likelihood-based dynamical model that solves the full transcriptional dynamics of splicing kinetics via EM, generalizing RNA velocity to transient cell states and inferring gene-specific reaction rates plus a gene-shared latent time that reconstructs a cell's position in a differentiation process from a single static scRNA-seq snapshot.",
+  "orientation": "A methods paper from the Theis group on inferring directed temporal dynamics (RNA velocity, latent time, trajectory inference) from a single scRNA-seq snapshot. It is most useful for our temporal axis: it concedes head-on that scRNA-seq is destructive and yields only static snapshots, and that snapshots fundamentally underconstrain the possible dynamics (requiring extra information such as lineage-tracing assays). Thus it can serve as SUPPORT for Claim 3 (destructive sequencing cannot pairwise-observe time; time must be reconstructed, not measured) and as a NAMED FOIL where the writer notes the field's response to the time gap is computational reconstruction from distributions rather than true paired time-course data, with the authors themselves listing limits and identifiability issues. It also lightly concedes the spatial gap (Claim 2, spatial axis) and the protein/metabolic-labeling extension need (Claim 4) only in the Discussion as future work. Routing hint only, non-binding.",
+  "excerpts": [
+    {
+      "id": "e1",
+      "text": "A central challenge in trajectory inference is the destructive nature of single-cell RNA sequencing (scRNA-seq), which reveals only static snapshots of cellular states. To move from descriptive toward predictive trajectory models, additional information is required to constrain the space of possible dynamics that could give rise to the same trajectory.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "supports"
+        },
+        {
+          "claimId": "轴 B · 时间",
+          "direction": "supports"
+        }
+      ],
+      "note": "States scRNA-seq is destructive and reveals only static snapshots, and that snapshots alone underconstrain the dynamics, requiring additional information."
+    },
+    {
+      "id": "e2",
+      "text": "As such, lineage-tracing assays can add information via genetic modification to enable the reconstruction of lineage relationships. However, these assays are not straightforward to set up and are technically limited in many systems, such as human tissues.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Notes lineage-tracing assays can recover lineage relationships but are hard to set up and technically limited in many systems including human tissues."
+    },
+    {
+      "id": "e3",
+      "text": "The concept of RNA velocity has enabled the recovery of directed dynamic information by leveraging the fact that newly transcribed, unspliced pre-mRNAs and mature, spliced mRNAs can be distinguished in common scRNA-seq protocols, the former detectable by the presence of introns. Assuming a simple per-gene reaction model that relates abundance of unspliced and spliced mRNA, the change in mRNA abundance, termed RNA velocity, can be inferred.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "nuances"
+        },
+        {
+          "claimId": "轴 B · 时间",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Describes RNA velocity as recovering directed dynamic information from the unspliced/spliced mRNA ratio within a single static snapshot, rather than from paired time-course measurement."
+    },
+    {
+      "id": "e4",
+      "text": "The inferred latent time represents the cell's internal clock, which accurately describes the cell's position in the underlying biological process. In contrast to existing similarity-based pseudo-time methods, this latent time is grounded only on transcriptional dynamics and accounts for speed and direction of motion.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "轴 B · 时间",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Defines latent time as a computationally inferred internal clock describing a cell's position in a process, derived from transcriptional dynamics of a snapshot."
+    },
+    {
+      "id": "e5",
+      "text": "On simulated splicing kinetics, latent time is able to reconstruct the underlying real time at near-perfect correlation and correct scale, clearly outperforming diffusion pseudo-time.",
+      "anchor": "Results — Solving the full gene-wise transcription dynamics",
+      "touchpoints": [
+        {
+          "claimId": "轴 B · 时间",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Claims latent time reconstructs underlying real time at near-perfect correlation on simulated data; reconstruction is validated against simulation, not paired experimental time."
+    },
+    {
+      "id": "e6",
+      "text": "To test whether scVelo's velocity estimates allow identification of more complex population kinetics, we considered a scRNA-seq experiment from the developing mouse dentate gyrus comprising two time points (P12 and P35) measured using droplet-based scRNA-seq (10× Genomics Chromium Single Cell Kit V1; Methods).",
+      "anchor": "Results — Resolving the heterogeneous population kinetics in dentate gyrus development",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "supports"
+        }
+      ],
+      "note": "The experimental temporal information is just two discrete sampled time points (P12, P35), used to corroborate inferred directionality rather than to follow individual cells over time."
+    },
+    {
+      "id": "e7",
+      "text": "Whether a cell type is still in transition or already terminal is indicated by two experimental time points (Supplementary Fig. 6a) and experimental analysis, both supporting the overall velocity-inferred directionality.",
+      "anchor": "Results — Resolving the heterogeneous population kinetics in dentate gyrus development",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "supports"
+        }
+      ],
+      "note": "Confirms that ground-truth temporal information here is only two discrete experimental time points used to validate velocity-inferred direction."
+    },
+    {
+      "id": "e8",
+      "text": "We compared pseudo-time and latent time in the chronology of endocrine cell fates. In real time, α-cells are produced earlier (before E12.5) than β-cells (E12.5–E15.5). This ordering is captured by latent time but not by pseudo-time (Fig. 3d).",
+      "anchor": "Results — Relating cell fates and disentangling dynamical regimes through latent time",
+      "touchpoints": [
+        {
+          "claimId": "轴 B · 时间",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Shows latent time recovers the real-time ordering of α- versus β-cell production; the real-time reference comes from prior external knowledge, not paired observation of the same cells."
+    },
+    {
+      "id": "e9",
+      "text": "In particular, spatial single-cell RNA profiling at transcriptome scale might provide additional information on relative cell positions necessary to resolve spatial dependencies in gene regulation. Spatial coordinates as well as experimental time might also be leveraged as additional constraints to extend the concept of latent time—for instance, to capture the progression around a cell cycle.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 2",
+          "direction": "supports"
+        },
+        {
+          "claimId": "轴 C · 空间",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concedes that the method lacks spatial information and that spatial coordinates and experimental time would provide additional constraints, motivating spatially resolved and temporally constrained data."
+    },
+    {
+      "id": "e10",
+      "text": "Extending the kinetic model to protein translation has been proposed within the steady-state formulation and can be likewise included into the dynamical model. Metabolic labeling, for example using single-cell SLAM-seq, enables the quantification of total RNA levels together with newly transcribed RNA. This additional readout can be easily included into the dynamical model, incorporating varying labeling lengths as additional prior.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        },
+        {
+          "claimId": "轴 A · 模态",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concedes the RNA-only readout is incomplete and points to protein translation and metabolic-labeling readouts as extensions, implicitly acknowledging additional modalities carry information RNA splicing alone does not."
+    },
+    {
+      "id": "e11",
+      "text": "scVelo's suitability for characterizing transient populations makes it a promising candidate for studying cellular responses to perturbation, which often display drastic switching behaviors.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 7",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Suggests velocity/latent-time inference as a tool for perturbation-response (cell state transition) studies, framed for snapshot data."
+    },
+    {
+      "id": "e12",
+      "text": "Another difficulty concerns insufficiently observed splicing kinetics. For instance, we might detect only a small portion of the overall dynamics at the very ends of the process (Supplementary Fig. 12a). This manifests as a straight line in the unspliced to spliced phase portraits rather than a curve (Supplementary Fig. 12b). Observing partial dynamics in this way leads the steady-state and stochastic models to incorrectly fit this line and erroneously assign positive and negative velocities.",
+      "anchor": "Results — Accounting for different kinetic regimes and insufficiently observed kinetics",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concedes that when a snapshot captures only partial dynamics, velocity inference becomes ambiguous and models can assign erroneous direction — a limit of reconstructing time from a single snapshot."
+    },
+    {
+      "id": "e13",
+      "text": "The latter case can occur when a dynamical process occurs in a fast or synchronous fashion such that the snapshot captured in an scRNA-seq data set recovers little of the full dynamics. Here, the overall developmental time scale of the sampled population might be far shorter than the potential duration of the kinetics.",
+      "anchor": "Results — Accounting for different kinetic regimes and insufficiently observed kinetics",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concedes that a single snapshot can recover little of the true dynamics when a process is fast or synchronous, requiring a root prior from the first experimental time point or known progenitor population."
+    },
+    {
+      "id": "e14",
+      "text": "Mathematically, these scenarios result in two local optima, thus entailing an identifiability issue, which can be solved only with additional information.",
+      "anchor": "Methods — Accounting for insufficiently observed kinetics with prior information",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "supports"
+        }
+      ],
+      "note": "States that snapshot-based velocity inference has a fundamental identifiability issue solvable only with additional (e.g., temporal/progenitor) information."
+    },
+    {
+      "id": "e15",
+      "text": "These assumptions are often violated, in particular when a population comprises multiple heterogeneous subpopulations with different kinetics.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Notes the steady-state RNA-velocity model's assumptions (full dynamics observed, common splicing rate) are often violated in heterogeneous populations."
+    }
+  ],
+  "figuresNumbers": [
+    {
+      "item": "Steady-state ratio correlation (simulation)",
+      "contains": "Pearson correlation between true and inferred steady-state ratio increases from 0.71 to 0.97 when using the dynamical model instead of the steady-state model."
+    },
+    {
+      "item": "Parameter recovery (simulation)",
+      "contains": "With overall time scale of 20 h imposed as prior, the dynamical model recovers true splicing-kinetics parameters at correlations of 0.85 and higher."
+    },
+    {
+      "item": "Speedup",
+      "contains": "scVelo achieves more than a tenfold speedup over the original implementation (velocyto) for steady-state and stochastic models; latent-time approximation gives a 30-fold speedup over exact optimal time assignment."
+    },
+    {
+      "item": "Scalability",
+      "contains": "Full pipeline on pancreas development with 25,919 transcriptome profiles runs in under 1 min (steady-state/stochastic); full dynamical inference ~20 min for 1,000 genes across 35,000 profiles. velocyto cannot process >40,000 cells (64 GB RAM); scVelo scales to >300,000 cells."
+    },
+    {
+      "item": "Simulation sampling",
+      "contains": "2,000 log-normally distributed parameters sampled per reaction rate; total time in a transcriptional state varied between 2 and 10 h."
+    },
+    {
+      "item": "Endocrine real-time chronology",
+      "contains": "α-cells produced before E12.5; β-cells produced E12.5–E15.5 (real-time ordering recovered by latent time but not pseudo-time)."
+    }
+  ],
+  "primarySources": [
+    {
+      "topic": "Original RNA velocity concept (unspliced/spliced mRNA gives directed dynamics; destructive snapshot)",
+      "citation": "La Manno, G. et al. RNA velocity of single cells. Nature 560, 494 (2018)",
+      "refN": "18"
+    },
+    {
+      "topic": "Fundamental limits on dynamic inference from single-cell snapshots",
+      "citation": "Weinreb, C. et al. Fundamental limits on dynamic inference from single-cell snapshots. Proc. Natl Acad. Sci. USA 115, E2467–E2476 (2018)",
+      "refN": "9"
+    },
+    {
+      "topic": "Concepts and limitations for learning developmental trajectories from single-cell genomics",
+      "citation": "Tritschler, S. et al. Concepts and limitations for learning developmental trajectories from single cell genomics. Development 146, dev170506 (2019)",
+      "refN": "10"
+    },
+    {
+      "topic": "Single-cell transcriptomics meets lineage tracing",
+      "citation": "Kester, L. & van Oudenaarden, A. Single-cell transcriptomics meets lineage tracing. Cell Stem Cell 23, 166–179 (2018)",
+      "refN": "16"
+    },
+    {
+      "topic": "Lineage tracing in humans via mitochondrial mutations",
+      "citation": "Ludwig, L. S. et al. Lineage tracing in humans enabled by mitochondrial mutations and single-cell genomics. Cell 176, 1325–1339.e22 (2019)",
+      "refN": "17"
+    },
+    {
+      "topic": "Spatial transcriptomics for tissue-level systems biology",
+      "citation": "Moor, A. E. & Itzkovitz, S. Spatial transcriptomics: paving the way for tissue-level systems biology. Curr. Opin. Biotechnol. 46, 126–133 (2017)",
+      "refN": "41"
+    },
+    {
+      "topic": "MERFISH spatial profiling reveals subcellular RNA compartmentalization",
+      "citation": "Xia, C. et al. Spatial transcriptome profiling by MERFISH reveals subcellular RNA compartmentalization and cell cycle-dependent gene expression. Proc. Natl Acad. Sci. USA 116, 19490–19499 (2019)",
+      "refN": "42"
+    },
+    {
+      "topic": "Protein velocity from single-cell multiomics",
+      "citation": "Gorin, G., Svensson, V. & Pachter, L. Protein velocity and acceleration from single-cell multiomics experiments. Genome Biol. 21, 39 (2020)",
+      "refN": "44"
+    },
+    {
+      "topic": "Metabolic labeling (single-cell SLAM-seq) for transcription dynamics",
+      "citation": "Erhard, F. et al. scSLAM-seq reveals core features of transcription dynamics in single cells. Nature 571, 419–423 (2019)",
+      "refN": "45"
+    }
+  ],
+  "flags": [
+    "Metadata: DOI doi:10.1038/s41587-020-0591-3 and venue Nature Biotechnology confirmed from text (DOI at lines 77/559/655; received 28 Oct 2019 / accepted 5 Jun 2020 / published online 3 Aug 2020). Volume/issue/page numbers are not present in the cleaned source, so venue gives year only.",
+    "Read at source: ref #9 (Weinreb et al., 'Fundamental limits on dynamic inference from single-cell snapshots', PNAS 2018) and ref #10 (Tritschler et al., 'Concepts and limitations for learning developmental trajectories from single cell genomics', Development 2019) are likely worth citing first-hand for our temporal/snapshot-limitation claim (Claim 3).",
+    "Scope note: This is a methods/modeling paper. Per the context file we do NOT write modeling methods; captured excerpts are restricted to where it concedes the destructive-snapshot temporal limitation, the spatial gap, and the RNA-only/multimodal extension need — i.e., where it bears on roadmap claims as support or foil, not its algorithmic contributions.",
+    "Orientation note: The paper's affirmative contribution (recovering 'time' computationally from a snapshot) can be read as the field's workaround for the destructive-measurement time gap; deployable as a named foil to our point that reconstruction-from-distribution is not true paired time-course measurement. Direction tags left neutral (mostly 'nuances'/'supports') per skill rules; no verdict asserted.",
+    "OCR quirks preserved in source (e.g., 'efcient', 'profling', 'difusion', 'Te', '∈-cells' for epsilon-cells) appear elsewhere in the file; quoted excerpts above were taken from clean passages and copied verbatim."
+  ]
+}

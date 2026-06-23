@@ -1,0 +1,339 @@
+{
+  "schemaVersion": "精练-4.0",
+  "citationKey": "09",
+  "title": "A practical guide for choosing an optimal spatial transcriptomics technology from seven major commercially available options",
+  "authors": "Hyun Ju Lim, Ye Wang, Anton Buzdin, Xinmin Li",
+  "venue": "unverified; see flags",
+  "year": "2025",
+  "doi": null,
+  "readOn": "2026-06-18",
+  "sourceFile": "/Users/augustsirius/Desktop/已清洗_260617/09 - A practical guide for choosing an optimal spatial transcriptomics technology_cleaned.md",
+  "oneSentence": "A review that compares seven commercially available spatial transcriptomics platforms (10X Visium, GeoMx DSP, Visium HD, Stereoseq, Merscope, Xenium, CosMx) across cellular resolution, sensitivity, gene/protein coverage, throughput, species/tissue compatibility, and cost, and gives a decision guide for choosing a platform per research aim.",
+  "orientation": "Feeds the spatial axis and the resolution-throughput-destructiveness trade-off claims: it explicitly states that single-cell and bulk sequencing destroy spatial/structural information, motivating spatial methods (supports Claim 2). It is itself RNA-only spatial transcriptomics, so it documents the modality-narrowness gap our thesis builds on: most platforms profile transcriptome only, protein is limited or unavailable, and no platform reaches whole-transcriptome at true single-cell resolution (can serve as foil for Claims 4/6 and support for the trilemma Claim 10). It also surfaces cross-platform incomparability and lateral-diffusion/sensitivity variability (Claim 9). Non-binding routing hint.",
+  "excerpts": [
+    {
+      "id": "e1",
+      "text": "However, this functionally critical spatial information is lost in widely used bulking sequencing and popular single cell sequencing due to the disruption of tissue structural organization during the sample process.",
+      "anchor": "Background",
+      "touchpoints": [
+        {
+          "claimId": "Claim 2",
+          "direction": "supports"
+        },
+        {
+          "claimId": "轴 C · 空间（spatial）",
+          "direction": "supports"
+        }
+      ],
+      "note": "States that bulk and single-cell sequencing lose spatial information because tissue structural organization is disrupted during sample processing."
+    },
+    {
+      "id": "e2",
+      "text": "This sophisticated organization of cells in space defines the structure of living organisms and their specific functions.",
+      "anchor": "Background",
+      "touchpoints": [
+        {
+          "claimId": "Claim 7",
+          "direction": "supports"
+        }
+      ],
+      "note": "Asserts that the spatial organization of cells determines tissue structure and function."
+    },
+    {
+      "id": "e3",
+      "text": "Therefore, comprehending the precise locations where genes are expressed within highly structured tissues is essential for elucidating various fundamental biological processes, such as gene functions, gene-gene interactions, cell-cell communication, dynamic molecular and cellular processes, and microenvironmental influences [1].",
+      "anchor": "Background",
+      "touchpoints": [
+        {
+          "claimId": "Claim 7",
+          "direction": "supports"
+        }
+      ],
+      "note": "Argues that knowing spatial gene-expression locations is essential for cell-cell communication and microenvironmental influence."
+    },
+    {
+      "id": "e4",
+      "text": "Sequencing-based technologies provide whole transcriptome analysis, though most lack single-cell resolution. They typically have lower RNA capture eficiency and detection sensitivity compared to imaging-based technologies, especially for low-abundance transcripts [20].",
+      "anchor": "Sequencing-based technologies",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        }
+      ],
+      "note": "States the sequencing-vs-imaging trade-off: whole transcriptome but most lack single-cell resolution and have lower capture efficiency/sensitivity."
+    },
+    {
+      "id": "e5",
+      "text": "imaging-based technologies ofer singlecell or subcellular resolution, high RNA detection sensitivity, specificity, and reproducibility. However, they are limited to gene panels ranging from several hundred to six thousand genes, require longer imaging times varying from two days to a week or more, and have low throughput.",
+      "anchor": "Sequencing-based technologies (closing paragraph)",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        }
+      ],
+      "note": "States imaging-based platforms give single-cell/subcellular resolution but are limited to gene panels (hundreds to ~6000 genes), long imaging time, and low throughput — a resolution-vs-coverage/throughput trade-off."
+    },
+    {
+      "id": "e6",
+      "text": "The main limitation is the lack of single-cell resolution, which is due to the ≥ 55 μm spot size in Visium (the average size of a mammalian cell is typically around 10  μm in diameter) and the ≥ 50-cell ROI size (Vendor recommended) in GeoMx. Consequently, each spot or ROI captures transcripts from multiple cell types, resulting in an average or mixed gene expression signal across these cell types.",
+      "anchor": "Group 1 (G1)",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        }
+      ],
+      "note": "Quantifies that Visium 55 um spots and GeoMx >=50-cell ROIs exceed the ~10 um cell size, so each spot/ROI mixes multiple cell types into an averaged signal."
+    },
+    {
+      "id": "e7",
+      "text": "To address this limitation, deconvolution tools have been developed and commonly used in analyzing G1 data. By integrating spatial transcriptomic data with singlecell RNA sequencing data from adjacent tissue sections, deconvolution can assign specific gene expression profiles to distinct cell types within each spot, allowing for a more accurate understanding of cellular architecture in tissues [21, 22].",
+      "anchor": "Group 1 (G1)",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        }
+      ],
+      "note": "States that deconvolution integrates spatial data with single-cell RNA-seq from adjacent sections to assign cell-type profiles to spots — a multi-data integration workaround for low resolution."
+    },
+    {
+      "id": "e8",
+      "text": "However, it is important to note that feature size is not the only factor influencing actual resolution; lateral difusion during tissue permeabilization also significantly impacts the spatial accuracy of transcript detection. Stereoseq has shown notable lateral difusion in some tissues [2].",
+      "anchor": "Group 2 (G2)",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        },
+        {
+          "claimId": "轴 C · 空间（spatial）",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Notes that nominal feature size overstates true spatial accuracy because lateral diffusion during permeabilization degrades it, with Stereoseq showing notable diffusion in some tissues."
+    },
+    {
+      "id": "e9",
+      "text": "Additionally, the term ‘single-cell resolution’ can be somewhat misleading. Platforms like Visium HD and Stereo-seq can detect only a few hundred to a thousand genes when data are exported to achieve single-cell scale/resolution. This level of resolution comes at the expense of a reduced number of detectable genes. As of now, sequencing-based spatial technologies are not yet capable of delivering whole-transcriptome data at true single-cell resolution.",
+      "anchor": "Group 2 (G2)",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        }
+      ],
+      "note": "States the resolution-vs-gene-coverage trade-off: at single-cell scale Visium HD/Stereoseq detect only a few hundred to a thousand genes, and no sequencing-based spatial technology yet delivers whole-transcriptome at true single-cell resolution."
+    },
+    {
+      "id": "e10",
+      "text": "As of November 28, 2024, G2 group is limited to transcriptome analysis only.",
+      "anchor": "Group 2 (G2)",
+      "touchpoints": [
+        {
+          "claimId": "蛋白质组",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        }
+      ],
+      "note": "States that Visium HD and Stereoseq are limited to transcriptome (RNA) analysis only, with no protein readout."
+    },
+    {
+      "id": "e11",
+      "text": "As of November 28, 2024, Visium HD, Stereoseq, and Xenium are limited to transcriptomic (RNA) analysis only. The remaining platforms are capable of both RNA and protein profiling.",
+      "anchor": "Analyte",
+      "touchpoints": [
+        {
+          "claimId": "蛋白质组",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        }
+      ],
+      "note": "States that three of seven platforms are RNA-only, while the others can profile both RNA and protein — documenting limited protein coverage in spatial platforms."
+    },
+    {
+      "id": "e12",
+      "text": "Merscope enables simultaneous RNA and protein profiling on the same slide, while CosMx performs this sequentially, and Xenium does not currently support protein panel.",
+      "anchor": "Group 3 (G3)",
+      "touchpoints": [
+        {
+          "claimId": "蛋白质组",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Notes platform-specific protein capability: Merscope co-profiles RNA and protein on one slide, CosMx does so sequentially, Xenium has no protein panel."
+    },
+    {
+      "id": "e13",
+      "text": "Both Xenium and Merscope demonstrate superior specificity compared to CosMx [23]. Xenium exhibits exceptional sensitivity with FFPE tissues, while Merscope outperforms Xenium with high-quality tissue [24].",
+      "anchor": "Group 3 (G3)",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Reports benchmarking results that platforms differ in sensitivity/specificity by tissue type (Xenium/Merscope > CosMx; Xenium best on FFPE, Merscope best on high-quality tissue)."
+    },
+    {
+      "id": "e14",
+      "text": "Imaging-based platforms generally ofer superior detection sensitivity and specificity compared to sequencing-based platforms. Among sequencing technologies, probe-based methods outperform polyAbased approaches, particularly for detecting lowly expressed genes. Studies indicate that 10X Xenium and Merscope technologies provide better sensitivity and specificity than CosMx [23, 24]. Probe-based Visium technology is considered more efective than Stereo-seq [2].",
+      "anchor": "Sensitivity & specificity",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "States that sensitivity/specificity vary systematically across platforms and capture chemistries (imaging > sequencing; probe-based > polyA; Xenium/Merscope > CosMx; Visium > Stereoseq)."
+    },
+    {
+      "id": "e15",
+      "text": "Spatial transcriptomics technologies are still in the early stages of development and are rapidly evolving. The performance of each technology is likely to improve over time with ongoing advancements.",
+      "anchor": "Experimental considerations/requirements (closing)",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Concedes that spatial transcriptomics is early-stage and rapidly changing, so platform performance and any guide will need updating over time."
+    },
+    {
+      "id": "e16",
+      "text": "Spatial technologies are advancing rapidly, with key areas for further improvement, such as enhancing spatial resolution without significantly reducing the number of detectable genes for sequencing-based technologies and increasing the number of profiled genes without substantially extending scanning time for imaging-based technologies.",
+      "anchor": "Move forward",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        }
+      ],
+      "note": "Frames the central unresolved trade-offs: resolution vs gene count (sequencing-based) and gene count vs scanning time (imaging-based)."
+    },
+    {
+      "id": "e17",
+      "text": "One future direction for spatial genomics is the development of 3D spatial multiomics technologies. StellarOmics’ imaging-based in-situ sequencing technology shows great promise in this area [25]. Unlike the standard 5–10 μm thick sections used in current spatial technologies, StellarOmics can image tissue sections up to 200 μm thick, enabling multi-cell layer profiling for deeper insights into tissue architecture and function.",
+      "anchor": "Move forward",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        },
+        {
+          "claimId": "轴 C · 空间（spatial）",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Identifies 3D spatial multiomics (e.g. StellarOmics imaging thick sections up to 200 um vs standard 5-10 um) as a future direction, implying current spatial methods are largely 2D and single-modality."
+    },
+    {
+      "id": "e18",
+      "text": "the spatial content in the dataset is crucial for answering your questions that cannot be satisfactorily addressed by other simpler or more cost-efective technologies. Examples of such questions include understanding how tumor cells interact with immune cells, how the tumor microenvironment afects tumor metastasis, and how drug treatment activates immune pathways, facilitates immune cell infiltration, and impacts tumor cell viability.",
+      "anchor": "Defining your biological questions",
+      "touchpoints": [
+        {
+          "claimId": "Claim 7",
+          "direction": "supports"
+        }
+      ],
+      "note": "Gives examples where spatial context is essential (tumor-immune interaction, microenvironment effects on metastasis, drug-induced immune infiltration) that non-spatial methods cannot address."
+    }
+  ],
+  "figuresNumbers": [
+    {
+      "item": "Table 1",
+      "contains": "Comparative summary across seven platforms. Resolution: 10X Visium 55 um; GeoMx >55 um (>=50 cells/ROI); Visium HD single-cell scale (2 um feature); Stereoseq single cell (0.22 um feature); Merscope/Xenium/CosMx single cell/subcellular. Genes: Visium/GeoMx/Visium HD/Stereoseq whole transcriptome; Merscope panels ~500+~500 custom; Xenium up to 5000 genes +~100 custom; CosMx up to 6000+~200 custom. Proteins: Visium 35 sequential, GeoMx 570 sequential, Merscope 6 simultaneous, CosMx 68 sequential; Visium HD/Stereoseq/Xenium not available. Cost: Visium $3293+seq, GeoMx $3837+seq, Visium HD $6645+seq, Stereoseq $3054+seq, Merscope ~$6733, Xenium $3878, CosMx $6325 (estimated at UCLA TCGB)."
+    },
+    {
+      "item": "Feature/spot sizes (Fig. 2 / text)",
+      "contains": "Visium 55 um; Visium HD 2 um (no gap between spots); Stereoseq DNB ~0.2 um diameter with 0.5 um center-to-center distance (~0.22 um feature). Mammalian cell average ~10 um diameter."
+    },
+    {
+      "item": "Capture area",
+      "contains": "Visium HD 6.5 mm x 6.5 mm; Stereoseq options 10 mm x 10 mm and 20 mm x 30 mm. Visium/Visium HD limited to 6.5 mm x 6.5 mm; other platforms >= 10 mm x 10 mm."
+    },
+    {
+      "item": "RNA integrity thresholds",
+      "contains": "RIN >= 7 recommended for fresh tissue; DV200 >= 30% needed for FFPE tissue."
+    },
+    {
+      "item": "Cost comparison (text)",
+      "contains": "Visium HD is twice as expensive as Stereoseq for library construction despite analyzing fewer cells; Xenium is the most affordable imaging-based platform."
+    },
+    {
+      "item": "Section thickness (Move forward)",
+      "contains": "Standard spatial technologies use 5-10 um thick sections; StellarOmics can image up to 200 um thick."
+    }
+  ],
+  "primarySources": [
+    {
+      "topic": "Spatially resolved transcriptomics rationale / spatial info value",
+      "citation": "Crosetto N, Bienko M, van Oudenaarden A. Spatially resolved transcriptomics and beyond. Nat Rev Genet. 2015;16(1):57-66",
+      "refN": "1"
+    },
+    {
+      "topic": "Systematic comparison of sequencing-based spatial methods; Stereoseq lateral diffusion; Visium > Stereoseq",
+      "citation": "You Y, Fu Y, Li L, et al. Systematic comparison of sequencing-based spatial transcriptomic methods. Nat Methods. 2024;21(9):1743-54",
+      "refN": "2"
+    },
+    {
+      "topic": "Original spatial transcriptomics method (Visium precursor)",
+      "citation": "Stahl PL, Salmen F, Vickovic S, et al. Visualization and analysis of gene expression in tissue sections by spatial transcriptomics. Science. 2016;353(6294):78-82",
+      "refN": "6"
+    },
+    {
+      "topic": "GeoMx digital spatial profiling of proteins and RNA",
+      "citation": "Merritt CR, Ong GT, Church SE, et al. Multiplex digital spatial profiling of proteins and RNA in fixed tissue. Nat Biotechnol. 2020;38(5):586-99",
+      "refN": "7"
+    },
+    {
+      "topic": "Stereoseq DNB-array spatiotemporal atlas",
+      "citation": "Chen A, Liao S, Cheng M, et al. Spatiotemporal transcriptomic atlas of mouse organogenesis using DNA nanoball-patterned arrays. Cell. 2022;185(10):1777-1792",
+      "refN": "9"
+    },
+    {
+      "topic": "MERFISH / Merscope multiplexed RNA imaging",
+      "citation": "Chen KH, Boettiger AN, Moffitt JR, Wang S, Zhuang X. Spatially resolved, highly multiplexed RNA profiling in single cells. Science. 2015;348(6233):aaa6090",
+      "refN": "10"
+    },
+    {
+      "topic": "CosMx SMI high-plex RNA+protein subcellular imaging",
+      "citation": "He S, Bhatt R, Brown C, et al. High-plex imaging of RNA and proteins at subcellular resolution in fixed tissue by spatial molecular imaging. Nat Biotechnol. 2022;40(12):1794-806",
+      "refN": "12"
+    },
+    {
+      "topic": "Imaging > sequencing sensitivity/specificity; Xenium/Merscope > CosMx benchmark",
+      "citation": "Wang H, Huang R, Nelson J, et al. Systematic benchmarking of imaging spatial transcriptomics platforms in FFPE tissues. bioRxiv. 2023",
+      "refN": "23"
+    },
+    {
+      "topic": "Comparative analysis of multiplexed in situ profiling (Xenium vs Merscope by tissue quality)",
+      "citation": "Hartman A, Satija R. Comparative analysis of multiplexed in situ gene expression profiling technologies. bioRxiv. 2024",
+      "refN": "24"
+    },
+    {
+      "topic": "3D spatial single-cell transcriptomics/translatomics in thick tissue (StellarOmics)",
+      "citation": "Sui X, Lo JA, Luo S, et al. Scalable spatial single-cell transcriptomics and translatomics in 3D thick tissue blocks. bioRxiv. 2024",
+      "refN": "25"
+    }
+  ],
+  "flags": [
+    "Metadata unverified: journal/venue name is not printed in the cleaned body text. The article is Open Access, Springer Nature ('Springer Nature remains neutral...' note); likely a BMC/Springer journal but cannot be confirmed from the source — venue set to 'unverified; see flags'.",
+    "DOI unverified: no DOI for this article appears in the body; the only DOI present (10.1101/2024.06.04.597233) belongs to reference 8 (a bioRxiv preprint), not this paper. doi set to null.",
+    "Year inferred from 'Accepted: 10 January 2025 / Published online: 20 January 2025'; Received 15 October 2024.",
+    "OCR quirks preserved verbatim in excerpts and figures (e.g. 'ofering', 'diference', 'eficiency', 'difusion', 'afects', 'singlecell', 'genespecific', 'MER-SCOPE'). Not corrected per skill rule.",
+    "Scope note: this is an RNA-only spatial transcriptomics platform review (no temporal/time-course dimension, no metabolomics, protein limited to add-on panels). It documents the spatial axis and resolution/throughput/coverage trade-offs strongly, and the modality-narrowness gap by omission — a downstream writer can deploy it as support for the spatial gap and as a foil illustrating RNA-centric, modality-narrow data.",
+    "Read at source: refs #2 (You et al., Nat Methods 2024 systematic comparison), #23 (Wang et al.) and #24 (Hartman & Satija) are the primary benchmarking sources behind the sensitivity/specificity and lateral-diffusion claims; worth citing first-hand.",
+    "Source inconsistency: Table 1 lists Stereoseq feature as '0.22 um' while running text and Fig. 2 describe DNB diameter ~0.2 um / 0.22 um feature and 0.5 um center-to-center — minor numeric variation carried as-is.",
+    "Author initials/names kept exactly as printed in references; some reference author lists are clearly OCR-garbled (e.g. ref 8, 16) and were not reconstructed."
+  ]
+}

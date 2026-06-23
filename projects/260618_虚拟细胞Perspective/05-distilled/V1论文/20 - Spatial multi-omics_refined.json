@@ -1,0 +1,665 @@
+{
+  "schemaVersion": "精练-4.0",
+  "citationKey": "20",
+  "title": "Spatial multi-omics: novel tools to study the complexity of cardiovascular diseases",
+  "authors": "Paul Kiessling, Christoph Kuppe",
+  "venue": "unverified; see flags",
+  "year": "2024",
+  "doi": null,
+  "readOn": "2026-06-18",
+  "sourceFile": "/Users/augustsirius/Desktop/已清洗_260617/20 - Spatial multi-omics - novel tools to study complexity of cardiovascular diseases_cleaned.md",
+  "oneSentence": "A review of spatial multi-omics technologies and computational methods (NGS-, imaging-, and MS-based) for jointly profiling transcriptome, epigenome, proteome, and metabolome in tissue, with a focus on applications and challenges in cardiovascular disease.",
+  "orientation": "A methods/technology review squarely on the spatial axis (Axis C) plus multi-modality (Axis A) and integration/standardization (standard axis). It strongly supports our claims that dissociated single-cell data loses spatial information (Claim 2), that modalities carry non-substitutable information (Claim 4), that spatial proteomics/metabolomics are feasible and advancing (Claim 6), that microenvironment/neighborhood shapes cell state (Claim 7), that multi-omic integration is needed yet hard (Claim 8), and that the field lacks standards/benchmarks and suffers data-sharing/silo problems (Claim 9), plus resolution-throughput-cost trade-offs (Claim 10). It can also serve as a FOIL: it presents these spatial tools as already-maturing solutions and explicitly concedes severe remaining limitations (no peer review of integration tools, no benchmarks, integration ground-truth correlation < 0.5, temporal/time-course largely absent), which a writer can deploy as the very gaps our standard must close.",
+  "excerpts": [
+    {
+      "id": "e1",
+      "text": "While single-cell and single-nuclei studies of the human heart in health [11, 12] and disease [4, 13–15] have led to valuable insights, spatial information was lacking.",
+      "anchor": "Background",
+      "touchpoints": [
+        {
+          "claimId": "2",
+          "direction": "supports"
+        }
+      ],
+      "note": "States that single-cell/single-nuclei studies of the human heart lacked spatial information."
+    },
+    {
+      "id": "e2",
+      "text": "However, it has become clear that for a comprehensive understanding of intrinsic and extrinsic factors which control cell fate decisions in tissues, it is crucial to consider and include spatial molecular information.",
+      "anchor": "Background",
+      "touchpoints": [
+        {
+          "claimId": "2",
+          "direction": "supports"
+        },
+        {
+          "claimId": "7",
+          "direction": "supports"
+        }
+      ],
+      "note": "Argues spatial molecular information is essential to understand factors controlling cell fate in tissues."
+    },
+    {
+      "id": "e3",
+      "text": "Spatial biology enables researchers to observe and decode these complex patterns and communications of cells within their native tissue environments.",
+      "anchor": "Background",
+      "touchpoints": [
+        {
+          "claimId": "7",
+          "direction": "supports"
+        }
+      ],
+      "note": "Frames spatial biology as a way to observe cell communication within native tissue environments."
+    },
+    {
+      "id": "e4",
+      "text": "These technologies aim to close the gaps inherent to dissociated single-cell data providing information on the colocalization of cell types and cell states, spatial covariance of gene expression changes, and defning cellular tissue niches and how they change in disease (Fig. 1).",
+      "anchor": "NGS-sequencing-based spatial multi-omics",
+      "touchpoints": [
+        {
+          "claimId": "2",
+          "direction": "supports"
+        },
+        {
+          "claimId": "7",
+          "direction": "supports"
+        }
+      ],
+      "note": "States spatial technologies close gaps inherent to dissociated single-cell data, recovering colocalization and tissue niche information."
+    },
+    {
+      "id": "e5",
+      "text": "Spatial resolution was crucial for these fndings, as myocarditis shows distinct zonation and border zones with unique infammatory signatures that could potentially be missed in single-cell RNA sequencing studies of dissociated tissue.",
+      "anchor": "NGS-sequencing-based spatial multi-omics",
+      "touchpoints": [
+        {
+          "claimId": "2",
+          "direction": "supports"
+        },
+        {
+          "claimId": "7",
+          "direction": "supports"
+        }
+      ],
+      "note": "Gives a concrete case where spatially zonated inflammatory signatures would be missed by dissociated scRNA-seq."
+    },
+    {
+      "id": "e6",
+      "text": "Based on transcriptomic data alone, the diferentiation of naïve or mature immune cells is generally challenging, but additional protein markers such as CD45RO/ CD45RA commonly used in FACS can signifcantly aid the identifcation of the correct immune cell state.",
+      "anchor": "NGS-sequencing-based spatial multi-omics",
+      "touchpoints": [
+        {
+          "claimId": "4",
+          "direction": "supports"
+        }
+      ],
+      "note": "States transcriptome alone is insufficient to distinguish immune cell states; protein markers add non-substitutable information."
+    },
+    {
+      "id": "e7",
+      "text": "While transcriptome information is widely used to model protein expression dynamics, the genome-wide correlation between mRNA and protein is estimated to be only around 40% [60, 61].",
+      "anchor": "Non-NGS-based spatial multi-omics",
+      "touchpoints": [
+        {
+          "claimId": "4",
+          "direction": "supports"
+        }
+      ],
+      "note": "Quantifies genome-wide mRNA-protein correlation at ~40%, arguing transcriptome cannot stand in for proteome."
+    },
+    {
+      "id": "e8",
+      "text": "Furthermore, the transcriptome alone cannot provide information about processes induced by posttranslational protein modifcations, which can have important efects on cell biology.",
+      "anchor": "Non-NGS-based spatial multi-omics",
+      "touchpoints": [
+        {
+          "claimId": "4",
+          "direction": "supports"
+        }
+      ],
+      "note": "States the transcriptome cannot capture PTM-induced processes, supporting modality non-substitutability."
+    },
+    {
+      "id": "e9",
+      "text": "Compared to the transcripts, resolving the proteome at single-cell resolution or in tissues is much more challenging. Cells typically contain 30,000× more protein molecules than mRNA molecules [67], and proteins are very heterogeneous in size and structure and, unlike nucleic acids, cannot be amplifed. Tis has limited the multiplexing and throughput of spatial proteome measurements.",
+      "anchor": "Non-NGS-based spatial multi-omics",
+      "touchpoints": [
+        {
+          "claimId": "6",
+          "direction": "challenges"
+        },
+        {
+          "claimId": "10",
+          "direction": "supports"
+        }
+      ],
+      "note": "Explains why spatial proteomics is harder than transcriptomics (30,000x more protein molecules, no amplification), a concession that limits proteome throughput."
+    },
+    {
+      "id": "e10",
+      "text": "Nevertheless, enormous progress has been made in generating multiplex proteomics datasets from tissues.",
+      "anchor": "Non-NGS-based spatial multi-omics",
+      "touchpoints": [
+        {
+          "claimId": "6",
+          "direction": "supports"
+        }
+      ],
+      "note": "Asserts substantial recent progress in multiplex tissue proteomics."
+    },
+    {
+      "id": "e11",
+      "text": "Another approach to enable unbiased singlecell or spatial proteomics is based on highly sensitive LC-MS-based proteomics (reviewed here [67, 74–76]), which has been adapted to spatial proteomics as deep visual proteomics (DVP) [77, 78]. DVP combines laser-capture microdissection of distinct cell types from tissue and performs MS proteomics of the collected tissues extending bulk proteomics of the human heart [79] with cell type and spatially resolved information in the near future.",
+      "anchor": "Non-NGS-based spatial multi-omics",
+      "touchpoints": [
+        {
+          "claimId": "6",
+          "direction": "supports"
+        }
+      ],
+      "note": "Describes DVP as an unbiased MS-based spatial proteomics method extending bulk human-heart proteomics to cell-type and spatial resolution."
+    },
+    {
+      "id": "e12",
+      "text": "Spatial metabolomics has reached 5–10 μm resolution and has been recently applied to study cell-type-specifc dynamics of metabolism in kidney repair [82].",
+      "anchor": "Non-NGS-based spatial multi-omics",
+      "touchpoints": [
+        {
+          "claimId": "6",
+          "direction": "supports"
+        },
+        {
+          "claimId": "4",
+          "direction": "supports"
+        }
+      ],
+      "note": "States spatial metabolomics reached 5-10 um resolution and resolved cell-type-specific metabolic dynamics."
+    },
+    {
+      "id": "e13",
+      "text": "MALDI-MSI-based metabolomics combined with 13C-labeled nutrients allowed the authors to study the dynamics of metabolic changes at subcellular resolution. Tey subsequently used multiplexed immunofuorescence microscopy to identify cell types which seemed unnecessary, as cell types could be diferentiated just based on the lipid profles.",
+      "anchor": "Non-NGS-based spatial multi-omics",
+      "touchpoints": [
+        {
+          "claimId": "4",
+          "direction": "supports"
+        },
+        {
+          "claimId": "5",
+          "direction": "supports"
+        }
+      ],
+      "note": "Reports cell types could be distinguished from lipid/metabolite profiles alone, showing metabolomics carries cell-identity information."
+    },
+    {
+      "id": "e14",
+      "text": "We discuss the advancements in lowresolution and high-resolution spatial multi-omics methods which can resolve up to 10,000 of individual molecules at subcellular level.",
+      "anchor": "Abstract",
+      "touchpoints": [
+        {
+          "claimId": "6",
+          "direction": "supports"
+        }
+      ],
+      "note": "States spatial multi-omics methods can resolve up to 10,000 individual molecules at subcellular level."
+    },
+    {
+      "id": "e15",
+      "text": "In ISS, mRNA is labeled with specifc nucleotide sequences called padlock probes [91], which are then sequenced with rolling circle amplifcation to increase the specifcity of fuorophore binding (see Table 1). HybISS [92], or the commercialized version by 10× Genomics (Xenium), enables the detection of 100–1000 targets at subcellular resolution, including the detection of mutations.",
+      "anchor": "Spatial multi-omics technologies at single-molecular resolution",
+      "touchpoints": [
+        {
+          "claimId": "10",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Notes ISS/HybISS reach subcellular resolution but detect only 100-1000 targets, a sensitivity-versus-breadth trade-off."
+    },
+    {
+      "id": "e16",
+      "text": "In general, both ISS- and FISH-based methods require the selection of a limited number of targets to form a probe panel a priori.",
+      "anchor": "Spatial multi-omics technologies at single-molecular resolution",
+      "touchpoints": [
+        {
+          "claimId": "10",
+          "direction": "supports"
+        }
+      ],
+      "note": "States targeted imaging methods require choosing a limited a priori probe panel, a coverage trade-off."
+    },
+    {
+      "id": "e17",
+      "text": "Unbiased ST methods at subcellular resolution have been developed recently, such as Stereo-Seq [101] and SeqScope [101]. While these approaches allow subcellular resolution transcriptomics (e.g., 220-nm diameter size for Stereo-Seq), assignment of signals to specifc cells is potentially more challenging, as cell boundary stains are not available and difusion dynamics might afect the measurement.",
+      "anchor": "Spatial multi-omics technologies at single-molecular resolution",
+      "touchpoints": [
+        {
+          "claimId": "10",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Notes unbiased subcellular ST (220 nm) trades resolution against difficulty of cell assignment and diffusion artifacts."
+    },
+    {
+      "id": "e18",
+      "text": "To unlock the synergy of multi-omic measurements, integrating the datasets with each other is necessary. Tis is a nontrivial task as the data generated by diferent modalities exist in entirely diferent feature spaces.",
+      "anchor": "Integration of multi-omic datasets",
+      "touchpoints": [
+        {
+          "claimId": "8",
+          "direction": "supports"
+        }
+      ],
+      "note": "States multi-omic integration is necessary but nontrivial because modalities live in entirely different feature spaces."
+    },
+    {
+      "id": "e19",
+      "text": "Argelaguet et al. [125] proposed three categories of integration tasks: Horizontal integration is used when the same modality is measured across diferent samples. An example could be the measurement of the spatial transcriptome across multiple myocardial infarction samples. Vertical integration describes the integration of measurements in the same cells, such as co-profling of the epigenome and transcriptome in DBiT-seq. Te most challenging case is diagonal integration. Here, neither the cells nor features are shared across datasets, and integration instead relies on a strong biological signal that can be captured with diferent modalities independently from each other.",
+      "anchor": "Integration of multi-omic datasets",
+      "touchpoints": [
+        {
+          "claimId": "8",
+          "direction": "supports"
+        }
+      ],
+      "note": "Lays out the horizontal/vertical/diagonal integration taxonomy, naming diagonal (no shared cells or features) as most challenging."
+    },
+    {
+      "id": "e20",
+      "text": "In general, algorithms developed for single-cell experiments like GLUE [136], Seurat WNN [137], or totalVI [138] could be applied to spatial experiments; however, this would dissociate cells from their spatial context and ignores the cellular neighborhood, which is highly informative for integration tasks.",
+      "anchor": "Integration of multi-omic datasets",
+      "touchpoints": [
+        {
+          "claimId": "2",
+          "direction": "supports"
+        },
+        {
+          "claimId": "7",
+          "direction": "supports"
+        }
+      ],
+      "note": "Warns that applying single-cell integration algorithms dissociates cells from spatial context and ignores the informative cellular neighborhood."
+    },
+    {
+      "id": "e21",
+      "text": "While these tools show promise, it is important to note that as of the time of this article’s publication, several tools have not undergone peer review. An independent benchmark of spatial-omics integration algorithms is urgently needed and would help scientists in their choice of integration strategy and inform their experimental designs.",
+      "anchor": "Integration of multi-omic datasets",
+      "touchpoints": [
+        {
+          "claimId": "9",
+          "direction": "supports"
+        },
+        {
+          "claimId": "1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concedes many integration tools are unbenchmarked/not peer-reviewed and calls an independent benchmark urgently needed."
+    },
+    {
+      "id": "e22",
+      "text": "Cell typing is much improved when information about both transcriptome and proteome is available, as cells like NK-cells, which play a major role in infammatory heart disease [142, 143], are notoriously hard to classify based solely on their low transcript counts.",
+      "anchor": "Integration of multi-omic datasets",
+      "touchpoints": [
+        {
+          "claimId": "4",
+          "direction": "supports"
+        }
+      ],
+      "note": "Gives NK-cells as an example where transcriptome is insufficient and adding proteome improves cell typing."
+    },
+    {
+      "id": "e23",
+      "text": "It is necessary to scrutinize integrated datasets for biological plausibility, especially as a recent review of transcriptomics integration methods found that no tool reached a Pearson correlation coefcient of more than 0.5 compared to ground truth [177]. Multi-omic integration is likely even more challenging as the link between datasets is weaker.",
+      "anchor": "Computational challenges",
+      "touchpoints": [
+        {
+          "claimId": "8",
+          "direction": "supports"
+        },
+        {
+          "claimId": "1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Reports that no transcriptomics integration tool exceeded Pearson 0.5 vs ground truth, and multi-omic integration is likely harder."
+    },
+    {
+      "id": "e24",
+      "text": "At the moment, the parallel measurement of multiple modalities of the same cells in a “true” multi-omic experiment is very limited, and researchers instead rely on algorithms that diagonally integrate separate measurements or impute missing data.",
+      "anchor": "Computational challenges",
+      "touchpoints": [
+        {
+          "claimId": "8",
+          "direction": "supports"
+        },
+        {
+          "claimId": "4",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concedes true same-cell multi-modal measurement is very limited, forcing reliance on diagonal integration or imputation."
+    },
+    {
+      "id": "e25",
+      "text": "One possible way forward might be the creation of foundation models for spatial multi-omics, analogues to eforts in natural language processing [178], and single-cell transcriptomics [179–181]. Tese models, trained on a large corpus of spatial and single-cell multiomic datasets, might be able to deconvolute underlying patterns necessary for successful integrations.",
+      "anchor": "Computational challenges",
+      "touchpoints": [
+        {
+          "claimId": "8",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Proposes foundation models trained on large spatial/single-cell multi-omic corpora as a route to better integration."
+    },
+    {
+      "id": "e26",
+      "text": "As with single-cell RNA sequencing, standardized sample preparation is key for successful experiments and high data quality. Especially for the handling of tissues, standardized protocols need to be followed for tissue sampling, fxation, freezing, and tissue sectioning.",
+      "anchor": "Experimental challenges",
+      "touchpoints": [
+        {
+          "claimId": "9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Stresses that standardized sample preparation and protocols are key for data quality."
+    },
+    {
+      "id": "e27",
+      "text": "A guide on how diferent tissues should be handled for each spatial multi-omics technology is currently lacking but would greatly increase reproducibility in the feld.",
+      "anchor": "Experimental challenges",
+      "touchpoints": [
+        {
+          "claimId": "9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concedes a tissue-handling guide per technology is currently lacking, hurting reproducibility."
+    },
+    {
+      "id": "e28",
+      "text": "Despite nontrivial challenges, such as the need for standardization of experimental setups, data analysis, and improved computational tools, the application of spatial multi-omics holds tremendous potential in revolutionizing our understanding of human disease processes and the identifcation of novel biomarkers and therapeutic targets.",
+      "anchor": "Abstract",
+      "touchpoints": [
+        {
+          "claimId": "9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Names standardization of experimental setups and data analysis as a key outstanding challenge for the field."
+    },
+    {
+      "id": "e29",
+      "text": "Cell segmentation remains challenging for all imagingbased approaches, as discussed above. It is often unclear which algorithm produces the best result, as the generation of ground truth for performance evaluation relies on tedious manual annotation of the target tissue. Furthermore, the performance of segmentation algorithms is highly tissue and disease-state dependent.",
+      "anchor": "Computational challenges",
+      "touchpoints": [
+        {
+          "claimId": "9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concedes cell segmentation remains unsolved, lacks ground truth for benchmarking, and is tissue/disease-state dependent."
+    },
+    {
+      "id": "e30",
+      "text": "Several other technologies are available: CosMx [100] (NanoString), and Molecular Cartography (Resolve Biosciences). However, an independent benchmark that compares sensitivity, specifcity, and other performance metrics has not been carried out.",
+      "anchor": "Spatial multi-omics technologies at single-molecular resolution",
+      "touchpoints": [
+        {
+          "claimId": "9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Notes no independent benchmark exists comparing sensitivity/specificity across competing imaging platforms."
+    },
+    {
+      "id": "e31",
+      "text": "It remains to be seen which approach yields the most biologically relevant information, as no comparative benchmarking has been published so far.",
+      "anchor": "Cell-cell interaction in space",
+      "touchpoints": [
+        {
+          "claimId": "9",
+          "direction": "supports"
+        }
+      ],
+      "note": "States no comparative benchmarking exists for spatial cell-cell-communication algorithms."
+    },
+    {
+      "id": "e32",
+      "text": "Lastly, spatial multi-omics experiments are challenging just based on the amount of data generated. An imaging-based spatial transcriptomics measurement can generate around 5 TB of raw data (e.g., MERFISH, own experience), necessitating a robust data storage strategy to which many academic laboratories might not have access.",
+      "anchor": "Computational challenges",
+      "touchpoints": [
+        {
+          "claimId": "10",
+          "direction": "supports"
+        }
+      ],
+      "note": "Quantifies the data burden (~5 TB raw per MERFISH experiment) as a practical barrier."
+    },
+    {
+      "id": "e33",
+      "text": "Multiple platforms have been established to facilitate the sharing of data and easy inbrowser viewing of datasets [182–187]. However, these repositories remain underused, with every website only containing a small subset of published data. Ideally, scientifc journals would require sharing of data in a digestible and convenient fashion as ofered by these data stores.",
+      "anchor": "Computational challenges",
+      "touchpoints": [
+        {
+          "claimId": "9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Reports data-sharing repositories are underused and each holds only a small subset of published data, a data-silo problem."
+    },
+    {
+      "id": "e34",
+      "text": "Ecosystems that process spatial multi-omics data in a standardized way are just beginning to emerge. Of note are SpatialData [121], SpatialExperiment [122], GiottoData [123], and SeuratObject [124], which ofer data containers that can store the diverse data generated by spatial-omics experiments. Tis infrastructure is critical to unify the heterogeneous data from diferent technology-specifc vendor formats and the various images, tables, and polygons that a single experiment can generate and makes the development of analysis algorithms that “plug-and-play” possible.",
+      "anchor": "Cell segmentation",
+      "touchpoints": [
+        {
+          "claimId": "9",
+          "direction": "supports"
+        }
+      ],
+      "note": "States standardized data ecosystems are only just emerging and are needed to unify heterogeneous vendor-specific formats."
+    },
+    {
+      "id": "e35",
+      "text": "Experiments can in general be divided into exploratory investigations that aim to generate hypotheses and confrmatory experiments that aim to prove a well-designed research question. Generally speaking, methods with a larger feature scale such as NGS-based multi-omics and microdissection MS lend themselves well to an exploratory setting, while more targeted approaches like imaging-based multi-omics and ion-label MS shine in confrming well-defned research questions.",
+      "anchor": "Design considerations for spatial multi-omic experiments",
+      "touchpoints": [
+        {
+          "claimId": "10",
+          "direction": "supports"
+        }
+      ],
+      "note": "Maps the breadth-versus-targeting trade-off: large feature-scale methods for exploration, targeted methods for confirmation."
+    },
+    {
+      "id": "e36",
+      "text": "As an example, rare cells, like neuronal cells or pericytes, would best be studied with a high-resolution technique, as detection might not be possible in lower resolution measurements which confate multiple cells into spots. Te analysis of lowly expressed genes like transcription factors is best served by approaches with maximal sensitivity, such as ISS or ISH.",
+      "anchor": "Design considerations for spatial multi-omic experiments",
+      "touchpoints": [
+        {
+          "claimId": "10",
+          "direction": "supports"
+        }
+      ],
+      "note": "Notes low-resolution spot methods conflate multiple cells, illustrating a resolution-versus-coverage trade-off."
+    },
+    {
+      "id": "e37",
+      "text": "With the introduction of spatial omics with subcellular resolution, this search for patterns is not limited to a macroscopic view of tissue composition but can also be extended to structures inside cells. Te cellular location of proteins is often disturbed in disease like in familial atrial fbrillation, for example, which is caused by a mutation that impedes HSP70 import [153].",
+      "anchor": "Integration of multi-omic datasets",
+      "touchpoints": [
+        {
+          "claimId": "7",
+          "direction": "supports"
+        }
+      ],
+      "note": "Gives subcellular protein localization (HSP70 import defect in familial atrial fibrillation) as disease-relevant spatial information."
+    },
+    {
+      "id": "e38",
+      "text": "Cell morphology is another resource that remains underutilized in the analysis of spatial datasets. Cardiomyocytes and fibroblasts are known to change their cellular phenotype and morphology in response to stress, such as hypertrophy, elongation, or thickening [117]. These features offer valuable insight into cell state that could be integrated with existing omics measurements.",
+      "anchor": "Integration of multi-omic datasets",
+      "touchpoints": [
+        {
+          "claimId": "4",
+          "direction": "supports"
+        }
+      ],
+      "note": "Argues cell morphology is an underused modality carrying cell-state information that should be integrated with omics."
+    },
+    {
+      "id": "e39",
+      "text": "In MI, ANKRD1 and NPPB show a gradient across the border zone of the infarct [4], and the epicardium has been shown to contain distinct niches of plasma B cells [22].",
+      "anchor": "Integration of multi-omic datasets",
+      "touchpoints": [
+        {
+          "claimId": "7",
+          "direction": "supports"
+        }
+      ],
+      "note": "Gives spatial gene-expression gradients and niche localization in myocardial infarction as microenvironment-dependent signal."
+    },
+    {
+      "id": "e40",
+      "text": "Tis is however problematic, as most forms of cell-cell communication are short ranged and very much dependent on the spatial tissue organization.",
+      "anchor": "Cell-cell interaction in space",
+      "touchpoints": [
+        {
+          "claimId": "7",
+          "direction": "supports"
+        },
+        {
+          "claimId": "2",
+          "direction": "supports"
+        }
+      ],
+      "note": "States cell-cell communication is short-ranged and spatially dependent, so dissociated data is inadequate for it."
+    },
+    {
+      "id": "e41",
+      "text": "This task is comparatively easier, as the concordance between spatial RNA measurements and single-cell RNA seems to mostly hold across genes [126, 127].",
+      "anchor": "Integration of multi-omic datasets",
+      "touchpoints": [
+        {
+          "claimId": "8",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Notes spatial-RNA to scRNA imputation is comparatively easy because RNA concordance mostly holds across genes (same-modality case)."
+    }
+  ],
+  "figuresNumbers": [
+    {
+      "item": "mRNA-protein correlation",
+      "contains": "Genome-wide correlation between mRNA and protein estimated at only ~40% (cited refs [60, 61] in this paper)."
+    },
+    {
+      "item": "Protein vs mRNA abundance",
+      "contains": "Cells typically contain 30,000x more protein molecules than mRNA molecules [67]; proteins are heterogeneous in size and cannot be amplified."
+    },
+    {
+      "item": "Integration accuracy",
+      "contains": "A recent review of transcriptomics integration methods found no tool reached Pearson correlation > 0.5 vs ground truth [177]."
+    },
+    {
+      "item": "Table 1 (resolution)",
+      "contains": "Resolution ranges: NGS non-deterministic barcoding 1-55 um (Stereo-seq 200 nm); deterministic barcoding (DBiT-Seq) 10 um; multiplex ISH non-diffraction-limited sub-5 nm; ion-labelled antibodies 100 nm-1 um; DVP microdissection 5-10 um (cellular level)."
+    },
+    {
+      "item": "Table 1 (feature scale)",
+      "contains": "Feature scale per method: NGS RNA 10,000s / protein 100s; ISS 1000s; cyclic IF 1-200; ion-labelled antibodies 1-50; microdissection (DVP) unlimited."
+    },
+    {
+      "item": "Spatial metabolomics resolution",
+      "contains": "Spatial metabolomics has reached 5-10 um resolution; applied to cell-type-specific metabolism in kidney repair [82]."
+    },
+    {
+      "item": "Data volume",
+      "contains": "An imaging-based spatial transcriptomics measurement (e.g., MERFISH) can generate around 5 TB of raw data."
+    },
+    {
+      "item": "HybISS/Xenium target count",
+      "contains": "HybISS / Xenium enables detection of 100-1000 targets at subcellular resolution."
+    },
+    {
+      "item": "Measurement area",
+      "contains": "Measurement area ranges from mm^2 up to 13.2 cm x 13.2 cm for Stereo-seq."
+    },
+    {
+      "item": "Visium resolution",
+      "contains": "Visium resolution limited to 55-um diameter spots in a hexagonal array with 100-um distance between spot centers; HDST 2-um resolution; Slide-SeqV2 near-cellular."
+    },
+    {
+      "item": "SM-Omics throughput",
+      "contains": "SM-Omics scales up to nearly 96 libraries in a little over 2 days, at a resolution of only 100 um."
+    },
+    {
+      "item": "Single-cell scaling",
+      "contains": "Single-cell assays scaled from 1 cell [27] to 100,000s with ultrahigh throughput [28, 29] within 10 years."
+    }
+  ],
+  "primarySources": [
+    {
+      "topic": "Spatial multi-omic map of human myocardial infarction (scRNA + scATAC + ST, multiple clinical time points)",
+      "citation": "Kuppe C, Ramirez Flores RO, Li Z, Hayat S, Levinson RT, Liao X, et al. Spatial multi-omic map of human myocardial infarction. Nature. 2022;608:766-77.",
+      "refN": "4"
+    },
+    {
+      "topic": "Spatially resolved multiomics of human cardiac niches (RNA+ATAC multiome, drug2cell, 8 heart regions)",
+      "citation": "Kanemaru K, Cranley J, Muraro D, et al. Spatially resolved multiomics of human cardiac niches. Nature. 2023.",
+      "refN": "22"
+    },
+    {
+      "topic": "First high-throughput transcriptome-wide spatial transcriptomics array (basis for Visium)",
+      "citation": "Stahl PL, Salmen F, Vickovic S, et al. Visualization and analysis of gene expression in tissue sections by spatial transcriptomics. Science. 2016;353:78-82.",
+      "refN": "35"
+    },
+    {
+      "topic": "DBiT-Seq deterministic microfluidic barcoding for spatial multi-omics",
+      "citation": "Liu Y, Yang M, Deng Y, et al. High-spatial-resolution multi-omics sequencing via deterministic barcoding in tissue. Cell. 2020;183:1665-81.e18.",
+      "refN": "53"
+    },
+    {
+      "topic": "Deep Visual Proteomics (DVP) MS-based spatial proteomics",
+      "citation": "Mund A, Coscia F, Kriston A, et al. Deep visual proteomics defines single-cell identity and heterogeneity. Nat Biotechnol. 2022;40:1231-40.",
+      "refN": "77"
+    },
+    {
+      "topic": "30,000x more protein than mRNA molecules per cell; single-molecule/MS proteome sampling",
+      "citation": "MacCoss MJ, Alfaro JA, Faivre DA, et al. Sampling the proteome by emerging single-molecule and mass spectrometry methods. Nat Methods. 2023;20:339-46.",
+      "refN": "67"
+    },
+    {
+      "topic": "Spatial metabolomics of cell-type-specific metabolism in kidney repair (MALDI-MSI + 13C)",
+      "citation": "Wang G, Heijs B, Kostidis S, et al. Analyzing cell-type-specific dynamics of metabolism in kidney repair. Nat Metab. 2022;4:1109-18.",
+      "refN": "82"
+    },
+    {
+      "topic": "Three-category taxonomy of integration tasks (horizontal/vertical/diagonal)",
+      "citation": "Argelaguet R, Cuomo ASE, Stegle O, Marioni JC. Computational principles and challenges in single-cell data integration. Nat Biotechnol. 2021;39:1202-15.",
+      "refN": "125"
+    },
+    {
+      "topic": "No transcriptomics integration tool reached Pearson > 0.5 vs ground truth",
+      "citation": "Li B, Zhang W, Guo C, et al. Benchmarking spatial and single-cell transcriptomics integration methods for transcript distribution prediction and cell type deconvolution. Nat Methods. 2022;19:662-70.",
+      "refN": "177"
+    },
+    {
+      "topic": "Region- and cell-type-resolved bulk proteomic map of the human heart",
+      "citation": "Doll S, Dressen M, Geyer PE, et al. Region and cell-type resolved quantitative proteomic map of the human heart. Nat Commun. 2017;8:1469.",
+      "refN": "79"
+    }
+  ],
+  "flags": [
+    "Metadata unverified: journal/venue name not stated in the cleaned text body; this is an Open Access REVIEW, Springer Nature publisher per Publisher's Note (line 599). Likely 'Basic Research in Cardiology' or a BMC/Springer journal, but NOT confirmed from text. venue left as 'unverified; see flags'.",
+    "DOI not present in the cleaned text; doi set to null. (Numerous 10.xxxx DOIs appear only inside the reference list for cited works, not for this article.)",
+    "Dates confirmed from text: Received 15 August 2023; Accepted 2 January 2024; Published online 18 January 2024 (line 203). year set to 2024 (published-online year).",
+    "Authors confirmed from text (line 603): Paul Kiessling and Christoph Kuppe, both affiliation 1; corresponding author Christoph Kuppe.",
+    "OCR quirks preserved verbatim in excerpts (e.g., 'fbroblasts', 'infammation', 'difusion', 'profling', 'Tese'/'Te' for 'These'/'The', 'efcient'). Not corrected per skill rules.",
+    "Source inconsistency: in-text says mRNA-protein correlation '~40% [60, 61]', but refs 60/61 in the list are Wirth et al. (spatial transcriptomics) and Kishi et al. (Light-Seq), which do NOT match a classic mRNA-protein correlation source. Citation numbering for this 40% figure appears mislinked in the cleaned text; treat the [60,61] pointer with caution.",
+    "Scope note: paper is heavily cardiovascular-disease-application focused; CVD-specific biology (atherosclerosis, MI border zones, kidney repair) captured only where it doubles as evidence for a roadmap claim (spatial/microenvironment/modality), not as standalone disease content.",
+    "Temporal axis (Axis B) is largely absent from this paper: it focuses on spatial and multi-modal axes; ref [4] (Kuppe MI) and ref [41] (Yamada spatiotemporal) include 'clinical time points' / 'spatiotemporal' but the review does not treat the destructive-measurement / pairwise-observation time constraint. Relevant as a gap, not captured as a positive temporal claim.",
+    "Read at source: ref #4 (Kuppe 2022 Nature, spatial multi-omic map of human MI) and ref #22 (Kanemaru 2023 Nature, cardiac niches) are worth first-hand citation as primary spatial multi-omic atlases.",
+    "Read at source: ref #177 (Li 2022 Nat Methods) is the primary source for the 'no integration tool > 0.5 Pearson' claim and worth first-hand citation."
+  ]
+}

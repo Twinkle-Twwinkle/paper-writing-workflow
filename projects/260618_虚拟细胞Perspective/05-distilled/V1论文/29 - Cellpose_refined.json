@@ -1,0 +1,241 @@
+{
+  "schemaVersion": "精练-4.0",
+  "citationKey": "29",
+  "title": "Cellpose: a generalist algorithm for cellular segmentation",
+  "authors": "Carsen Stringer, Tim Wang, Michalis Michaelos and Marius Pachitariu",
+  "venue": "Nature Methods, 2020 (online 14 December 2020)",
+  "year": "2020",
+  "doi": "doi:10.1038/s41592-020-01018-x",
+  "readOn": "2026-06-18",
+  "sourceFile": "/Users/augustsirius/Desktop/已清洗_260617/29_cleaned.md",
+  "oneSentence": "Introduces Cellpose, a generalist deep-learning cell-segmentation method trained on a new, highly varied dataset of over 70,000 segmented objects, which segments cells across many microscopy image types without retraining or parameter adjustment, plus a 3D extension that reuses the 2D model without 3D-labeled data.",
+  "orientation": "Methods/tool paper on segmenting cells from microscopy images; an enabling prerequisite for spatial/imaging modalities (Axis A imaging, Axis C spatial). It is most useful as support for the imaging/morphology modality and for the generalization critique of specialized deep models (Claim 1): it repeatedly states that automated DL methods trained on specialized datasets do not generalize and need new human-labeled data per image type. It also concedes temporal/tracking as a not-yet-built extension (Axis B foil) and frames its community-benchmark/reproducibility angle (Claim 9). It motivates segmentation by the need to assign both RNA and protein expression to single cells.",
+  "excerpts": [
+    {
+      "id": "e1",
+      "text": "uantitative cell biology requires measurements of multiple cellular properties such as shape, position, RNA expression and protein expression<sup>1</sup>. To assign these properties to individual cells, one must first segment an image volume into cell bodies, usually based on a cytoplasmic or membrane marker<sup>2–8</sup>.",
+      "anchor": "Introduction / p.1",
+      "touchpoints": [
+        {
+          "claimId": "A",
+          "direction": "supports",
+          "otherLabel": ""
+        },
+        {
+          "claimId": "C",
+          "direction": "supports",
+          "otherLabel": ""
+        }
+      ],
+      "note": "States that single-cell quantification of multiple properties (shape, position, RNA, protein) requires first segmenting the image into cell bodies; positions imaging/segmentation as prerequisite to assigning per-cell molecular and spatial properties."
+    },
+    {
+      "id": "e2",
+      "text": "Fully automated methods have many advantages, such as reduced human effort, increased reproducibility and better scalability to big datasets from large screens. However, these methods are typically trained on specialized datasets, and do not generalize well to other types of data, requiring new human-labeled images to achieve good performance on any one image type.",
+      "anchor": "Introduction / p.1",
+      "touchpoints": [
+        {
+          "claimId": "1",
+          "direction": "supports",
+          "otherLabel": ""
+        }
+      ],
+      "note": "States that automated deep-learning segmentation methods trained on specialized datasets do not generalize to other data types and require new labeled images per image type."
+    },
+    {
+      "id": "e3",
+      "text": "Recognizing this generalization problem in the context of nuclear segmentation, a recent Data Science Bowl challenge amassed a dataset of varied images of nuclei from many different laboratories<sup>15</sup>. Methods trained on this dataset can generalize far more widely than those trained on data from a single laboratory.",
+      "anchor": "Introduction / p.1",
+      "touchpoints": [
+        {
+          "claimId": "1",
+          "direction": "supports",
+          "otherLabel": ""
+        },
+        {
+          "claimId": "9",
+          "direction": "supports",
+          "otherLabel": ""
+        }
+      ],
+      "note": "Frames the generalization problem and notes that models trained on a varied, multi-lab dataset generalize far more widely than single-lab-trained models."
+    },
+    {
+      "id": "e4",
+      "text": "Previous approaches did not perform well on this dataset, and we therefore developed a new model with better expressive power called Cellpose.",
+      "anchor": "Introduction / p.1",
+      "touchpoints": [
+        {
+          "claimId": "1",
+          "direction": "supports",
+          "otherLabel": ""
+        }
+      ],
+      "note": "States prior segmentation approaches failed on their diverse cell dataset, motivating a new, higher-capacity generalist model."
+    },
+    {
+      "id": "e5",
+      "text": "However, all models trained on the specialized data alone performed poorly on the full dataset (Fig. 4e), motivating the need for a generalist algorithm.",
+      "anchor": "Results — Benchmarks / p.3",
+      "touchpoints": [
+        {
+          "claimId": "1",
+          "direction": "supports",
+          "otherLabel": ""
+        }
+      ],
+      "note": "Specialist-trained models performed poorly on the full diverse dataset, an explicit demonstration of poor generalization of narrowly-trained data-driven models."
+    },
+    {
+      "id": "e6",
+      "text": "On the generalized data alone, the generalist Cellpose model had an average precision of 0.77 at a threshold of 0.5, significantly outperforming Mask R-CNN and Stardist that had average precisions of 0.61 and 0.61 respectively (Fig. 4g).",
+      "anchor": "Results — Benchmarks / p.3",
+      "touchpoints": [
+        {
+          "claimId": "1",
+          "direction": "supports",
+          "otherLabel": ""
+        }
+      ],
+      "note": "Quantitative generalization benchmark: generalist Cellpose AP 0.77 vs 0.61 for Mask R-CNN and Stardist on diverse generalized data at IoU 0.5."
+    },
+    {
+      "id": "e7",
+      "text": "Altogether, these results show that the inclusion of more images in the training set does not saturate the capacity of the neural network, indicating that Cellpose might have even more spare capacity for additional training data, which we hope to identify via community contributions.",
+      "anchor": "Results — Benchmarks / p.3",
+      "touchpoints": [
+        {
+          "claimId": "9",
+          "direction": "supports",
+          "otherLabel": ""
+        }
+      ],
+      "note": "Argues that adding more (diverse) training data keeps improving the model and motivates community data contribution rather than per-lab siloed datasets."
+    },
+    {
+      "id": "e8",
+      "text": "However, generalizing to out-of-sample data is a notoriously difficult problem for neural networks (for example, Fig. 4e), and more work will be needed to best take advantage of new types of training data.",
+      "anchor": "Discussion / p.4",
+      "touchpoints": [
+        {
+          "claimId": "1",
+          "direction": "supports",
+          "otherLabel": ""
+        }
+      ],
+      "note": "Author-conceded limitation: out-of-sample generalization remains a notoriously difficult problem for neural networks even with their generalist approach."
+    },
+    {
+      "id": "e9",
+      "text": "Other extensions of Cellpose are possible, for example to cell tracking<sup>40</sup>, which could be addressed by adding a ‘temporal gradient’ dimension to the spatial gradient dimensions.",
+      "anchor": "Discussion / p.4",
+      "touchpoints": [
+        {
+          "claimId": "B",
+          "direction": "challenges",
+          "otherLabel": ""
+        }
+      ],
+      "note": "Cell tracking over time is only a proposed future extension (temporal gradient), conceding that temporal/trajectory handling is not yet built into the method."
+    },
+    {
+      "id": "e10",
+      "text": "Combined with new histology methods such as spatial transcriptomics<sup>41</sup>, Cellpose has the potential to aid and enable new approaches in quantitative single-cell biology that are reproducible and scalable to large datasets.",
+      "anchor": "Discussion / p.4",
+      "touchpoints": [
+        {
+          "claimId": "C",
+          "direction": "supports",
+          "otherLabel": ""
+        },
+        {
+          "claimId": "9",
+          "direction": "supports",
+          "otherLabel": ""
+        }
+      ],
+      "note": "Positions cell segmentation as an enabler for spatial transcriptomics and reproducible, scalable single-cell biology."
+    },
+    {
+      "id": "e11",
+      "text": "We evaluated the performance of Cellpose3D and the other models on a manually annotated 3D test volume in which the DNA and RNA were costained to serve as nuclear and cytoplasmic markers, respectively (Fig. 6f). The human annotator found 183 cells, while Cellpose3D predicted 172 cells, with 17 false positives at an IoU threshold of 0.5 (Fig. 6g, Videos 1 and 2).",
+      "anchor": "Results — 3D segmentation / p.4",
+      "touchpoints": [
+        {
+          "claimId": "C",
+          "direction": "supports",
+          "otherLabel": ""
+        }
+      ],
+      "note": "Demonstrates 3D (volumetric/spatial) cell segmentation performance, extending segmentation into the spatial-volume dimension for tissue imaging."
+    },
+    {
+      "id": "e12",
+      "text": "This step can be straightforward when cells are sufficiently separated from one other, for example in monodispersed cultures in vitro. However, in many tissues, cells are tightly packed together and difficult to separate.",
+      "anchor": "Introduction / p.1",
+      "touchpoints": [
+        {
+          "claimId": "C",
+          "direction": "supports",
+          "otherLabel": ""
+        },
+        {
+          "claimId": "10",
+          "direction": "nuances",
+          "otherLabel": ""
+        }
+      ],
+      "note": "Notes segmentation is easy for dissociated/in-vitro cultures but hard for cells tightly packed in intact tissue, contrasting dissociated vs in-situ tissue contexts."
+    }
+  ],
+  "figuresNumbers": [
+    {
+      "item": "Training dataset size",
+      "contains": "New dataset of highly varied cell images containing over 70,000 segmented objects; cytoplasm dataset of 608 images (100 Cell Image Library + 508 additional; 69 reserved for testing); nucleus dataset of 1,139 images (111 reserved for testing)."
+    },
+    {
+      "item": "Specialist benchmark (Fig. 4d)",
+      "contains": "Trained/tested on specialized Cell Image Library data, at IoU 0.5 Cellpose matched 485/521 ground-truth ROI with 18 false positives, average precision 0.91, vs 0.76 for Stardist and 0.80 for Mask R-CNN."
+    },
+    {
+      "item": "Generalist benchmark (Fig. 4g)",
+      "contains": "On generalized data at IoU 0.5: generalist Cellpose AP 0.77 vs Mask R-CNN 0.61 and Stardist 0.61."
+    },
+    {
+      "item": "3D segmentation (Fig. 6g)",
+      "contains": "On a 3D cortical test volume: human annotator 183 cells; Cellpose3D 172 cells with 17 false positives at IoU 0.5; Cellpose3D outperformed ilastik, 2D-stitched methods and U-Net 3D extensions."
+    },
+    {
+      "item": "Size prediction (Extended Data Fig. 3)",
+      "contains": "Refined object-size prediction reached correlation 0.93 (cytoplasm) and 0.97 (nuclei) with ground truth on test images."
+    }
+  ],
+  "primarySources": [
+    {
+      "topic": "Multi-lab varied nuclei dataset enabling generalization (Data Science Bowl)",
+      "citation": "Caicedo, J. C. et al. Nucleus segmentation across imaging experiments: the 2018 data science bowl. Nat. Methods 16, 1247-1253 (2019)",
+      "refN": "15"
+    },
+    {
+      "topic": "Quantitative single-cell biology requires measuring multiple cellular properties (shape, position, RNA, protein)",
+      "citation": "Boutros, M., Heigwer, F. & Laufer, C. Microscopy-based high-content screening. Cell 163, 1314-1325 (2015)",
+      "refN": "1"
+    },
+    {
+      "topic": "Spatial transcriptomics as histology method segmentation can enable",
+      "citation": "Ståhl, P. L. et al. Visualization and analysis of gene expression in tissue sections by spatial transcriptomics. Science 353, 78-82 (2016)",
+      "refN": "41"
+    },
+    {
+      "topic": "Cell tracking / temporal extension of segmentation",
+      "citation": "Ulman, V. et al. An objective comparison of cell-tracking algorithms. Nat. Methods 14, 1141-1152 (2017)",
+      "refN": "40"
+    }
+  ],
+  "flags": [
+    "Metadata: venue confirmed as Nature Methods from DOI prefix 10.1038/s41592 and self-citation context; volume/issue/pages not printed in the cleaned text (online publication date 14 December 2020 is given).",
+    "OCR quirks preserved verbatim, e.g. excerpt e1 begins 'uantitative' (dropped leading 'Q'); 'Mask-R-CN'/'Mask R-CN' and 'unet' appear truncated in figure descriptions.",
+    "Scope note: this is a microscopy cell-segmentation tool paper; on-roadmap relevance is as an enabling imaging/spatial method and as evidence on poor generalization of specialized deep models (Claim 1), not a direct molecular-modality study.",
+    "Read at source: ref #15 (Caicedo 2019 Data Science Bowl) worth first-hand for the multi-lab-generalization point."
+  ]
+}

@@ -1,0 +1,457 @@
+{
+  "schemaVersion": "精练-4.0",
+  "citationKey": "05",
+  "title": "Benchmarking algorithms for generalizable single-cell perturbation response prediction",
+  "authors": "Zhiting Wei, Yiheng Wang, Yicheng Gao, Shuguang Wang, Ping Li, Duanmiao Si, Yuli Gao, Siqi Wu, Danlu Li, Kejing Dong, Xingbo Yang, Chen Tang, Shaliu Fu, Xiaohan Chen, Wannian Li, Yuzhou You, Chen Zhang, Aibin Liang, Guohui Chuai & Qi Liu",
+  "venue": "Nature Methods, 2025; unverified vol(issue):pages, see flags",
+  "year": "2025",
+  "doi": "doi:10.1038/s41592-025-02980-0",
+  "readOn": "2026-06-18",
+  "sourceFile": "/Users/augustsirius/Desktop/已清洗_260617/05 - Benchmarking algorithms for generalizable single-cell perturbation response prediction_cleaned.md",
+  "oneSentence": "A comprehensive benchmark of 27 single-cell perturbation response prediction methods (including foundation models) across 29 datasets and 6 metrics, evaluating generalizability under cellular-context and perturbation generalization scenarios, finding no one-size-fits-all method, that all methods generalize poorly to dissimilar new contexts (often worse than baselines), and that foundation models only help when fine-tuning data are large.",
+  "orientation": "Strong ammunition for our claim that data, not models, is the bottleneck (Claim 1): it shows current single-cell perturbation models—including foundation models—fail to generalize to unseen, dissimilar cellular contexts and often lose to trivial baselines, and that generalization is governed by training-test data similarity more than dataset size. It also feeds Claim 9 (incomparability/standards) by documenting how preprocessing/control/split choices flip conclusions across papers, and Claim 10 (measurement trade-offs) via the infeasibility of large-scale/combinatorial screens. It operates entirely on dissociated scRNA-seq (RNA-only, no space/time/protein), so it can be cited both as support for our thesis AND, by what it omits, as evidence of the field's modality/spatial/temporal blind spots. Non-binding routing hint.",
+  "excerpts": [
+    {
+      "id": "e1",
+      "text": "However, recent studies have continued to raise concerns regarding the true effectiveness of these models<sup>10–12</sup>. Specifically, many of these methods do not outperform baseline models or linear models on the basis of straightforward assumptions when they are evaluated across multiple datasets.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Reports that many perturbation-prediction methods, including foundation models, fail to beat simple baselines/linear models across multiple datasets."
+    },
+    {
+      "id": "e2",
+      "text": "Our study indicated that there is no ‘one-size-fits-all’ method that works well across all datasets.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "No single method generalizes across all datasets; performance is dataset-dependent."
+    },
+    {
+      "id": "e3",
+      "text": "In the cellular context generalization scenario, owing to limitations in algorithm design, that is, neglecting the specificity of perturbation responses across different cellular contexts (intercellular heterogeneity, or for simplicity inter-heterogeneity), all methods likely exhibit poor generalizability. Specifically, when predicting the effects of perturbations in a new cellular context that is quite different from the training datasets, all methods performed poorly, even worse than the baseline models;",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "All methods, including foundation models, generalize poorly to a new cellular context dissimilar from training, performing even worse than baselines."
+    },
+    {
+      "id": "e4",
+      "text": "By analyzing datasets of varying sizes, it is found that baseline models tend to perform better on smaller training datasets. In contrast, foundation models tend to perform better in terms of both prediction accuracy and generalizability, when the fine-tuning datasets are sufficiently large.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Foundation models only outperform baselines when fine-tuning data are sufficiently large; baselines win on small datasets."
+    },
+    {
+      "id": "e5",
+      "text": "Conducting large-scale perturbation screens, particularly for combined perturbations, is infeasible because of the exponential growth in complexity.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        }
+      ],
+      "note": "Large-scale and combinatorial perturbation screens are infeasible due to exponentially growing experimental complexity, motivating computational prediction."
+    },
+    {
+      "id": "e6",
+      "text": "Accuracy evaluation presents a particular challenge because of the lack of consensus on the most suitable evaluation metrics in the feld. A variety of metrics have been proposed for evaluating single-cell perturbation efect prediction performance, but their reliability and informativeness are still debated.",
+      "anchor": "Results — Evaluation metrics and assessment of methods",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "No consensus exists on suitable evaluation metrics in the field; metric reliability is still debated, complicating comparison."
+    },
+    {
+      "id": "e7",
+      "text": "This result indicated that it is still challenging for the current methods to be generalized to a new cellular context that is dissimilar to the training cellular context (Extended Data Fig. 4).",
+      "anchor": "Results — Limitations of current methods in the cellular context generalization scenario",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Current methods cannot generalize to a new cellular context dissimilar from the training context."
+    },
+    {
+      "id": "e8",
+      "text": "In summary, the analysis of the benchmark results in the cellular context generalization scenarios shows that the performance of the evaluated methods is highly dependent on the inter-heterogeneity. When predicting perturbation effects in a new cellular context that differs substantially from the training datasets, all methods likely performed unsatisfactorily, highlighting their limited generalizability.",
+      "anchor": "Results — Limitations of current methods in the cellular context generalization scenario",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Method performance depends on similarity between train and test contexts; all methods fail when the new context differs substantially."
+    },
+    {
+      "id": "e9",
+      "text": "Further analysis revealed that model performance declined on perturbations with high inter-heterogeneity, suggesting that generalization is more strongly influenced by data quality—particularly the similarity between training and testing perturbations—than by dataset size (Supplementary Fig. 29).",
+      "anchor": "Results — Limitations of current methods in the perturbation generalization scenario",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Generalization is governed more by data quality and train-test similarity than by dataset size."
+    },
+    {
+      "id": "e10",
+      "text": "As shown in our results, increasing the number of cells or perturbations in the training data did not lead to performance gains across all evaluation metrics (Supplementary Note 11 and Supplementary Figs. 13 and 14).",
+      "anchor": "Results — Limitations of current methods in the perturbation generalization scenario",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Simply adding more cells or perturbations to training data did not improve generalization across metrics."
+    },
+    {
+      "id": "e11",
+      "text": "In our study, the four baseline models and linearModel performed relatively poorly, which differs from the findings of previous studies—potentially due to differences in data preprocessing and the size of the training set (Supplementary Note 18).",
+      "anchor": "Results — Genetic perturbation setting",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Their baseline/linear-model results contradict previous studies, attributed to differences in data preprocessing and training-set size — i.e., conclusions are not comparable across papers."
+    },
+    {
+      "id": "e12",
+      "text": "In addition, recent studies suggest that for predicting gene expression profiles under combined perturbations, the simplest additive model—which predicts the effects of combined perturbations as the sum of the effects of two single perturbations—often outperforms complex deep learning models or foundation models such as scGPT<sup>12</sup>. However, these conclusions were derived from a single dataset.",
+      "anchor": "Results — Benchmarking analysis of the perturbation generalization scenario",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 9",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Cites prior finding that a simple additive model often beats deep/foundation models for combined perturbations, while noting that conclusion came from only a single dataset."
+    },
+    {
+      "id": "e13",
+      "text": "It is surprising that models relying on unaligned natural language embeddings outperform those leveraging transcriptome-informed embeddings.",
+      "anchor": "Results — Genetic perturbation setting",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "nuances"
+        }
+      ],
+      "note": "LLM/natural-language-derived gene embeddings outperform transcriptome-informed (single-cell foundation model) embeddings for genetic perturbation prediction."
+    },
+    {
+      "id": "e14",
+      "text": "These results indicate that LLM-derived gene embeddings may capture high-level functional and contextual knowledge that is otherwise hard to extract from gene expression data alone.",
+      "anchor": "Results — Genetic perturbation setting",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Suggests functional/contextual knowledge useful for prediction is hard to extract from gene expression (RNA) data alone."
+    },
+    {
+      "id": "e15",
+      "text": "In the combined-perturbation dataset, baseReg outperformed CPA on all six metrics, highlighting the current gap in methods for chemical perturbation prediction, particularly in combinatorial contexts (Fig. 5b).",
+      "anchor": "Results — Chemical perturbation setting",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "A simple regression baseline beat the deep model CPA on all six metrics for combined chemical perturbations."
+    },
+    {
+      "id": "e16",
+      "text": "We observed that all methods likely performed poorly on population-distribution metrics especially on the Common-DEGs metric in genetic perturbation scenarios. For instance, in genetic single-perturbation datasets, even the best-performing model, baseMLP, identified fewer than 10 of 100 true most differentially expressed genes (Fig. 5f).",
+      "anchor": "Results — Limitations of current methods in the perturbation generalization scenario",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Even the best model recovers fewer than 10 of 100 true most differentially expressed genes, showing poor distribution-level prediction."
+    },
+    {
+      "id": "e17",
+      "text": "However, biolord and scDisInFact did not outperform the tools that did not incorporate covariates on these datasets (Fig. 2c).",
+      "anchor": "Results — Benchmarking analysis for the cellular context generalization scenario",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Methods that incorporate time-point/dosage covariate metadata did not outperform methods that ignore covariates."
+    },
+    {
+      "id": "e18",
+      "text": "Models that consider covariates affecting cellular responses provide more accurate predictions of single-cell perturbation effects. However, most existing tools do not incorporate covariates, and those that do are still far from being sufficiently accurate. Given the increasing availability of multi-condition data in the single-cell perturbation field, there is a pressing need to develop high-performing models tailored for multi-condition data, which can fully exploit covariate information to achieve improved prediction accuracy.",
+      "anchor": "Results — Benchmarking analysis for the cellular context generalization scenario (summary)",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Most tools ignore covariates (e.g., time-point/dosage); incorporating them helps but current models remain insufficiently accurate, calling for models tailored to multi-condition data."
+    },
+    {
+      "id": "e19",
+      "text": "However, understanding the heterogeneity within cellular subpopulations in response to perturbations is vital for revealing gene functions and regulatory networks.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Other",
+          "direction": "supports",
+          "otherLabel": "Single-cell heterogeneity / distribution-level information matters beyond population averages"
+        }
+      ],
+      "note": "Argues capturing subpopulation-level heterogeneity in perturbation response is essential, not just average effects."
+    },
+    {
+      "id": "e20",
+      "text": "All current methods likely exhibited poor generalizability, especially when predicting perturbation effects in novel cellular contexts. To alleviate this, we propose incorporating prior knowledge through cell-line embeddings, which can improve model generalizability (Supplementary Notes 12 and 13 and Supplementary Figs. 27, 28 and 38).",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "All methods generalize poorly to novel cellular contexts; authors propose cell-line embeddings (prior knowledge) as a mitigation."
+    },
+    {
+      "id": "e21",
+      "text": "While the proposed cellular context embedding strategy represents a conceptually promising direction, its current performance demonstrates only limited improvements—mainly in the PCC-delta and Common-DEGs metrics—and does not consistently surpass baseline methods across evaluation metrics on all the evaluated datasets.",
+      "anchor": "Discussion — limitations",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Their own proposed cell-context embedding fix gives only limited, inconsistent improvement and does not reliably beat baselines."
+    },
+    {
+      "id": "e22",
+      "text": "Our proposed cellular context embedding strategy is currently applicable only to cell-line-derived contexts and cannot be directly applied to patient-derived contexts (Supplementary Note 12);",
+      "anchor": "Discussion — limitations",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Authors concede their embedding strategy works only for cell-line contexts and does not transfer to patient-derived contexts."
+    },
+    {
+      "id": "e23",
+      "text": "Our current work does not address the challenge of poor performance on population-distribution metrics, which reflect a model’s ability to capture intracellular heterogeneity. Addressing this limitation remains an important direction for future research;",
+      "anchor": "Discussion — limitations",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Authors concede the field has not solved poor distribution-level prediction, which reflects failure to capture single-cell heterogeneity."
+    },
+    {
+      "id": "e24",
+      "text": "There is an urgent need to establish more diverse and comprehensive single-cell perturbation atlases. Similarly to how large-scale single-cell atlases have accelerated algorithmic development in the broader single-cell field, systematically building perturbation-focused cell atlases could catalyze progress in perturbation effect prediction.",
+      "anchor": "Discussion — looking ahead",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Calls for larger, more diverse, systematically built perturbation data atlases as the prerequisite to advance prediction methods — data-first framing."
+    },
+    {
+      "id": "e25",
+      "text": "Notably, Rood et al. have proposed the concept of a ‘perturbation cell atlas’, highlighting the value of such systematic efforts for the community<sup>55</sup>. Large-scale resources such as Tahoe-100M and X-Atlas have begun to fill this gap by providing comprehensive perturbation datasets, which lay a strong foundation for future benchmarking and systematic evaluation of foundation model performance<sup>56,57</sup>;",
+      "anchor": "Discussion — looking ahead",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Points to a 'perturbation cell atlas' concept and large new datasets (Tahoe-100M, X-Atlas) as the foundation needed for benchmarking and foundation-model evaluation."
+    },
+    {
+      "id": "e26",
+      "text": "Future work may further explore the integration of prior biological knowledge—such as gene regulatory networks or pathway information—into model design to enhance generalization across a wide range of cellular contexts. Incorporating biological priors could substantially improve the robustness and interpretability of perturbation prediction models;",
+      "anchor": "Discussion — looking ahead",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Suggests integrating prior biological knowledge (gene regulatory networks, pathways) to improve generalization — information beyond raw expression."
+    },
+    {
+      "id": "e27",
+      "text": "One limitation of our current robustness evaluation framework is that it primarily focuses on the effects of technical artifacts, such as noise and sparsity. While this allows us to systematically assess the sensitivity of predictive models to common experimental distortions, it does not capture biological variability in perturbation responses across different cellular contexts or genetic backgrounds.",
+      "anchor": "Discussion — limitations",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Concedes robustness evaluation covers only technical noise/sparsity, not biological variability across contexts or genetic backgrounds."
+    },
+    {
+      "id": "e28",
+      "text": "As the noise and sparsity in the data increased, the performance of all methods decreased markedly (Fig. 2g). We also noted that the performance of the algorithms deteriorated more severely for high-sparsity data, indicating that their performance is more sensitive to data sparsity (Fig. 2b).",
+      "anchor": "Results — Benchmarking analysis for the cellular context generalization scenario",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "All methods degrade markedly with increasing data noise and sparsity, and are especially sensitive to sparsity (a data-quality factor)."
+    }
+  ],
+  "figuresNumbers": [
+    {
+      "item": "Benchmark scale (abstract / Discussion)",
+      "contains": "27 methods (23 published + 4 baseline) benchmarked across 29 datasets using 6 metrics (MSE, PCC-delta, E-distance, Wasserstein distance, KL-divergence, Common-DEGs)."
+    },
+    {
+      "item": "Cellular context generalization scenario",
+      "contains": "14 methods compared across 12 datasets (8 cross-cell-line, 3 cross-patient, 1 cross-species; 7 single-condition, 5 multi-condition); 477,677 cells and 73 perturbations."
+    },
+    {
+      "item": "Perturbation generalization scenario",
+      "contains": "18 methods across 17 datasets (13 genetic: 9 single + 4 combined; 4 chemical: 3 single + 1 combined); perturbation counts range 25 to 1,618; 1,588,215 cells and 4,874 perturbations."
+    },
+    {
+      "item": "Haber dataset (cellular context)",
+      "contains": "Top method reached average PCC-delta 0.86, but UMAP showed substantial discrepancy between predicted and ground-truth distributions; on average only ~10% of true most differentially expressed genes recovered."
+    },
+    {
+      "item": "Afriat vs KaggleCrossCell (Fig. 2c)",
+      "contains": "Afriat: trainMean baseline reached median PCC-delta 0.92, average 0.85. KaggleCrossCell: all ML models poor, median PCC-delta 0.54, average 0.52."
+    },
+    {
+      "item": "Common-DEGs in genetic single-perturbation (Fig. 5f)",
+      "contains": "Best model baseMLP identified fewer than 10 of 100 true most differentially expressed genes."
+    },
+    {
+      "item": "ANOVA of inter- vs intra-heterogeneity (text tables, p.391/393)",
+      "contains": "MSE: inter-heterogeneity F=45.481, P=9.16e-09; intra-heterogeneity F=1.628, P=0.207. PCC-delta: inter-heterogeneity F=8.463, P=0.005; intra-heterogeneity F=0.304, P=0.584. Inter-heterogeneity (between-context) dominates, intra not significant."
+    },
+    {
+      "item": "Metric selection",
+      "contains": "Literature survey over 28 tools/benchmarks identified 19 evaluation metrics; 6 retained (3 population-average: MSE, E-distance, PCC-delta; 3 population-distribution: Wasserstein, KL-divergence, Common-DEGs); metrics computed for all genes and for top 100 most differentially expressed genes."
+    }
+  ],
+  "primarySources": [
+    {
+      "topic": "Deep-learning perturbation prediction does not yet beat simple linear baselines (additive model beats scGPT on combined perturbations)",
+      "citation": "Ahlmann-Eltze, C., Huber, W. & Anders, S. Deep-learning-based gene perturbation effect prediction does not yet outperform simple linear baselines. Nat. Methods 22, 1657–1661 (2025)",
+      "refN": "12"
+    },
+    {
+      "topic": "scGPT single-cell foundation model",
+      "citation": "Cui, H. et al. scGPT: toward building a foundation model for single-cell multi-omics using generative AI. Nat. Methods 21, 1470–1480 (2024)",
+      "refN": "7"
+    },
+    {
+      "topic": "scFoundation large-scale single-cell foundation model",
+      "citation": "Hao, M. et al. Large-scale foundation model on single-cell transcriptomics. Nat. Methods 21, 1481–1491 (2024)",
+      "refN": "6"
+    },
+    {
+      "topic": "GEARS — predicting unseen multigene perturbations via gene-gene knowledge graph",
+      "citation": "Roohani, Y., Huang, K. & Leskovec, J. Predicting transcriptional outcomes of novel multigene perturbations with GEARS. Nat. Biotechnol. 42, 927–935 (2024)",
+      "refN": "5"
+    },
+    {
+      "topic": "scGen — variational autoencoder for cross-context perturbation prediction",
+      "citation": "Lotfollahi, M., Wolf, F. A. & Theis, F. J. scGen predicts single-cell perturbation responses. Nat. Methods 16, 715–721 (2019)",
+      "refN": "4"
+    },
+    {
+      "topic": "scPerturb harmonized perturbation data and E-distance metric",
+      "citation": "Peidli, S. et al. scPerturb: harmonized single-cell perturbation data. Nat. Methods 21, 531–540 (2024)",
+      "refN": "13"
+    },
+    {
+      "topic": "PerturBench — benchmarking ML models for cellular perturbation analysis",
+      "citation": "Wu, Y. et al. PerturBench: benchmarking machine learning models for cellular perturbation analysis. Preprint arXiv:2408.10609 (2024)",
+      "refN": "10"
+    },
+    {
+      "topic": "Foundation models for perturbation underperform simple PCA",
+      "citation": "Bendidi, I. et al. Benchmarking transcriptomics foundation models for perturbation analysis: one PCA still rules them all. Preprint arXiv:2410.13956 (2024)",
+      "refN": "11"
+    },
+    {
+      "topic": "Perturbation cell and tissue atlas — toward a foundation model of causal cell/tissue biology",
+      "citation": "Rood, J. E., Hupalowska, A. & Regev, A. Toward a foundation model of causal cell and tissue biology with a perturbation cell and tissue atlas. Cell 187, 4520–4545 (2024)",
+      "refN": "55"
+    },
+    {
+      "topic": "Tahoe-100M giga-scale single-cell perturbation atlas",
+      "citation": "Zhang, J. et al. Tahoe-100M: a giga-scale single-cell perturbation atlas for context-dependent gene function and cellular modeling. Preprint bioRxiv 2025.02.20.639398 (2025)",
+      "refN": "56"
+    },
+    {
+      "topic": "Optimal distance metrics for single-cell RNA-seq populations (basis for metric choice)",
+      "citation": "Ji, Y. et al. Optimal distance metrics for single-cell RNA-seq populations. Preprint bioRxiv 2023.12.26.572833 (2023)",
+      "refN": "47"
+    }
+  ],
+  "flags": [
+    "Metadata partially unverified: venue confirmed as Nature Methods (DOI prefix s41592; peer-review note 'Nature Methods thanks Yi Zhao'; corresponding author Qi Liu), year 2025 (copyright 2025; 'Last updated by author(s): Oct. 31, 2025'), but exact volume/issue/page numbers are not present in the cleaned text — left unasserted in venue.",
+    "DOI 10.1038/s41592-025-02980-0 confirmed from in-text links (Online content, Extended data, Supplementary information).",
+    "Internal source inconsistency: in-text 'study by Ji et al.' (Methods) and 'comprehensive benchmark by Jing et al.' (Evaluation metrics section) both point to ref 47 (Ji, Y. et al.); 'Jing et al.' appears to be a typo for 'Ji et al.' in the cleaned MD.",
+    "Method-count inconsistency in source: abstract/Discussion state 27 methods and 29 datasets total; per-scenario counts (14 + 18 methods, 12 + 17 datasets) overlap because some methods/baselines are shared across scenarios — not additive.",
+    "OCR quirks preserved verbatim in several excerpts and figuresNumbers (e.g., 'feld', 'efect', 'efciency', 'profles', 'Replogel' vs 'Replogle', superscript ref markers like <sup>10–12</sup>).",
+    "Scope note: this paper operates entirely on dissociated scRNA-seq perturbation data (RNA-only); it does not address spatial organization (Claim 2/7), temporal trajectories / destructive-measurement pairing (Claim 3), or protein/other modalities (Claim 5/6) directly. Its relevance to those axes is by omission, not by explicit statement — touchpoints conservatively confined to Claims 1, 4, 9, 10 plus one 'Other'.",
+    "Read at source: refs #12 (Ahlmann-Eltze 2025), #10 (PerturBench), #11 (Bendidi 'one PCA rules them all'), and #55 (Rood perturbation atlas) are worth citing first-hand for the 'simple baselines beat deep/foundation models' and 'data-atlas-as-prerequisite' arguments.",
+    "Scope note: cell/perturbation totals (477,677 cells / 73 perturbations; 1,588,215 cells / 4,874 perturbations) are taken from the Reporting Summary 'Sample size' field, not the main Results text."
+  ]
+}

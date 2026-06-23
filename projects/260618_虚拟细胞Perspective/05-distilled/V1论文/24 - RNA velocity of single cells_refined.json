@@ -1,0 +1,237 @@
+{
+  "schemaVersion": "精练-4.0",
+  "citationKey": "24",
+  "title": "RNA velocity of single cells",
+  "authors": "Gioele La Manno, Ruslan Soldatov, Amit Zeisel, Emelie Braun, Hannah Hochgerner, Viktor Petukhov, Katja Lidschreiber, Maria E. Kastriti, Peter Lönnerberg, Alessandro Furlan, Jean Fan, Lars E. Borm, Zehua Liu, David van Bruggen, Jimin Guo, Xiaoling He, Roger Barker, Erik Sundström, Gonçalo Castelo-Branco, Patrick Cramer, Igor Adameyko, Sten Linnarsson, Peter V. Kharchenko",
+  "venue": "Nature, 2018; volume/pages unverified, see flags",
+  "year": "2018",
+  "doi": "doi:10.1038/s41586-018-0414-6",
+  "readOn": "2026-06-18",
+  "sourceFile": "/Users/augustsirius/Desktop/已清洗_260617/24_cleaned.md",
+  "oneSentence": "Introduces RNA velocity—the time derivative of gene expression estimated from the ratio of unspliced to spliced mRNA already present in standard single-cell RNA-seq—and uses it to predict each cell's near-future transcriptional state and reconstruct directed differentiation lineages in mouse and human tissues.",
+  "orientation": "Sits squarely on roadmap Claim 3 (destructive sequencing cannot pair-observe the same cell over time). It explicitly concedes that scRNA-seq yields only a static snapshot (supports our problem framing) yet its central contribution is a computational route to recover temporal dynamics from that one snapshot—the very 'infer time from a distribution rather than a real trajectory' approach we critique—so it is a strong candidate FOIL for Claim 3 (and a methodological neighbour of Waddington-OT / lineage tracing). It is purely transcriptomic, so it also lightly touches Claim 4 (modality narrowness) as an instance of RNA-only inference; its limitations on extrapolation horizon and failure modes are useful nuance.",
+  "excerpts": [
+    {
+      "id": "e1",
+      "text": "However, this approach captures only a static snapshot at a point in time, posing a challenge for the analysis of time-resolved phenomena such as embryogenesis or tissue regeneration.",
+      "anchor": "Abstract / Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "supports"
+        },
+        {
+          "claimId": "轴 B · 时间（temporal）",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concedes that single-cell RNA-seq measures only a static snapshot and cannot directly observe time-resolved processes."
+    },
+    {
+      "id": "e2",
+      "text": "Here we show that RNA velocity—the time derivative of the gene expression state—can be directly estimated by distinguishing between unspliced and spliced mRNAs in common single-cell RNA sequencing protocols. RNA velocity is a high-dimensional vector that predicts the future state of individual cells on a timescale of hours.",
+      "anchor": "Abstract",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "challenges"
+        },
+        {
+          "claimId": "轴 B · 时间（temporal）",
+          "direction": "challenges"
+        }
+      ],
+      "note": "Proposes inferring per-cell future state (a temporal dynamic) computationally from a single static snapshot, rather than from paired longitudinal measurement."
+    },
+    {
+      "id": "e3",
+      "text": "During development, differentiation occurs on a timescale of hours to days, which is comparable to the typical half-life of mRNA. The relative abundance of nascent (unspliced) and mature (spliced) mRNA can be exploited to estimate the rates of gene splicing and degradation, without the need for metabolic labelling, as previously shown in bulk2–4.",
+      "anchor": "Main text, para 2",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "challenges"
+        }
+      ],
+      "note": "States the inference mechanism: dynamics are reconstructed from the unspliced/spliced ratio within one sample, exploiting mRNA kinetics rather than tracking the same cell over time."
+    },
+    {
+      "id": "e4",
+      "text": "The balance of unspliced and spliced mRNA abundance is, therefore, an indicator of the future state of mature mRNA abundance, and thus the future state of the cell.",
+      "anchor": "Main text, model section",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "challenges"
+        }
+      ],
+      "note": "Core claim that a single-timepoint molecular ratio predicts the cell's future state."
+    },
+    {
+      "id": "e5",
+      "text": "RNA velocity estimates of the individual cells accurately recapitulated the transcriptional dynamics within this dataset, including general movement of the differentiating cells towards a chromaffin fate (Fig. 2d), as well as the movement towards and away from the intermediate differentiation state.",
+      "anchor": "Main text (chromaffin cells)",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "challenges"
+        }
+      ],
+      "note": "Reports that computationally inferred velocity matched the true differentiation direction validated by lineage tracing."
+    },
+    {
+      "id": "e6",
+      "text": "On the basis of pulse labelling of chromaffin progenitor cells with 5-ethynyl-2′-deoxyuridine (EdU) (Supplementary Note 2 Section 6), we estimate that we were able to extrapolate 2.5–3.8 h into the future (Fig. 2f, g), which is also consistent with the ability to resolve cell-cycle events. Given the linear nature of the extrapolation, however, this predictive timescale will depend on the shape of the gene expression trajectory (that is, the curvature of the expression manifold).",
+      "anchor": "Main text (timescale of extrapolation)",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "nuances"
+        },
+        {
+          "claimId": "轴 B · 时间（temporal）",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Concedes the inferred temporal horizon is short (a few hours) and trajectory-shape dependent—an admitted limit of recovering time from one snapshot."
+    },
+    {
+      "id": "e7",
+      "text": "Because cells can have RNA velocities along multiple independent components simultaneously, such as differentiation, maturation and proliferation, care must be taken when interpreting low-dimensional representations, as cells that lack apparent velocity in one particular embedding can nevertheless have substantial velocity in some subspace that is not visualized.",
+      "anchor": "Main text (visualization caveats)",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Author-conceded interpretive caveat: inferred velocity is embedding-dependent and can be missed or misread."
+    },
+    {
+      "id": "e8",
+      "text": "Failures in specific cases had several apparent causes, including genes observed exclusively far from equilibrium, uneven contribution of non-coding transcripts, and alternative splicing leading to multiple rates of γ across the measured populations (Supplementary Note 2 Section 4).",
+      "anchor": "Main text (generality / robustness)",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Author-conceded failure modes of the velocity inference at the gene level."
+    },
+    {
+      "id": "e9",
+      "text": "Using a Markov random-walk model on the velocity field, the terminal and root states could be automatically identified (Fig. 3c), demonstrating the power of RNA velocity to orient the lineage tree without prior knowledge about the developmental process.",
+      "anchor": "Main text (hippocampus lineage)",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "challenges"
+        }
+      ],
+      "note": "Claims the directed lineage tree (root and terminal states) can be reconstructed from a single snapshot without prior developmental knowledge."
+    },
+    {
+      "id": "e10",
+      "text": "Examining two adjacent neuroblasts just at the entrance to the branching point between CA and granule fates (Fig. 3e), we found that although their current states were neighbours (in gene-expression space), their futures were already tilted towards different fates, distinguished by activation of Prox1 (Fig. 3c, inset).",
+      "anchor": "Main text (fate choice)",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "challenges"
+        }
+      ],
+      "note": "Argues future fate of individual cells can be read from present molecular state even when current expression states are nearly identical."
+    },
+    {
+      "id": "e11",
+      "text": "As RNA velocity is grounded in real transcription kinetics, this approach promises to bring a more solid quantitative foundation to our understanding of the dynamics of cells in gene-expression space during differentiation.",
+      "anchor": "Main text, closing paragraph",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "challenges"
+        }
+      ],
+      "note": "Positions the method as a quantitatively grounded substitute for direct temporal observation of differentiation dynamics."
+    },
+    {
+      "id": "e12",
+      "text": "RNA abundance is a powerful indicator of the state of individual cells. Single-cell RNA sequencing can reveal RNA abundance with high quantitative accuracy, sensitivity and throughput1.",
+      "anchor": "Introduction (opening)",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "challenges"
+        }
+      ],
+      "note": "Frames cell state through RNA abundance alone; an instance of RNA-centric reasoning where transcript level stands in for cell state."
+    },
+    {
+      "id": "e13",
+      "text": "Metabolic labelling showed that for most genes, changes in the spliced/unspliced ratio would be detectable after 10–100 min (Extended Data Fig. 2).",
+      "anchor": "Main text (timescale)",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Quantifies the kinetic detection window underlying velocity, bounding the temporal resolution recoverable from one snapshot."
+    }
+  ],
+  "figuresNumbers": [
+    {
+      "item": "Unspliced read fraction",
+      "contains": "15–25% of reads contained unspliced intronic sequences across SMART-seq2, STRT/C1, inDrop and 10x Genomics Chromium protocols; in agreement with bulk (14.6%) and single-cell (~20%) prior observations."
+    },
+    {
+      "item": "First-order kinetics fit",
+      "contains": "83% of all genes displayed expression time courses consistent with simple first-order kinetics (consistent with unspliced reads representing nascent mRNA); Extended Data Fig. 2 reports 83.4% concordant vs 16.6% discordant genes."
+    },
+    {
+      "item": "Single vs double gamma",
+      "contains": "Steady-state behaviour of most genes consistent with a single fixed slope γ; 11% (Extended Data Fig. 3: 10.8%) of genes showed distinct slopes in different tissue subsets, suggesting tissue-specific splicing/degradation."
+    },
+    {
+      "item": "Extrapolation horizon",
+      "contains": "Velocity extrapolated 2.5–3.8 h into the future (chromaffin); distribution mode of optimal extrapolation time = 2.1 h (Fig. 2g)."
+    },
+    {
+      "item": "Detection window",
+      "contains": "Changes in spliced/unspliced ratio detectable after 10–100 min (Extended Data Fig. 2)."
+    },
+    {
+      "item": "Validation correlation",
+      "contains": "Most genes showed positive correlation between velocity estimates and empirically observed expression derivatives; 75% of genes differentially regulated along pseudotime showed positive correlation with the empirical derivative (Extended Data Fig. 8)."
+    },
+    {
+      "item": "Dataset sizes",
+      "contains": "Mouse hippocampus n = 18,213 cells (P0: 8,113; P5: 10,100); chromaffin E12.5 n = 385; human forebrain glutamatergic n = 1,720 (post-conception week 10); oligodendrocytes n = 6,307; bone marrow n = 3,018; intestinal epithelium n = 2,683."
+    }
+  ],
+  "primarySources": [
+    {
+      "topic": "Original simple model of transcriptional dynamics (coupled pre-mRNA/mRNA) underlying velocity",
+      "citation": "Zeisel, A. et al. Coupled pre-mRNA and mRNA dynamics unveil operational strategies underlying transcriptional responses to stimuli. Mol. Syst. Biol. 7, 529 (2011)",
+      "refN": "2"
+    },
+    {
+      "topic": "Prior demonstration of estimating splicing/degradation rates from intronic vs exonic reads in bulk RNA-seq",
+      "citation": "Gaidatzis, D., Burger, L., Florescu, M. & Stadler, M. B. Analysis of intronic and exonic reads in RNA-seq data characterizes transcriptional and posttranscriptional regulation. Nat. Biotechnol. 33, 722–729 (2015)",
+      "refN": "4"
+    },
+    {
+      "topic": "Lineage-tracing validation: chromaffin cells arise from Schwann cell precursors (test case for velocity direction)",
+      "citation": "Furlan, A. et al. Multipotent peripheral glial cells generate neuroendocrine cells of the adrenal medulla. Science 357, eaal3753 (2017)",
+      "refN": "13"
+    }
+  ],
+  "flags": [
+    "Metadata partially unverified: text confirms journal Nature, year 2018, DOI 10.1038/s41586-018-0414-6, Received 13 Dec 2017, Accepted 3 Jul 2018, Published online 8 Aug 2018; volume and page range are NOT stated in the source and are left unverified in venue.",
+    "OCR quirks kept verbatim in excerpts and references: 'u= γs', 'SMARTseq2', 'principle component analysis (PCA)' (sic), reference superscript markers rendered inline as digits (e.g. 'protocols1', 'metabolic labelling2–4').",
+    "Source inconsistency in reference list: ref 18 (Plass et al., Science 360, eaaq1723, 2018) carries a title duplicated from ref 17 (Iwano et al., Prox1...)—an OCR/typesetting error in the cleaned MD; the correct ref 18 is the planarian whole-organism single-cell lineage atlas. Title not used as a primary source here due to the corruption.",
+    "Scope note: bulk of the paper is methodological (velocity estimation, splicing biology, pipeline parameters) and developmental-neuroscience application, which is off-roadmap; only the temporal-inference framing (Claim 3) and the RNA-only-as-cell-state framing (Claim 4) were captured.",
+    "Read at source: ref #2 (Zeisel 2011) and ref #4 (Gaidatzis 2015) are the first-hand origins of the velocity model/intronic-read approach—worth citing directly rather than via this paper."
+  ]
+}

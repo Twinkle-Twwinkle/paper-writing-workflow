@@ -1,0 +1,328 @@
+{
+  "schemaVersion": "精练-4.0",
+  "citationKey": "14",
+  "title": "Deep Profiling of Mouse Splenic Architecture with CODEX Multiplexed Imaging",
+  "authors": "Yury Goltsev, Nikolay Samusik, Julia Kennedy-Darling, Salil Bhate, Matthew Hale, Gustavo Vazquez, Sarah Black, Garry P. Nolan",
+  "venue": "Cell, 2018 (volume/pages unverified; see flags)",
+  "year": "2018",
+  "doi": "doi:10.1016/j.cell.2018.07.010",
+  "readOn": "2026-06-18",
+  "sourceFile": "/Users/augustsirius/Desktop/已清洗_260617/14 - Deep Profiling of Mouse Splenic Architecture with CODEX Multiplexed Imaging_cleaned.md",
+  "oneSentence": "Introduces CODEX, a DNA-barcode/primer-extension highly multiplexed in situ imaging method that quantifies ~30 protein markers at single-cell resolution in intact tissue sections, and applies it to normal and lupus (MRL/lpr) mouse spleens to map cell types, cellular neighborhoods (i-niches), and how local neighborhood shapes surface-marker expression and disease-associated tissue reorganization.",
+  "orientation": "Strong support for the spatial axis (Claim 2 / axis C) and for protein/imaging modality (axis A) as a non-disruptive in-situ alternative to dissociated cytometry; it directly demonstrates that dissociation loses resident/stromal cell types and that local neighborhood (i-niche) drives a measurable fraction of surface-protein expression variance (Claim 7). It also bears on multimodal/integration (Claim 8) and on quantitative cross-method comparability/standardization (Claim 9). Can serve as both ally (protein + spatial in situ is feasible and informative) and as a foil illustrating what dissociated single-cell measurement discards. Note: this is a single-timepoint imaging method with no temporal/lineage tracking, so it is mostly silent on the temporal axis.",
+  "excerpts": [
+    {
+      "id": "e1",
+      "text": "Compared to CyTOF data on splenocytes isolated from non-enzymatically homogenized spleen, CODEX in situ analysis produced a similar distribution of cell counts for major cell type. Yet being a non-disruptive technique CODEX identified larger numbers of resident and stromal cell types such as erythroblasts and F4/80 macrophages than CyTOF did (Figure 3E).",
+      "anchor": "Results — Benchmarking CODEX",
+      "touchpoints": [
+        {
+          "claimId": "Claim 2",
+          "direction": "supports"
+        },
+        {
+          "claimId": "axis C",
+          "direction": "supports"
+        }
+      ],
+      "note": "In situ (non-dissociative) measurement recovers resident and stromal cell types that dissociation-based cytometry under-counts."
+    },
+    {
+      "id": "e2",
+      "text": "We observed an unexpected, profound impact of the cellular neighborhood on the expression of protein receptors on immune cells.",
+      "anchor": "Summary",
+      "touchpoints": [
+        {
+          "claimId": "Claim 7",
+          "direction": "supports"
+        },
+        {
+          "claimId": "axis C",
+          "direction": "supports"
+        }
+      ],
+      "note": "States the central spatial finding: cellular neighborhood strongly affects protein receptor expression on cells."
+    },
+    {
+      "id": "e3",
+      "text": "Taken together, we see that surface-marker expression alone is insufficient to associate many cell subsets with a given tissue subcompartment (e.g., CD4<sup>+</sup> T cells can be found both in the PALS and in the red pulp). However, i-niche designation does provide such mapping data",
+      "anchor": "Results — Pairwise and Combinatorial (i-niches) Statistics",
+      "touchpoints": [
+        {
+          "claimId": "Claim 7",
+          "direction": "supports"
+        },
+        {
+          "claimId": "axis C",
+          "direction": "supports"
+        }
+      ],
+      "note": "Marker identity alone cannot place a cell in a tissue subcompartment; spatial neighborhood (i-niche) information is required."
+    },
+    {
+      "id": "e4",
+      "text": "These observations suggest that the spread of the CD79b-B220 levels as well as of other marker levels on splenic B cells could be, to a large degree, accounted for by the niche composition around those B cells—and that the expression levels on these cells might be influenced by (or influences) the cells in their immediate surrounding.",
+      "anchor": "Results — Cell-Surface-Marker Expression Depends on Local Neighborhood",
+      "touchpoints": [
+        {
+          "claimId": "Claim 7",
+          "direction": "supports"
+        }
+      ],
+      "note": "Variance in protein marker levels on B cells is largely attributable to spatial niche composition, not just intrinsic noise."
+    },
+    {
+      "id": "e5",
+      "text": "Notably, adding the i-niche information as a dependent variable significantly improved the fitness of the model for all markers (Table S4) with highest improvement F-values for CD90, B220, CD21/35, and ERTR7 and the lowest prediction rates for Ly6G, CD5, CD11b, CD5, and TCR-b.",
+      "anchor": "Results — Cell-Surface-Marker Expression Depends on Local Neighborhood",
+      "touchpoints": [
+        {
+          "claimId": "Claim 7",
+          "direction": "supports"
+        }
+      ],
+      "note": "Quantitative regression: spatial neighborhood identity significantly improves prediction of protein marker expression for all markers, strongly for some."
+    },
+    {
+      "id": "e6",
+      "text": "As a counter point, the data also show that i-niche does not reliably predict expression of other proteins, such as CD5 or TCR-b, the expression levels of these receptors is relatively constant across the i-niches (Figure 4E).",
+      "anchor": "Results — Cell-Surface-Marker Expression Depends on Local Neighborhood",
+      "touchpoints": [
+        {
+          "claimId": "Claim 7",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Conceded nuance: spatial neighborhood does not drive all proteins; some marker levels are neighborhood-independent."
+    },
+    {
+      "id": "e7",
+      "text": "Such a distribution of expression is sometimes attributed to staining variability, measurement noise, or a simple lack of understanding of the underlying biology. However, as seen on Figure 4H, upper-left panel, there is a non-random pattern of CD79b and B220 expression across the central cell of the corresponding i-niches, and, depending on the B220/CD79b levels, the i-niches (the central cells) map to specific regions in the splenic architecture",
+      "anchor": "Results — Cell-Surface-Marker Expression Depends on Local Neighborhood",
+      "touchpoints": [
+        {
+          "claimId": "Claim 7",
+          "direction": "supports"
+        }
+      ],
+      "note": "Protein-level spread once dismissed as noise is shown to be spatially structured and to map to anatomical location."
+    },
+    {
+      "id": "e8",
+      "text": "In other words, what immunologists previously thought of as a single cell type could be subdivided into more subtle cell subsets that are defined by the neighborhood in which they reside.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 7",
+          "direction": "supports"
+        }
+      ],
+      "note": "Spatial context resolves additional functional cell subsets beyond what marker phenotype alone defines."
+    },
+    {
+      "id": "e9",
+      "text": "Unexpectedly, a consistently high degree of association was observed between the cells of the same phenotypic class (Figure 3G, red diagonal), suggesting that homotypic adhesion constitutes a major force driving the architecture of immune tissue.",
+      "anchor": "Results — Pairwise and Combinatorial (i-niches) Statistics",
+      "touchpoints": [
+        {
+          "claimId": "axis C",
+          "direction": "supports"
+        }
+      ],
+      "note": "Spatial organization of tissue is non-random and governed by cell-cell association rules detectable only with spatial data."
+    },
+    {
+      "id": "e10",
+      "text": "From these observations and their quantitative analysis, we concluded that it is largely the change in cell numbers rather than in cellular interaction strength (estimated from ratio of observed to expected probability of interaction) that is involved in reorganization of spleen during transition from norm to autoimmunity.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 7",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Disease-associated tissue reorganization is driven mainly by shifts in cell-type frequency rather than changes in pairwise interaction affinity."
+    },
+    {
+      "id": "e11",
+      "text": "We found some examples supporting that, whereby the proximity of CD4 T cells to B220<sup>+</sup> DN T leads to CD4 T cell activation in spleens of MRL/lpr mice: Figure 6C shows increased levels of CD27 expression in CD4 T cells present in i-niches dominated by B220<sup>+</sup> DN T cells",
+      "anchor": "Results — Reorganization of Cells in Disease-Associated Tissue Substructures",
+      "touchpoints": [
+        {
+          "claimId": "Claim 7",
+          "direction": "supports"
+        }
+      ],
+      "note": "Spatial proximity to a disease-associated cell type changes a protein activation marker (CD27) on neighboring CD4 T cells."
+    },
+    {
+      "id": "e12",
+      "text": "Antigen co-expression signals from CODEX, obtained from image segmentation (see STAR Methods), were consistently similar to CyTOF (Figure 2B, for direct comparability, both CODEX and CyTOF data are plotted on a linear scale).",
+      "anchor": "Results — Benchmarking CODEX",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "In situ protein quantification benchmarks consistently against an orthogonal single-cell method (CyTOF), supporting cross-platform comparability."
+    },
+    {
+      "id": "e13",
+      "text": "Accurate highly multiplexed singlecell quantification of membrane protein expression in densely packed lymphoid tissue images (which was once deemed impossible [Gerner et al., 2012]) was achieved using polymerase-driven incorporation of dye-labeled nucleotides into the DNA tag of oligonucleotide-conjugated antibodies, combined with an image-based expression estimation algorithm.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        },
+        {
+          "claimId": "axis A",
+          "direction": "supports"
+        }
+      ],
+      "note": "Demonstrates feasibility of high-plex single-cell protein quantification in situ in intact tissue."
+    },
+    {
+      "id": "e14",
+      "text": "A consistent performance of CODEX in codetecting up to 66 antigens was demonstrated, and the ‘‘activation primer’’-based extension of the system could enable a potentially vast expansion of CODEX multiplexing capacity.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        },
+        {
+          "claimId": "axis A",
+          "direction": "supports"
+        }
+      ],
+      "note": "Reports multiplexing depth (up to 66 antigens) with a design path to higher multiplexing for spatial protein measurement."
+    },
+    {
+      "id": "e15",
+      "text": "Thus, panel-activator design extends CODEX to a theoretically unlimited multiplexing capacity, bounded only by the speed and resolution of the imaging process itself and the time required for each imaging cycle.",
+      "anchor": "Results — Single Base Primer Extension Enables Multiplexed Antigen Staining",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Spatial protein multiplexing is bounded by imaging speed/resolution and per-cycle time — a throughput trade-off on the measurement side."
+    },
+    {
+      "id": "e16",
+      "text": "the data collected in this study lays the foundation for a pan-cellular reference database defining cellular types not only by identities of proteins expressed, but also by definitions for specific cell-to-cell interactions. We performed deep characterization here for normal and diseased tissue from such a perspective of cell-cell arrangements and present here, for the research community, a large ( 700,000 cells) public dataset encompassing segmentation, quantification, and, most uniquely, spatial data from normal and diseaseafflicted spleens",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        },
+        {
+          "claimId": "axis C",
+          "direction": "supports"
+        }
+      ],
+      "note": "Proposes that a cell-type reference should be defined by protein identity plus spatial cell-cell interactions, and releases a large spatial single-cell dataset."
+    },
+    {
+      "id": "e17",
+      "text": "Recent advances in genomics suggest that, despite the vastness of a genetic repertoire, there exist only a limited number of cellular states with a concomitantly limited gene expression pattern. These countable, limited patterns are reflected in the expression of surface-marker phenotypes recognizable as cell types. It is therefore reasonable to suggest that cell-to-cell interactions should be limited as well and falling into repeated patterns.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "axis C",
+          "direction": "supports"
+        }
+      ],
+      "note": "Argues spatial cell-cell interaction patterns are finite and recurrent, hence learnable/standardizable like cell-state catalogs."
+    },
+    {
+      "id": "e18",
+      "text": "Tissue locale (i-niches) is a powerful indicator of potential differential function (to the extent tissue locale drives function), and these deterministic changes in surface marker protein expression are surrogate indicators of this locale or function.",
+      "anchor": "Results — Cell-Surface-Marker Expression Depends on Local Neighborhood",
+      "touchpoints": [
+        {
+          "claimId": "Claim 7",
+          "direction": "supports"
+        }
+      ],
+      "note": "Links spatial tissue location to differential function, read out via protein marker changes."
+    }
+  ],
+  "figuresNumbers": [
+    {
+      "item": "Dataset size",
+      "contains": "A total of 734,101 segmented cells across 9 spleens; reduced to 707,466 after removing artifact clusters; grouped into 27 broadly defined phenotypic groups (from 58 X-shift clusters)."
+    },
+    {
+      "item": "Cohort",
+      "contains": "3 wild-type/normal BALBc spleens and 6 MRL/lpr spleens (early: MRL-4,-5,-6; intermediate: MRL-7,-8; late: MRL-9); 9-month-old female mice."
+    },
+    {
+      "item": "Disease changes",
+      "contains": "Strong variation in cell counts between norm and disease for 19 of 27 cell types identified by X-shift clustering."
+    },
+    {
+      "item": "Driver analysis (Fig 5D-E)",
+      "contains": "No correlation (R2 = 0.058) between interaction count change and odds-ratio change; correlation (R2 = 0.288) between cell-count change and interaction count change. Of 26 top-scoring pairs (FDR <0.05, count change >150), only 2 showed significant odds-ratio change."
+    },
+    {
+      "item": "CODEX performance stats (Fig S1F / table)",
+      "contains": "Signal-to-noise ~85:1 (avg over 15 cycles); fluorophore removal efficiency ~98%; signal deterioration ~0.79% per cycle; background starts ~1.1% and increases ~0.06% per cycle; spillover compensation gives ~2-fold reduction in spillover signal."
+    },
+    {
+      "item": "Multiplexing",
+      "contains": "30-antibody panel for spleen; 22-plex detected thrice (66 total detections) via primer-dependent subpanels; main spleen imaging acquired 28 DNA-conjugated antibodies over 14 cycles plus 2 fluorescent antibodies and 1 nuclear stain = 31 channels."
+    },
+    {
+      "item": "Segmentation accuracy (Fig S1H-J / table)",
+      "contains": "Algorithm correctly identified 87.25% +/- 2.89% of cells (BALBc), of which 89.88% +/- 1.12% were singlets; MRL 88.50% +/- 5.31%, singlets 92.09% +/- 4.41%."
+    },
+    {
+      "item": "Neural network",
+      "contains": "Fully convolutional network (VGG-16 initialized layers 5-16) classified normal vs MRL/lpr image patches at ~90% precision in cross-validation; a spatial-information-free logistic-regression baseline could not distinguish patches."
+    },
+    {
+      "item": "Imaging resolution",
+      "contains": "40x oil objective, 188 nm/pixel lateral, 900 nm axial, 11 z-planes per tile, 7x9 tiled acquisition; final images x=9702 y=9072 z=11; ~3.5 hr for a 30-antibody visualization."
+    }
+  ],
+  "primarySources": [
+    {
+      "topic": "Mass cytometry (CyTOF) used as the orthogonal single-cell benchmark for CODEX protein quantification",
+      "citation": "Bendall et al. 2011, Science 332:687-696",
+      "refN": null
+    },
+    {
+      "topic": "Histo-cytometry — prior high-plex quantitative tissue imaging the paper builds on / once deemed impossible",
+      "citation": "Gerner, Kastenmuller, Ifrim, Kabat, Germain 2012, Immunity 37:364-376",
+      "refN": null
+    },
+    {
+      "topic": "X-shift automated phenotype mapping algorithm applied to the spatial single-cell data",
+      "citation": "Samusik, Good, Spitzer, Davis, Nolan 2016, Nat. Methods 13:493-496",
+      "refN": null
+    },
+    {
+      "topic": "ERTR7 stromal fiber role in T cell trafficking (interpretation of T cell / ERTR7 niche association)",
+      "citation": "Burrell, Warren, Nakayama, Iwami, Brinkman, Bromberg 2015, Transplantation 99:1119-1125",
+      "refN": null
+    },
+    {
+      "topic": "Prior multiplexed fluorescence imaging approaches requiring iterative stain/strip/wash cycles",
+      "citation": "Schubert et al. 2006, Nat. Biotechnol. 24:1270-1278; Gerdes et al. 2013, Proc. Natl. Acad. Sci. USA 110:11982-11987",
+      "refN": null
+    }
+  ],
+  "flags": [
+    "Metadata partially unverified: venue confirmed as Cell from DOI prefix (10.1016/j.cell.2018.07.010) and self-citation style, but exact volume/issue/page range is not printed in the cleaned text (this is Cell 174(4):968-981, e.g., per external knowledge, not asserted from the file).",
+    "Dates from body: Received September 22, 2017; Revised February 5, 2018; Accepted July 3, 2018; Published August 2, 2018.",
+    "Authors printed with full given names in the author block (line 357); kept verbatim.",
+    "Scope note: temporal axis (axis B / Claim 3) not addressed — CODEX as used here is single-timepoint, no lineage/trajectory; disease 'progression' is reconstructed by staging separate fixed samples, not by tracking the same cells over time.",
+    "OCR quirks kept verbatim in excerpts (e.g. '<sup>+</sup>', '<sub>-</sub>85:1' style markers in source); section header 'BEFERENCES'/'DECLARATIONOE INTERESTS' are OCR errors in the source.",
+    "Numbers ~85:1, ~98%, ~0.79%, ~1.1%, ~0.06% appear in source with '<sub>-</sub>' (approximately) prefixes that render imperfectly; treated as approximate values."
+  ]
+}

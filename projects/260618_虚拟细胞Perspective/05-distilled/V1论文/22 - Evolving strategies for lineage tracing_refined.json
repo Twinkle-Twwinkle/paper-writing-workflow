@@ -1,0 +1,514 @@
+{
+  "schemaVersion": "精练-4.0",
+  "citationKey": "22",
+  "title": "Evolving strategies for lineage tracing: Genetic markers, synthetic barcodes, and natural variants",
+  "authors": "Z.K., H.C., S.L., S.-W.W., B.Z. (full names not printed in cleaned source; author initials from AUTHOR CONTRIBUTIONS; B.Z. is a member of the Cell Stem Cell Advisory Board)",
+  "venue": "unverified; see flags",
+  "year": "unverified; see flags",
+  "doi": null,
+  "readOn": "2026-06-18",
+  "sourceFile": "/Users/augustsirius/Desktop/已清洗_260617/22 - Evolving strategies for lineage tracing - genetic markers synthetic barcodes and natural variants_cleaned.md",
+  "oneSentence": "A review synthesizing three methodological pillars of lineage tracing (prospective genetic markers, high-throughput synthetic DNA barcodes, and retrospective endogenous natural variants), their integration with single-cell multi-omics and spatial profiling, and the computational tools used to link lineage history to cell state and decode cell fate.",
+  "orientation": "A methods review centered on reconstructing temporal lineage history and integrating it with cell state and spatial context. It feeds the temporal axis (Claim 3) most strongly: it details how destructive single-cell sequencing precludes paired before/after observation, forcing reliance on barcodes/variants to retrospectively reconstruct phylogenies, and it documents the limits of state-only trajectory inference (pseudotime/RNA velocity) lacking true temporal constraints. It also bears on the spatial axis (Claim 2/7) via spatial lineage tracing, on multi-omics integration (Claim 8), and on standards/comparability caveats (Claim 9). It can serve as support (it concedes the destructive, non-paired, transcriptome-only limitations our thesis builds on) and as a named opponent/nuance (it offers concrete workarounds and warns that transcriptomic similarity does not equal lineage similarity). Non-binding routing hint.",
+  "excerpts": [
+    {
+      "id": "e1",
+      "text": "Tools such as CaTCH and ClonMapper overcome the destructive nature of single-cell sequencing by using targeted CRISPR activation to induce fluorescent reporters only in specifically barcoded cells, enabling physical isolation of live clones of interest.",
+      "anchor": "Synthetic lineage tracing / Static barcoding",
+      "touchpoints": [
+        {
+          "claimId": "3",
+          "direction": "supports"
+        }
+      ],
+      "note": "Explicitly names single-cell sequencing as destructive, motivating live-clone-recall methods to work around it."
+    },
+    {
+      "id": "e2",
+      "text": "Both genetic markers and synthetic barcodes rely on transgenic engineering, precluding their use in human subjects. To uncover natural fate paths and functional outputs directly within native human tissues, retrospective lineage tracing is required— leveraging endogenous variants that accumulate during cell division",
+      "anchor": "Natural lineage tracing with endogenous variants",
+      "touchpoints": [
+        {
+          "claimId": "3",
+          "direction": "supports"
+        }
+      ],
+      "note": "States that lineage history in human tissue must be reconstructed retrospectively from accumulated variants, because prospective transgenic labeling is impossible."
+    },
+    {
+      "id": "e3",
+      "text": "Although scRNA-seq data alone can be utilized to infer differentiation dynamics via pseudotime analysis or RNA velocity, these approaches are inherently limited by the absence of true temporal constraints and are shown to perform poorly in distinguishing early fate bias among progenitors. By explicitly integrating lineage history with transcriptomic state information, the underlying differentiation processes can be captured with significantly higher fidelity.",
+      "anchor": "Computational integration of lineage and state dynamics",
+      "touchpoints": [
+        {
+          "claimId": "3",
+          "direction": "supports"
+        },
+        {
+          "claimId": "1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Claims transcriptome-only trajectory inference lacks true temporal constraints and fails at early fate bias; real lineage history is needed for fidelity."
+    },
+    {
+      "id": "e4",
+      "text": "For instance, LARRY revealed that hematopoietic progenitors commit to specific lineages days before these fate biases manifest transcriptomically.",
+      "anchor": "Synthetic lineage tracing / Static barcoding",
+      "touchpoints": [
+        {
+          "claimId": "3",
+          "direction": "supports"
+        },
+        {
+          "claimId": "4",
+          "direction": "supports"
+        }
+      ],
+      "note": "States that fate commitment precedes its transcriptomic manifestation, so RNA state alone misses lineage commitment timing."
+    },
+    {
+      "id": "e5",
+      "text": "However, these multimodal integrations must be applied cautiously, as transcriptomic similarity does not inherently dictate lineage similarity.",
+      "anchor": "Practical challenges in synthetic lineage tracing",
+      "touchpoints": [
+        {
+          "claimId": "4",
+          "direction": "supports"
+        },
+        {
+          "claimId": "8",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Cautions that transcriptomic similarity is not equivalent to lineage relationship; the two modalities carry distinct information."
+    },
+    {
+      "id": "e6",
+      "text": "their foundational assumption that lineage similarity dictates fate similarity must be applied cautiously, as it may fail in contexts of divergent or convergent differentiation.",
+      "anchor": "Computational integration of lineage and state dynamics",
+      "touchpoints": [
+        {
+          "claimId": "8",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Warns that optimal-transport lineage-OT methods can fail when lineage and fate diverge; integration assumptions are not always valid."
+    },
+    {
+      "id": "e7",
+      "text": "Crucially, these barcodes can be directly integrated with single-cell sequencing to enable high-resolution state-to-fate mapping.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "8",
+          "direction": "supports"
+        }
+      ],
+      "note": "States synthetic barcodes can be co-captured with the single-cell transcriptome to jointly map state and fate."
+    },
+    {
+      "id": "e8",
+      "text": "CellTag-multi jointly profiles lineage barcodes and chromatin accessibility in single cells and computationally integrates these data with RNA modalities to enhance fate prediction. Pushing further, Camellia-seq captures lineage barcodes alongside transcriptomic, chromatin accessibility, and DNA methylation profiles.",
+      "anchor": "Integrating lineage history with molecular and spatial states",
+      "touchpoints": [
+        {
+          "claimId": "8",
+          "direction": "supports"
+        }
+      ],
+      "note": "Documents multi-omic readouts (lineage + RNA + ATAC + DNA methylation) co-captured in single cells to improve fate prediction."
+    },
+    {
+      "id": "e9",
+      "text": "In human contexts, MethylTree enables non-invasive, multi-omics lineage tracing by jointly profiling RNA expression and DNA methylation, allowing analysis of lineage, transcriptome, and epigenome in single cells.",
+      "anchor": "Integrating lineage history with molecular and spatial states",
+      "touchpoints": [
+        {
+          "claimId": "8",
+          "direction": "supports"
+        },
+        {
+          "claimId": "4",
+          "direction": "supports"
+        }
+      ],
+      "note": "States that joint RNA + DNA-methylation profiling adds an epigenomic lineage layer beyond the transcriptome in human single cells."
+    },
+    {
+      "id": "e10",
+      "text": "Integrating barcode information with spatial location represents another critical frontier for dissecting how cell-cell interactions and native microenvironments shape cell fate.",
+      "anchor": "Integrating lineage history with molecular and spatial states",
+      "touchpoints": [
+        {
+          "claimId": "7",
+          "direction": "supports"
+        },
+        {
+          "claimId": "2",
+          "direction": "supports"
+        }
+      ],
+      "note": "States that recovering spatial location alongside lineage is needed to capture how microenvironment and cell-cell interactions shape fate."
+    },
+    {
+      "id": "e11",
+      "text": "Although labeled cells can be sorted for single-cell profiling, the lack of lineage barcode diversity fundamentally limits resolution at the single-cell level.",
+      "anchor": "Integrating lineage history with molecular and spatial states",
+      "touchpoints": [
+        {
+          "claimId": "2",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Notes a trade-off: dissociation-and-sort profiling forfeits the native spatial architecture that classic marker tracing preserves."
+    },
+    {
+      "id": "e12",
+      "text": "Recent advancements in spatial profiling—progressing from the 55-μm spots of Visium to the 500-nm resolution of Stereoseq—have enabled spatial lineage tracing with synthetic barcodes at high resolution, albeit at high cost.",
+      "anchor": "Integrating lineage history with molecular and spatial states",
+      "touchpoints": [
+        {
+          "claimId": "2",
+          "direction": "supports"
+        },
+        {
+          "claimId": "10",
+          "direction": "supports"
+        }
+      ],
+      "note": "Quantifies spatial resolution gains (Visium 55 um to Stereo-seq 500 nm) enabling high-resolution spatial lineage tracing at higher cost."
+    },
+    {
+      "id": "e13",
+      "text": "Classic marker-based lineage tracing inherently captures spatial information at low cost and high throughput.",
+      "anchor": "Integrating lineage history with molecular and spatial states",
+      "touchpoints": [
+        {
+          "claimId": "2",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Notes that imaging-based marker tracing natively preserves spatial context, unlike dissociative sequencing readouts."
+    },
+    {
+      "id": "e14",
+      "text": "However, this approach incurs higher costs and, compared with imaging-based methods, currently offers lower spatial resolution—though newer techniques such as Stereoseq now achieve 500 nm resolution.",
+      "anchor": "Practical design guidance",
+      "touchpoints": [
+        {
+          "claimId": "10",
+          "direction": "supports"
+        }
+      ],
+      "note": "Articulates a resolution-vs-cost-vs-throughput trade-off across sequencing-based and imaging-based spatial readouts."
+    },
+    {
+      "id": "e15",
+      "text": "Ultimately, the choice of platform is dictated by the competing needs for phylogenetic depth versus the preservation of the native physical microenvironment.",
+      "anchor": "Integrating lineage history with molecular and spatial states",
+      "touchpoints": [
+        {
+          "claimId": "10",
+          "direction": "supports"
+        }
+      ],
+      "note": "Frames a core trade-off: deep lineage resolution versus preserving native spatial microenvironment."
+    },
+    {
+      "id": "e16",
+      "text": "The utility of these variants depends on their faithful mitotic inheritance. Generally, stability follows a clear hierarchy: DNA sequence > DNA methylation > histone modifications > chromatin accessibility (assay for transposaseaccessible chromatin [ATAC]) and RNA expression (Figure 4A). Whereas DNA sequences are stably inherited across successive divisions, ATAC and transcriptomic profiles fluctuate dynamically in response to state changes",
+      "anchor": "Natural lineage tracing with endogenous variants",
+      "touchpoints": [
+        {
+          "claimId": "4",
+          "direction": "supports"
+        }
+      ],
+      "note": "Ranks heritable stability across molecular layers; states RNA/ATAC fluctuate while DNA sequence and methylation are stably inherited, distinguishing modalities by information content."
+    },
+    {
+      "id": "e17",
+      "text": "Highlighting this hierarchy, multi-omics tracing recently demonstrated that DNA methylation patterns of HSCs retain robust clonal memory from embryonic development through adulthood, whereas ATAC and RNA states do not.",
+      "anchor": "Natural lineage tracing with endogenous variants",
+      "touchpoints": [
+        {
+          "claimId": "4",
+          "direction": "supports"
+        }
+      ],
+      "note": "States DNA methylation carries durable clonal memory that RNA and chromatin-accessibility states do not, evidence that modalities are non-interchangeable."
+    },
+    {
+      "id": "e18",
+      "text": "Because the mitochondrial genome mutates at a 10- to 100-fold higher rate than the nuclear genome and is highly transcribed, these variants serve as abundant endogenous barcodes.",
+      "anchor": "Resolving histories via mitochondrial DNA mutations",
+      "touchpoints": [
+        {
+          "claimId": "3",
+          "direction": "supports"
+        }
+      ],
+      "note": "Quantifies mtDNA mutation rate (10-100x nuclear) enabling endogenous barcoding co-captured with cell state on standard single-cell platforms."
+    },
+    {
+      "id": "e19",
+      "text": "Although SNVs should, in principle, offer the highest fidelity for phylogenetic reconstruction, their extremely low natural mutation rate (roughly one per cell division) makes them difficult to detect against background sequencing errors.",
+      "anchor": "Resolving histories via somatic DNA mutations",
+      "touchpoints": [
+        {
+          "claimId": "3",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Quantifies the limit of retrospective SNV tracing: ~1 mutation per division is hard to detect against sequencing noise."
+    },
+    {
+      "id": "e20",
+      "text": "high-resolution phylogenetic trees can be reconstructed, where branch lengths directly correlate with elapsed time",
+      "anchor": "Resolving histories via somatic DNA mutations",
+      "touchpoints": [
+        {
+          "claimId": "3",
+          "direction": "nuances"
+        }
+      ],
+      "note": "States that colony-WGS SNV phylogenies can encode real elapsed time in branch lengths, a partial recovery of the temporal axis from endogenous variants."
+    },
+    {
+      "id": "e21",
+      "text": "the ability to jointly profile somatic mutations and transcriptomic states represents a major leap forward for natural variant tracing in human tissues.",
+      "anchor": "Resolving histories via somatic DNA mutations",
+      "touchpoints": [
+        {
+          "claimId": "8",
+          "direction": "supports"
+        }
+      ],
+      "note": "Notes that joint capture of somatic mutations and transcriptome from the same cell advances human lineage tracing."
+    },
+    {
+      "id": "e22",
+      "text": "However, mitochondrial tracing introduces severe biologica and analytical limitations due to the non-deterministic inheritance of mtDNA. Because mitochondria segregate randomly during cell division, heteroplasmic mutations are subjected to intracellular selection and neutral drift, driving variants toward either complete fixation or total loss in descendant cells.",
+      "anchor": "Resolving histories via mitochondrial DNA mutations",
+      "touchpoints": [
+        {
+          "claimId": "3",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Concedes mtDNA drift/random segregation make phylogenetic reconstruction error-prone, limiting it to short-term clonal events."
+    },
+    {
+      "id": "e23",
+      "text": "This creates a severe structural bottleneck known as ‘‘inter-site dropout,’’ where a single large deletion can erase previously encoded mutations, irreversibly destroy ancestral information, and fragment the downstream phylogenetic tree.",
+      "anchor": "Synthetic lineage tracing / Evolvable barcoding",
+      "touchpoints": [
+        {
+          "claimId": "3",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Describes a structural failure mode of CRISPR cumulative barcodes: edits overwrite ancestral information, limiting recoverable temporal depth."
+    },
+    {
+      "id": "e24",
+      "text": "The second challenge is data sparsity, which occurs when only a small fraction of cells within a clone are ultimately sampled (Figure 3Cb). This incomplete capture can create the illusion of smaller, highly coherent clones, leading to erroneous conclusions of early fate priming. Sparsity stems from two main factors: the high cost of deep single-cell sequencing and the low barcode recovery rates typical of many in vivo synthetic barcodes—the CARLIN mouse model, for instance, recovers only about 10% of barcodes.",
+      "anchor": "Practical challenges in synthetic lineage tracing",
+      "touchpoints": [
+        {
+          "claimId": "9",
+          "direction": "supports"
+        },
+        {
+          "claimId": "10",
+          "direction": "supports"
+        }
+      ],
+      "note": "Quantifies data sparsity and low barcode recovery (CARLIN ~10%); warns sparse sampling produces erroneous fate conclusions."
+    },
+    {
+      "id": "e25",
+      "text": "To circumvent this artifact, the effective diversity of the barcode library should be empirically assessed and must vastly outnumber the target population size at the time of labeling; specifically, achieving an error rate below 1% requires a barcode diversity at least 100 times larger than the target population.",
+      "anchor": "Practical challenges in synthetic lineage tracing",
+      "touchpoints": [
+        {
+          "claimId": "9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Gives a quantitative design standard (100x diversity for <1% homoplasy error) needed for reliable, comparable barcode-based clonal analysis."
+    },
+    {
+      "id": "e26",
+      "text": "To further mitigate the risk of misinterpretation, rigorous statistical validation can be applied by shuffling barcode data to generate a null baseline, enabling evaluation of the statistical significance of observed lineage relationships.",
+      "anchor": "Practical challenges in synthetic lineage tracing",
+      "touchpoints": [
+        {
+          "claimId": "9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Recommends null-shuffle baselines and statistical validation, an explicit standards/QC prescription for lineage claims."
+    },
+    {
+      "id": "e27",
+      "text": "Historically, viral barcoding was restricted to in vitro or transplantation assays that often fail to reflect true native physiology.",
+      "anchor": "Synthetic lineage tracing / Static barcoding",
+      "touchpoints": [
+        {
+          "claimId": "10",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concedes that in vitro/transplantation barcoding does not reflect native in vivo physiology, an in-vitro-vs-in-vivo trade-off."
+    },
+    {
+      "id": "e28",
+      "text": "Crucially, both approaches require transgenesis, restricting their use to model organisms. Finally, natural variants eliminate the need for genetic engineering entirely, making them uniquely applicable to human samples. Although they capture high lineage diversity, their lineage recovery varies depending on the natural variant used and sequencing depth; furthermore, they lack temporal control and pose significant computational challenges for data interpretation.",
+      "anchor": "Practical design guidance",
+      "touchpoints": [
+        {
+          "claimId": "3",
+          "direction": "nuances"
+        },
+        {
+          "claimId": "10",
+          "direction": "supports"
+        }
+      ],
+      "note": "Summarizes the three pillars' trade-offs; concedes natural-variant tracing lacks temporal control and is computationally hard, while transgenic methods cannot be used in humans."
+    },
+    {
+      "id": "e29",
+      "text": "Seamlessly integrating continuous lineage trees with next-generation spatial profiling technologies will eventually illuminate how the physical microenvironment and localized niche interactions cooperatively prime cell fate decisions over time.",
+      "anchor": "Opportunities and future directions",
+      "touchpoints": [
+        {
+          "claimId": "7",
+          "direction": "supports"
+        },
+        {
+          "claimId": "2",
+          "direction": "supports"
+        }
+      ],
+      "note": "Frames as a future goal the joint capture of lineage, spatial microenvironment, and time, the very spatiotemporal gap our thesis targets."
+    },
+    {
+      "id": "e30",
+      "text": "This requires moving beyond standard transcriptomics to incorporate co-profiling of the epigenome, direct mapping of physical cell-cell contacts, and logging of historical molecular signaling events.",
+      "anchor": "Opportunities and future directions",
+      "touchpoints": [
+        {
+          "claimId": "4",
+          "direction": "supports"
+        },
+        {
+          "claimId": "8",
+          "direction": "supports"
+        }
+      ],
+      "note": "Calls to move beyond transcriptomics to epigenome, physical contacts, and signaling history, arguing single-modality state is insufficient."
+    },
+    {
+      "id": "e31",
+      "text": "Despite these recent advances, the computational integration of lineage and state information remains a formidable challenge. Resolving these analytical bottlenecks may require additional analytical paradigms that can account for challenges such as complex kinetics, heterogeneous sampling, barcode dropout, and the absence of ancestral states.",
+      "anchor": "Computational integration of lineage and state dynamics",
+      "touchpoints": [
+        {
+          "claimId": "8",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Concedes that integrating lineage with state remains unsolved due to sampling heterogeneity, dropout, and missing ancestral states."
+    }
+  ],
+  "figuresNumbers": [
+    {
+      "item": "Stability hierarchy (Figure 4A)",
+      "contains": "Mitotic-inheritance stability ranking: DNA sequence > DNA methylation > histone modifications > chromatin accessibility (ATAC) and RNA expression."
+    },
+    {
+      "item": "mtDNA mutation rate",
+      "contains": "Mitochondrial genome mutates 10- to 100-fold higher than the nuclear genome; highly transcribed; suited to short-term clonal events."
+    },
+    {
+      "item": "SNV mutation rate",
+      "contains": "Somatic SNVs accumulate at roughly one per cell division; difficult to detect against background sequencing errors."
+    },
+    {
+      "item": "DNA methylation epimutation rate",
+      "contains": "~0.001 per CpG site per division; roughly 10,000 epimutations per cell cycle across the human genome."
+    },
+    {
+      "item": "Barcode recovery rates",
+      "contains": "LARRY >70%; DARLIN ~70%; CARLIN mouse recovers only ~10% of barcodes."
+    },
+    {
+      "item": "Barcode diversity rule",
+      "contains": "Error rate below 1% requires barcode diversity at least 100x larger than the target population at labeling."
+    },
+    {
+      "item": "Spatial resolution",
+      "contains": "Visium 55-um spots; Stereo-seq 500-nm resolution."
+    },
+    {
+      "item": "Tree support values",
+      "contains": "SMALT base-editing trees: median statistical support ~90%; MethylTree benchmark accuracy nearly 100% vs synthetic-barcode ground truth; MethylTree estimated ~250 de novo HSC clones in early murine blood development."
+    },
+    {
+      "item": "Table 2",
+      "contains": "Pillar comparison: genetic marker (lineage diversity low, 1-10; high recovery; temporal control yes; model organisms only); synthetic barcode (high diversity; variable recovery; partial temporal control; model organisms/in vitro); natural variant (high diversity; low/variable recovery; no temporal control; applicable to human)."
+    }
+  ],
+  "primarySources": [
+    {
+      "topic": "Lineage tracing links state to fate; early fate commitment precedes transcriptomic manifestation; pseudotime/velocity limits",
+      "citation": "Weinreb, C., Rodriguez-Fraticelli, A., Camargo, F.D., and Klein, A.M. (2020). Lineage tracing on transcriptional landscapes links state to fate during differentiation. Science 367, eaaw3381",
+      "refN": "5"
+    },
+    {
+      "topic": "Lineage tracing meets single-cell omics: opportunities and challenges (lineage vs transcriptomic similarity caveat)",
+      "citation": "Wagner, D.E., and Klein, A.M. (2020). Lineage tracing meets single-cell omics: opportunities and challenges. Nat. Rev. Genet. 21, 410-427",
+      "refN": "13"
+    },
+    {
+      "topic": "DARLIN mouse: joint lineage, transcriptomic, epigenomic profiling; DNA methylation clonal memory",
+      "citation": "Li, L., Bowling, S., McGeary, S.E., et al. (2023). A mouse model with high clonal barcode diversity for joint lineage, transcriptomic, and epigenomic profiling in single cells. Cell 186, 5183-5199.e22",
+      "refN": "44"
+    },
+    {
+      "topic": "MethylTree: noninvasive single-cell lineage tracing via DNA methylation epimutations",
+      "citation": "Chen, M., Fu, R., Chen, Y., Li, L., and Wang, S.W. (2025). High-resolution, noninvasive single-cell lineage tracing in mice and humans based on DNA methylation epimutations. Nat. Methods 22, 488-498",
+      "refN": "57"
+    },
+    {
+      "topic": "EPI-Clone: clonal tracing with somatic epimutations, blood ageing",
+      "citation": "Scherer, M., Singh, I., Braun, M.M., et al. (2025). Clonal tracing with somatic epimutations reveals dynamics of blood ageing. Nature 643, 478-487",
+      "refN": "58"
+    },
+    {
+      "topic": "MAESTER: mtDNA variant enrichment from scRNA-seq to resolve clones",
+      "citation": "Miller, T.E., Lareau, C.A., Verga, J.A., et al. (2022). Mitochondrial variant enrichment from high-throughput single-cell RNA sequencing resolves clonal populations. Nat. Biotechnol. 40, 1030-1034",
+      "refN": "60"
+    },
+    {
+      "topic": "PEtracer: high-resolution spatial mapping of cell state and lineage in vivo",
+      "citation": "Koblan, L.W., Yost, K.E., Zheng, P., et al. (2025). High-resolution spatial mapping of cell state and lineage dynamics in vivo with PEtracer. Science 390, eadx3800",
+      "refN": "51"
+    },
+    {
+      "topic": "SMALT base-editing phylogeny with high tree support",
+      "citation": "Liu, K., Deng, S., Ye, C., et al. (2021). Mapping single-cell-resolution cell phylogeny reveals cell population dynamics during organ development. Nat. Methods 18, 1506-1514",
+      "refN": "52"
+    }
+  ],
+  "flags": [
+    "Metadata unverified: cleaned source contains no self-DOI, no venue line, and no publication year for this paper; venue and year set to 'unverified; see flags' and doi to null. B.Z. is listed as a member of the Cell Stem Cell Advisory Board and several self-cited methods (refs 57, 58, 63, 64) are 2025/2026, suggesting a 2025/2026 review (plausibly in Cell Stem Cell), but this is NOT asserted from the text.",
+    "Authors given only as initials in the cleaned source (Z.K., H.C., S.L., S.-W.W., B.Z.); full names not printed. Initials kept as printed.",
+    "OCR quirks preserved verbatim in several excerpts (e.g., 'experimenta', 'biologica', 'Stereoseq' vs 'Stereo-seq', missing spaces); not corrected.",
+    "Scope note: large portions of the paper (single-/dual-recombinase genetic systems, MADM, specific barcode chemistries, clinical liquid-biopsy directions) are method detail off our roadmap and were not captured unless they bear on temporal/spatial/modality/standards claims.",
+    "Read at source: ref #5 (Weinreb 2020 Science) and ref #13 (Wagner & Klein 2020 Nat Rev Genet) are the strongest first-hand citations behind the 'state alone misses fate/time' and 'lineage != transcriptomic similarity' points; cite first-hand."
+  ]
+}

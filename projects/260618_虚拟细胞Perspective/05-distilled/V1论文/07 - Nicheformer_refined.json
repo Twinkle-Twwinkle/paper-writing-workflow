@@ -1,0 +1,476 @@
+{
+  "schemaVersion": "精练-4.0",
+  "citationKey": "07",
+  "title": "Nicheformer: a foundation model for single-cell and spatial omics",
+  "authors": "unverified; see flags",
+  "venue": "Nature Methods, 2025",
+  "year": "2025",
+  "doi": "doi:10.1038/s41592-025-02814-z",
+  "readOn": "2026-06-18",
+  "sourceFile": "/Users/augustsirius/Desktop/已清洗_260617/07 - Nicheformer - a foundation model for single-cell and spatial omics_cleaned.md",
+  "oneSentence": "The authors introduce Nicheformer, a transformer foundation model pretrained on SpatialCorpus-110M (over 110 million dissociated single-cell and image-based spatial transcriptomics cells across 73 tissues, human and mouse), and show it learns spatially aware cell representations that predict spatial niche labels, neighborhood composition and density and transfer spatial context onto dissociated scRNA-seq data, with models trained on dissociated data alone failing to recover spatial microenvironment complexity.",
+  "orientation": "Strongly on-roadmap for the spatial-loss and multiscale-integration arguments: it explicitly concedes that scRNA-seq dissociation loses microenvironment information and demonstrates empirically that dissociated-only training cannot recover spatial structure (direct support for Claim 2 and the spatial axis). It is also a useful foil/nuance: it is itself an RNA-only (transcriptomics-only) foundation model that does NOT encode physical coordinates, does NOT use protein/metabolite/epigenetic modalities, and concedes paired multimodal data are lacking and benchmarks are non-standardized (feeds Claims 1, 4, 9 and the modality/standard axes, often as the very approach we critique conceding the gap we build on). Routing hint, non-binding.",
+  "excerpts": [
+    {
+      "id": "e1",
+      "text": "However, single-cell RNA sequencing (scRNA-seq) requires cell dissociation, losing information about the cellular microenvironment and hindering a complete understanding of molecular variation⁴.",
+      "anchor": "Introduction / p.1",
+      "touchpoints": [
+        {
+          "claimId": "Claim 2",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Axis C · spatial",
+          "direction": "supports"
+        }
+      ],
+      "note": "States that scRNA-seq dissociation loses cellular microenvironment information and impedes a complete understanding of molecular variation."
+    },
+    {
+      "id": "e2",
+      "text": "Critically, we show that models trained only on dissociated data fail to recover the complexity of spatial microenvironments, underscoring the need for multiscale integration.",
+      "anchor": "Abstract / p.1",
+      "touchpoints": [
+        {
+          "claimId": "Claim 2",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Axis C · spatial",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        }
+      ],
+      "note": "Empirically claims dissociated-only models cannot recover spatial microenvironment complexity, motivating multiscale (dissociated + spatial) integration."
+    },
+    {
+      "id": "e3",
+      "text": "Specifically, training on dissociated data alone (even three times the amount of spatial data) resulted in lower performance across downstream tasks (Extended Data Fig. 2a,b), indicating that dissociated data alone cannot capture spatial variation.",
+      "anchor": "Results — Model design and training / p.2",
+      "touchpoints": [
+        {
+          "claimId": "Claim 2",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Axis C · spatial",
+          "direction": "supports"
+        }
+      ],
+      "note": "Quantitative ablation: more dissociated data (3x the spatial amount) still underperforms, evidence that dissociated data alone cannot capture spatial variation."
+    },
+    {
+      "id": "e4",
+      "text": "A limiting factor for image-based spatial transcriptomics data is the targeted feature space, measuring only hundreds to a few thousands of genes, depending on technology and panel³¹.",
+      "anchor": "Results — A transformer-based foundation model / p.2",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Axis C · spatial",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Concedes a trade-off of image-based spatial transcriptomics: gaining spatial resolution costs feature breadth, measuring only hundreds to a few thousand targeted genes."
+    },
+    {
+      "id": "e5",
+      "text": "Previous works³¹ have demonstrably shown technology-dependent biases between spatial and dissociated transcriptomics data, with spatial data often yielding higher gene counts due to preprocessing steps³².",
+      "anchor": "Results — Cell representation / p.2",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Axis · standard",
+          "direction": "supports"
+        }
+      ],
+      "note": "States there are technology-dependent biases (batch effects) between spatial and dissociated data, requiring technology-specific normalization for cross-technology comparability."
+    },
+    {
+      "id": "e6",
+      "text": "Notably, these models do not account for spatial relationships of cells during training, with the exception of CellPLM²⁹, which, however, is trained on a limited dataset of 9 million dissociated and 2 million spatial transcriptomics cells and not fine-tuned on spatial tasks beyond gene imputation.",
+      "anchor": "Introduction / p.1",
+      "touchpoints": [
+        {
+          "claimId": "Claim 2",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Axis C · spatial",
+          "direction": "supports"
+        }
+      ],
+      "note": "Notes that prior single-cell foundation models do not account for spatial relationships during training (CellPLM the partial exception), i.e. the dominant paradigm ignores space."
+    },
+    {
+      "id": "e7",
+      "text": "Current results are promising but not entirely replicated in independent benchmarks²⁶⁻²⁸.",
+      "anchor": "Introduction / p.1",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concedes that single-cell foundation model results are not entirely reproduced in independent benchmarks, signalling generalization and comparability concerns."
+    },
+    {
+      "id": "e8",
+      "text": "These findings are statistically significant (analysis of variance, adjusted for false discovery rate (FDR); Extended Data Fig. 2a,c) and highlight the importance of data diversity in model training for optimal performance across context³³.",
+      "anchor": "Results — Model design and training / p.2",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Argues that data diversity (not sheer cell count) drives model performance across contexts, attributing the bottleneck to the input data composition."
+    },
+    {
+      "id": "e9",
+      "text": "Importantly, this result is not influenced by the sheer number of cells since all models are trained with the same number of cells; the only difference is the diversity of the data.",
+      "anchor": "Results — Model design and training / p.2",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Clarifies that performance differences come from data diversity rather than cell count, isolating data composition as the limiting factor."
+    },
+    {
+      "id": "e10",
+      "text": "Importantly, we did not integrate datasets into a unified latent space. Our goal was to preserve biological and technical variability while offering a large-scale resource for model training. Like CellXGene, SpatialCorpus-110M provides curated raw inputs, allowing researchers to choose their own normalization and integration strategies.",
+      "anchor": "Results — SpatialCorpus-110M / p.3",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "nuances"
+        },
+        {
+          "claimId": "Axis · standard",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Describes a curated, harmonized raw corpus with standardized ontologies but explicitly leaves normalization/integration to the user rather than imposing one integrated standard."
+    },
+    {
+      "id": "e11",
+      "text": "For all datasets in the SpatialCorpus-110M, we curated metadata, such as assay, sex, organism and tissue, based on the original publica tions by using official ontology term identifiers (Fig. 2c and Methods).",
+      "anchor": "Results — SpatialCorpus-110M / p.3",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Axis · standard",
+          "direction": "supports"
+        }
+      ],
+      "note": "Reports harmonizing heterogeneous datasets via official ontology term identifiers, an example of standardization/metadata curation to make siloed datasets comparable."
+    },
+    {
+      "id": "e12",
+      "text": "Cell types are defined ignoring the spatial context, which provides additional value for understanding cellular microenvironments⁵³.",
+      "anchor": "Results — transferring labels / p.4",
+      "touchpoints": [
+        {
+          "claimId": "Claim 2",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 7",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Axis C · spatial",
+          "direction": "supports"
+        }
+      ],
+      "note": "States cell-type definitions ignore spatial context, and that spatial context adds value for understanding cellular microenvironments."
+    },
+    {
+      "id": "e13",
+      "text": "Differences in neighborhood composition have been shown to have an important effect on gene expression and can be associated with cell–cell communication events⁶.",
+      "anchor": "Results — neighborhood compositions / p.4",
+      "touchpoints": [
+        {
+          "claimId": "Claim 7",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Axis C · spatial",
+          "direction": "supports"
+        }
+      ],
+      "note": "Claims neighborhood/microenvironment composition meaningfully affects a cell's gene expression and links to cell-cell communication."
+    },
+    {
+      "id": "e14",
+      "text": "Furthermore, the cellular composition of neighborhoods in the tumor microenvironment may hold prognostic value, because immune cell infiltration in the spatial context is a predictor for cancer survival⁵⁵.",
+      "anchor": "Results — neighborhood compositions / p.4",
+      "touchpoints": [
+        {
+          "claimId": "Claim 7",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 5",
+          "direction": "supports"
+        }
+      ],
+      "note": "States spatial neighborhood composition (immune infiltration) has prognostic value, tying spatial microenvironment to functional/clinical phenotype."
+    },
+    {
+      "id": "e15",
+      "text": "Consistent with literature observations⁶³,⁶⁴, we observed a higher average cellular density in the cancer sections (colon, 12.3 cells; lung, 12.1 cells) compared to healthy tissue (colon, 10.7 cells; lung, 10.7 cells) when extracting cellular neighborhoods at the same radius (Fig. 6a,f and Methods).",
+      "anchor": "Results — niche density / p.5",
+      "touchpoints": [
+        {
+          "claimId": "Claim 7",
+          "direction": "supports"
+        }
+      ],
+      "note": "Quantitative: cancer tissue shows higher local cell density than healthy tissue, an example of disease-state-dependent spatial microenvironment differences."
+    },
+    {
+      "id": "e16",
+      "text": "More generally, it will be necessary to operate on multimodal data to generate a true representation of the cellular state. While spatial transcriptomics captures the cellular microenvironment in tissues well, integrating additional data modalities, such as protein abundance or epigenetic modifications, will provide a more complete picture of the cellular state.",
+      "anchor": "Discussion / p.6",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Axis A · modality",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concedes that transcriptomics alone is insufficient and that a true representation of cellular state requires multimodal data including protein abundance and epigenetic modifications."
+    },
+    {
+      "id": "e17",
+      "text": "The development of multimodal foundation models faces multiple challenges. One key hurdle is the lack of sufficient paired data measured across multiple or even all cellular modalities.",
+      "anchor": "Discussion / p.6",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Axis A · modality",
+          "direction": "supports"
+        }
+      ],
+      "note": "Identifies the lack of sufficient paired multi-modality data as a key bottleneck for multimodal foundation models."
+    },
+    {
+      "id": "e18",
+      "text": "Incorporating additional modalities will remain a challenge in the future as, for example, epigenetic modifications, protein abundance and gene expression all have unique characteristics, and effectively combining them in a way that leverages their strengths remains an ongoing research area.",
+      "anchor": "Discussion / p.6",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Axis A · modality",
+          "direction": "supports"
+        }
+      ],
+      "note": "States that protein abundance, epigenetic modifications and gene expression have distinct characteristics and that combining modalities to leverage their complementary strengths is unsolved."
+    },
+    {
+      "id": "e19",
+      "text": "Secondly, Nicheformer does not explicitly incorporate the physical location of a cell during pretraining, limiting its capability to fully leverage the available information on spatial context. We deliberately chose not to include spatial coordinates during pretraining because we wanted to learn a general representation of gene expression variation across both modalities, fully supervised by gene expression alone.",
+      "anchor": "Discussion — limitations / p.6",
+      "touchpoints": [
+        {
+          "claimId": "Axis C · spatial",
+          "direction": "challenges"
+        },
+        {
+          "claimId": "Claim 2",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Author-conceded limitation: the model does not encode physical coordinates during pretraining and is supervised by gene expression alone, so explicit spatial geometry is not used."
+    },
+    {
+      "id": "e20",
+      "text": "Firstly, Nicheformer performance depends on the data abundance and transcriptional diversity of the cells under study. Indeed, we showed that Nicheformer's performance for predicting spatial labels and spatial compositions is impacted by cell-type and tissue-type abundance in a spatial transcriptomics dataset.",
+      "anchor": "Discussion — limitations / p.6",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Author-conceded limitation: performance is bounded by data abundance and transcriptional diversity in the spatial dataset, i.e. the model is input-data-limited."
+    },
+    {
+      "id": "e21",
+      "text": "However, unlike more established AI domains, there's a crucial gap in the form of standardized benchmarks for evaluating these models. Establishing robust benchmarks is a critical next step to compare and improve performance, rigorously assess methodological progress and guide future model development to unleash the full potential of foundation models for single-cell biology.",
+      "anchor": "Discussion / p.6",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Axis · standard",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concedes a crucial gap: the field lacks standardized benchmarks for evaluating single-cell/spatial foundation models, making cross-model comparison and progress assessment difficult."
+    },
+    {
+      "id": "e22",
+      "text": "Only expression data were used during pretraining to train the model to integrate data from dissociated and targeted spatial technologies, both of which show substantial batch effects (Fig. 1a).",
+      "anchor": "Results — A transformer-based foundation model / p.2",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "nuances"
+        },
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Axis A · modality",
+          "direction": "challenges"
+        }
+      ],
+      "note": "States that only (RNA) expression data were used in pretraining and that both modalities show substantial batch effects requiring integration."
+    },
+    {
+      "id": "e23",
+      "text": "Transferring labels between dissociated and spatial data is challenging due to limited gene overlap⁵⁴, and modality-specific methods are not designed to learn from reference atlases at the scale of hundreds of million of cells.",
+      "anchor": "Results — transferring labels / p.4",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 8",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Notes that limited gene overlap between dissociated and spatial data makes label transfer / integration across modalities challenging."
+    }
+  ],
+  "figuresNumbers": [
+    {
+      "item": "SpatialCorpus-110M scale",
+      "contains": "over 110 million cells: 57.06 million dissociated cells and 53.8 (53.83) million image-based spatial cells; human and mouse; 73 different organs/tissues; over 350 datasets; eight sequencing technologies."
+    },
+    {
+      "item": "Gene vocabulary",
+      "contains": "20,310 unique gene tokens: 16,981 orthologous, 3,178 human-specific, 151 mouse-specific genes."
+    },
+    {
+      "item": "Spatial corpus composition",
+      "contains": "Spatial: MERFISH/Xenium/CosMx/ISS; 15 tissues from 158 individuals/animals; over 10,600 tissue sections; brain 60.46% (n=32,146,779), lung 9.95% (n=3,199,548); 55.23% unannotated; 64.07% healthy and 31.98% cancer."
+    },
+    {
+      "item": "Model architecture",
+      "contains": "1,500-token context length; 12 transformer encoder layers; 16 attention heads; feed-forward size 1,024; 512-dimensional embedding; 49.3 million parameters."
+    },
+    {
+      "item": "Density healthy vs cancer (Fig. 6a,f)",
+      "contains": "Higher mean cellular density in cancer (colon 12.3, lung 12.1 cells) vs healthy (colon 10.7, lung 10.7 cells) at the same radius."
+    },
+    {
+      "item": "scGPT gene-overlap fractions (Methods)",
+      "contains": "Overlap of targeted spatial panels with scGPT gene context: MERFISH mouse brain 471/483, CosMx human liver 997/999, CosMx human lung 958/960 genes."
+    },
+    {
+      "item": "CellPLM pretraining scale (cited)",
+      "contains": "CellPLM trained on 9 million dissociated and 2 million spatial transcriptomics cells."
+    }
+  ],
+  "primarySources": [
+    {
+      "topic": "scRNA-seq dissociation loses microenvironment information",
+      "citation": "Du, J. et al. Advances in spatial transcriptomics and related data analysis strategies. J. Transl. Med. 21, 330 (2023)",
+      "refN": "4"
+    },
+    {
+      "topic": "Independent benchmarks not fully replicating single-cell foundation model results",
+      "citation": "Kedzierska, K. Z. et al. Zero-shot evaluation reveals limitations of single-cell foundation models. Genome Biol. 26, 101 (2025)",
+      "refN": "27"
+    },
+    {
+      "topic": "Technology-dependent biases between spatial and dissociated transcriptomics",
+      "citation": "Hartman, A. & Satija, R. Comparative analysis of multiplexed in situ gene expression profiling technologies. eLife 13, RP96949 (2024)",
+      "refN": "31"
+    },
+    {
+      "topic": "Spatial data preprocessing yielding higher gene counts / Xenium QC",
+      "citation": "Marco Salas, S. et al. Optimizing Xenium In Situ data utility by quality assessment and best-practice analysis workflows. Nat. Methods 22, 813-823 (2025)",
+      "refN": "32"
+    },
+    {
+      "topic": "Data diversity / scaling laws importance",
+      "citation": "Kaplan, J. et al. Scaling laws for neural language models. Preprint at arXiv 2001.08361 (2020)",
+      "refN": "33"
+    },
+    {
+      "topic": "Spatial context adds value beyond cell-type definitions",
+      "citation": "Palla, G., Fischer, D. S., Regev, A. & Theis, F. J. Spatial components of molecular tissue biology. Nat. Biotechnol. 40, 308-318 (2022)",
+      "refN": "53"
+    },
+    {
+      "topic": "Neighborhood composition affects gene expression / cell-cell communication",
+      "citation": "Fischer, D. S., Schaar, A. C. & Theis, F. J. Modeling intercellular communication in tissues using spatial graphs of cells. Nat. Biotechnol. 41, 332-336 (2023)",
+      "refN": "6"
+    },
+    {
+      "topic": "Immune infiltration in spatial context predicts cancer survival",
+      "citation": "Fridman, W. H., Pages, F., Sautes-Fridman, C. & Galon, J. The immune contexture in human tumours: impact on clinical outcome. Nat. Rev. Cancer 12, 298-306 (2012)",
+      "refN": "55"
+    },
+    {
+      "topic": "Immune cell density associated with patient survival (colon cancer)",
+      "citation": "Galon, J. et al. Type, density, and location of immune cells within human colorectal tumors predict clinical outcome. Science 313, 1960-1964 (2006)",
+      "refN": "63"
+    },
+    {
+      "topic": "Limited gene overlap challenges label transfer across modalities",
+      "citation": "Mages, S. et al. TACCO unifies annotation transfer and decomposition of cell identities for single-cell and spatial omics. Nat. Biotechnol. 41, 1465-1473 (2023)",
+      "refN": "54"
+    }
+  ],
+  "flags": [
+    "Metadata unverified: cleaned MD has no printed author byline on the title page; corresponding author is Fabian J. Theis (per Correspondence section, p. with Author contributions). Full author list not asserted; authors set to 'unverified; see flags'.",
+    "Metadata inferred: venue 'Nature Methods' inferred from DOI prefix 10.1038/s41592- and the article-processing dates (Received 24 Oct 2024; Accepted 11 Aug 2025; Published online 30 Oct 2025); volume/issue/pages not printed in the cleaned MD.",
+    "OCR quirks preserved in excerpts (e.g. 'publica tions', spacing artifacts) and in quantitative description; not corrected.",
+    "Scope note: extensive Methods on tokenization, attention/interpretability, and per-cell-type prediction accuracy are largely off-roadmap (modeling-method detail) and intentionally not captured beyond the load-bearing data/spatial/modality lines.",
+    "Read at source: ref #31 (Hartman & Satija, technology biases) and ref #27 (Kedzierska, foundation-model benchmark limitations) are worth first-hand citation for the spatial-bias and generalization-gap arguments."
+  ]
+}

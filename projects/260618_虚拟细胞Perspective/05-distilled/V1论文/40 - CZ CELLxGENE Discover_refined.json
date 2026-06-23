@@ -1,0 +1,546 @@
+{
+  "schemaVersion": "精练-4.0",
+  "citationKey": "40",
+  "title": "CZ CELLxGENE Discover: a single-cell data platform for scalable exploration, analysis and modeling of aggregated data",
+  "authors": "CZI Cell Science Program; Shibla Abdulla, Brian Aevermann, Pedro Assis, Seve Badajoz, Sidney M. Bell, Emanuele Bezzi, Batuhan Cakir, Jim Chaffer, Signe Chambers, J. Michael Cherry, Tiffany Chi, Jennifer Chien, Leah Dorman, Pablo Garcia-Nieto, Nayib Gloria, Mim Hastie, Daniel Hegeman, Jason Hilton, Timmy Huang, Amanda Infeld, Ana-Maria Istrate, Ivana Jelic, Kuni Katsuya, Yang Joon Kim, Karen Liang, Mike Lin, Maximilian Lombardo, Bailey Marshall, Bruce Martin, Fran McDade, Colin Megill, Nikhil Patel, Alexander Predeus, Brian Raymor, Behnam Robatmili, Dave Rogers, Erica Rutherford, Dana Sadgat, Andrew Shin, Corinn Small, Trent Smith, Prathap Sridharan, Alexander Tarashansky, Norbert Tavares, Harley Thomas, Andrew Tolopko, Meghan Urisko, Joyce Yan, Garabet Yeretssian, Jennifer Zamanian, Arathi Mani, Jonah Cool and Ambrose Carr",
+  "venue": "unverified; see flags",
+  "year": "unverified; see flags",
+  "doi": null,
+  "readOn": "2026-06-18",
+  "sourceFile": "/Users/augustsirius/Desktop/已清洗_260617/40 - CZ CELLxGENE Discover - a single-cell data platform for scalable exploration, analysis and modeling_cleaned.md",
+  "oneSentence": "The paper presents CZ CELLxGENE Discover, an open data platform that aggregates, curates and standardizes community-contributed single-cell transcriptomic data (over 93 million unique cells under a minimal versioned schema) and provides visual and programmatic tools (Explorer, Gene Expression, Census) for cross-corpus exploration, analysis and machine-learning modeling.",
+  "orientation": "Strong support for our 'data silos / non-comparability / lack of standards' claim: the paper's entire raison d'etre is that single-cell datasets are inconsistently curated, non-interoperable and hard to meta-analyze, and it builds a standardized schema to fix this. Simultaneously it is a clean foil for our spatial/temporal/multimodal gaps: the corpus is overwhelmingly dissociated RNA transcriptomic, the authors concede spatial information and non-RNA modalities are only emerging support, and there is no temporal/trajectory dimension. It also feeds the 'data powers foundation models' axis (scGPT, Geneformer trained on this data). Routing hint, non-binding.",
+  "excerpts": [
+    {
+      "id": "e1",
+      "text": "Despite the promise of these and emerging analytical tools for analyzing large amounts of data, the sheer number of datasets, data models and accessibility remains a challenge.",
+      "anchor": "Abstract",
+      "touchpoints": [
+        {
+          "claimId": "9",
+          "direction": "supports"
+        }
+      ],
+      "note": "States the core problem the platform addresses: heterogeneity of datasets and data models impedes reuse."
+    },
+    {
+      "id": "e2",
+      "text": "Built-for-purpose portals enable rapid publication of studies and dissemination of unique biological features in specific datasets but lack the scalability and standardization needed for efficient meta-analysis. Even in the presence of such portals, efforts to explore or (re)analyze many datasets face a requirement to first standardize across individual data portals and resources, with only an estimated 25% of publicly available datasets providing the cell-level metadata needed for reuse (9).",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Existing portals lack standardization; only ~25% of public datasets carry the cell-level metadata needed for reuse."
+    },
+    {
+      "id": "e3",
+      "text": "Data interoperability is a particularly important challenge for both individual users and the broader community to realize the promise of single-cell biology both now and in future applications that involve training models or assembling integrated references.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "9",
+          "direction": "supports"
+        },
+        {
+          "claimId": "1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Frames data interoperability as the gating challenge for both model training and integrated reference assembly."
+    },
+    {
+      "id": "e4",
+      "text": "CZ CELLxGENE is differentiated from other single-cell data portals by its enforcement of a standardized schema for gene, cell, assay and donor metadata that evolves to address contributor requirements.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "standard",
+          "direction": "supports"
+        },
+        {
+          "claimId": "9",
+          "direction": "supports"
+        }
+      ],
+      "note": "The platform's distinguishing feature is enforcement of a single standardized, evolving metadata schema."
+    },
+    {
+      "id": "e5",
+      "text": "CZ CELLxGENE serves only matrix-formatted data and metadata, which precludes the submission of raw sequence data.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "standard",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Scope of the resource: only matrix-formatted data and metadata, not raw sequence."
+    },
+    {
+      "id": "e6",
+      "text": "Single-cell transcriptomic datasets from a large number of laboratories, institutions and consortia are available via websites and portals (12). Each portal serves the needs of its dataset, but typically fails to enable collective use. This presents a barrier to downstream use of the data and queries that run across many datasets.",
+      "anchor": "Results — CZ CELLxGENE data is universally standardized to a minimal data schema",
+      "touchpoints": [
+        {
+          "claimId": "9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Per-dataset portals fail to enable collective use, barring cross-dataset queries."
+    },
+    {
+      "id": "e7",
+      "text": "Metadata is critical for the reuse of data but often inconsistently captured or represented in single-cell datasets.",
+      "anchor": "Results — A minimal cell-level schema",
+      "touchpoints": [
+        {
+          "claimId": "9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Metadata is essential for reuse yet inconsistently captured across single-cell datasets."
+    },
+    {
+      "id": "e8",
+      "text": "Integration enables the compilation of datasets into atlases and has become a core computational task within single-cell biology (13,14). It allows for the inference of multi-modal measurements, cell type prediction and cross-species analysis that underpins insights into a wide array of biological questions as well as the ambitions of community efforts to integrate individual datasets into references (15).",
+      "anchor": "Results — A minimal cell-level schema",
+      "touchpoints": [
+        {
+          "claimId": "8",
+          "direction": "supports"
+        }
+      ],
+      "note": "Integration is a core computational task enabling multi-modal inference, cell-type prediction and cross-species analysis."
+    },
+    {
+      "id": "e9",
+      "text": "To avoid deterring or inhibiting data submission and adoption, we limit the schema to 11 required fields considered most valuable for data integration and reuse.",
+      "anchor": "Results — A minimal cell-level schema",
+      "touchpoints": [
+        {
+          "claimId": "standard",
+          "direction": "supports"
+        }
+      ],
+      "note": "The required schema is deliberately minimal at 11 fields to balance adoption against integration value."
+    },
+    {
+      "id": "e10",
+      "text": "The required fields represent attributes that are often variable within or across studies and are often identified as strong covariates correlated with gene expression variation within cells (20,21).",
+      "anchor": "Results — A minimal cell-level schema",
+      "touchpoints": [
+        {
+          "claimId": "9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Required metadata fields capture covariates that strongly correlate with cross-study gene expression variation."
+    },
+    {
+      "id": "e11",
+      "text": "CZ CELLxGENE hosts the largest curated collection of publicly available single-cell data, with data obtained from both single cells and single nuclei across 449 tissues and 40 unique assay types transcriptomics (Figure 2A–C). The CZ CEL-LxGENE schema and underlying architecture have been designed for extensibility to new modalities and growth of the data corpus. Current data is primarily single-cell transcriptomic, although CZ CELLxGENE accepts additional modalities to support the growing number of studies that incorporate a multitude of assays and co-assays (Figure 2B).",
+      "anchor": "Results — Community resource for standardized cell resolved measurements",
+      "touchpoints": [
+        {
+          "claimId": "4",
+          "direction": "challenges"
+        },
+        {
+          "claimId": "A",
+          "direction": "challenges"
+        }
+      ],
+      "note": "Concedes the corpus is primarily single-cell transcriptomic; other modalities are only an extensibility goal, not present at scale."
+    },
+    {
+      "id": "e12",
+      "text": "Of the 93+ million unique cells available in the data corpus, 63% of the total cells in the corpus are human, 32% are mouse and <5% are from other species (Figure 2C). Of the human data, ∼62% is defined as coming from healthy donors, and the remaining 38% span 132 unique diseases.",
+      "anchor": "Results — Community resource for standardized cell resolved measurements",
+      "touchpoints": [
+        {
+          "claimId": "Other",
+          "direction": "nuances",
+          "otherLabel": "Corpus composition statistics (species/health-status breakdown)"
+        }
+      ],
+      "note": "Reports composition of the >93M-cell corpus by species and by healthy vs diseased human donors."
+    },
+    {
+      "id": "e13",
+      "text": "While CZ CELLxGENE data corpus remains the largest publicly available single-cell data resource, significant data deficiencies exist in many tissues and systems across both mouse and human (Figure 2D). When considering the comprehensiveness of human data available in the data corpus, samples from female tissue donors are slightly more numerous across the data corpus, and diverse ethnicities and age groups are grossly underrepresented, with the majority of data coming from adults of European or Unknown ethnicity (Figure 2E–G).",
+      "anchor": "Results — Community resource for standardized cell resolved measurements",
+      "touchpoints": [
+        {
+          "claimId": "Other",
+          "direction": "nuances",
+          "otherLabel": "Coverage gaps / representational bias in the data corpus"
+        }
+      ],
+      "note": "Concedes significant tissue/system gaps and gross under-representation of ethnicities and age groups even in the largest corpus."
+    },
+    {
+      "id": "e14",
+      "text": "The majority of single-cell visualization portals rely on precomputed values that limit interactive features on datasets and generally are tuned to host datasets of 250–500k cells (30). Portals have struggled to keep up with the growth of dataset size, now reaching the order of millions of cells per study (Figure 3A) (34,35). As the field scales, and perhaps importantly, as more integrated datasets become available, it is critical to have the ability to dynamically visualize and perform basic analysis functions on millions of cells.",
+      "anchor": "Results — Explorer allows interactive exploration and analysis of individual single-cell datasets up to 4 M cells",
+      "touchpoints": [
+        {
+          "claimId": "1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Existing tools struggle to scale to the millions-of-cells-per-study regime; scalable infrastructure is needed."
+    },
+    {
+      "id": "e15",
+      "text": "Single-cell transcriptomic data suffers from batch effects which distort biological signal when comparing between datasets. Despite many advances in methods development for data integration, the current state-of-the-art methods produce output in a lower-dimensional space than the original count matrix, making them unsuitable for our application.",
+      "anchor": "Results — Aggregation partially mitigates batch effects",
+      "touchpoints": [
+        {
+          "claimId": "9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Batch effects distort cross-dataset comparison; SOTA integration methods output low-dimensional spaces unsuitable for serving full count matrices."
+    },
+    {
+      "id": "e16",
+      "text": "This suggests that batch effects are at least partially mitigated by aggregation and log normalization compared to raw counts; however, users should be advised that the displayed values may still be affected by batch effects, especially for rare cell types.",
+      "anchor": "Results — Aggregation partially mitigates batch effects",
+      "touchpoints": [
+        {
+          "claimId": "9",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Author-conceded limitation: aggregation only partially mitigates batch effects; displayed values may remain biased, especially for rare cell types."
+    },
+    {
+      "id": "e17",
+      "text": "We found an average recall of 33% (Figure 5). The probability of observing this level of sensitivity by chance for each cell type ranges from $P = 0 . 0 0 – 0 . 0 4 ;$ the moderately low sensitivity values are likely influenced by the fact that the HuBMAP dataset we use as our ‘ground truth’ includes annotations from a variety of different assay types and are quite noisy.",
+      "anchor": "Results — Gene Expression provides computationally derived marker genes for most cell types",
+      "touchpoints": [
+        {
+          "claimId": "9",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Marker-gene recall averages only 33%, partly attributed to noisy heterogeneous-assay ground-truth annotations."
+    },
+    {
+      "id": "e18",
+      "text": "Many tools that are widely used for analysis, or even meta-analysis, are not designed to operate on datasets of this scale (38).",
+      "anchor": "Results — Census provides efficient programmatic access",
+      "touchpoints": [
+        {
+          "claimId": "1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Widely used analysis tools are not designed for atlas-scale datasets, motivating new scalable infrastructure."
+    },
+    {
+      "id": "e19",
+      "text": "While these tools are increasing the scale to which computational biologists can access and analyze data, many of these solutions are still limited to only millions of cells and more importantly, lack of interoperability between R and Python. To fill this gap, and in particular, to allow interoperable and scalable data access beyond 10s and 100s of millions of cells, we co-developed TileDB-SOMA",
+      "anchor": "Results — Census provides efficient programmatic access",
+      "touchpoints": [
+        {
+          "claimId": "9",
+          "direction": "supports"
+        },
+        {
+          "claimId": "1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Existing scalable tools lack R/Python interoperability and cap at millions of cells; TileDB-SOMA built to enable interoperable access beyond tens/hundreds of millions of cells."
+    },
+    {
+      "id": "e20",
+      "text": "TileDB-SOMA was then used to build Census – a large data object hosted in the cloud with initial data covering all RNA non-spatial transcriptomic data from CZ CELLxGENE.",
+      "anchor": "Results — Census provides efficient programmatic access",
+      "touchpoints": [
+        {
+          "claimId": "C",
+          "direction": "challenges"
+        },
+        {
+          "claimId": "4",
+          "direction": "challenges"
+        }
+      ],
+      "note": "Census initially covers only RNA, non-spatial transcriptomic data, explicitly excluding spatial data."
+    },
+    {
+      "id": "e21",
+      "text": "Modeling of single-cell data at scale is an important aspect of Census, as well as the broader single-cell field, given its demonstrated uses for in silico experimentation (51,52), data integration and annotation (53,54), cell state prediction (55,56) and clinical applications (57–59).",
+      "anchor": "Results — Census provides efficient programmatic access",
+      "touchpoints": [
+        {
+          "claimId": "1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Positions standardized data as the substrate for scalable modeling (in silico experimentation, prediction, clinical applications)."
+    },
+    {
+      "id": "e22",
+      "text": "PyTorch (60) is one of the most popular machine learning frameworks in singlecell, with notable models built using the PyTorch library including scvi-tools, Geneformer (61) and scGPT (62). To allow existing and new machine learning models to be trained on Census-scale data, we implemented PyTorch iterable data loaders that work natively with Census via TileDB-SOMA.",
+      "anchor": "Results — Census provides efficient programmatic access",
+      "touchpoints": [
+        {
+          "claimId": "1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Census provides PyTorch data loaders so foundation models (Geneformer, scGPT) can train on corpus-scale data."
+    },
+    {
+      "id": "e23",
+      "text": "Initial datasets included in Census were generated using non-spatial RNA technologies, contain cells from human or mouse, provide raw counts and utilize only standardized cell and gene metadata as described in the CZ CELLx-GENE dataset schema description above.",
+      "anchor": "Results — Census provides efficient programmatic access",
+      "touchpoints": [
+        {
+          "claimId": "C",
+          "direction": "challenges"
+        },
+        {
+          "claimId": "4",
+          "direction": "challenges"
+        }
+      ],
+      "note": "Reiterates that the modeling-ready Census corpus is non-spatial, RNA-only, human/mouse."
+    },
+    {
+      "id": "e24",
+      "text": "Compilation and standardization of single-cell transcriptomic datasets reduces barriers to meta analysis. CZ CEL-LxGENE’s cell-level schema is important for this work as it enables corpus-wide analysis but also user-defined subsetting of the data to related collections of cells that span multiple datasets.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "9",
+          "direction": "supports"
+        },
+        {
+          "claimId": "standard",
+          "direction": "supports"
+        }
+      ],
+      "note": "Standardization of datasets is presented as the mechanism that lowers barriers to meta-analysis and corpus-wide queries."
+    },
+    {
+      "id": "e25",
+      "text": "A recent demonstration of the power of CZ CELLxGENE data is on its application to train scGPT, a generative pretrained model, on 33 M cells, which the authors used for cell-type annotation, multi-batch integration, multi-omic integration, genetic perturbation prediction and gene network inference.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "1",
+          "direction": "supports"
+        }
+      ],
+      "note": "scGPT was trained on 33M CZ CELLxGENE cells for tasks including perturbation prediction and gene network inference."
+    },
+    {
+      "id": "e26",
+      "text": "However, users do not have the ability to directly interact with models via the hosted web interface. Workflows, such as cell type prediction, projecting a new dataset onto the reference corpus and alignment of unanalyzed modalities, still require downloading an embedding and working outside of the platform.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Other",
+          "direction": "nuances",
+          "otherLabel": "Platform limitation: model interaction not yet integrated"
+        }
+      ],
+      "note": "Author-conceded limitation: models cannot be used directly in the platform; model-based workflows require external work."
+    },
+    {
+      "id": "e27",
+      "text": "Importantly, the field has acknowledged the importance of spatial information in the context of single-cell biology (69,70), and ongoing work in both CZ CELLxGENE Explorer as well as Census seeks to support these efforts and technologies. Finally, we recognize the ongoing importance of new modalities beyond dissociated RNA and have begun to provide support for a growing array of data modalities.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "C",
+          "direction": "challenges"
+        },
+        {
+          "claimId": "2",
+          "direction": "supports"
+        },
+        {
+          "claimId": "4",
+          "direction": "challenges"
+        }
+      ],
+      "note": "Concedes spatial information and modalities beyond dissociated RNA are important but only emerging in the platform; acknowledges the field recognizes spatial importance."
+    },
+    {
+      "id": "e28",
+      "text": "In summary, the CZ CELLxGENE platform not only enables data sharing and data reuse through its standardized schema and curation pipeline but also allows researchers across expertise to access and visualize the largest single-cell dataset to date, with over 90 million cells across 449 tissues.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "standard",
+          "direction": "supports"
+        }
+      ],
+      "note": "Summary: standardized schema plus curation pipeline enables sharing and reuse of the largest single-cell dataset to date."
+    },
+    {
+      "id": "e29",
+      "text": "Critically, the Census has unlocked a new potential for biological insights at scale and provides a low-friction bridge between single-cell biology and the machine learning community.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Positions Census as the bridge feeding standardized single-cell data into machine learning."
+    },
+    {
+      "id": "e30",
+      "text": "The data model behind the SOMA specification is flexible and extensible, and it is inspired by existing single-cell data formats, notably AnnData. It can accommodate multiple measurements from derivative views (e.g. spatial and non-spatial data) and embeddings of sparse and dense data, along with both observation (e.g. cells) and feature (e.g. genes) axis annotations. Importantly the flexibility of the SOMA data model allows for representations beyond the single-dataset paradigm and enables managing single-cell data from multiple modalities (e.g. RNA, spatial, epigenomics) across joint or disjoint observations.",
+      "anchor": "Materials and methods — TileDB-SOMA development for census",
+      "touchpoints": [
+        {
+          "claimId": "8",
+          "direction": "supports"
+        },
+        {
+          "claimId": "C",
+          "direction": "nuances"
+        }
+      ],
+      "note": "SOMA data model is designed to represent multiple modalities (RNA, spatial, epigenomics) across joint or disjoint observations, beyond a single dataset."
+    },
+    {
+      "id": "e31",
+      "text": "With each schema update, previously submitted data are migrated to meet the new schema, even if that requires re-curation (see the ‘Materials and methods’ section). These data migrations ensure that all datasets are consistently described by the most current standards at all times, and users will have consistent filtering and integration experiences independent of when a given dataset was submitted.",
+      "anchor": "Results — Schema evolution",
+      "touchpoints": [
+        {
+          "claimId": "standard",
+          "direction": "supports"
+        }
+      ],
+      "note": "All previously submitted data are re-migrated on each schema update so the entire corpus stays under one current standard."
+    },
+    {
+      "id": "e32",
+      "text": "Any cell that has <500 genes expressed is excluded, which filters out about 8% of all data and does not eliminate any cell type in its entirety. This filter reduces noise in the gene expression estimates.",
+      "anchor": "Materials and methods — Removal of low coverage cells",
+      "touchpoints": [
+        {
+          "claimId": "Other",
+          "direction": "nuances",
+          "otherLabel": "QC / quality filtering thresholds"
+        }
+      ],
+      "note": "Quality filter removes cells with <500 genes (~8% of data), a concrete QC criterion."
+    }
+  ],
+  "figuresNumbers": [
+    {
+      "item": "Corpus size (1 October 2024)",
+      "contains": "Over 1550 datasets and 169.3 million cells (93.6 million unique cells)."
+    },
+    {
+      "item": "Abstract / Figure 1A",
+      "contains": "Over 93 million unique cells; growing community-contributed corpus."
+    },
+    {
+      "item": "Figure 2C",
+      "contains": "Species composition: 63% human, 32% mouse, <5% other species. Human data ~62% healthy donors, 38% spanning 132 unique diseases."
+    },
+    {
+      "item": "Corpus scope",
+      "contains": "Data across 449 tissues and 40 unique transcriptomic assay types."
+    },
+    {
+      "item": "Metadata reuse statistic (ref 9)",
+      "contains": "Only an estimated 25% of publicly available datasets provide the cell-level metadata needed for reuse."
+    },
+    {
+      "item": "Schema",
+      "contains": "Minimal schema limited to 11 required fields (Figure 1B shows 10 generally available categories plus is_primary_data)."
+    },
+    {
+      "item": "Explorer scalability",
+      "contains": "Dynamically explore individual datasets up to 4.3 million cells in <1 min; interactive comparison of populations up to 1.5 million cells in under 60 s. Existing portals typically tuned to 250-500k cells."
+    },
+    {
+      "item": "Figure 5 — marker gene recall",
+      "contains": "Average recall of 33% across 127 cell types from 14 tissues vs HuBMAP ground truth; P = 0.00-0.04."
+    },
+    {
+      "item": "Figure 4 — ANOVA batch effects",
+      "contains": "For ln(CPM+1), 9/10 (dataset_id) and 6/10 (assay) P values >0.05 aggregated over marker and housekeeping genes; for most cell types no significant difference across covariates."
+    },
+    {
+      "item": "Census / Figure 6",
+      "contains": "Out-of-core computations across 65 million cells and >60,000 genes on a regular 8 GB memory laptop; 900+ datasets spanning human and mouse."
+    },
+    {
+      "item": "scGPT training (ref 62)",
+      "contains": "scGPT generative pretrained model trained on 33 M cells from CZ CELLxGENE."
+    },
+    {
+      "item": "Low-coverage filter",
+      "contains": "Cells with <500 genes expressed excluded, filtering ~8% of all data."
+    },
+    {
+      "item": "Figure 3A",
+      "contains": "UMAP of all 483,152 cells in the Tabula Sapiens dataset visualized in Explorer."
+    }
+  ],
+  "primarySources": [
+    {
+      "topic": "Only ~25% of public single-cell datasets provide cell-level metadata needed for reuse",
+      "citation": "Puntambekar,S., Hesselberth,J.R., Riemondy,K.A. and Fu,R. (2021) Cell-level metadata are indispensable for documenting single-cell sequencing datasets. PLoS Biol., 19, e3001077.",
+      "refN": "9"
+    },
+    {
+      "topic": "Benchmarking atlas-level data integration in single-cell genomics",
+      "citation": "Luecken,M.D., Buttner,M., Chaichoompu,K., et al. (2022) Benchmarking atlas-level data integration in single-cell genomics. Nat. Methods, 19, 41-50.",
+      "refN": "13"
+    },
+    {
+      "topic": "Computational principles and challenges in single-cell data integration",
+      "citation": "Argelaguet,R., Cuomo,A.S.E., Stegle,O. and Marioni,J.C. (2021) Computational principles and challenges in single-cell data integration. Nat. Biotechnol., 39, 1202-1215.",
+      "refN": "15"
+    },
+    {
+      "topic": "Eleven grand challenges in single-cell data science (tools not built for scale)",
+      "citation": "Lahnemann,D., Koster,J., Szczurek,E., et al. (2020) Eleven grand challenges in single-cell data science. Genome Biol., 21, 31.",
+      "refN": "38"
+    },
+    {
+      "topic": "Geneformer — transfer learning / foundation model trained on single-cell data",
+      "citation": "Theodoris,C.V., Xiao,L., Chopra,A., et al. (2023) Transfer learning enables predictions in network biology. Nature, 618, 616-624.",
+      "refN": "61"
+    },
+    {
+      "topic": "scGPT — generative foundation model trained on 33M CZ CELLxGENE cells",
+      "citation": "Cui,H., Wang,C., Maan,H., Pang,K., Luo,F. and Wang,B. (2024) scGPT: towards building a foundation model for single-cell multi-omics using generative AI. Nat Methods, 21, 1470-1480.",
+      "refN": "62"
+    },
+    {
+      "topic": "Method of the year: spatially resolved transcriptomics (field recognizes spatial importance)",
+      "citation": "Marx,V. (2021) Method of the year: spatially resolved transcriptomics. Nat. Methods, 18, 9-14.",
+      "refN": "69"
+    },
+    {
+      "topic": "Spatial components of molecular tissue biology",
+      "citation": "Palla,G., Fischer,D.S., Regev,A. and Theis,F.J. (2022) Spatial components of molecular tissue biology. Nat. Biotechnol., 40, 308-318.",
+      "refN": "70"
+    }
+  ],
+  "flags": [
+    "Metadata unverified: the paper's own venue, year and DOI are not printed in the cleaned text. 'Supplementary Data are available at NAR Online' (line 250) plus the manuscript repo name 'cellxgene-manuscript-2023' strongly suggest Nucleic Acids Research; corpus snapshot is dated 1 October 2024, implying publication ~2024-2025. venue/year/doi therefore set to 'unverified; see flags'/null rather than asserted.",
+    "Author block lists CZI Cell Science Program as a group author followed by ~50 named individuals; corresponding authors are Arathi Mani, Jonah Cool and Ambrose Carr (acarr@chanzuckerberg.com).",
+    "Scope note: 'Other'-tagged excerpts (corpus composition e12, coverage/representation gaps e13, platform model-interaction limit e26, QC filters e32) are recorded as context/QC color; e13 and e32 also bear on our 'data standard / QC / comparability' theme and could be re-routed to claim 9 / standard axis downstream.",
+    "Direction note on e27/e30: the paper concedes spatial and non-RNA modalities are currently weak (challenges our gap claims) while announcing schema/SOMA support for them (a forward-looking nuance); both directions captured rather than sanitized to agreement.",
+    "Roadmap-claim id 'A' (modality axis) and 'C' (spatial axis) and 'standard' used as claimId values per the context file's organizing axes; numbered claims 1,2,4,8,9 used as printed."
+  ]
+}

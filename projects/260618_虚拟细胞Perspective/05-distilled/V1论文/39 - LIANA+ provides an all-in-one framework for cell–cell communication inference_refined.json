@@ -1,0 +1,363 @@
+{
+  "schemaVersion": "精练-4.0",
+  "citationKey": "39",
+  "title": "LIANA+ provides an all-in-one framework for cell–cell communication inference",
+  "authors": "Daniel Dimitrov, Philipp Sven Lars Schäfer, Elias Farr, Pablo Rodriguez-Mier, Sebastian Lobentanzer, Pau Badia-i-Mompel, Aurelien Dugourd, Jovan Tanevski, Ricardo Omar Ramirez Flores & Julio Saez-Rodriguez",
+  "venue": "Nature Cell Biology, 2024 (unverified journal name; see flags)",
+  "year": "2024",
+  "doi": "doi:10.1038/s41556-024-01469-w",
+  "readOn": "2026-06-18",
+  "sourceFile": "/Users/augustsirius/Desktop/已清洗_260617/39 - LIANA+ - an all-in-one framework for cell-cell communication inference_cleaned.md",
+  "oneSentence": "The paper presents LIANA+, a scalable Python framework that unifies and extends many cell–cell communication (CCC) inference methods across single-cell and spatially resolved (multi-)omics data, demonstrated on a murine Parkinson metabolome–transcriptome dataset and a human myocardial-infarction single-nucleus + spatial dataset.",
+  "orientation": "A methods/tooling paper that repeatedly concedes the structural data gaps our perspective argues: dissociated single-cell CCC inference loses tissue architecture and only sees co-expression (never protein/function), spatial data faces a coverage–resolution trade-off, modalities beyond transcriptomics (metabolites, proteins) are largely ignored, and CCC benchmarks lack ground truth. It most plausibly feeds Claim 2 (scRNA loses spatial info), Claim 4/8 (modalities are non-substitutable and must be integrated), Claim 9 (resource heterogeneity/comparability/standards), and Claim 10 (resolution-coverage-destructiveness trade-off). It can serve as a foil (the method-proliferation, transcriptomics-centric paradigm we critique) AND as support (its own conceded limitations and its move to integrate spatial + dissociated multi-omics).",
+  "excerpts": [
+    {
+      "id": "e1",
+      "text": "Most methods have focused on protein-mediated interactions, predominantly inferred from transcriptomics data<sup>2,3</sup>, and only a few from multi-omics data<sup>10</sup>. As a consequence, other modes of intercellular signalling have been typically ignored<sup>3</sup> except for limited metabolite-mediated CCC predictions from transcriptomics data<sup>11–14</sup>. Emerging multi-omics technologies<sup>15</sup> are anticipated to provide a broader picture of molecular mediators and in turn prompt the development of new CCC tools.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        },
+        {
+          "claimId": "axis A modality",
+          "direction": "supports"
+        }
+      ],
+      "note": "The field is overwhelmingly transcriptomics-centric and protein-mediated; non-transcriptomic modes of signalling (e.g. metabolite-mediated) have typically been ignored, and only emerging multi-omics is expected to broaden the picture."
+    },
+    {
+      "id": "e2",
+      "text": "All single-cell methods are based on multiple assumptions, including that gene co-expression across dissociated cells, or groups of cells, reflects CCC within tissues<sup>3</sup>.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 2",
+          "direction": "supports"
+        }
+      ],
+      "note": "Single-cell CCC inference rests on the assumption that gene co-expression in dissociated cells reflects communication within intact tissue — a spatial-information loss conceded as an assumption."
+    },
+    {
+      "id": "e3",
+      "text": "Finally, all these developments use various infrastructures, with each CCC tool being typically designed for a specific task or data type.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Tools are fragmented — each designed for a specific task or data type on differing infrastructures, motivating a unifying framework."
+    },
+    {
+      "id": "e4",
+      "text": "leading to multiple heterogeneous databases and potential inconsistencies caused solely by the choice of resource<sup>3</sup>.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Prior-knowledge resources are heterogeneous, and results can differ purely because of which resource was chosen — a comparability/standardization problem."
+    },
+    {
+      "id": "e5",
+      "text": "LIANA+ uses standardized scverse<sup>28</sup> input and output formats (Fig. 2a), enabling interoperability with external packages and the straightforward extensions of CCC approaches.",
+      "anchor": "Results — LIANA+ as an all-in-one solution to model CCC",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "nuances"
+        }
+      ],
+      "note": "LIANA+ adopts standardized scverse input/output formats to enable interoperability — a proposed remedy to the fragmentation/standardization problem."
+    },
+    {
+      "id": "e6",
+      "text": "A particular challenge of emerging spatial technologies is that, on a single tissue section, they can combine different technologies<sup>15</sup>, and hence the observations from each technology may correspond to distinct spatial locations that need to be aligned<sup>26,29</sup>.",
+      "anchor": "Results — LIANA+ enables modelling CCC across spatial modalities",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        }
+      ],
+      "note": "Combining multiple spatial technologies on one section yields modality observations at distinct locations that must be aligned — a concrete cross-modal integration challenge."
+    },
+    {
+      "id": "e7",
+      "text": "Identifying co-localized genes from spatially resolved data alone can help us to pinpoint relevant interactions driving disease. However, it remains limited by a common coverage–resolution trade-off in most spatial technologies<sup>39,40</sup>: they either quantify a limited fraction of molecules or they capture multiple cells within spots, relying on deconvolution to quantify cell-type frequencies within them<sup>39,40</sup>.",
+      "anchor": "Results — Ligand–receptor inference weakly reflects co-localization",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        },
+        {
+          "claimId": "axis C spatial",
+          "direction": "supports"
+        }
+      ],
+      "note": "Spatial technologies face a coverage–resolution trade-off: either limited molecular coverage, or multi-cell spots requiring deconvolution — a direct statement of the resolution/throughput trade-off."
+    },
+    {
+      "id": "e8",
+      "text": "We found weak associations between ligand–receptor interactions predicted in a spatially agnostic manner and the co-localization of their ligands, receptors and cell types (Fig. 4 and Supplementary Note 5).",
+      "anchor": "Results — Ligand–receptor inference weakly reflects co-localization",
+      "touchpoints": [
+        {
+          "claimId": "Claim 2",
+          "direction": "supports"
+        },
+        {
+          "claimId": "axis C spatial",
+          "direction": "supports"
+        }
+      ],
+      "note": "Ligand–receptor predictions made without spatial information correlate only weakly with the actual co-localization of the partners — empirical evidence that dropping spatial context degrades CCC inference."
+    },
+    {
+      "id": "e9",
+      "text": "Single-cell technologies capture cellular heterogeneity but typically lose tissue architecture information during dissociation, leading to many false positives in spatially agnostic CCC inference, as our evaluations demonstrate.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 2",
+          "direction": "supports"
+        },
+        {
+          "claimId": "axis C spatial",
+          "direction": "supports"
+        }
+      ],
+      "note": "Dissociation loses tissue architecture, producing many false positives in spatially agnostic CCC inference — explicitly supported by the paper's own evaluations."
+    },
+    {
+      "id": "e10",
+      "text": "Dissociated and spatially resolved data generation has commonly focused on transcriptomics<sup>2,3</sup>, limiting CCC method development to protein-mediated interactions. Yet emerging multi-omics technologies enable the quantification of diverse molecules<sup>15,26,58</sup>.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        },
+        {
+          "claimId": "axis A modality",
+          "direction": "supports"
+        }
+      ],
+      "note": "Both dissociated and spatial data generation have focused on transcriptomics, which has limited methods to protein-mediated interactions; multi-omics is needed to quantify diverse molecule types."
+    },
+    {
+      "id": "e11",
+      "text": "Second, CCC from dissociated single-cell data remains limited to the co-expression of communication partners, which may not translate to the protein level, let alone imply a functional interaction<sup>3</sup>. Likewise, while spatially resolved data is a step further from its dissociated counterparts, it is limited to the co-localization of molecules.",
+      "anchor": "Discussion — limitations",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 2",
+          "direction": "supports"
+        }
+      ],
+      "note": "Conceded limitation: dissociated CCC inference sees only co-expression (RNA), which may not translate to protein level or functional interaction — RNA cannot stand in for protein/function; spatial data is limited to co-localization."
+    },
+    {
+      "id": "e12",
+      "text": "First, while each of its methods can flexibly infer interactions between any set of variables, they typically use prior knowledge, which is limited, often exhibiting biases and a trade-off between coverage and quality<sup>3,24,67</sup>.",
+      "anchor": "Discussion — limitations",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Prior knowledge underlying these methods is limited and biased, with a coverage–quality trade-off — a data/resource-quality limitation."
+    },
+    {
+      "id": "e13",
+      "text": "Finally, while our preliminary evaluations support the ability of LIANA+ to generate CCC insights across a range of technologies, systematic benchmarks of CCC methods are still pending. Ours and other evaluations remain limited by the lack of ground truth<sup>3</sup>, using instead orthogonal modalities, such as spatial data<sup>3,69</sup> or downstream signalling<sup>3</sup>.",
+      "anchor": "Discussion — limitations",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 8",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Conceded: systematic CCC benchmarks are still pending and evaluations lack ground truth, relying on orthogonal modalities (spatial data, downstream signalling) as proxies — a benchmark/comparability gap, and an argument that orthogonal modalities supply complementary truth."
+    },
+    {
+      "id": "e14",
+      "text": "In the meantime, LIANA+— like other CCC inference methods—remains a tool for hypothesis generation.",
+      "anchor": "Discussion — limitations",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "The authors concede that LIANA+ and other CCC methods remain hypothesis-generation tools rather than validated predictors — an admission of limited reliability without better data/ground truth."
+    },
+    {
+      "id": "e15",
+      "text": "As emerging technologies<sup>70–72</sup> that capture bona fide CCC events become measurable at scale and widely available, LIANA+ will facilitate such benchmarks and comparisons.",
+      "anchor": "Discussion — limitations",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Forward-looking: only when technologies that capture genuine CCC events become scalable will proper benchmarking/comparison be possible — current comparability is bottlenecked by data."
+    },
+    {
+      "id": "e16",
+      "text": "Using LIANA+, we jointly analysed the CCC events following myocardial infarction from single-nucleus and spatially resolved transcriptomics data<sup>27</sup>, thereby addressing the resolution limitations of spatial transcriptomics data<sup>15,39</sup> and the anticipated high false positive rates from dissociated data.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 10",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Demonstrates integrating dissociated single-nucleus with spatial data to compensate for the resolution limits of spatial data and the false-positive rates of dissociated data — modalities used as mutual complements."
+    },
+    {
+      "id": "e17",
+      "text": "Several metabolite peaks were explained relatively well by the joint model $( R ^ { 2 } > 0 . 5 )$ , including dopamine and its derivative 3-methoxytyramine, among other potentially deregulated, but unannotated, metabolite peaks (Extended Data Fig. 3a). Focusing on dopamine, we saw a large difference in explained variance between the intact (R<sup>2</sup> = 0.535) and lesioned hemispheres (R<sup>2</sup> ≈ 0; Extended Data Fig. 3a), which is expected due to the absence of dopamine in the striatum of the lesioned hemisphere<sup>26</sup> (Fig. 3e and Extended Data Fig. 4).",
+      "anchor": "Results — LIANA+ enables modelling CCC across spatial modalities",
+      "touchpoints": [
+        {
+          "claimId": "axis A modality",
+          "direction": "supports"
+        }
+      ],
+      "note": "Quantitative metabolite-mediated CCC result: dopamine explained variance R2=0.535 (intact) vs ~0 (lesioned), showing a non-RNA (metabolite) modality carries signalling information recoverable via spatial multi-omics."
+    },
+    {
+      "id": "e18",
+      "text": "this unsupervised and synergistic analysis highlighted the importance of FB and myeloid cells (MY) as potential drivers of the disease trajectory following early myocardial infarction in both single-cell and spatial data.",
+      "anchor": "Results — LIANA+ infers intercellular programmes from dissociated data",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        }
+      ],
+      "note": "Cross-modal corroboration: the same fibroblast-myeloid signalling axis emerges in both dissociated single-cell and spatial data, illustrating value of integrating modalities."
+    },
+    {
+      "id": "e19",
+      "text": "We additionally incorporated co-localization information to mitigate the anticipated high false positive rates (Supplementary Note 5).",
+      "anchor": "Results — LIANA+ infers intercellular programmes from dissociated data",
+      "touchpoints": [
+        {
+          "claimId": "Claim 2",
+          "direction": "supports"
+        }
+      ],
+      "note": "Spatial co-localization information is explicitly added to mitigate the high false-positive rate of dissociated-data CCC inference — concedes that dissociated data alone is error-prone without spatial context."
+    },
+    {
+      "id": "e20",
+      "text": "To our knowledge, it is currently the only approach that considers the sign of the molecular interactions underlying inter- and intracellular signalling, a key feature of signal transduction.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Other",
+          "direction": "nuances",
+          "otherLabel": "Sign/direction of molecular interactions (regulatory wiring) as information beyond expression magnitude"
+        }
+      ],
+      "note": "Claims LIANA+ is the only method accounting for the sign (activating/inhibitory) of molecular interactions — a regulatory/network-wiring layer of information beyond raw expression."
+    }
+  ],
+  "figuresNumbers": [
+    {
+      "item": "Intro count",
+      "contains": "Over 100 tools have contributed to CCC inference from single-cell and spatial transcriptomics data."
+    },
+    {
+      "item": "Dopamine R2 (Extended Data Fig. 3a)",
+      "contains": "Joint multi-view model explained dopamine intensity with R2 = 0.535 in the intact hemisphere vs R2 ≈ 0 in the lesioned hemisphere; several metabolite peaks had R2 > 0.5."
+    },
+    {
+      "item": "Myocardial infarction dataset (Fig. 5a)",
+      "contains": "29 single-nucleus and 28 10X Visium spatial samples from human myogenic, fibrotic and ischaemic heart regions after myocardial infarction."
+    },
+    {
+      "item": "NMF factors (Fig. 5b–c)",
+      "contains": "Five intercellular programmes (factors) obtained across 28 spatial slides; factors 1, 2, 5 enriched in ischaemic samples, factor 4 in fibrotic, factor 3 in myogenic."
+    },
+    {
+      "item": "Multi-view factor 1 (Fig. 5i,j)",
+      "contains": "Dissociated single-nucleus factor 1 sample loadings differed across conditions (P = 9.9 × 10^-12); fibroblast-to-myeloid signalling axis R2 = 25.1%."
+    },
+    {
+      "item": "Local-metric set",
+      "contains": "Eight local metrics implemented; spatially weighted cosine chosen as default for interpretability and consistent performance."
+    },
+    {
+      "item": "Efficiency benchmark (Extended Data Fig. 1)",
+      "contains": "Scalability tested on simulated datasets from 1,000 to 100,000 cells; multi-view learning RAM ~2,900 MB (±100 MB)."
+    }
+  ],
+  "primarySources": [
+    {
+      "topic": "Comparison of methods/resources for CCC inference from scRNA-seq; co-expression assumption; lack of ground truth; resource-driven inconsistencies",
+      "citation": "Dimitrov, D. et al. Comparison of methods and resources for cell–cell communication inference from single-cell RNA-seq data. Nat. Commun. 13, 3224 (2022)",
+      "refN": "3"
+    },
+    {
+      "topic": "Reviews establishing transcriptomics-centric, protein-mediated focus of CCC methods",
+      "citation": "Armingol, E., Officer, A., Harismendy, O. & Lewis, N. E. Deciphering cell–cell interactions and communication from gene expression. Nat. Rev. Genet. 22, 71–88 (2021)",
+      "refN": "2"
+    },
+    {
+      "topic": "Single-cell multi-omics technological landscape (basis for 'emerging multi-omics' claims)",
+      "citation": "Baysoy, A., Bai, Z., Satija, R. & Fan, R. The technological landscape and applications of single-cell multi-omics. Nat. Rev. Mol. Cell Biol. 24, 695–713 (2023)",
+      "refN": "15"
+    },
+    {
+      "topic": "Coverage–resolution trade-off in spatial technologies",
+      "citation": "Vandereyken, K., Sifrim, A., Thienpont, B. & Voet, T. Methods and applications for single-cell and spatial multi-omics. Nat. Rev. Genet. 24, 494–515 (2023)",
+      "refN": "39"
+    },
+    {
+      "topic": "Spatial multimodal (metabolome–transcriptome) Parkinson dataset used as the spatial multi-omics case study",
+      "citation": "Vicari, M. et al. Spatial multimodal analysis of transcriptomes and metabolomes in tissues. Nat. Biotechnol. (2023) doi:10.1038/s41587-023-01937-y",
+      "refN": "26"
+    },
+    {
+      "topic": "Spatial multi-omic map of human myocardial infarction (single-nucleus + Visium dataset)",
+      "citation": "Kuppe, C. et al. Spatial multi-omic map of human myocardial infarction. Nature 608, 766–777 (2022)",
+      "refN": "27"
+    },
+    {
+      "topic": "Slide-tags technology enabling single-nucleus data with preserved spatial information (used as indirect ground truth)",
+      "citation": "Russell, A. J. C. et al. Slide-tags enables single-nucleus barcoding for multimodal spatial genomics. Nature 625, 101–109 (2024)",
+      "refN": "41"
+    }
+  ],
+  "flags": [
+    "Metadata: journal name not printed in cleaned text header (labeled 'Technical Report'); inferred as Nature Cell Biology from peer-review line ('Nature Cell Biology thanks the anonymous reviewers') and DOI prefix s41556 (NCB). Year 2024 confirmed (Published online 2 September 2024). Venue volume/issue/pages not in text — recorded as unverified.",
+    "Dates from header: Received 15 March 2024; Accepted 2 July 2024; Published online 2 September 2024.",
+    "OCR quirks preserved verbatim in quotes (e.g. 'diferential', 'afiliations', spaced LaTeX math like '$( R ^ { 2 } > 0 . 5 )$', '<sup>' markup) — not corrected.",
+    "Scope note: most of the paper concerns CCC-inference methodology (factorization, network optimization, ligand–receptor scoring), which is out of scope for our data-standard thesis; captured only the lines bearing on spatial loss, modality breadth, integration, comparability/standards and the coverage–resolution trade-off.",
+    "Read at source: ref #3 (Dimitrov 2022, Nat. Commun. 13:3224) is the recurring authority for the co-expression assumption, lack of ground truth and resource-driven inconsistencies — worth citing first-hand.",
+    "Source inconsistency: reference list duplicates ref #74/#58 (Saarenpää spatial metatranscriptomics) and contains a malformed citation '<sup>2</sup>' for the Parkinson dataset in Methods (should be ref 26); numbering #76–94 appears split across multiple 'References' blocks in the cleaned text."
+  ]
+}

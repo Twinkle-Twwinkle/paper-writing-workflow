@@ -1,0 +1,524 @@
+{
+  "schemaVersion": "精练-4.0",
+  "citationKey": "18",
+  "title": "In-depth and high-throughput spatial proteomics for whole-tissue slice profiling by deep learning-facilitated sparse sampling strategy",
+  "authors": "Ritian Qin, Jiacheng Ma, Fuchu He, Weijie Qin",
+  "venue": "Cell Discovery, 2024",
+  "year": "2024",
+  "doi": "doi:10.1038/s41421-024-00764-y",
+  "readOn": "2026-06-18",
+  "sourceFile": "/Users/augustsirius/Desktop/已清洗_260617/18 - In-depth and high-throughput spatial proteomics for whole-tissue slice profiling_cleaned.md",
+  "oneSentence": "The authors developed S4P, a sparse-sampling spatial proteomics strategy with a deep-learning reconstruction model (DeepS4P), to map the spatial distribution of more than 9000 proteins at ~525 um resolution across a whole mouse-brain slice, the largest spatial proteome to date, and found widespread spatial discordance between mRNA and protein distributions.",
+  "orientation": "Strong support for Claim 6 (high-throughput spatial proteomics is feasible) and Claim 2/Axis C (transcriptomics loses or biases protein spatial information; protein measurement is needed). Also feeds Claim 4 (mRNA-protein non-substitutability) via quantitative correlation data and Claim 10 (resolution x throughput x destructiveness trilemma) via explicit sample-number/MS-time trade-off discussion. The paper itself concedes a temporal limitation (averaging across z-slices, no time course) that can be deployed for Claim 3/Axis B. Can serve as both an ally (proteomics is needed and now achievable) and as a candidate to be critiqued (still no temporal axis, lower resolution than ST, slice-averaging).",
+  "excerpts": [
+    {
+      "id": "e1",
+      "text": "While genome mutations and transcriptome alterations act as drivers of diseases, the proteins that they encode regulate essentially all biological functions and constitute the majority of biomarkers and drug targets for disease diagnostics and treatment.",
+      "anchor": "Abstract",
+      "touchpoints": [
+        {
+          "claimId": "Claim 5",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Axis A (modality)",
+          "direction": "supports"
+        }
+      ],
+      "note": "Argues proteins, not the upstream genome/transcriptome, regulate biological function and dominate biomarkers and drug targets."
+    },
+    {
+      "id": "e2",
+      "text": "However, unlike transcriptomics, which has a recent explosion in highthroughput spatial technologies with deep coverage, spatial proteomics capable of reaching bulk tissue-level coverage is still rare in the <sup>fi</sup>eld, due to the non-ampli<sup>fi</sup>able nature of proteins and sensitivity limitation of mass spectrometry (MS).",
+      "anchor": "Abstract",
+      "touchpoints": [
+        {
+          "claimId": "Claim 6",
+          "direction": "challenges"
+        },
+        {
+          "claimId": "Axis A (modality)",
+          "direction": "supports"
+        }
+      ],
+      "note": "States that high-throughput spatial proteomics lags far behind spatial transcriptomics because proteins cannot be amplified and MS sensitivity is limited; protein modality is under-measured."
+    },
+    {
+      "id": "e3",
+      "text": "More importantly, due to the limited multiplexing capability of the current proteomics methods, whole-tissue slice mapping with high spatial resolution requires a formidable amount of MS matching time.",
+      "anchor": "Abstract",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        }
+      ],
+      "note": "Frames the resolution-vs-throughput trade-off: high-resolution whole-slice proteomics demands a prohibitive amount of MS instrument time."
+    },
+    {
+      "id": "e4",
+      "text": "In this way, we generated the largest spatial proteome to date, mapping more than 9000 proteins in the mouse brain, and discovered potential new regional or cell type markers.",
+      "anchor": "Abstract",
+      "touchpoints": [
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        }
+      ],
+      "note": "Claims the largest spatial proteome to date, >9000 proteins mapped in mouse brain."
+    },
+    {
+      "id": "e5",
+      "text": "The spatial organization of these biomolecules plays a crucial role in determining their function and interaction with their spatial neighborhood in physiological and pathological tissue environments<sup>1,2</sup>.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 7",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Axis C (spatial)",
+          "direction": "supports"
+        }
+      ],
+      "note": "Asserts spatial organization and spatial-neighborhood interactions determine biomolecular function in tissue."
+    },
+    {
+      "id": "e6",
+      "text": "However, it is the gene-encoded proteins that actually regulate essentially all cellular functions and therefore need to be investigated to reveal tissue spatial heterogeneity.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 5",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Axis A (modality)",
+          "direction": "supports"
+        }
+      ],
+      "note": "Argues proteins must be measured directly to reveal tissue spatial heterogeneity, because they execute cellular function."
+    },
+    {
+      "id": "e7",
+      "text": "Accumulating proteogenomic comparisons revealed that typical Pearson correlation coef<sup>fi</sup>cients for mRNA–protein in mammalian tissues are \\~0.35–0.6, and can be even lower at single-cell level<sup>7</sup>.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        }
+      ],
+      "note": "Quantifies low mRNA-protein correlation (~0.35-0.6, lower at single-cell level), evidence that RNA cannot substitute for protein measurement."
+    },
+    {
+      "id": "e8",
+      "text": "Discordant spatial distribution was also revealed by the different zonation patterns of the enterocyte proteins and mRNAs along the villus axis<sup>8</sup>.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Axis C (spatial)",
+          "direction": "supports"
+        }
+      ],
+      "note": "Cites a prior finding that protein and mRNA spatial zonation patterns differ along the intestinal villus axis."
+    },
+    {
+      "id": "e9",
+      "text": "The poor mRNA–protein correlation may result in biased inference of gene expression distribution using transcriptional data, especially for mammalian brains, considering the large distances between the locations where the proteins are synthesized and transported<sup>9–11</sup>.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 2",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Axis C (spatial)",
+          "direction": "supports"
+        }
+      ],
+      "note": "Argues transcriptional data biases inference of protein spatial distribution, especially in brain where proteins are transported far from synthesis sites."
+    },
+    {
+      "id": "e10",
+      "text": "Imaging mass cytometry (IMC) using lanthanide metal labeling has single-cell sensitivity and resolution. It has gained signi<sup>fi</sup>cant attention for its high throughput, capable of analyzing thousands of cells per minute. However, similar to IHC, it is also a target-based method that is dominated by antibodies<sup>12</sup>. Only several dozen proteins can be analyzed, which makes IMC less attractive for the discoverdriven screening of cellular phenotypes.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 6",
+          "direction": "nuances"
+        },
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        }
+      ],
+      "note": "Notes the trade-off that antibody-based IMC has single-cell resolution and high throughput but is limited to several dozen targeted proteins, unsuitable for discovery-driven screening."
+    },
+    {
+      "id": "e11",
+      "text": "In contrast, liquid chromatography-coupled biological mass spectrometry (LC-MS), which routinely measures \\~10,000 unique proteins from bulk cell and tissue samples, is advantageous in capturing the spatial complexity of tissue proteome.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        }
+      ],
+      "note": "States LC-MS routinely measures ~10,000 proteins from bulk samples, contrasting with targeted antibody methods."
+    },
+    {
+      "id": "e12",
+      "text": "2000 proteins can be obtained at 100-µm spatial resolution due to the limited sample amount<sup>17,18</sup>. Although 3000 proteins at 50-µm resolution was reached in a recent work<sup>19</sup>, a larger scale of proteome identi<sup>fi</sup>cation is more desirable to deeply cover regulatory pathways in tissues for spatially resolved physiological and pathological investigation at the molecular level.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 6",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Documents the resolution-vs-depth trade-off in prior spatial proteomics: ~2000 proteins at 100 um, 3000 at 50 um, limited by sample amount."
+    },
+    {
+      "id": "e13",
+      "text": "Although the proteome coverage can be improved using region-speci<sup>fi</sup>c anatomic dissection of whole tissue, it relies on histologic anatomy structure and cannot provide the high spatial resolution comparable to that of spatial transcriptomics (ST) or metabolomics<sup>20–22</sup>.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 6",
+          "direction": "challenges"
+        },
+        {
+          "claimId": "Axis C (spatial)",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Concedes that anatomy-based dissection proteomics cannot reach the spatial resolution of spatial transcriptomics or metabolomics."
+    },
+    {
+      "id": "e14",
+      "text": "Taking a circle tissue slice with a diameter of 1 cm as an example, \\~8000 samples, corresponding to more than 8000–10,000 h of MS machine time, are required to achieve whole-tissue-slice coverage with a 100 μm resolution, which makes it a formidable task in routine studies.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        }
+      ],
+      "note": "Quantifies the throughput barrier: covering a 1 cm slice at 100 um resolution would need ~8000 samples and >8000-10,000 h of MS time."
+    },
+    {
+      "id": "e15",
+      "text": "Therefore, whole-tissue-slice-based spatial proteomic approaches that provide reasonable throughput without compromising spatial resolution and proteome depth are urgently needed.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        }
+      ],
+      "note": "States the field needs spatial proteomics that balances throughput, spatial resolution, and proteome depth simultaneously."
+    },
+    {
+      "id": "e16",
+      "text": "Using S4P, we successfully reconstructed the spatial proteome (SP) of a whole-tissue slice of a mouse brain, consisting of the distribution and expression of 9204 proteins with a spatial resolution of 525 μm (Supplementary Fig. S1). In this way, the MS data acquisition was completed within \\~200 h of MS time, half of the time required by the “gridding”-like strategy.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        }
+      ],
+      "note": "Reports 9204 proteins reconstructed at 525 um resolution in ~200 h MS time, half the time of the gridding strategy."
+    },
+    {
+      "id": "e17",
+      "text": "For example, an MS time 15–20 times shorter than that of the “gridding”-like strategy can be achieved for a 100 μm spatial resolution (Supplementary Fig. S2).",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        }
+      ],
+      "note": "Claims sparse sampling cuts MS time 15-20x versus gridding at 100 um resolution."
+    },
+    {
+      "id": "e18",
+      "text": "The <sup>fi</sup>rst large-scale discovery of different levels of spatial distribution inconsistency between RNAs and proteins in various biological processes, such as synaptic secretion of proteins and neurotransmitters, cellular metabolism, and cognitive & motor function integration, is invaluable for future brain science study.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Axis C (spatial)",
+          "direction": "supports"
+        }
+      ],
+      "note": "Frames the paper's first large-scale finding of spatial RNA-protein inconsistency across biological processes as a key result."
+    },
+    {
+      "id": "e19",
+      "text": "Considering that ST is currently the dominant technology for mapping the distribution of gene expression products, we performed ST analysis by Visium from 10X Genomics using a tissue slice from the same mouse brain (Supplementary Fig. S13). Limited by the ST chip size, only a partial region of the tissue slice was used for ST analysis (Fig. 7a).",
+      "anchor": "Correlation analysis of S4P and ST mappings",
+      "touchpoints": [
+        {
+          "claimId": "Claim 2",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Notes ST is the dominant gene-expression mapping technology but that the ST chip size limited coverage to only a partial region of the slice."
+    },
+    {
+      "id": "e20",
+      "text": "8691 pairs of gene expression products were found from both ST and spatial proteome SP data (Fig. 7b). We further calculated the Pearson correlation of the transcript–protein pairs for their spatial expression. The correlation between different molecule pairs varies greatly, ranging from –0.47 to 0.62 (Fig. 7c).",
+      "anchor": "Correlation analysis of S4P and ST mappings",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Axis C (spatial)",
+          "direction": "supports"
+        }
+      ],
+      "note": "Reports spatial transcript-protein Pearson correlations spanning -0.47 to 0.62 across 8691 co-detected gene products, with some strongly anti-correlated."
+    },
+    {
+      "id": "e21",
+      "text": "For gene products with poor correlation, their inconsistency may be attributed to the complex brain tissue, which comprises hundreds to thousands of cell types, each with potentially different spatial distribution patterns of mRNAs and proteins.",
+      "anchor": "Correlation analysis of S4P and ST mappings",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        }
+      ],
+      "note": "Attributes mRNA-protein spatial inconsistency partly to cell-type heterogeneity within the brain."
+    },
+    {
+      "id": "e22",
+      "text": "The spatial discordance between mRNAs and the corresponding functional proteins involved in catabolism processes indicates the necessity of developing SP techniques for exploring the biological mechanism in the brain. Although we cannot fully explain this spatially inconsistent distribution between RNAs and proteins, the results further indicate the advantage of directly mapping protein quantity and location in the tissue.",
+      "anchor": "Correlation analysis of S4P and ST mappings",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 2",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concludes spatial mRNA-protein discordance shows transcriptomics cannot infer protein location and that protein must be directly mapped; authors admit they cannot fully explain the discordance."
+    },
+    {
+      "id": "e23",
+      "text": "Although a large number of spatial transcriptomics techniques have been developed and successfully applied in studies on brain function, embryonic development, and tumor microenvironment, direct characterization of the quantity and location of proteins at whole-tissue level is indispensable for both biological function and disease mechanism studies, due to the widely discovered low correlation between RNA and protein.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 2",
+          "direction": "supports"
+        }
+      ],
+      "note": "States direct protein quantity/location measurement is indispensable and not replaceable by spatial transcriptomics, because of low RNA-protein correlation."
+    },
+    {
+      "id": "e24",
+      "text": "Especially for tissues like the brain, where large-scale proteins are transported away from the sites where they are synthesized, unbiased proteome location measurement is highly demanded to promote elucidation of the spatially organized molecular regulations in the most complex organ.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Axis C (spatial)",
+          "direction": "supports"
+        }
+      ],
+      "note": "Argues protein transport away from synthesis sites in brain makes direct protein localization (not RNA) essential."
+    },
+    {
+      "id": "e25",
+      "text": "S4P can be used as a complementary strategy to reveal protein distribution that cannot be inferred by spatial transcriptome, especially for the metabolic signaling and protein expression-related genes that are important not only for the understanding of basic biology, but also for the identi<sup>fi</sup>cation of potential targets for future diagnostics and therapies.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        }
+      ],
+      "note": "Positions spatial proteomics as complementary to spatial transcriptomics, revealing protein distributions that cannot be inferred from RNA."
+    },
+    {
+      "id": "e26",
+      "text": "Another limitation is that eight adjacent slices are needed for spatial proteome reconstruction currently. Although we did not observe obvious proteome differences among these slices (Supplementary Fig. S4), we still have to consider that the <sup>fi</sup>nal spatial proteome pro<sup>fi</sup>le obtained is the average result of the eight slices spanning 80 μm along the z axis.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 6",
+          "direction": "challenges"
+        },
+        {
+          "claimId": "Axis C (spatial)",
+          "direction": "challenges"
+        }
+      ],
+      "note": "Author-conceded limitation: the reconstructed proteome is an average over eight z-axis slices (80 um), limiting true 3D/single-slice spatial fidelity."
+    },
+    {
+      "id": "e27",
+      "text": "According to our attempts, \\~100 µm in strip width is the current limit for LMDbased sample collection. For even higher spatial resolution, a combination of S4P with a tissue expansion method<sup>18</sup> may be a promising way, in which size of the tissue slice can be evenly expanded \\~8 times in every direction to support possible singlecell spatial resolution.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Axis C (spatial)",
+          "direction": "challenges"
+        }
+      ],
+      "note": "Author-conceded resolution limit: ~100 um strip width is the current LMD limit, below true single-cell spatial resolution without tissue expansion."
+    },
+    {
+      "id": "e28",
+      "text": "Therefore, future studies using a combination of S4P and time-resolved mouse models may provide information on the dynamic distribution and functional variation of synaptic vesicle proteins under different physiological and pathological conditions for a more comprehensive understanding of synaptic transmission.",
+      "anchor": "Landscape of protein spatial distribution in the mouse brain",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "challenges"
+        },
+        {
+          "claimId": "Axis B (temporal)",
+          "direction": "challenges"
+        }
+      ],
+      "note": "Implicitly concedes the method captures a static snapshot and lacks a temporal/dynamic axis; proposes future time-resolved models to add dynamics."
+    }
+  ],
+  "figuresNumbers": [
+    {
+      "item": "Spatial proteome scale",
+      "contains": "9204 protein distribution maps reconstructed at 525 um spatial resolution; 234,768 peptides and 9318 unique proteins mapped/quantified in brain strips; ~200 h MS time, half of the gridding strategy."
+    },
+    {
+      "item": "mRNA-protein correlation (literature)",
+      "contains": "Typical Pearson correlation for mRNA-protein in mammalian tissues ~0.35-0.6, lower at single-cell level (ref 7)."
+    },
+    {
+      "item": "Fig. 7c (ST-SP correlation)",
+      "contains": "8691 co-detected gene-product pairs between ST (Visium) and SP; spatial transcript-protein Pearson correlation ranges from -0.47 to 0.62."
+    },
+    {
+      "item": "Throughput / trade-off estimate",
+      "contains": "A 1 cm circular slice at 100 um resolution would require ~8000 samples and >8000-10,000 h of MS time; S4P offers 15-20x shorter MS time at 100 um and ~2x deeper coverage at ~500 um vs prior method (ref 18)."
+    },
+    {
+      "item": "Reproducibility / QC",
+      "contains": "8101-8343, 8056-8386, 7591-8010 proteins across three area groups; median CV < 0.13 for same-axial strips; QC samples 7583-8502 proteins, median CV 0.16, Pearson > 0.93; >96% protein overlap across slices; per-slice 9107-9228 proteins."
+    },
+    {
+      "item": "Resolution limits",
+      "contains": "Current LMD strip-width limit ~100 um; final profile averaged over eight 10-um slices spanning 80 um in z; prior methods ~2000 proteins at 100 um, 3000 at 50 um."
+    },
+    {
+      "item": "Co-localization validation (CS)",
+      "contains": "Cosine similarity for co-localized protein pairs: TUBA4A-TUBB4B 0.98, GABBR1-GABBR2 0.99, TRAPPC8-TRAPPC11 0.98, ATP6V1E1-ATP6V1F 0.97, DNM1-DNM2 0.98, SYN1-SYN2 0.94, CTNNB1-CDH2 0.93, NSF-NAPA 0.90; gridding vs S4P median CS 0.869."
+    }
+  ],
+  "primarySources": [
+    {
+      "topic": "Typical mRNA-protein correlation ~0.35-0.6, lower at single-cell level",
+      "citation": "Jiang, Y. R. et al. Simultaneous deep transcriptome and proteome profiling in a single mouse oocyte. Cell Rep. 42, 113455 (2023)",
+      "refN": "7"
+    },
+    {
+      "topic": "Discordant spatial zonation of enterocyte proteins vs mRNAs along the villus axis",
+      "citation": "Harnik, Y. et al. Spatial discordances between mRNAs and proteins in the intestinal epithelium. Nat. Metab. 3, 1680-1693 (2021)",
+      "refN": "8"
+    },
+    {
+      "topic": "Emerging principles of mRNA-protein gene-expression control / poor correlation in brain",
+      "citation": "Buccitelli, C. & Selbach, M. mRNAs, proteins and the emerging principles of gene expression control. Nat. Rev. Genet. 21, 630-644 (2020)",
+      "refN": "9"
+    },
+    {
+      "topic": "Prior spatial proteomics: ~2000 proteins at 100 um resolution",
+      "citation": "Piehowski, P. D. et al. Automated mass spectrometry imaging of over 2000 proteins from tissue sections at 100-um spatial resolution. Nat. Commun. 11, 8 (2020)",
+      "refN": "17"
+    },
+    {
+      "topic": "Spatially resolved proteomics via tissue expansion (~2x depth comparison baseline)",
+      "citation": "Li, L. et al. Spatially resolved proteomics via tissue expansion. Nat. Commun. 13, 7242 (2022)",
+      "refN": "18"
+    },
+    {
+      "topic": "Recent spatial proteomics reaching 3000 proteins at 50 um resolution",
+      "citation": "Kwon, Y. et al. Proteome-scale tissue mapping using mass spectrometry based on label-free and multiplexed workflows. Mol. Cell Proteom. 23, 100841 (2024)",
+      "refN": "19"
+    },
+    {
+      "topic": "Microscaffold-assisted spatial proteomics (MASP) comparison method",
+      "citation": "Ma, M. et al. In-depth mapping of protein localizations in whole tissue by microscaffold assisted spatial proteomics (MASP). Nat. Commun. 13, 7736 (2022)",
+      "refN": "24"
+    },
+    {
+      "topic": "Imaging-free molecular tomography reconstruction (design matrix / Tomographer)",
+      "citation": "Schede, H. H. et al. Spatial tissue profiling by imaging-free molecular tomography. Nat. Biotechnol. 39, 968-977 (2021)",
+      "refN": "25"
+    },
+    {
+      "topic": "Local translation enabling neurons to overcome distance constraints (synaptic transcriptome)",
+      "citation": "Holt, C. E., Martin, K. C. & Schuman, E. M. Local translation in neurons: visualization and function. Nat. Struct. Mol. Biol. 26, 557-566 (2019)",
+      "refN": "55"
+    }
+  ],
+  "flags": [
+    "Metadata: DOI 10.1038/s41421-024-00764-y and venue Cell Discovery confirmed verbatim in source (lines 163, 291); year 2024 inferred from DOI prefix and reference dates.",
+    "Metadata unverified: received/accepted/published dates and volume/issue/pages not present in the cleaned MD; venue given as 'Cell Discovery, 2024' without volume/page.",
+    "OCR quirks preserved in excerpts: 'fi'/'fl' ligatures rendered as <sup>fi</sup>/<sup>fl</sup>, '~' rendered as '\\~', en-dash variants kept as in source.",
+    "Source inconsistency: abstract/text states 'more than 9000 proteins' and '9204 protein distribution maps'; QC section reports 9318 unique proteins mapped and quantified in strips before reconstruction filtering (9204 after).",
+    "Scope note: extensive brain-specific marker/pathway content (Figs 4-6, neurotransmitter/synaptic vesicle pathways) is largely off-roadmap detail and not captured except where it bears on RNA-protein discordance or method capability.",
+    "Read at source: ref #8 (Harnik 2021, Nat. Metab.) and ref #7 (Jiang 2023, Cell Rep.) worth first-hand for mRNA-protein spatial discordance / correlation numbers."
+  ]
+}

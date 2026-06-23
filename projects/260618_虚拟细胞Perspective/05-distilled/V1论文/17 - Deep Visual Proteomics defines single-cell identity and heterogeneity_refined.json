@@ -1,0 +1,453 @@
+{
+  "schemaVersion": "精练-4.0",
+  "citationKey": "17",
+  "title": "Deep Visual Proteomics defines single-cell identity and heterogeneity",
+  "authors": "Andreas Mund, Fabian Coscia, András Kriston, Réka Hollandi, Ferenc Kovács, Andreas-David Brunner, Ede Migh, Lisa Schweizer, Alberto Santos, Michael Bzorek, Soraya Naimy, Lise Mette Rahbek-Gjerdrum, Beatrice Dyring-Andersen, Jutta Bulkescher, Claudia Lukas, Mark Adam Eckert, Ernst Lengyel, Christian Gnann, Emma Lundberg, Peter Horvath, Matthias Mann",
+  "venue": "Nature Biotechnology, 2022, 40:1231-1240",
+  "year": "2022",
+  "doi": "doi:10.1038/s41587-022-01302-5",
+  "readOn": "2026-06-18",
+  "sourceFile": "/Users/augustsirius/Desktop/已清洗_260617/17 - Deep Visual Proteomics defines single-cell identity and heterogeneity_cleaned.md",
+  "oneSentence": "The paper introduces Deep Visual Proteomics (DVP), a workflow combining AI-driven image analysis, automated single-cell laser microdissection and ultra-high-sensitivity mass spectrometry to measure single-cell proteomes while preserving spatial and subcellular context, and applies it to cultured cells and archived cancer tissues to resolve cell-state and disease-progression proteome changes in situ.",
+  "orientation": "A spatial single-cell proteomics method paper that most directly feeds the protein-modality axis and the spatial axis: it demonstrates that high-sensitivity proteomics of ~50-100 cells with retained spatial context is now feasible (supports claim 6 capability and claim 2's spatial gap as a remedy), recovers protein-level information not captured by transcriptomics (claim 4 modality orthogonality), and localizes microenvironment-dependent state changes in tumor tissue (claim 7). It can also serve as a foil: it concedes that dissociation/single-cell transcriptomics loses spatial and ECM context (claim 2), and its destructive endpoint MS measurement underscores the no-paired-observation constraint relevant to claim 3 (temporal), though its cell-cycle classes only infer dynamics from a snapshot.",
+  "excerpts": [
+    {
+      "id": "e1",
+      "text": "Despite the availabilty of imaging-based and mass-spectrometry-based methods for spatial proteomics, a key challenge remains connecting images with single-cell-resolution protein abundance measurements.",
+      "anchor": "Abstract",
+      "touchpoints": [
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        }
+      ],
+      "note": "States the unsolved problem the method targets: linking imaging to single-cell-resolution protein abundance in spatial proteomics."
+    },
+    {
+      "id": "e2",
+      "text": "DVP links protein abundance to complex cellular or subcellular phenotypes while preserving spatial context.",
+      "anchor": "Abstract",
+      "touchpoints": [
+        {
+          "claimId": "轴 C · 空间（spatial）",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 2",
+          "direction": "supports"
+        }
+      ],
+      "note": "Claims the method retains spatial context while measuring single-cell protein abundance."
+    },
+    {
+      "id": "e3",
+      "text": "The ability of DVP to retain precise spatial proteomic information in the tissue context has implications for the molecular profiling of clinical samples.",
+      "anchor": "Abstract",
+      "touchpoints": [
+        {
+          "claimId": "轴 C · 空间（spatial）",
+          "direction": "supports"
+        }
+      ],
+      "note": "Frames retaining spatial proteomic information in tissue as the key clinical implication."
+    },
+    {
+      "id": "e4",
+      "text": "Currently, a predefined subset of proteins is usually targeted, far short of the actual complexity of the proteome.",
+      "anchor": "Introduction, p.1",
+      "touchpoints": [
+        {
+          "claimId": "轴 A · 模态（measure what）",
+          "direction": "supports"
+        }
+      ],
+      "note": "Notes that imaging-based proteomics is usually limited to a small predefined antibody panel, far short of full proteome complexity."
+    },
+    {
+      "id": "e5",
+      "text": "Taking advantage of substantially increased sensitivity in technology based on mass spectrometry (MS), we set out to enable the analysis of proteomes within their native, subcellular context to explore their contribution to health and disease.",
+      "anchor": "Introduction, p.1",
+      "touchpoints": [
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        },
+        {
+          "claimId": "轴 A · 模态（measure what）",
+          "direction": "supports"
+        }
+      ],
+      "note": "States the goal of measuring unbiased MS proteomes within native subcellular context, enabled by increased MS sensitivity."
+    },
+    {
+      "id": "e6",
+      "text": "After optimization, the LMD7 can autonomously excise 1,250 high-resolution contours per hour, equivalent to 50 to 100 cells per sample (Methods).",
+      "anchor": "Results: Image-guided single-cell isolation, p.2",
+      "touchpoints": [
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 10",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Quantifies automated laser microdissection throughput (1,250 contours/hour; 50-100 cells per proteomic sample)."
+    },
+    {
+      "id": "e7",
+      "text": "Current LMD methods preserve the spatial context but are mostly limited to human-eye-observable phenotypes and require manual selection of cells, often resulting in admixing of different cell types, which constrains throughput and de novo discovery11.",
+      "anchor": "Results: Image-guided single-cell isolation, p.2",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "nuances"
+        },
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concedes that prior laser-microdissection methods, while spatially preserving, are throughput- and discovery-limited by manual selection and cell-type admixing."
+    },
+    {
+      "id": "e8",
+      "text": "we obtained normal human fallopian tube tissue and separated ciliated from secretory cells—the two major cell types of the fallopian tube epithelium12—using the cell-lineage-specific transcription factor FOXJ1, a master regulator of cilia function, and measured their proteomes (Fig. 2e–h, Extended Data Fig. 1c–f and Supplementary Table 2). We solely detected FOXJ1 (ciliated cells) in FOXJ1-stained cells (Fig. 2e,g), along with more than 5,000 other quantified proteins with excellent correlations of biological replicates",
+      "anchor": "Results: Image-guided single-cell isolation, p.2",
+      "touchpoints": [
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        }
+      ],
+      "note": "Reports separating two epithelial cell types in situ and quantifying >5,000 proteins per cell type with reproducible replicates."
+    },
+    {
+      "id": "e9",
+      "text": "Such in vivo cell type comparisons will allow the discovery of cell type and cell state markers and provide unbiased information to understand disease states at the global proteome level.",
+      "anchor": "Results: Image-guided single-cell isolation, p.2",
+      "touchpoints": [
+        {
+          "claimId": "Claim 5",
+          "direction": "supports"
+        }
+      ],
+      "note": "Argues unbiased global proteome measurement of defined cell types yields cell-state markers and disease-state information."
+    },
+    {
+      "id": "e10",
+      "text": "Replicates of cell and nucleus proteomes demonstrated high quantitative reproducibility (Pearson r = 0.96), and proteomes of whole cells differed from those of nuclei alone, as expected from subcellular proteomics experiments based on biochemical separation18 (Extended Data Fig. 2a,b).",
+      "anchor": "Results: DVP defines single-cell heterogeneity, p.3",
+      "touchpoints": [
+        {
+          "claimId": "轴 C · 空间（spatial）",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        }
+      ],
+      "note": "Demonstrates subcellular (whole-cell vs nucleus) proteome resolution with high replicate reproducibility (r = 0.96)."
+    },
+    {
+      "id": "e11",
+      "text": "ML found three primary nuclei classes (27–37% each) and also identified three rare ones (2–4% each) (Extended Data Fig. 2c). The resulting six distinct nuclei classes had visible differences in size and shape, with class 1 representing mitotic states and the remaining five classes representing interphase with varying feature weighting (Fig. 3e,f).",
+      "anchor": "Results: DVP defines single-cell heterogeneity, p.3",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        }
+      ],
+      "note": "Shows morphology-defined nuclei classes, including rare states, each with distinct proteomes."
+    },
+    {
+      "id": "e12",
+      "text": "This revealed that the rarest cell classes had the highest numbers of differentially expressed proteins compared to unclassified ‘bulk’ proteomes (Extended Data Fig. 2d,e).",
+      "anchor": "Results: DVP defines single-cell heterogeneity, p.3",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Reports that the rarest cell classes diverge most from bulk proteomes, motivating single-cell resolution over bulk averaging."
+    },
+    {
+      "id": "e13",
+      "text": "Comparing our data to a single-cell imaging dataset of cell-cycle-regulated proteins19, we found significant enrichment in our regulated proteins (FDR < 10−6). Nuclear area, one of the driving features among the different classes identified, increased during interphase from G1 to S/G2 cells (Fig. 3e and Extended Data Fig. 3a–c), further supporting the importance of the cell cycle in defining the nuclei classes.",
+      "anchor": "Results: DVP defines single-cell heterogeneity, p.3",
+      "touchpoints": [
+        {
+          "claimId": "轴 B · 时间（temporal）",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Infers cell-cycle temporal structure (G1 to S/G2) from a fixed snapshot of morphological/proteomic classes, not from live trajectory tracking."
+    },
+    {
+      "id": "e14",
+      "text": "Our single-cell-type proteomes discovered several uncharacterized proteins, presenting an opportunity to associate them with a potential cellular function. Focusing on C11orf98, C7orf50, C1orf112 and C19orf53, which remained after data filtering (ANOVA P <0.05), showed class-specific expression patterns (Extended Data Fig. 3d).",
+      "anchor": "Results: DVP defines single-cell heterogeneity, p.3",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        }
+      ],
+      "note": "Reports that unbiased proteomics discovered uncharacterized proteins (ORFs) with cell-class-specific expression."
+    },
+    {
+      "id": "e15",
+      "text": "These rare, bean-shaped nuclei showed upregulation of specific cytoskeletal and cell adhesion proteins (for example, VIM, TUBB, ACTB and ITGB1), suggesting that these signatures derived from migrating cells undergoing nuclear deformation, suggestive of cellular invasion21,22. Note that we classified nuclei from 2D images, but LMD isolates them in 3D. Thus, samples also probe morphology-driven protein re-localization around the nucleus as exemplified by class 6 nuclei. Likewise, excising the nuclei captures the trafficking of proteins to and from the cytosol to some degree.",
+      "anchor": "Results: DVP defines single-cell heterogeneity, p.3",
+      "touchpoints": [
+        {
+          "claimId": "轴 C · 空间（spatial）",
+          "direction": "supports"
+        }
+      ],
+      "note": "Shows morphology-driven subcellular protein re-localization/trafficking is captured by the spatially resolved isolation."
+    },
+    {
+      "id": "e16",
+      "text": "These cell culture experiments establish that DVP correlates cellular phenotypes, heterogeneity and dynamics with the proteome level in an unbiased way for common and rare phenotypes.",
+      "anchor": "Results: DVP defines single-cell heterogeneity, p.4",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        }
+      ],
+      "note": "Summary claim that DVP links phenotype/heterogeneity to unbiased single-cell proteome for both common and rare states."
+    },
+    {
+      "id": "e17",
+      "text": "Billions of patient samples are collected routinely during diagnostic workup and stored in the archives of pathology departments around the world23. The precise proteomic characterization of single cells in their spatial and subcellular context from tissue slides could have a tremendous clinical effect, complementing the emerging field of digital pathology24.",
+      "anchor": "Results: DVP applied to cancer tissue heterogeneity, p.4",
+      "touchpoints": [
+        {
+          "claimId": "轴 C · 空间（spatial）",
+          "direction": "supports"
+        }
+      ],
+      "note": "Argues spatial/subcellular single-cell proteomics of archival tissue has large clinical potential."
+    },
+    {
+      "id": "e18",
+      "text": "Bioinformatics analysis of the measured proteome differences revealed significant biological differences between these neighboring cell types, reflecting their distinct physiological functions. Acinar cells, which produce and secrete saliva in secretory granules, showed high expression of proteins related to vesicle transport and glycosylation along with known acinar cell markers such as α-amylase (AMY1A), CA6 and PIP (Extended Data Fig. 4b). In contrast, ductal cells expressed high levels of mitochondria and metabolism-related proteins required to meet the high energy demand for saliva secretion25 (Extended Data Fig. 4c and Supplementary Table 5).",
+      "anchor": "Results: DVP applied to cancer tissue heterogeneity, p.4",
+      "touchpoints": [
+        {
+          "claimId": "Claim 5",
+          "direction": "supports"
+        }
+      ],
+      "note": "Shows neighboring cell types separated in situ have functionally distinct proteomes (secretory vs metabolic), tied to physiology."
+    },
+    {
+      "id": "e19",
+      "text": "DVP allowed us to discover upregulation of interferon response proteins (for example, MX1 and HLA-A; Supplementary Table 6) and the proto-oncogene SRC, both actionable therapeutic targets26 (Fig. 4e).",
+      "anchor": "Results: DVP applied to cancer tissue heterogeneity, p.4",
+      "touchpoints": [
+        {
+          "claimId": "Claim 5",
+          "direction": "supports"
+        }
+      ],
+      "note": "Reports discovery of disease-specific, druggable protein changes in carcinoma cells via spatial proteomics."
+    },
+    {
+      "id": "e20",
+      "text": "We co-stained FFPE-embedded primary tumor material preserved for 17 years with two markers, SOX10 and CD146, to map melanoma cells.",
+      "anchor": "Results (melanoma), p.4",
+      "touchpoints": [
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        }
+      ],
+      "note": "Demonstrates the method works on 17-year-old archival FFPE tumor material."
+    },
+    {
+      "id": "e21",
+      "text": "ML predicted five classes with clearly defined spatial distribution: class 1, melanoma in situ; class 2, predominantly tumor; class 3, cells of the tumor microenvironment; class 4, enriched in CD146-high regions; and class 5, enriched in CD146-low regions.",
+      "anchor": "Results (melanoma), p.4",
+      "touchpoints": [
+        {
+          "claimId": "Claim 7",
+          "direction": "supports"
+        },
+        {
+          "claimId": "轴 C · 空间（spatial）",
+          "direction": "supports"
+        }
+      ],
+      "note": "Resolves spatially distinct tumor and microenvironment classes by ML on imaging."
+    },
+    {
+      "id": "e22",
+      "text": "Including replicates, we isolated and profiled 27 different samples obtained from seven unique regions of the same tissue section, including normal melanocytes, melanoma in situ and primary melanoma from the radial and vertical growth phases (Fig. 5a–d).",
+      "anchor": "Results (melanoma), p.4",
+      "touchpoints": [
+        {
+          "claimId": "Claim 7",
+          "direction": "supports"
+        }
+      ],
+      "note": "Profiles spatially defined disease-progression stages within a single tissue section."
+    },
+    {
+      "id": "e23",
+      "text": "Expression of proteins involved in oxidative phosphorylation and mitochondria function gradually increased from melanocytes, melanoma in situ to invasive melanoma, indicating a dependency on mitochondrial respiration in the advanced tumor stages (Fig. 5h–j, Extended Data Fig. 5c and Supplementary Tables 7–9). Conversely, proteins involved in antigen presentation and interferon response were downregulated when compared to melanoma in situ (Fig. 5h–j and Supplementary Tables 7–9), in line with immune evasion strategies in melanoma32.",
+      "anchor": "Results (melanoma), p.4",
+      "touchpoints": [
+        {
+          "claimId": "Claim 7",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 5",
+          "direction": "supports"
+        }
+      ],
+      "note": "Tracks proteome changes (metabolism up, immune presentation down) across spatially ordered disease-progression stages."
+    },
+    {
+      "id": "e24",
+      "text": "The direct comparison of these spatially defined regions of the same phenotype (class 4 cells) further highlighted critical features of cancer metastasis, such as extracellular matrix (ECM) remodeling (for example, collagen degradation) and upregulated PDGF signaling33 (Fig. 5k,l, Extended Data Fig. 5e and Supplementary Table 10).",
+      "anchor": "Results (melanoma), p.4",
+      "touchpoints": [
+        {
+          "claimId": "Claim 7",
+          "direction": "supports"
+        }
+      ],
+      "note": "Shows that cells of the same phenotypic class differ proteomically (ECM remodeling, PDGF) depending on their spatial region."
+    },
+    {
+      "id": "e25",
+      "text": "DVP also discovered a significant upregulation of mRNA splicing in the vertical compared to the radial growth phase. ... The increase in splicing coincided with a significant downregulation of immune-related signaling (interferon signaling and antigen presentation) (Fig. 5l and Supplementary Table 10), suggesting the transition from an immunogenic ‘hot’ to a ‘cold’ tumor zone in the vertical growth phase within the same tumor section.",
+      "anchor": "Results (melanoma), p.5",
+      "touchpoints": [
+        {
+          "claimId": "Claim 7",
+          "direction": "supports"
+        }
+      ],
+      "note": "Localizes a hot-to-cold immunogenic transition to a specific spatial growth zone within one tumor section."
+    },
+    {
+      "id": "e26",
+      "text": "In contrast to single-cell transcriptomics, DVP can readily analyze the ECMʼs subcellular structures and spatial dynamics.",
+      "anchor": "Discussion, p.5",
+      "touchpoints": [
+        {
+          "claimId": "Claim 2",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        }
+      ],
+      "note": "Explicitly contrasts DVP with single-cell transcriptomics, claiming proteomics can analyze ECM and subcellular/spatial structures that scRNA cannot."
+    },
+    {
+      "id": "e27",
+      "text": "With further improvements in proteomics technology, DVP should also be suited to study proteoforms and post-translational modifications at a single-cell-type level.",
+      "anchor": "Discussion, p.5",
+      "touchpoints": [
+        {
+          "claimId": "轴 A · 模态（measure what）",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Concedes that proteoform/PTM-level measurement is a future capability not yet realized, indicating present modality coverage is incomplete."
+    },
+    {
+      "id": "e28",
+      "text": "For FFPE tissue proteome analysis, we collected 50–100 cells per sample (total area collected × slide thickness / average mammalian cell volume of 2,000 µm3; BNID 100434), in agreement with estimations in spatial transcriptomics analysis39.",
+      "anchor": "Methods: LMD, p.7",
+      "touchpoints": [
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 10",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Specifies the input requirement of 50-100 cells per tissue proteome sample (not yet true single-cell for tissue), bearing on the resolution-vs-sensitivity trade-off."
+    }
+  ],
+  "figuresNumbers": [
+    {
+      "item": "Table 1 (F1 scores)",
+      "contains": "Mean F1 segmentation scores (0.7-IoU). nucleAIzer/BIAS (OUR) achieved highest scores on most samples, e.g. Salivary gland nuc 0.7684 ± 0.0316 vs unet4nuclei 0.0797, CellProfiler 0.6488, Cellpose 0.0338; U2OS cyto 0.7336 ± 0.0218; Melanoma nuc 0.5498 ± 0.0231."
+    },
+    {
+      "item": "LMD throughput",
+      "contains": "1,250 high-resolution contours excised per hour; equivalent to 50-100 cells per sample; LMD theoretical accuracy 70 nm (×150 objective), 200 nm in practice."
+    },
+    {
+      "item": "Proteome depth / reproducibility",
+      "contains": "More than 5,000 proteins quantified per fallopian-tube cell type; cell vs nucleus replicate Pearson r = 0.96; within-group salivary tissue Pearson r > 0.96; normal-vs-cancer Pearson r = 0.8."
+    },
+    {
+      "item": "Nuclei classes (U2OS)",
+      "contains": "Six ML-defined nuclei classes: three primary (27-37% each) and three rare (2-4% each); 515 significantly differentially expressed proteins across five interphase classes; cell-cycle enrichment FDR < 10^-6."
+    },
+    {
+      "item": "Melanoma samples",
+      "contains": "27 samples profiled from seven unique regions of one tissue section; FFPE material preserved 17 years; 1,910 ANOVA-significant (FDR < 0.05) protein groups used for clustering."
+    },
+    {
+      "item": "Spectral library",
+      "contains": "Project-specific DIA-NN library: 90,056 precursors, 79,802 elution groups, 7,765 protein groups."
+    }
+  ],
+  "primarySources": [
+    {
+      "topic": "Ultra-high-sensitivity single-cell MS workflow underlying DVP",
+      "citation": "Brunner, A. et al. 2022, Mol. Syst. Biol. 18:e10798",
+      "refN": "2"
+    },
+    {
+      "topic": "diaPASEF data-independent acquisition method used for MS",
+      "citation": "Meier, F. et al. 2020, Nat. Methods 17:1229-1236",
+      "refN": "17"
+    },
+    {
+      "topic": "Single-cell proteogenomic dissection of the cell cycle (comparison dataset)",
+      "citation": "Mahdessian, D. et al. 2021, Nature 590:649-654",
+      "refN": "19"
+    },
+    {
+      "topic": "Spatial proteomics as a discovery tool (subcellular fractionation context)",
+      "citation": "Lundberg, E. & Borner, G. H. H. 2019, Nat. Rev. Mol. Cell Biol. 20:285-302",
+      "refN": "18"
+    },
+    {
+      "topic": "FFPE archives as underexploited resource for protein/nucleic-acid extraction",
+      "citation": "Kokkat, T. J. et al. 2013, Biopreserv. Biobank 11:101-106",
+      "refN": "23"
+    },
+    {
+      "topic": "Cell-count estimation aligned with spatial transcriptomics",
+      "citation": "Moncada, R. et al. 2020, Nat. Biotechnol. 38:333-342",
+      "refN": "39"
+    }
+  ],
+  "flags": [
+    "Metadata: DOI confirmed in text (https://doi.org/10.1038/s41587-022-01302-5); venue inferred from the s41587 prefix = Nature Biotechnology. Volume/page range (40:1231-1240) NOT printed in this cleaned source and was reconstructed from the known DOI/year; treat as unverified.",
+    "Dates confirmed in text: Received 8 March 2022; Accepted 30 March 2022; Published online 19 May 2022 (line 51).",
+    "Scope note: This is a spatial single-cell proteomics METHOD paper; on-roadmap value is mainly as evidence that high-throughput spatial+subcellular proteomics is feasible (claim 6) and as a contrast to dissociated scRNA-seq (claim 2). It is NOT a virtual-cell/AI-model paper.",
+    "Temporal caveat: the cell-cycle 'dynamics' (G1->S/G2) are inferred from a fixed-cell morphological snapshot, not paired/live time-course tracking; relevant to claim 3 (destructive measurement, no paired observation) but the paper does not frame it that way.",
+    "OCR quirks preserved verbatim in excerpts/title-page (e.g. 'availabilty', 'predominatly', 'Te' for 'The', 'ml−1', 'µm3', en-dashes); not corrected.",
+    "Resolution caveat: for tissue, 50-100 cells are pooled per proteome sample (not single-cell for tissue); single-cell/nucleus proteomes shown mainly for cultured U2OS. Bears on claim 10 (resolution x throughput x destructiveness trade-off)."
+  ]
+}

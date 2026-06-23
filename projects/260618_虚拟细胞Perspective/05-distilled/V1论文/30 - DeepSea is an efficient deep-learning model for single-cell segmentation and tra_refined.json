@@ -1,0 +1,330 @@
+{
+  "schemaVersion": "精练-4.0",
+  "citationKey": "30",
+  "title": "DeepSea is an efficient deep-learning model for single-cell segmentation and tracking in time-lapse microscopy",
+  "authors": "Abolfazl Zargari, Gerrald A. Lodewijk, Najmeh Mashhadi, Nathan Cook, Celine W. Neudorf, Kimiasadat Araghbidikashani, Robert Hays, Sayaka Kozuki, Stefany Rubio, Eva Hrabeta-Robinson, Angela Brooks, Lindsay Hinck, S. Ali Shariati",
+  "venue": "Cell Reports Methods, 2023, 3(6):100500",
+  "year": "2023",
+  "doi": "doi:10.1016/j.crmeth.2023.100500",
+  "readOn": "2026-06-18",
+  "sourceFile": "/Users/augustsirius/Desktop/已清洗_260617/30_cleaned.md",
+  "oneSentence": "The authors develop DeepSea, a compact trainable deep-learning model and user-friendly software that segments and tracks individual cells across sequences of phase-contrast time-lapse microscopy images, building full cell-cycle lineage trajectories and outperforming existing segmentation and tracking tools, and apply it to show that smaller-born mouse embryonic stem cells lengthen their G1 phase, indicating cell-size control.",
+  "orientation": "This is a methods paper for label-free time-lapse microscopy, an inherently NON-destructive imaging modality that directly observes the SAME individual cell continuously over many days and reconstructs real birth-to-division trajectories and lineage trees. It is most useful to our roadmap as a counterpoint/complement to Claim 3 (destructive sequencing cannot pair-observe the time axis): imaging can do exactly the paired, longitudinal observation that destructive omics cannot. It also feeds Axis B (temporal: high-temporal-resolution single-cell dynamics) and the imaging/morphology modality entry of Axis A. As a foil, it underscores the trilemma (Claim 10): imaging is non-destructive and temporally resolved but carries only morphological/size readouts, not molecular (RNA/protein/metabolite) content. Non-binding routing hint.",
+  "excerpts": [
+    {
+      "id": "e1",
+      "text": "Time-lapse microscopy is the only method that can directly capture the dynamics and heterogeneity of fundamental cellular processes at the single-cell level with high temporal resolution.",
+      "anchor": "SUMMARY",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "challenges"
+        },
+        {
+          "claimId": "Axis B (temporal)",
+          "direction": "supports"
+        }
+      ],
+      "note": "Asserts time-lapse microscopy uniquely captures single-cell dynamics directly with high temporal resolution, i.e. a non-destructive route to the temporal axis."
+    },
+    {
+      "id": "e2",
+      "text": "Single-cell quantitative live microscopy can directly capture both dynamics and heterogeneity of cellular decisions by continuous long-term measurements of cellular features.",
+      "anchor": "INTRODUCTION",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "challenges"
+        },
+        {
+          "claimId": "Axis B (temporal)",
+          "direction": "supports"
+        }
+      ],
+      "note": "States that live microscopy enables continuous long-term measurement of the same cells, capturing dynamics directly rather than inferring them."
+    },
+    {
+      "id": "e3",
+      "text": "In recent years, it has become clear that single-cell-level analysis over time is essential for revealing the dynamics and heterogeneity of individual cells.",
+      "anchor": "INTRODUCTION",
+      "touchpoints": [
+        {
+          "claimId": "Axis B (temporal)",
+          "direction": "supports"
+        }
+      ],
+      "note": "Frames over-time single-cell analysis as essential for revealing dynamics and heterogeneity."
+    },
+    {
+      "id": "e4",
+      "text": "Widely available microscopy techniques such as label-free phasecontrast live microscopy allow for monitoring the dynamics of morphological features such as the size and shape of the cells.",
+      "anchor": "INTRODUCTION",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "challenges"
+        },
+        {
+          "claimId": "Other",
+          "direction": "nuances",
+          "otherLabel": "Imaging/morphology modality is non-destructive but reads only shape/size, not molecular content"
+        }
+      ],
+      "note": "Notes label-free phase-contrast imaging is non-toxic/widely available but its readout is restricted to morphological features (size, shape)."
+    },
+    {
+      "id": "e5",
+      "text": "Typical live-cell imaging of biological features of cells is a multi-day experiment that produces several gigabytes of images collected from thousands of cells.",
+      "anchor": "INTRODUCTION",
+      "touchpoints": [
+        {
+          "claimId": "Axis B (temporal)",
+          "direction": "supports"
+        }
+      ],
+      "note": "Quantifies live-imaging experiments as multi-day, gigabyte-scale across thousands of cells, indicating throughput of longitudinal observation."
+    },
+    {
+      "id": "e6",
+      "text": "Most critically, they divide into two new daughter cells during mitosis, which is unique and not comparable with other phenomena we encounter in conventional object-tracking applications.",
+      "anchor": "INTRODUCTION",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Highlights that cell division (mitosis) is a tracking-specific challenge distinguishing lineage tracing from generic object tracking."
+    },
+    {
+      "id": "e7",
+      "text": "With this model, we could monitor multiple cellular phenotypes and several cell division cycles across the microscopy image sequences to generate lineage tree structures of cells.",
+      "anchor": "RESULTS — Designing and training a cell segmentation and tracking model",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "challenges"
+        }
+      ],
+      "note": "States the model links cells frame to frame and detects divisions to build lineage tree structures, i.e. true observed lineages rather than inferred ones."
+    },
+    {
+      "id": "e8",
+      "text": "DeepSea was able to outperform existing state-of-the-art models such as CellPose, 15 StarDist,16 and 2D-UNET21,26 i n terms of latency and mean average precision (mAP) when trained on the same training sets and tested on the same test sets at all pre-defined IoU thresholds (Figures 1A and 1B).",
+      "anchor": "RESULTS — DeepSea performance evaluation",
+      "touchpoints": [
+        {
+          "claimId": "Other",
+          "direction": "supports",
+          "otherLabel": "Benchmark comparison of image-analysis models under matched train/test sets"
+        }
+      ],
+      "note": "Reports DeepSea beats CellPose, StarDist and 2D-UNET on latency and mAP under matched training and test sets."
+    },
+    {
+      "id": "e9",
+      "text": "While our model achieved $0 . 9 8 \\pm \\ : 0 . 2$ precision (@0.5 IoU threshold) for tracking single cells, the precision of our model for mitosis detection was around $0 . 8 9 \\pm 0 . 3$ (@0.5 IoU threshold) (Figures 4A and 4B).",
+      "anchor": "RESULTS — DeepSea performance evaluation",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "challenges"
+        }
+      ],
+      "note": "Quantifies tracking precision 0.98 for single-cell linking and 0.89 for mitosis detection (@0.5 IoU), showing reliable continuous tracking of the same cell across division."
+    },
+    {
+      "id": "e10",
+      "text": "It shows that the higher sampling rate reduces the tracking model failures, especially for the cells that move and change quickly over time.",
+      "anchor": "RESULTS — DeepSea performance evaluation",
+      "touchpoints": [
+        {
+          "claimId": "Axis B (temporal)",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Finds tracking accuracy is sensitive to frame sampling rate; higher temporal sampling reduces failures for fast-changing cells."
+    },
+    {
+      "id": "e11",
+      "text": "Our DeepSea tracking model achieved a MOTA value of 0.94 ± 0.2 compared with the Trackmate model, which had a MOTA of 0.29 ± 0.7 (Table S3).",
+      "anchor": "RESULTS — DeepSea performance evaluation",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "challenges"
+        }
+      ],
+      "note": "Reports DeepSea full-cell-cycle tracking MOTA 0.94 versus Trackmate 0.29 over 228 ground-truth trajectories."
+    },
+    {
+      "id": "e12",
+      "text": "We also would like to note that rule-based tools like Trackmate are not trainable to be rapidly adapted to any specialized dataset.",
+      "anchor": "RESULTS — DeepSea performance evaluation",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Notes rule-based tracking tools are not trainable/adaptable to specialized datasets, contrasting with trainable deep-learning approaches."
+    },
+    {
+      "id": "e13",
+      "text": "By measuring the size of the sister cells at birth, we showed that 42% of divisions resulted in daughter cells of different sizes (Figure 6B).",
+      "anchor": "RESULTS — Cell cycle duration is adjusted based on birth size",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "challenges"
+        }
+      ],
+      "note": "Quantifies that 42% of divisions yield differently sized daughters, a paired single-cell measurement enabled by continuous tracking."
+    },
+    {
+      "id": "e14",
+      "text": "In support of this hypothesis, we observed that smaller-born cells increase their cell cycle duration by about 2 h compared with their larger sister cells (Figure 6C).",
+      "anchor": "RESULTS — Cell cycle duration is adjusted based on birth size",
+      "touchpoints": [
+        {
+          "claimId": "Axis B (temporal)",
+          "direction": "supports"
+        }
+      ],
+      "note": "Reports smaller-born cells lengthen their cell cycle by ~2 h versus larger sisters, a temporal-dynamic finding obtainable only by following individual cells over time."
+    },
+    {
+      "id": "e15",
+      "text": "The segmentation and tracking of cell bodies and sub-cellular organelles from microscopy images are critical steps for nearly all microscopybased biological analysis applications.",
+      "anchor": "DISCUSSION",
+      "touchpoints": [
+        {
+          "claimId": "Axis C (spatial)",
+          "direction": "supports"
+        }
+      ],
+      "note": "States segmentation/tracking of cell bodies and sub-cellular organelles is foundational to microscopy-based analysis, linking imaging to spatial/sub-cellular localization."
+    },
+    {
+      "id": "e16",
+      "text": "The lack of a comprehensive, high-quality annotated dataset of cells prevents the full utilization of DL-based models for microscopy image analysis systems.",
+      "anchor": "DISCUSSION",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Identifies the absence of high-quality annotated datasets as the bottleneck preventing full use of deep-learning models for microscopy analysis."
+    },
+    {
+      "id": "e17",
+      "text": "We also showed that more frequent imaging of microscopy frames would increase the accuracy of tracking the full cell cycle by providing more information about the cell features right before cell division.",
+      "anchor": "DISCUSSION",
+      "touchpoints": [
+        {
+          "claimId": "Axis B (temporal)",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Reiterates that denser temporal sampling improves full-cell-cycle tracking accuracy near division."
+    },
+    {
+      "id": "e18",
+      "text": "We would like to note that our dataset and models are limited to the phase contrast 2D images of three cell types.",
+      "anchor": "Limitations of the study",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Other",
+          "direction": "nuances",
+          "otherLabel": "Imaging modality limited to 2D phase-contrast and few cell types (generalization limit)"
+        }
+      ],
+      "note": "Author-conceded limitation: dataset and models confined to 2D phase-contrast images of three cell types."
+    },
+    {
+      "id": "e19",
+      "text": "A larger dataset of samples from different cell types and different imaging modalities would be useful for testing our proposed model's generalization, reliability, and robustness.",
+      "anchor": "Limitations of the study",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concedes that more diverse cell types and imaging modalities are needed to test the model's generalization, reliability and robustness."
+    }
+  ],
+  "figuresNumbers": [
+    {
+      "item": "Tracking precision",
+      "contains": "Single-cell tracking precision 0.98 ± 0.2 and mitosis-detection precision 0.89 ± 0.3, both at the 0.5 IoU threshold (Figures 4A, 4B)."
+    },
+    {
+      "item": "Table S3 / MOTA",
+      "contains": "Full-cell-cycle tracking MOTA: DeepSea 0.94 ± 0.2 vs Trackmate 0.29 ± 0.7, over 228 ground-truth cell-cycle trajectories (each >3 consecutive frames)."
+    },
+    {
+      "item": "Segmentation IoU",
+      "contains": "Segmentation model achieved IoU 0.90 ± 0.2 at the 0.5 IoU matching threshold (DISCUSSION)."
+    },
+    {
+      "item": "Model size",
+      "contains": "DeepSea segmentation model has only 1.9 million parameters; tracking model has 2.1 million parameters, vs >20 million for ROLO/DeepSort/TrackRCNN."
+    },
+    {
+      "item": "Pre-trained baseline performance on these images",
+      "contains": "Original pre-trained StarDist models reached ~43% and ~5% average precision on the authors' test sets; existing tracking tools' segmentation precision on these images was lower than 50%."
+    },
+    {
+      "item": "Birth-size / cell-cycle finding (Figure 6)",
+      "contains": "42% of divisions produced daughter cells of different sizes; smaller-born cells lengthened their cell cycle by about 2 h vs larger sisters; mESC cycle ~10 h with ~2 h G1."
+    },
+    {
+      "item": "Dataset (Method Details)",
+      "contains": "Three phase-contrast datasets: mouse embryonic stem cells (31 sets, 1074 images), bronchial epithelial cells (7 sets, 2010 images), mouse C2C12 muscle progenitor cells (7 sets, 540 images)."
+    },
+    {
+      "item": "Frame-sampling experiment",
+      "contains": "Sub-sampling intervals of 5, 10 and 15 min tested (Figure S7C); higher sampling rate reduced tracking failures."
+    }
+  ],
+  "primarySources": [
+    {
+      "topic": "CellPose generalist cell-segmentation algorithm (benchmark baseline)",
+      "citation": "Stringer, C., Wang, T., Michaelos, M., Pachitariu, M. (2021). Cellpose: a generalist algorithm for cellular segmentation. Nat. Methods 18, 100-106",
+      "refN": "15"
+    },
+    {
+      "topic": "StarDist star-convex polygon cell detection (benchmark baseline)",
+      "citation": "Schmidt, U., Weigert, M., Broaddus, C., Myers, G. (2018). Cell Detection with Star-Convex Polygons. Springer, pp. 265-273",
+      "refN": "16"
+    },
+    {
+      "topic": "U-Net architecture underlying the segmentation model",
+      "citation": "Ronneberger, O., Fischer, P., Brox, T. (2015). U-net: convolutional networks for biomedical image segmentation. Preprint at arXiv:1505.04597",
+      "refN": "26"
+    },
+    {
+      "topic": "TrackMate cell-tracking tool (benchmark baseline)",
+      "citation": "Ershov, D., Phan, M.-S., Pylvänäinen, J.W., et al. (2022). TrackMate 7. Nat. Methods 19, 829-832",
+      "refN": "30"
+    },
+    {
+      "topic": "Molecular mechanisms of animal cell-size homeostasis (cell-size control basis)",
+      "citation": "Zatulovskiy, E., Skotheim, J.M. (2020). On the molecular mechanisms regulating animal cell size homeostasis. Trends Genet. 36, 360-372",
+      "refN": "33"
+    }
+  ],
+  "flags": [
+    "Metadata verified from text: DOI 10.1016/j.crmeth.2023.100500 (line 33); venue Cell Reports Methods 3(6) (line 15), ISSN 2667-2375; Received July 11 2022 / Accepted May 17 2023 / Published June 12 2023 (lines 182-185).",
+    "OCR quirks preserved verbatim in excerpts e9 and e11 (e.g. '$0 . 9 8 \\pm \\ : 0 . 2$', '0.94 ± 0.2') and in e8 ('i n terms', 'CellPose, 15 StarDist,16'); numbers reconciled in figuresNumbers.",
+    "Source inconsistency: tracking MOTA reported as 0.94 ± 0.2 in RESULTS (line 111) but as 0.94 ± 0.3 in DISCUSSION (line 127); both retained as printed.",
+    "Scope note: paper is a deep-learning image-analysis methods/tool paper; core relevance to our thesis is as a NON-destructive, directly-observed temporal/lineage modality (counterpoint to destructive-sequencing Claim 3) plus the imaging/morphology modality of Axis A. Its molecular readout is limited to morphology (size/shape), not RNA/protein/metabolite — captured as a trilemma nuance under 'Other'.",
+    "Modeling-method internals (UNET scaling, residual blocks, progressive learning, loss functions, augmentation) are out of roadmap scope (context boundary: we do not write modeling methods) and were not captured as excerpts."
+  ]
+}

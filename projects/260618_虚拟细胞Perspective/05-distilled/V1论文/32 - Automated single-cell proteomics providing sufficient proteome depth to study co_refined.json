@@ -1,0 +1,396 @@
+{
+  "schemaVersion": "精练-4.0",
+  "citationKey": "32",
+  "title": "Automated single-cell proteomics providing sufficient proteome depth to study complex biology beyond cell type classifications",
+  "authors": "Claudia Ctortecka, Natalie M. Clark, Brian W. Boyle, Anjali Seth, D. R. Mani, Namrata D. Udeshi & Steven A. Carr",
+  "venue": "Nature Communications, 2024, vol/issue/pages unverified; see flags",
+  "year": "2024",
+  "doi": "doi:10.1038/s41467-024-49651-w",
+  "readOn": "2026-06-18",
+  "sourceFile": "/Users/augustsirius/Desktop/已清洗_260617/32 - Automated single-cell proteomics with sufficient proteome depth beyond cell-type classification_cleaned.md",
+  "oneSentence": "The authors present an automated label-free single-cell proteomics workflow (proteoCHIP EVO 96 + Evosep One + Bruker timsTOF Ultra) that quantifies on average 3500 (up to 4000) protein groups per single HEK-293T cell without a carrier or match-between-runs, and use it to recapitulate LPS-induced proteome changes in single THP-1 cells.",
+  "orientation": "A mass-spectrometry single-cell proteomics methods paper. It feeds the protein-modality axis (Claim 4/5) by directly measuring thousands of proteins per single cell and arguing proteins/PTMs drive cellular identity and function in ways sequencing cannot capture, and it supplies Claim 6 (high-throughput single-cell proteomics is becoming feasible). It is a strong concrete example of the resolution-vs-throughput-vs-depth trilemma (Claim 10) via its explicit 40SPD-vs-80SPD depth/throughput trade-off. It can also serve as a FOIL: it is a dissociated, destructive single-cell approach with no spatial context and no per-cell time course (it borrows a separate bulk time-course study for validation), so its own design embodies the spatial/temporal gaps our thesis critiques; and it shows the standardization/missing-value/normalization concerns of Claim 9. Non-binding routing hint.",
+  "excerpts": [
+    {
+      "id": "e1",
+      "text": "Mass spectrometry (MS)-based proteomics is ideally suited to study cellular identity and functionality as those are mostly driven by proteins or their post-translational modi<sup>fi</sup>cations (PTMs)<sup>12,13</sup>.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 5",
+          "direction": "supports"
+        },
+        {
+          "claimId": "蛋白质组",
+          "direction": "supports"
+        }
+      ],
+      "note": "Asserts that cellular identity and function are mostly driven by proteins and their PTMs, motivating protein-level measurement."
+    },
+    {
+      "id": "e2",
+      "text": "In the past few years, single-cell proteomics (SCP) has developed into a viable complement to other sequencing-based omics techniques<sup>6–11</sup>.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        },
+        {
+          "claimId": "蛋白质组",
+          "direction": "supports"
+        }
+      ],
+      "note": "Positions single-cell proteomics as a complement to sequencing-based single-cell omics."
+    },
+    {
+      "id": "e3",
+      "text": "Currently, most single-cell approaches aim at resolving biological heterogeneity by describing diverse sub-populations or unexpected cell types within a given sample<sup>4,5</sup>.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "nuances"
+        }
+      ],
+      "note": "States that prevailing single-cell approaches are mostly used for sub-population/cell-type description; the paper's title frames going beyond cell-type classification."
+    },
+    {
+      "id": "e4",
+      "text": "This study demonstrates that the proteoCHIP EVO 96-based sample preparation with the timsTOF Ultra provides suf<sup>fi</sup>cient proteome depth to study complex biology beyond cell-type classi<sup>fi</sup>cations.",
+      "anchor": "Abstract",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "nuances"
+        },
+        {
+          "claimId": "蛋白质组",
+          "direction": "supports"
+        }
+      ],
+      "note": "Central claim: single-cell proteomics now reaches enough depth to study complex biology, not only cell-type classification."
+    },
+    {
+      "id": "e5",
+      "text": "the newest generation timsTOF Ultra identi<sup>fi</sup>es up to 4000 with an average of 3500 protein groups per single HEK-293T without a carrier or match-between runs.",
+      "anchor": "Abstract",
+      "touchpoints": [
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        },
+        {
+          "claimId": "蛋白质组",
+          "direction": "supports"
+        }
+      ],
+      "note": "Quantitative headline result: up to 4000 (average 3500) protein groups per single cell without carrier or MBR."
+    },
+    {
+      "id": "e6",
+      "text": "Until recently, the limited protein content of most mammalian cells, which is only about 50–300 pg, represented a signi<sup>fi</sup>cant challenge to MS-based SCP<sup>14</sup>. Even though this is over 1000 times lower than standard input of current MS-based proteomics studies, the latest advances in dedicated work<sup>fl</sup>ows and liquid chromatography tandem mass spectrometry (LC-MS/MS) instrumentation have begun to overcome these sensitivity limitations<sup>15–24</sup>.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "nuances"
+        },
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        }
+      ],
+      "note": "Quantifies the core sensitivity constraint of single-cell proteomics (50-300 pg, >1000x below bulk input) and claims recent advances are overcoming it."
+    },
+    {
+      "id": "e7",
+      "text": "These strategies, however, suffer from inherent reporter ion signal suppression or ratio compression of isobaric labels, in standard data dependent acquisition (DDA), which negatively impacts quantitative accuracy<sup>26–28</sup>. Additionally, stochastic precursor selection in DDA results in missing data when analyzing large numbers of single cells in multiple TMT plexes<sup>10,29–31</sup>.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Describes quantitative-accuracy and missing-data problems (ratio compression, stochastic precursor selection) in multiplexed single-cell proteomics."
+    },
+    {
+      "id": "e8",
+      "text": "The manually transferred samples yielded a median of 582 protein groups per analytical run, while the direct loading of the Evotips resulted in a median of 812 proteins per single cell. This indicated that automated transfer of the sample increased protein groups by 29% in comparison to the manually pipetted ones (Fig. 1b).",
+      "anchor": "Results - The proteoCHIP EVO 96 minimizes adsorptive peptide losses",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Quantifies how manual sample handling reduces yield (582 vs 812 protein groups; 29% gain from automation), bearing on reproducibility/standardization."
+    },
+    {
+      "id": "e9",
+      "text": "Using the modi<sup>fi</sup>ed diaPASEF acquisition method, together with the 40SPD method, we identi<sup>fi</sup>ed 3000 proteins per single HEK-293T cell (Fig. 1d).",
+      "anchor": "Results - The proteoCHIP EVO 96 minimizes adsorptive peptide losses",
+      "touchpoints": [
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        }
+      ],
+      "note": "Reports 3000 proteins per single HEK-293T cell with the 40SPD diaPASEF method on the timsTOF SCP."
+    },
+    {
+      "id": "e10",
+      "text": "Most standard SCP projects require the acquisition of hundreds to thousands of single cells to resolve tissue or population heterogeneity and to understand the underlying biology.",
+      "anchor": "Results - Doubling throughput still yields 3500 proteins",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "nuances"
+        }
+      ],
+      "note": "States that meaningful single-cell studies need hundreds to thousands of cells, framing the throughput requirement."
+    },
+    {
+      "id": "e11",
+      "text": "As expected, with the short 80SPD separation method, the median number of proteins identi<sup>fi</sup>ed decreased to 1200 per single cell, representing a drop of \\~60% compared to 40SPD (Fig. 2a).",
+      "anchor": "Results - Doubling throughput still yields 3500 proteins",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        }
+      ],
+      "note": "Direct depth-vs-throughput trade-off: doubling throughput (80SPD) drops proteins per cell ~60% to a median of 1200."
+    },
+    {
+      "id": "e12",
+      "text": "This demonstrates that 2-fold higher single-cell analysis throughput is feasible, at decreased analysis depth. Therefore, the experimental design must take into consideration whether the acquisition of hundreds or thousands of single cells are required for statistical signi<sup>fi</sup>cance and if the proteins of interest can still be reliably quanti<sup>fi</sup>ed to address a speci<sup>fi</sup>c biological question.",
+      "anchor": "Results - Doubling throughput still yields 3500 proteins",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        }
+      ],
+      "note": "Authors explicitly frame the throughput-vs-depth trade-off as a design decision the experimenter must balance."
+    },
+    {
+      "id": "e13",
+      "text": "The increased throughput using the 80SPD separation method reduced the dynamic range of single-cell analysis by one order of magnitude (Fig. 2c).",
+      "anchor": "Results - Doubling throughput still yields 3500 proteins",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        }
+      ],
+      "note": "Higher throughput costs dynamic range (reduced by one order of magnitude), losing low-abundance proteins."
+    },
+    {
+      "id": "e14",
+      "text": "Specifically, using the 40SPD method, we identify over 50 E3 ubiquitin-protein ligases in single cells while 13 are recovered using the 80SPD method (Fig. 2c).",
+      "anchor": "Results - Doubling throughput still yields 3500 proteins",
+      "touchpoints": [
+        {
+          "claimId": "蛋白质组",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        }
+      ],
+      "note": "Demonstrates depth: over 50 E3 ubiquitin-protein ligases (a functionally important protein family) detected at 40SPD vs only 13 at 80SPD."
+    },
+    {
+      "id": "e15",
+      "text": "We demonstrate that single HEK-293T cells acquired on the timsTOF Ultra with the 40SPD chromatographic separation yield up to 4000 protein groups and on average 3500 protein groups spanning 4 orders of magnitude in abundance.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        }
+      ],
+      "note": "Restates headline depth: up to 4000 / average 3500 protein groups per single cell over 4 orders of magnitude in abundance."
+    },
+    {
+      "id": "e16",
+      "text": "We demonstrate that protein identi<sup>fi</sup>cations are reduced by close to 60% when decreasing the gradient length by 50%. This additionally reduces the overall protein abundance and decreases detection limits by an order of magnitude.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        }
+      ],
+      "note": "Restates the trade-off in the discussion: halving gradient length cuts identifications ~60% and worsens detection limits by an order of magnitude."
+    },
+    {
+      "id": "e17",
+      "text": "Importantly, along with sample preparation capabilities and instrument sensitivity, the cell size highly impacts proteome depth.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Concedes cell size strongly determines achievable proteome depth (HEK-293T 26.7 um vs THP-1 13.7 um), a biological constraint on single-cell measurement."
+    },
+    {
+      "id": "e18",
+      "text": "Compared to bulk data, SCP datasets exhibit distinct considerations for normalization, due to technical variability throughout the sample processing, or differences in cell size<sup>60,61</sup> (Supplementary Fig. 3; HEK-293T – 26.7 µm, THP-1 – 13.7 µm). Thus, we normalized our SCP data using SCnorm<sup>62</sup>, which is an approach originally developed for single-cell transcriptomics studies",
+      "anchor": "Results - LPS-induced proteome changes are validated in single cells",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Notes single-cell proteomics needs distinct normalization for technical variability and cell-size differences, here borrowing a single-cell-transcriptomics normalization method (SCnorm)."
+    },
+    {
+      "id": "e19",
+      "text": "After normalization, we evaluated what proportion of the variance could be due to technical effects by processing the cells on different days using PCA regression (see Methods) and observed that approximately 9.28% of the variance can be explained by this batch effect (Supplementary Fig. 5a). We therefore batch-corrected our data using the limma package<sup>63</sup>",
+      "anchor": "Results - LPS-induced proteome changes are validated in single cells",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Quantifies a batch effect (9.28% of variance from processing on different days) requiring explicit batch correction, illustrating cross-batch comparability challenges."
+    },
+    {
+      "id": "e20",
+      "text": "Additionally, we compared our results to a previous in-depth proteomics analysis of bulk THP-1 cells treated with LPS<sup>57</sup>. Mulvey and co-authors pro<sup>fi</sup>led the effects of LPS treatment across a 24-hour time course and identi<sup>fi</sup>ed 4882 proteins. We found 26% of those quanti<sup>fi</sup>ed proteins also in our single cell THP-1 dataset, while the bulk study identi<sup>fi</sup>ed 3009 additional proteins (Supplementary Fig. 6a).",
+      "anchor": "Results - LPS-induced proteome changes are validated in single cells",
+      "touchpoints": [
+        {
+          "claimId": "B",
+          "direction": "challenges"
+        },
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        }
+      ],
+      "note": "The temporal (24-h time course) information comes from a separate bulk study; the single-cell dataset captures only a static snapshot and recovers just 26% of the bulk-identified proteins (bulk found 3009 more)."
+    },
+    {
+      "id": "e21",
+      "text": "This and the regulation of other key LPS response proteins corroborates previous <sup>fi</sup>ndings that even though fold changes between bulk and single cell proteomics datasets do not scale, the biological regulation correlates (Supplementary Fig. 6b)<sup>17</sup>.",
+      "anchor": "Results - LPS-induced proteome changes are validated in single cells",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Concedes that fold changes between bulk and single-cell proteomics do not scale (only the direction of regulation correlates), a cross-platform comparability caveat."
+    },
+    {
+      "id": "e22",
+      "text": "For our comparative studies, we combine only single cells without the usage of a carrier sample for data analysis to eliminate the possibility of identi<sup>fi</sup>cation transfer without controlling the false discovery rate across the entire dataset<sup>50,51</sup>.",
+      "anchor": "Results - Doubling throughput still yields 3500 proteins",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Methodological rigor note: avoids carrier samples to prevent uncontrolled identification transfer / FDR issues, relevant to data-quality standards."
+    },
+    {
+      "id": "e23",
+      "text": "Similarly, the analysis of single cells in combination with higher input samples might impact identi<sup>fi</sup>cation accuracy due to the lack of false discovery rate <sup>fi</sup>ltering post-match between runs. In this case, identi<sup>fi</sup>cations are heavily in<sup>fl</sup>uenced by the representation of sub-populations within higher input samples.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Conceded limitation: combining single cells with higher-input carrier/reference samples can bias identifications due to missing post-MBR FDR control."
+    }
+  ],
+  "figuresNumbers": [
+    {
+      "item": "Abstract / Fig. 2a",
+      "contains": "timsTOF Ultra identifies up to 4000 protein groups, average 3500 per single HEK-293T cell at 40SPD, without carrier or match-between-runs; spans 4 orders of magnitude."
+    },
+    {
+      "item": "Fig. 1b",
+      "contains": "Manual transfer: median 582 protein groups per run; direct Evotip loading: median 812 per single cell; automation gives 29% more protein groups. Peptide sequence overlap 99% (37 unique peptides in no-transfer sample)."
+    },
+    {
+      "item": "Fig. 1d",
+      "contains": "nanoElute 30-min gradient: 1547 proteins/cell average; modified diaPASEF + 40SPD Evosep: 3000 proteins/single HEK-293T cell (~2-fold more, 30% higher throughput)."
+    },
+    {
+      "item": "Fig. 1e-f",
+      "contains": "Direct Evosep gives 12% greater data completeness vs manual nanoElute; samples span close to 5 orders of magnitude."
+    },
+    {
+      "item": "Fig. 2a",
+      "contains": "timsTOF Ultra 40SPD: >3500 proteins/cell (15% higher than timsTOF SCP); 80SPD: median 1200 proteins/cell (~60% drop vs 40SPD)."
+    },
+    {
+      "item": "Fig. 2c-d",
+      "contains": ">50 E3 ubiquitin-protein ligases detected at 40SPD vs 13 at 80SPD; 80SPD reduces dynamic range by one order of magnitude; proteins with MS1 abundance <1e3 in 40SPD drop below detection in 80SPD."
+    },
+    {
+      "item": "Fig. 3b-d",
+      "contains": "THP-1 LPS experiment: up to 1537 protein groups, median 1149 per single cell; PCA PC1 75.8% variance; 214 proteins significantly up, 15 down (229 significant, adj. p <= 0.05). LPS n=77/84, DMSO control, 12 h, 200 ng/mL."
+    },
+    {
+      "item": "Cell sizes",
+      "contains": "HEK-293T diameter 26.7 um; THP-1 diameter 13.7 um (~2-fold smaller), correlating with lower protein IDs per THP-1 cell."
+    },
+    {
+      "item": "Batch effect / normalization",
+      "contains": "~9.28% of variance explained by day-of-processing batch effect; corrected with limma; SCnorm (originally single-cell transcriptomics) used for normalization; pan-human DIA-NN library (301,643 precursors, 10,886 protein groups)."
+    },
+    {
+      "item": "Bulk vs single-cell comparison",
+      "contains": "Mulvey et al. bulk THP-1 LPS 24-h time course identified 4882 proteins; single-cell dataset recovered 26% of those; bulk found 3009 additional proteins. Fold changes do not scale but direction of regulation correlates."
+    }
+  ],
+  "primarySources": [
+    {
+      "topic": "Bulk THP-1 LPS proteomics across a 24-h time course (4882 proteins; temporal/spatiotemporal reference dataset used for single-cell validation)",
+      "citation": "Mulvey, C. M. et al. Spatiotemporal proteomic profiling of the pro-inflammatory response to lipopolysaccharide in the THP-1 human leukaemia cell line. Nat. Commun. 12, 5773 (2021)",
+      "refN": "57"
+    },
+    {
+      "topic": "Protein content of mammalian cells (~50-300 pg) / proteomic ruler",
+      "citation": "Wisniewski, J. R., Hein, M. Y., Cox, J. & Mann, M. A 'Proteomic Ruler' for protein copy number and concentration estimation without spike-in standards. Mol. Cell Proteom. 13, 3497-3506 (2014)",
+      "refN": "14"
+    },
+    {
+      "topic": "Cellular identity/function driven by proteins and PTMs",
+      "citation": "Aebersold, R. & Mann, M. Mass-spectrometric exploration of proteome structure and function. Nature 537, 347-355 (2016)",
+      "refN": "13"
+    },
+    {
+      "topic": "Fold changes between bulk and single-cell proteomics do not scale but regulation correlates (SCoPE2 macrophage study)",
+      "citation": "Specht, H. et al. Single-cell proteomic and transcriptomic analysis of macrophage heterogeneity using SCoPE2. Genome Biol. 22, 50 (2021)",
+      "refN": "17"
+    },
+    {
+      "topic": "SCnorm normalization originally developed for single-cell RNA-seq, here applied to single-cell proteomics",
+      "citation": "Bacher, R. et al. SCnorm: robust normalization of single-cell RNA-seq data. Nat. Methods 14, 584-586 (2017)",
+      "refN": "62"
+    }
+  ],
+  "flags": [
+    "Metadata partially unverified: venue is Nature Communications 2024 (DOI 10.1038/s41467-024-49651-w, '(c) The Author(s) 2024'), but volume/issue/article-number/page range are not present in the cleaned MD; volume set to 'unverified; see flags'. Received/accepted/published dates absent from cleaned text.",
+    "OCR quirks throughout the source: many ligature/superscript artifacts (e.g. 'suf<sup>fi</sup>cient', 'identi<sup>fi</sup>cation', 'work<sup>fl</sup>ow', '\\~30-min', '\\~60%'); verbatim excerpts copy these as-is.",
+    "Scope note: this is an MS-based single-cell proteomics METHODS paper; most of it (chip/LC/MS engineering detail) is off-roadmap and was not captured. Captured excerpts focus on protein-modality value (Claim 4/5), feasibility of high-throughput SCP (Claim 6), the depth/throughput/dynamic-range trade-off (Claim 10), and normalization/batch/comparability issues (Claim 9).",
+    "Dual-use note: the paper can serve as SUPPORT (protein modality reaches functional depth in single cells) AND as a FOIL (it is a dissociated, destructive, snapshot-only single-cell method with no spatial context and no per-cell time course; temporal info is imported from a separate bulk study, ref 57).",
+    "Read at source: ref #57 (Mulvey et al., Nat. Commun. 2021) is the spatiotemporal/time-course bulk dataset and is worth citing first-hand for the temporal axis (Axis B). Ref #17 (Specht SCoPE2) worth first-hand for the bulk-vs-single-cell fold-change-do-not-scale point.",
+    "'Other'-style angle considered but mapped to roadmap: the borrowed single-cell-transcriptomics normalization (SCnorm) and pan-human library reflect Claim 9 standardization/comparability, so no 'Other' touchpoint was emitted."
+  ]
+}

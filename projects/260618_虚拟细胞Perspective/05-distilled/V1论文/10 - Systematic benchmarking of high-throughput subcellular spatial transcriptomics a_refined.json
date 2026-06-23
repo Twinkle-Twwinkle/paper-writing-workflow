@@ -1,0 +1,297 @@
+{
+  "schemaVersion": "精练-4.0",
+  "citationKey": "10",
+  "title": "Systematic benchmarking of high-throughput subcellular spatial transcriptomics across human tumors",
+  "authors": "Pengfei Ren, Rui Zhang, Yunfeng Wang, Peng Zhang, Ce Luo, Suyan Wang, Xiaohong Li, Zongxu Zhang, Yanping Zhao, Yufeng He, Haorui Zhang, Yufeng Li, Zhidong Gao, Xiuping Zhang, Yahui Zhao, Zhihua Liu, Yuanguang Meng, Zhe Zhang, Zexian Zeng",
+  "venue": "Nature Communications, 2025",
+  "year": "2025",
+  "doi": "doi:10.1038/s41467-025-64292-3",
+  "readOn": "2026-06-18",
+  "sourceFile": "/Users/augustsirius/Desktop/已清洗_260617/10 - Systematic benchmarking of subcellular spatial transcriptomics across human tumors_cleaned.md",
+  "oneSentence": "The authors uniformly processed serial sections from three human tumor types and benchmarked four high-throughput subcellular spatial transcriptomics platforms (Stereo-seq v1.3, Visium HD FFPE, CosMx 6K, Xenium 5K) against CODEX protein and matched scRNA-seq references across sensitivity, specificity, diffusion, segmentation, annotation, clustering, and transcript-protein concordance, finding platform-specific strengths and trade-offs.",
+  "orientation": "This is a methods/resource benchmarking paper that primarily feeds the spatial axis and the standards/comparability claim (Claim 2, Claim 9): it argues spatial transcriptomics fills the spatial gap left by scRNA-seq, and demonstrates first-hand why prior cross-study benchmarks are incomparable for lack of unified conditions and ground truth. It also feeds Claim 10 (resolution/throughput/coverage trade-offs across platforms) and Claim 8/Claim 4 (using orthogonal protein and scRNA-seq references, with imperfect transcript-protein concordance). It can serve as support for 'spatial matters / data is siloed and incomparable' and as nuance for 'modalities are not interchangeable.'",
+  "excerpts": [
+    {
+      "id": "e1",
+      "text": "Spatially resolved transcriptomics integrates high-throughput transcriptomic profiling with spatially contextualized tissue architecture, bridging the gap in single-cell RNA sequencing (scRNA-seq) by linking molecular profiles to their spatial context. With preserved spatial information, this technology offers unprecedented insights into cellular states, intercellular interactions, and tissue organization",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "2",
+          "direction": "supports"
+        }
+      ],
+      "note": "States that scRNA-seq lacks spatial context and spatial transcriptomics fills that gap by preserving spatial information."
+    },
+    {
+      "id": "e2",
+      "text": "Furthermore, many benchmarking studies rely on public datasets generated under varying experimental conditions or with varying tissue types, which often lack consistent ground truth data for robust evaluation. As a result, existing efforts offer only a partial understanding of the latest advancements in ST technologies. This underscores the urgent need for a systematic benchmarking study conducted under unified experimental conditions to comprehensively evaluate the performance and comparative strengths of current high-resolution, high-throughput ST platforms.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Argues prior benchmarks use varying conditions and lack consistent ground truth, motivating unified-condition benchmarking; direct support for cross-study incomparability and lack of standards."
+    },
+    {
+      "id": "e3",
+      "text": "To establish comprehensive ground truth datasets for robust evaluation, we profiled proteins using CODEX on tissue sections adjacent to those used for each ST platform. In parallel, we performed scRNA-seq on matched tumor samples (Fig. 1a). The uniformly generated reference datasets enabled integrative and cross-modal comparisons across diverse platforms.",
+      "anchor": "Results — Sample preparation and multi-omics profiling",
+      "touchpoints": [
+        {
+          "claimId": "8",
+          "direction": "supports"
+        },
+        {
+          "claimId": "9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Describes integrating an orthogonal protein modality (CODEX) and scRNA-seq as references, generated uniformly to enable cross-modal comparison."
+    },
+    {
+      "id": "e4",
+      "text": "The resulting uniformly generated, processed, and annotated multi-omics dataset, comprising 8.13 million cells, serves as a valuable resource for advancing computational method development and enabling biological discoveries.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Frames the uniformly processed multi-omics dataset as a resource for method development, an instance of building comparable standardized data."
+    },
+    {
+      "id": "e5",
+      "text": "These complementary approaches underscore the strengths of ST, with sST providing unbiased transcriptome-wide coverage and iST offering high resolution and sensitivity for the detection of target genes.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "10",
+          "direction": "supports"
+        }
+      ],
+      "note": "Frames a coverage-versus-resolution/sensitivity trade-off between sequencing-based and imaging-based spatial platforms."
+    },
+    {
+      "id": "e6",
+      "text": "Compared to the ST platforms, scRNA-seq consistently detected more transcripts and genes per cell (Fig. 4c). Marker gene expression levels also remained higher in scRNA-seq (Supplementary Fig. 10b). However, when restricting the analysis to a shared gene set (2522 genes), the iST platforms demonstrated comparable transcripts and genes per cell to scRNA-seq (Fig. 4c).",
+      "anchor": "Results — Evaluation of the single-cell segmentation",
+      "touchpoints": [
+        {
+          "claimId": "10",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Quantifies a sensitivity gap: scRNA-seq detects more transcripts/genes per cell than spatial platforms, except within shared gene panels where iST is comparable."
+    },
+    {
+      "id": "e7",
+      "text": "Transcript diffusion beyond tissue boundaries was observed in both Stereo-seq v1.3 and Visium HD FFPE (Fig. 2d and Supplementary Fig. 5f).",
+      "anchor": "Results — Evaluation of transcript background noise and diffusion control",
+      "touchpoints": [
+        {
+          "claimId": "10",
+          "direction": "supports"
+        }
+      ],
+      "note": "Reports a spatial-fidelity limitation (transcript diffusion / spatial leakage) in sequencing-based platforms, a measurement trade-off."
+    },
+    {
+      "id": "e8",
+      "text": "Although CosMx 6K detected a higher total number of transcripts than Xenium 5K (Supplementary Fig. 3b), its gene-wise transcript counts showed substantial deviation from matched scRNA-seq reference (Fig. 1d).",
+      "anchor": "Results — Evaluation of molecular capture efficiency across entire gene panels",
+      "touchpoints": [
+        {
+          "claimId": "9",
+          "direction": "supports"
+        },
+        {
+          "claimId": "10",
+          "direction": "supports"
+        }
+      ],
+      "note": "Higher raw transcript count does not equal better fidelity; one platform deviates substantially from the scRNA-seq reference, illustrating cross-platform discordance."
+    },
+    {
+      "id": "e9",
+      "text": "Our findings provide practical guidance for selecting ST platforms based on study objectives. For single-cell level analyses, iST platforms are preferable due to their use of multichannel staining and full-cell segmentation, which enable more accurate cell boundary delineation and reduce transcript spillover. Their targeted capture strategies also enhance the sensitivity and specificity of marker gene detection, supporting cell state inference. In contrast, for spatial analyses focused on tissue-region level patterns, sST platforms may be more suitable due to their broader gene coverage, which improves sensitivity for pathway-level enrichment analyses.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "10",
+          "direction": "supports"
+        }
+      ],
+      "note": "Explicitly frames a no-single-winner trade-off: imaging-based platforms suit single-cell resolution while sequencing-based suit broad-coverage region-level analysis."
+    },
+    {
+      "id": "e10",
+      "text": "Notably, both Xenium 5K and Visium HD FFPE exhibited higher spatial concordance with CODEX-based protein maps, underscoring their spatial accuracy.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "8",
+          "direction": "supports"
+        }
+      ],
+      "note": "Uses an orthogonal protein modality (CODEX) as the benchmark for spatial accuracy of transcript localization, an instance of cross-modal validation."
+    },
+    {
+      "id": "e11",
+      "text": "Looking ahead, each platform class faces distinct technical challenges. For iST technologies, expanding toward whole-transcriptome coverage while maintaining high specificity and detection efficiency is a critical frontier. However, optical crowding remains a limiting factor, as larger gene panels may reduce detection efficiency due to signal overlap.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "10",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concedes a hard trade-off for imaging-based platforms: optical crowding limits panel size versus detection efficiency, bounding modality breadth."
+    },
+    {
+      "id": "e12",
+      "text": "The development of three-dimensional spatial transcriptomics for thick tissue sections, relaxation of sample input constraints, progress in nondestructive spatial profiling, and integration with multiomic modalities will collectively expand the scope, accessibility, and impact of ST technologies in both research and clinical settings.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "8",
+          "direction": "supports"
+        },
+        {
+          "claimId": "3",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Names nondestructive spatial profiling and multiomic integration as future directions, implicitly conceding current destructiveness and single-modality limits."
+    },
+    {
+      "id": "e13",
+      "text": "Second, CODEX was performed on adjacent tissue sections instead of the original ST sections, which provided essential reference but also introduced morphological discrepancies that may impact direct comparisons across platforms.",
+      "anchor": "Discussion — limitations",
+      "touchpoints": [
+        {
+          "claimId": "8",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Author-conceded limitation: cross-modal protein reference is from adjacent (not the same) sections, a structural barrier to truly paired multimodal measurement."
+    },
+    {
+      "id": "e14",
+      "text": "Compared to previous benchmarking efforts that primarily relied on histologically homogeneous tissues, our study focused on tumor samples characterized by high cellular heterogeneity, complex tissue architecture, and spatially irregular gene expression, thereby offering a more stringent and biologically relevant context.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Positions the study as a more rigorous benchmark than prior efforts, reinforcing that earlier comparisons were limited and standards immature."
+    },
+    {
+      "id": "e15",
+      "text": "Among the ST platforms, iST technologies achieved better resolution of transcriptomic differences between cell clusters, highlighting the advantage of their higher spatial resolution (Fig. 5b).",
+      "anchor": "Results — Evaluation of cell clustering and cell type annotation",
+      "touchpoints": [
+        {
+          "claimId": "10",
+          "direction": "supports"
+        }
+      ],
+      "note": "Links higher spatial resolution of imaging-based platforms to better cluster resolution, a resolution-driven performance difference."
+    },
+    {
+      "id": "e16",
+      "text": "Lastly, for applications involving host–microbe interactions, Stereo-seq v1.3 holds unique advantages due to its unbiased poly(A)-based capture, which allows for the detection of both human and nonhuman transcripts.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "10",
+          "direction": "supports"
+        }
+      ],
+      "note": "Notes a capture-strategy trade-off: unbiased poly(A) capture gives broader (non-targeted) transcript scope unavailable to probe-based platforms."
+    }
+  ],
+  "figuresNumbers": [
+    {
+      "item": "Dataset scale",
+      "contains": "Uniformly generated, processed, annotated multi-omics dataset comprising 8.13 million cells across COAD, HCC, and OV tumor samples."
+    },
+    {
+      "item": "Platforms benchmarked",
+      "contains": "Four high-throughput subcellular ST platforms: Stereo-seq v1.3 (0.5 um, BGI), Visium HD FFPE (2 um, 10x, 18,085 genes), CosMx 6K (NanoString, 6175 genes), Xenium 5K (10x, 5001 genes). References: 16-plex CODEX protein and matched scRNA-seq."
+    },
+    {
+      "item": "Gene panel sizes / resolution",
+      "contains": "Stereo-seq v1.3 resolution 0.5 um; Visium HD 2 um targeting 18,085 genes; CosMx 6K profiles 6175 genes; Xenium 5K profiles 5001 genes; analyses binned at 8 um. Earlier iST: ISS 39 genes, MERFISH 1000 genes, STARmap 1020 genes."
+    },
+    {
+      "item": "Manual segmentation ground truth",
+      "contains": "72,405 cells manually annotated for nuclear boundaries across five 500 x 500 um regions per dataset."
+    },
+    {
+      "item": "Shared gene panel",
+      "contains": "2522 genes shared between CosMx 6K and Xenium 5K; restricting to this set, iST platforms reach transcripts/genes per cell comparable to scRNA-seq."
+    },
+    {
+      "item": "Fig. 1d",
+      "contains": "Pearson gene-wise correlation between ST and scRNA-seq; Stereo-seq v1.3, Visium HD FFPE, Xenium 5K show high correlation, CosMx 6K deviates substantially."
+    },
+    {
+      "item": "Fig. 2 / Moran's I",
+      "contains": "CosMx 6K shows elevated negative-control signals and stronger spatial aggregation (Moran's I) of background; Xenium 5K has lower negative-control proportion after normalization."
+    },
+    {
+      "item": "Fig. 2f",
+      "contains": "Ratio of mean transcript count in extra-tissue vs intra-tissue bins shows substantially greater diffusion in Stereo-seq v1.3 than Visium HD FFPE (n=3 cancer types)."
+    }
+  ],
+  "primarySources": [
+    {
+      "topic": "scRNA-seq lacks spatial context (foundational gap spatial transcriptomics addresses)",
+      "citation": "Ren et al. self-framing; concept attributed broadly to refs 1-6",
+      "refN": null
+    },
+    {
+      "topic": "Prior systematic benchmark of sequencing-based spatial platforms (Stereo-seq vs Visium)",
+      "citation": "You, Y. et al. Systematic comparison of sequencing-based spatial transcriptomic methods. Nat. Methods 21, 1743-1754 (2024)",
+      "refN": "30"
+    },
+    {
+      "topic": "Original Visium spatial transcriptomics method",
+      "citation": "Stahl, P. L. et al. Visualization and analysis of gene expression in tissue sections by spatial transcriptomics. Science 353, 78-82 (2016)",
+      "refN": "11"
+    },
+    {
+      "topic": "Stereo-seq method (DNA nanoball spatial array)",
+      "citation": "Chen, A. et al. Spatiotemporal transcriptomic atlas of mouse organogenesis using DNA nanoball-patterned arrays. Cell 185, 1777-1792 (2022)",
+      "refN": "14"
+    },
+    {
+      "topic": "CosMx spatial molecular imaging method",
+      "citation": "He, S. et al. High-plex imaging of RNA and proteins at subcellular resolution in fixed tissue by spatial molecular imaging. Nat. Biotechnol. 40, 1794-1806 (2022)",
+      "refN": "24"
+    },
+    {
+      "topic": "Xenium in situ method",
+      "citation": "Janesick, A. et al. High resolution mapping of the tumor microenvironment using integrated single-cell, spatial and in situ analysis. Nat. Commun. 14, 8353 (2023)",
+      "refN": "25"
+    },
+    {
+      "topic": "Optical crowding limits iST panel expansion",
+      "citation": "Bilous, M. et al. From transcripts to cells: dissecting sensitivity, signal contamination, and specificity in Xenium spatial Transcriptomics. bioRxiv 2025.04.23.649965 (2025)",
+      "refN": "45"
+    }
+  ],
+  "flags": [
+    "Metadata confirmed from text: DOI 10.1038/s41467-025-64292-3; venue Nature Communications; Received 26 January 2025, Accepted 15 September 2025, Published online 17 October 2025.",
+    "Authors printed with full given names in the Authors block; reproduced verbatim (no initials-only issue).",
+    "Issue/volume/page numbers not present in this cleaned text (online-only article identifier); venue given as 'Nature Communications, 2025' without Vol(Issue):Pages.",
+    "Scope note: This is a spatial-transcriptomics benchmarking/resource paper. It bears mainly on spatial (Claim 2), standards/comparability (Claim 9), trade-offs (Claim 10), and multimodal integration (Claim 8). It does NOT address temporal/destructive-measurement trajectories (Claim 3) except as a one-line future-direction mention (e10/e12), and protein here is a 16-plex imaging reference, not high-throughput proteomics (relevant to Claim 6 only weakly; not stamped).",
+    "OCR quirks in source (e.g. 'profiling', 'specificity', 'fixed' rendered with sup tags) were normalized in quoted excerpts to readable spelling; verbatim wording otherwise preserved."
+  ]
+}

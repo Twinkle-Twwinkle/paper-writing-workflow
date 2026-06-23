@@ -1,0 +1,589 @@
+{
+  "schemaVersion": "精练-4.0",
+  "citationKey": "01",
+  "title": "How to Build the Virtual Cell with Artificial Intelligence: Priorities and Opportunities",
+  "authors": "Charlotte Bunne, Yusuf Roohani, Yanay Rosen, Ankit Gupta, Xikun Zhang, Marcel Roed, Theo Alexandrov, Mohammed AlQuraishi, Patricia Brennan, Daniel B. Burkhardt, Andrea Califano, Jonah Cool, Abby F. Dernburg, Kirsty Ewing, Emily B. Fox, Matthias Haury, Amy E. Herr, Eric Horvitz, Patrick D. Hsu, Viren Jain, Gregory R. Johnson, Thomas Kalil, David R. Kelley, Shana O. Kelley, Anna Kreshuk, Tim Mitchison, Stephani Otte, Jay Shendure, Nicholas J. Sofroniew, Fabian Theis, Christina V. Theodoris, Srigokul Upadhyayula, Marc Valer, Bo Wang, Eric Xing, Serena Yeung-Levy, Marinka Zitnik, Theofanis Karaletsos, Aviv Regev, Emma Lundberg, Jure Leskovec, Stephen R. Quake",
+  "venue": "unverified; see flags",
+  "year": "unverified; see flags",
+  "doi": null,
+  "readOn": "2026-06-18",
+  "sourceFile": "/Users/augustsirius/Desktop/已清洗_260617/01 - How to Build the Virtual Cell with AI_cleaned.md",
+  "oneSentence": "A community Perspective (Chan Zuckerberg Initiative-catalyzed) proposing the vision of an AI Virtual Cell (AIVC): a multi-scale, multi-modal neural-network model learned directly from biological data, built from Universal Representations (molecular, cellular, multicellular) and Virtual Instruments, with a roadmap covering data needs, evaluation, interpretability, and open collaboration.",
+  "orientation": "This is the canonical articulation of the AIVC vision our Perspective responds to, and it serves primarily as a high-value FOIL-and-concession source: it loudly champions models while itself conceding nearly every data-foundation gap our thesis names (spatial dissociation, destructive/temporal sampling, transcriptome over-reliance, modality breadth, data standards and cross-lab comparability). The same paper can be deployed as the named opponent ('models racing ahead') AND as authoritative support, since its own 'Data needs' section concedes the gaps. Most relevant to Claims 2, 3, 4, 8, 9 and the modality/temporal/spatial/standard axes; lightly touches Claim 1 (data-as-priority) and Claim 7 (microenvironment).",
+  "excerpts": [
+    {
+      "id": "e1",
+      "text": "Given their prevalence, the cellular UR will initially rely on transcriptomics measurements, while imaging modalities will be key for continued modeling of cellular spatial organization and dynamics.",
+      "anchor": "Cellular scale",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        },
+        {
+          "claimId": "modality",
+          "direction": "supports"
+        }
+      ],
+      "note": "States the cellular representation will initially rely on transcriptomics, conceding the field's transcriptome-centric starting point."
+    },
+    {
+      "id": "e2",
+      "text": "Data for the cellular UR consist of measurements mapped to a single cell level such as measurements of the transcriptome (scRNA-seq), chromatin accessibility (scATAC-seq), chromatin modification transcription factor binding, and proteome",
+      "anchor": "Cellular scale",
+      "touchpoints": [
+        {
+          "claimId": "modality",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Lists single-cell modalities available for the cellular representation, with proteome appended last among sequencing-based readouts."
+    },
+    {
+      "id": "e3",
+      "text": "Multicellular interactions can be analyzed after tissue dissociation (such as in scRNA-seq) <sup>104</sup> or in situ in a 2D section or 3D volume, where the tissue structure is preserved.",
+      "anchor": "Multicellular scale",
+      "touchpoints": [
+        {
+          "claimId": "Claim 2",
+          "direction": "supports"
+        },
+        {
+          "claimId": "spatial",
+          "direction": "supports"
+        }
+      ],
+      "note": "Contrasts dissociation-based scRNA-seq with in situ approaches that preserve tissue structure, implying dissociation loses spatial structure."
+    },
+    {
+      "id": "e4",
+      "text": "There are multiple methods to profile the spatial location of RNA <sup>105</sup>, and proteins <sup>106</sup> in cells, along with various imaging methods for select molecular species (e.g., immunohistochemistry), or with stains for tissue strucutre alone (e.g., haematoxylin and eosin (H&E)). Spatial molecular biology is currently a very active area of research and method development. While publicly available data are still limited, we foresee a rapid development in this domain providing multi-omic 2D and",
+      "anchor": "Multicellular scale",
+      "touchpoints": [
+        {
+          "claimId": "Claim 2",
+          "direction": "supports"
+        },
+        {
+          "claimId": "spatial",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concedes that publicly available spatial molecular data are still limited, while spatial molecular biology is a very active developing area (keep OCR 'strucutre')."
+    },
+    {
+      "id": "e5",
+      "text": "A more generalized data generation efort together with open frameworks for spatial data <sup>107</sup> could greatly accelerate modeling at the multicellular scale.",
+      "anchor": "Multicellular scale",
+      "touchpoints": [
+        {
+          "claimId": "spatial",
+          "direction": "supports"
+        },
+        {
+          "claimId": "standard",
+          "direction": "supports"
+        }
+      ],
+      "note": "Calls for more generalized spatial data generation and open data frameworks to accelerate multicellular-scale modeling."
+    },
+    {
+      "id": "e6",
+      "text": "Data generation will require simultaneous exploration of temporal and physical scales, while allowing for system perturbations.",
+      "anchor": "Data needs and requirements",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "supports"
+        },
+        {
+          "claimId": "temporal",
+          "direction": "supports"
+        },
+        {
+          "claimId": "spatial",
+          "direction": "supports"
+        }
+      ],
+      "note": "States data generation must simultaneously cover temporal and physical (spatial) scales plus perturbations."
+    },
+    {
+      "id": "e7",
+      "text": "Furthermore, biological processes span a vast range of timescales, from the fastest reactions happening in picoseconds, to a cell division happening in a day, tumor development occurring over years, and neurodegeneration over decades.",
+      "anchor": "Data needs and requirements",
+      "touchpoints": [
+        {
+          "claimId": "temporal",
+          "direction": "supports"
+        }
+      ],
+      "note": "Underscores the vast range of biological timescales (picoseconds to decades) that data must capture."
+    },
+    {
+      "id": "e8",
+      "text": "The recent construction of universal cell atlases <sup>134,128</sup> may serve as a powerful resource for modeling cellular behavior over longer time scales, such as tissue formation. New approaches will be needed to build comparable data sets which capture the behavior of cells on shorter times scales, e.g., through methods such as live-cell imaging.",
+      "anchor": "Data needs and requirements",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "supports"
+        },
+        {
+          "claimId": "temporal",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concedes that new approaches are needed to capture cell behavior on shorter timescales, pointing to live-cell imaging."
+    },
+    {
+      "id": "e9",
+      "text": "Another important driver for the development of AI Virtual Cells will be multi-modal datasets. For example, datasets which bridge molecular and spatial scales, such as single cell transcriptomics data combined with histology to understand how cells interact and what molecular signatures underpin the formation of specialized spatial niches<sup>135</sup>. Further technological development is needed to collect multi-modal data that better captures the relationship between molecular signatures, cell behavior, cellular regulation and organization.",
+      "anchor": "Data needs and requirements",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 7",
+          "direction": "supports"
+        }
+      ],
+      "note": "Identifies multi-modal datasets bridging molecular and spatial scales as a key driver, conceding current data falls short and further development is needed."
+    },
+    {
+      "id": "e10",
+      "text": "While a core interest of virtual cell modeling will focus on human datasets for the purpose of understanding disease and aiding the development of novel therapeutics, human datasets are limited in our ability to perform controlled experimentation and perturbations in vivo.",
+      "anchor": "Data needs and requirements",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concedes a trade-off: human datasets are limited for controlled in vivo experimentation and perturbation."
+    },
+    {
+      "id": "e11",
+      "text": "Finally, a key aspect of biological data generation will be the exploration of combinatorial spaces: biological spaces are commonly high dimensional, and enumerating their variants is intractable in general, e.g., when considering all possible variants of a genome. Even for combinations of a small number of entities, exemplified in the case of enumerating pairs or sets of perturbations <sup>58,115</sup>, experimental design becomes exceedingly challenging.",
+      "anchor": "Data needs and requirements",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concedes that combinatorial perturbation spaces are intractable to enumerate experimentally, making experimental design exceedingly challenging."
+    },
+    {
+      "id": "e12",
+      "text": "For instance, the Short Read Archive of biological sequence data holds over 14 petabytes of information <sup>142</sup> which is more than one thousand times larger than the dataset used to train ChatGPT <sup>143</sup>. Large parts of this data may be redundant, or have diminishing returns if used for training, and the scaling laws for models’ performances must be investigated thoroughly.",
+      "anchor": "Data needs and requirements",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Quantifies sequence data scale (>14 PB, >1000x ChatGPT's training set) but concedes much may be redundant or have diminishing returns, so quantity is not sufficient."
+    },
+    {
+      "id": "e13",
+      "text": "In addition to data size, data diversity is critical to ensure model quality<sup>144</sup>. Data from humans and model organisms like mice and E. coli are unequally represented in sequence and literature databases, which when used for training, encode strong species biases <sup>144</sup>. Other biases, for example towards specific diseases or human ancestral populations could also reduce the impact of AIVC models <sup>145</sup>.",
+      "anchor": "Data needs and requirements",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 9",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Concedes that data diversity (not just size) is critical and that existing databases encode strong species and population biases that degrade models."
+    },
+    {
+      "id": "e14",
+      "text": "A more important question for the development of AI Virtual Cells may not be “How to build them?”, but rather “How to build trust in their competence and fidelity?” To this end, a comprehensive and adaptable benchmarking framework will be needed.",
+      "anchor": "Model evaluation",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Argues the harder question is trust/fidelity, requiring a comprehensive benchmarking framework that does not yet exist."
+    },
+    {
+      "id": "e15",
+      "text": "the AIVC will need to demonstrate generalizability across numerous biological contexts and downstream tasks. It must account for dynamic distributions that evolve due to environmental changes, infections, genetic variants and other such factors causing distribution shifts <sup>146</sup>.",
+      "anchor": "Model evaluation",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "States the AIVC must generalize across contexts and handle distribution shifts, conceding generalization is an open challenge."
+    },
+    {
+      "id": "e16",
+      "text": "Generalizability measures how well the model performs in unseen contexts such as novel cell types and genetic backgrounds. It can be evaluated through a cross-modal reconstruction task, such as predicting gene expression given the morphology of a previously unseen cell or the next image in a sequence of microscopy images of cell state.",
+      "anchor": "Model evaluation",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        }
+      ],
+      "note": "Proposes cross-modal reconstruction (e.g. predicting expression from morphology) as a generalizability test, implying modalities carry complementary information."
+    },
+    {
+      "id": "e17",
+      "text": "Establishing such cross-modal benchmarks to link scales and modalities in cell biology is of imminent priority to the research community, as these tasks are both biologically useful and well-defined.",
+      "anchor": "Model evaluation",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        },
+        {
+          "claimId": "standard",
+          "direction": "supports"
+        }
+      ],
+      "note": "Calls cross-modal benchmarks linking scales and modalities an imminent community priority."
+    },
+    {
+      "id": "e18",
+      "text": "These eforts would greatly benefit from open data resources and data standards, a collaborative platform for cell modeling, and especially open benchmark datasets and common validation strategies to ensure their biological fidelity and real-world utility.",
+      "anchor": "An open collaborative approach",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        },
+        {
+          "claimId": "standard",
+          "direction": "supports"
+        }
+      ],
+      "note": "Explicitly endorses open data resources, data standards, and common validation strategies, conceding their current absence."
+    },
+    {
+      "id": "e19",
+      "text": "Besides the synchronization with data generators and other modeling eforts, collaboration with regulatory authorities and bioethics experts are crucial for benchmarking and establishing new norms that will expedite the deployment of AI Virtual Cells",
+      "anchor": "An open collaborative approach",
+      "touchpoints": [
+        {
+          "claimId": "standard",
+          "direction": "supports"
+        }
+      ],
+      "note": "Stresses synchronization with data generators and establishing new norms/benchmarking standards."
+    },
+    {
+      "id": "e20",
+      "text": "Two exciting revolutions in science and technology— in AI and in ’omics—now enable the construction of cell models learned directly from data.",
+      "anchor": "Main",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "challenges"
+        }
+      ],
+      "note": "Central thesis of the paper: AI plus omics now enable fully data-driven cell models, framing data abundance as an enabler rather than the bottleneck (the foil to our data-bottleneck argument)."
+    },
+    {
+      "id": "e21",
+      "text": "Experimentally, the exponential increase in the throughput of measurement technologies has led to the collection of large and growing reference datasets within and across diferent cell and tissue systems <sup>27,28,29,30</sup>, with data doubling every six months for the past several years <sup>31</sup>, along with the ability to couple these measurements with systematic perturbations <sup>32,33,34,35</sup>.",
+      "anchor": "Main",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "challenges"
+        }
+      ],
+      "note": "Quantitative claim that biological data is doubling every six months, used to argue data abundance enables the AIVC (a foil to the data-scarcity/bottleneck framing)."
+    },
+    {
+      "id": "e22",
+      "text": "(1) Multi-cellscale modeling: Cells operate on multiple scales across both time and space, from atomic to molecular to cellular and histological, with functional properties emerging through nonlinear transformation from one scale to another.",
+      "anchor": "Main",
+      "touchpoints": [
+        {
+          "claimId": "spatial",
+          "direction": "supports"
+        },
+        {
+          "claimId": "temporal",
+          "direction": "supports"
+        }
+      ],
+      "note": "Acknowledges cells operate across both time and space and multiple physical scales, with emergent properties across scales (OCR run-on 'Multi-cellscale')."
+    },
+    {
+      "id": "e23",
+      "text": "By training on a wide range of snapshots, time-resolved, non-interventional and interventional datasets collected across contexts and scales, the AIVC can develop an understanding of the molecular, cellular, and tissue dynamics that occur under natural or engineered signals.",
+      "anchor": "Predicting cell behavior and understanding mechanisms",
+      "touchpoints": [
+        {
+          "claimId": "temporal",
+          "direction": "supports"
+        }
+      ],
+      "note": "States the AIVC needs time-resolved datasets (alongside snapshots) to learn dynamics, implicitly conceding most data are static snapshots."
+    },
+    {
+      "id": "e24",
+      "text": "The AIVC should also have the capability to simulate the temporal evolution of alterations in cell states in response to both intrinsic or extrinsic factors, along with the resulting multicellular spatial arrangements.",
+      "anchor": "Predicting cell behavior and understanding mechanisms",
+      "touchpoints": [
+        {
+          "claimId": "temporal",
+          "direction": "supports"
+        },
+        {
+          "claimId": "spatial",
+          "direction": "supports"
+        }
+      ],
+      "note": "States the AIVC should simulate temporal evolution of cell states together with their spatial arrangements, framing time and space as jointly required."
+    },
+    {
+      "id": "e25",
+      "text": "The key step here would be to integrate learned representations of molecules with their quantities, and appropriately abstracted locations and timestamps, to create a unified representation of the cell <sup>72,73,74</sup>.",
+      "anchor": "Cellular scale",
+      "touchpoints": [
+        {
+          "claimId": "spatial",
+          "direction": "supports"
+        },
+        {
+          "claimId": "temporal",
+          "direction": "supports"
+        }
+      ],
+      "note": "Says a unified cell representation must integrate molecular quantities with locations and timestamps, naming spatial and temporal coordinates as required inputs."
+    },
+    {
+      "id": "e26",
+      "text": "Complementing imaging approaches, mass spectrometry and proximity-dependent labeling can unveil proteinprotein associations and provide deeper insights into cell structure and signaling network rewiring <sup>86,87</sup>",
+      "anchor": "Cellular scale",
+      "touchpoints": [
+        {
+          "claimId": "Claim 5",
+          "direction": "supports"
+        },
+        {
+          "claimId": "modality",
+          "direction": "supports"
+        }
+      ],
+      "note": "Notes mass spectrometry and proximity labeling reveal protein-protein associations and signaling rewiring, information beyond transcriptomics (OCR 'proteinprotein')."
+    },
+    {
+      "id": "e27",
+      "text": "Furthermore, variations in cellular URs can be linked to corresponding changes in molecular states or their spatial localization, influenced by downstream factors like genetic variants or functional changes in proteins that are represented in a lower scale of the AIVC.",
+      "anchor": "Predicting cell behavior and understanding mechanism",
+      "touchpoints": [
+        {
+          "claimId": "Claim 5",
+          "direction": "supports"
+        },
+        {
+          "claimId": "spatial",
+          "direction": "supports"
+        }
+      ],
+      "note": "Links cell-state variation to molecular spatial localization and to functional changes in proteins, treating protein-level function as load-bearing."
+    },
+    {
+      "id": "e28",
+      "text": "While the AIVC would already accurately qualify the change in the expression of genes, tumor sequencing data would allow it to model the change of function of those genes, for example through loss of function, change in post-translational modifications, or rewiring of protein-protein interactions and signaling networks <sup>171</sup>.",
+      "anchor": "Unlocking the power of spatial biology to fight cancer",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 5",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concedes that gene expression alone does not capture gene function; post-translational modifications and protein-interaction rewiring carry function that RNA cannot."
+    },
+    {
+      "id": "e29",
+      "text": "Spatial structures in cancer, specifically within the tumor microenvironment (TME) are critical drivers of cancer progression, and can drive resistance to the immune system and limit drug eficacy <sup>164</sup>.",
+      "anchor": "Unlocking the power of spatial biology to fight cancer",
+      "touchpoints": [
+        {
+          "claimId": "Claim 7",
+          "direction": "supports"
+        },
+        {
+          "claimId": "spatial",
+          "direction": "supports"
+        }
+      ],
+      "note": "States spatial structures in the tumor microenvironment are critical drivers of cancer progression and drug resistance, supporting spatial-context importance."
+    },
+    {
+      "id": "e30",
+      "text": "Thus, immune resistance must be understood in the spatial context of the cellular neighborhood in order to identify the specific cell states and gene signatures involved.",
+      "anchor": "Unlocking the power of spatial biology to fight cancer",
+      "touchpoints": [
+        {
+          "claimId": "Claim 7",
+          "direction": "supports"
+        },
+        {
+          "claimId": "spatial",
+          "direction": "supports"
+        }
+      ],
+      "note": "Argues immune resistance and cell states can only be understood in the spatial context of the cellular neighborhood."
+    },
+    {
+      "id": "e31",
+      "text": "The same entity, profiled with diferent technologies, should have the same internal representation in an AIVC.",
+      "anchor": "Box 1: Grand challenges (Establishing self-consistency)",
+      "touchpoints": [
+        {
+          "claimId": "standard",
+          "direction": "supports"
+        }
+      ],
+      "note": "Asserts an entity profiled by different technologies should map to one internal representation, a self-consistency/cross-platform comparability requirement."
+    },
+    {
+      "id": "e32",
+      "text": "Models should propagate function across physical scales— interactions between molecules should have consistent efects when measuring binding afinity, gene expression, cell-cell communication or tissue organization.",
+      "anchor": "Box 1: Grand challenges (Establishing self-consistency)",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        }
+      ],
+      "note": "Requires models to propagate function consistently across scales and measurement types, implying cross-modal integration is required."
+    },
+    {
+      "id": "e33",
+      "text": "A fundamental question for the collaborative development of AIVCs is which data and modalities should be collected to enable generalization across biological contexts and scales. These data will need to encompass the breadth of biology in diferent species, domains and modalities, representing the heterogeneity of life, while maintaining depth suficient to distinguish true signals from noise. A key aspect of data generation will be the simultaneous measurement of temporal and physical scales, while also allowing perturbations of the system.",
+      "anchor": "Box 1: Grand challenges (Understanding the value of diferent data types)",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        },
+        {
+          "claimId": "temporal",
+          "direction": "supports"
+        },
+        {
+          "claimId": "spatial",
+          "direction": "supports"
+        }
+      ],
+      "note": "Frames 'which data and modalities to collect' as a fundamental open question and calls for simultaneous temporal and physical (spatial) measurement with perturbations."
+    },
+    {
+      "id": "e34",
+      "text": "For example, fluorescence confocal microscopy can help resolve the subcellular location of the human proteome <sup>79</sup>. Live-cell imaging<sup>80</sup> enables the study of proteins in living cells using time-lapse microscopy.",
+      "anchor": "Cellular scale",
+      "touchpoints": [
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        },
+        {
+          "claimId": "spatial",
+          "direction": "supports"
+        },
+        {
+          "claimId": "temporal",
+          "direction": "supports"
+        }
+      ],
+      "note": "Notes imaging can resolve subcellular protein location and live-cell time-lapse imaging tracks proteins over time, evidencing spatial and temporal protein measurement feasibility."
+    }
+  ],
+  "figuresNumbers": [
+    {
+      "item": "Data growth rate",
+      "contains": "Reference datasets with data doubling every six months for the past several years (ref 31)."
+    },
+    {
+      "item": "Sequence Read Archive scale",
+      "contains": "Short Read Archive holds over 14 petabytes of biological sequence data (ref 142), more than one thousand times larger than the dataset used to train ChatGPT (ref 143)."
+    },
+    {
+      "item": "First whole-cell model (2012)",
+      "contains": "The first whole-cell model (2012) represented all 482 genes and molecular functions known for Mycoplasma genitalium (ref 9). [OCR: text reads 'Mycobacterium genitalium' but the organism is Mycoplasma genitalium; see flags]"
+    },
+    {
+      "item": "Biological timescales",
+      "contains": "Processes span picoseconds (fastest reactions) to a day (cell division) to years (tumor development) to decades (neurodegeneration)."
+    }
+  ],
+  "primarySources": [
+    {
+      "topic": "Highly parallel single-cell expression profiling via dissociation (scRNA-seq / Drop-seq), cited for dissociation-based multicellular analysis",
+      "citation": "Macosko, E. Z. et al. Highly parallel genome-wide expression profiling of individual cells using nanoliter droplets. Cell 161 (2015)",
+      "refN": "104"
+    },
+    {
+      "topic": "Spatial transcriptomics method (profiling spatial location of RNA)",
+      "citation": "Ståhl, P. L. et al. Visualization and analysis of gene expression in tissue sections by spatial transcriptomics. Science 353 (2016)",
+      "refN": "105"
+    },
+    {
+      "topic": "Spatial proteomics as a discovery tool (profiling spatial location of proteins)",
+      "citation": "Lundberg, E. & Borner, G. H. H. Spatial proteomics: a powerful discovery tool for cell biology. Nature Reviews Molecular Cell Biology 20, 285-302 (2019)",
+      "refN": "106"
+    },
+    {
+      "topic": "Subcellular location of the human proteome via fluorescence confocal microscopy",
+      "citation": "Thul, P. J. et al. A subcellular map of the human proteome. Science 356 (2017)",
+      "refN": "79"
+    },
+    {
+      "topic": "Single-cell transcriptomics combined with histology to identify spatial niches (multi-modal molecular+spatial)",
+      "citation": "He, B. et al. Integrating spatial gene expression and breast tumour morphology via deep learning. Nature Biomedical Engineering 4, 827-834 (2020)",
+      "refN": "135"
+    },
+    {
+      "topic": "Number of distinct proteoforms (protein-level functional diversity beyond gene expression)",
+      "citation": "Aebersold, R. et al. How many human proteoforms are there? Nature Chemical Biology 14 (2018)",
+      "refN": "171"
+    },
+    {
+      "topic": "Species bias from unequal sequence sampling across the tree of life (data diversity)",
+      "citation": "Ding, F. & Steinhardt, J. N. Protein language models are biased by unequal sequence sampling across the tree of life. bioRxiv (2024)",
+      "refN": "144"
+    },
+    {
+      "topic": "Sequence Read Archive scale (14 petabytes)",
+      "citation": "Katz, K. et al. The Sequence Read Archive: a decade more of explosive growth. Nucleic Acids Research 50, D387-D390 (2022)",
+      "refN": "142"
+    },
+    {
+      "topic": "Out-of-distribution generalization / distribution shift challenge for evaluation",
+      "citation": "Liu, J. et al. Towards out-of-distribution generalization: A survey. arXiv preprint arXiv:2108.13624 (2021)",
+      "refN": "146"
+    }
+  ],
+  "flags": [
+    "Metadata unverified: no DOI found in the cleaned text (grep for '10.xxxx/' returned nothing); venue and year not stated in the body. Externally this is widely known as a Nature Perspective (2024-2025) catalyzed by a Chan Zuckerberg Initiative workshop, but it is NOT asserted in the source text, so venue/year/doi left as 'unverified; see flags'/null.",
+    "OCR quirks pervasive throughout the cleaned MD: 'diferent', 'eficient', 'efects', 'afinity', 'difusion', 'strucutre', run-on artifacts (e.g. 'Multi-cellscale', 'proteinprotein'); excerpts copied verbatim with these intact.",
+    "Source inconsistency: the text states the first whole-cell model represented 482 genes of 'Mycobacterium genitalium', but the organism in the cited work (Karr et al. 2012, ref 9) is Mycoplasma genitalium; likely OCR/text error in the cleaned MD.",
+    "Heavy figure-caption text bleed into the Main body in the cleaned MD (stray fragments like 'Molecular scale', 'Cellular scale', 'replication', 'translation cell' interleaved in paragraphs around lines 11-15); excerpt e22 was trimmed to the clean sentence to avoid bleed.",
+    "Author affiliations indicate the paper is led by Chan Zuckerberg Initiative + Stanford with Genentech (Bunne, Regev) and EvolutionaryScale (Sofroniew) industry coauthors; relevant only as context, not a roadmap claim.",
+    "Scope note: large portions of this Perspective (model architectures in Box 3 — transformers/CNNs/diffusion/GNNs; Virtual Instruments mechanics; drug discovery and diagnostics application vignettes) are about HOW to model, which is explicitly out of scope per the context file (section 6: do not write specific modeling methods); those were not captured except where a sentence doubles as a data-foundation concession.",
+    "Read at source: ref #106 (Lundberg & Borner, Spatial proteomics, Nat Rev Mol Cell Biol 2019) and ref #75 (Mahdessian et al., Spatiotemporal dissection of the cell cycle with single-cell proteogenomics, Nature 590, 2021) are first-hand sources worth citing directly for the spatial-proteomics and spatiotemporal-proteomics capability claims (Claims 2/6)."
+  ]
+}

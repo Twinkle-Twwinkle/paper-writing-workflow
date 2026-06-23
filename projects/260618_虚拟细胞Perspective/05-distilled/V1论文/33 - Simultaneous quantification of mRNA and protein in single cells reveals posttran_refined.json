@@ -1,0 +1,422 @@
+{
+  "schemaVersion": "精练-4.0",
+  "citationKey": "33",
+  "title": "Simultaneous quantification of mRNA and protein in single cells reveals posttranscriptional effects of genetic variation",
+  "authors": "Christian Brion, Sheila M Lutz, Frank Wolfgang Albert",
+  "venue": "eLife, 2020",
+  "year": "2020",
+  "doi": "doi:10.7554/eLife.60645",
+  "readOn": "2026-06-18",
+  "sourceFile": "/Users/augustsirius/Desktop/已清洗_260617/33 - Simultaneous quantification of mRNA and protein in single cells reveals post-transcriptional effects_cleaned.md",
+  "oneSentence": "The authors built a CRISPR-based dual fluorescent reporter that simultaneously quantifies mRNA production and protein abundance of the same gene in single live yeast cells, then mapped 86 trans-acting loci across ten genes and found that fewer than 20% had concordant effects on mRNA and protein, with most loci affecting protein but not mRNA.",
+  "orientation": "Direct ammunition for the roadmap claim that modalities carry orthogonal, non-substitutable information: it shows, in a confounder-controlled same-cell design, that genetic effects on protein largely do not match effects on mRNA, so RNA cannot stand in for protein. It also feeds the 'cross-study non-comparability / lack of standards' claim (the paper's whole motivation is that prior eQTL-vs-pQTL discrepancies were confounded by being measured in different labs, tissues, and conditions) and the 'destructive/lysis vs throughput' measurement-tradeoff claim (its reporter avoids lysis to gain throughput). Could serve as support for protein-as-irreplaceable-modality and as a methodological foil illustrating the confounding problem.",
+  "excerpts": [
+    {
+      "id": "e1",
+      "text": "Less than 20% of these loci had concordant effects on mRNA and protein of the same gene. Most loci influenced protein but not mRNA of a given gene.",
+      "anchor": "Abstract",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        }
+      ],
+      "note": "Headline result: genetic effects on mRNA and protein of the same gene are largely non-overlapping, with protein-specific effects dominating."
+    },
+    {
+      "id": "e2",
+      "text": "These results demonstrate complex, posttranscriptional genetic effects on gene expression.",
+      "anchor": "Abstract",
+      "touchpoints": [],
+      "note": "States that protein levels are shaped by post-transcriptional processes acting independently of mRNA. (Echo of e1's central thesis; touchpoint left to the strongest distinct statements.)"
+    },
+    {
+      "id": "e3",
+      "text": "Post-transcriptional mechanisms can shape protein levels independently of mRNA abundance (Buccitelli and Selbach, 2020; Csa´rdi et al., 2015; McCarthy, 1998), raising important questions about how DNA variation shapes protein levels compared to mRNA abundance.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        }
+      ],
+      "note": "Frames the premise that mRNA abundance does not fully determine protein abundance."
+    },
+    {
+      "id": "e4",
+      "text": "It is unclear whether most eQTLs, which by definition affect mRNA, also affect the protein abundance of the same genes, such that they also result in a protein-QTL (pQTL) (Damerval et al., 1994). It is also unclear to what extent there are protein-specific pQTLs that influence protein abundance without affecting the mRNA of the same gene.",
+      "anchor": "Introduction",
+      "touchpoints": [],
+      "note": "Poses the open question of whether mRNA-level variation maps onto protein-level variation. (Framing echo; not restamped.)"
+    },
+    {
+      "id": "e5",
+      "text": "However, other work found many cis-eQTLs whose effects on protein were smaller than those on mRNA, suggesting the existence of mechanisms that buffer protein levels against variation in mRNA abundance (Battle et al., 2015; Ghazalpour et al., 2011; Mirauta et $a \\mathbf { l . } _ { }$ 2020).",
+      "anchor": "Introduction",
+      "touchpoints": [],
+      "note": "Reports prior evidence of buffering that decouples protein from mRNA, even in cis. (Prior-work echo of the decoupling theme; not restamped.)"
+    },
+    {
+      "id": "e6",
+      "text": "In mouse crosses and some yeast crosses, (Mirauta et al., 2020) transeQTLs and trans-pQTLs mapped for the same genes showed very little overlap, suggesting that while many trans-eQTLs are buffered at the protein level, there are also many trans-pQTLs that affect proteins via mechanisms that do not affect mRNA (Chick et al., 2016; Foss et al., 2011; Foss et al., 2007; Ghazalpour et al., 2011; Williams et al., 2016).",
+      "anchor": "Introduction",
+      "touchpoints": [],
+      "note": "Prior literature: trans-acting genetic effects on mRNA and protein show very little overlap. (Background echo; this paper's own data carry the stamp.)"
+    },
+    {
+      "id": "e7",
+      "text": "In yeast and humans, genetic effects on translation as measured by ribosome profiling were similar to those on mRNA, suggesting that translation cannot account for protein-specific pQTLs (Albert et al., 2014a; Battle et $a \\mathbf { l . } _ { \\mathbf { \\ell } }$ 2015; Cenik et $a \\mathbf { l . }$ 2015). Instead, proteinspecific effects may arise from protein degradation, especially for proteins that are part of protein complexes (Chick et $a \\mathbf { l . } _ { \\mathbf { \\ell } }$ 2016; Großbach et $a \\mathbf { l . } _ { \\mathbf { \\ell } }$ 2019; He et $a \\mathbf { l . } _ { \\mathbf { \\ell } }$ 2020).",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        }
+      ],
+      "note": "Identifies protein degradation (not translation) as the layer producing protein-specific variation invisible at the mRNA level."
+    },
+    {
+      "id": "e8",
+      "text": "Together, this literature suggests that genetic variants can independently affect the different layers of gene expression regulation.",
+      "anchor": "Introduction",
+      "touchpoints": [],
+      "note": "Summarizes that the regulatory layers (mRNA vs protein) are independently controllable, i.e. not mutually substitutable readouts. (Summary echo of cited literature; not restamped.)"
+    },
+    {
+      "id": "e9",
+      "text": "First, small sample sizes of dozens to a few hundred individuals were used in most studies to date. Most eQTLs and pQTLs change the expression of the gene they affect by 10% or less (Albert et al., 2018). Detecting such small-effect loci requires high statistical power... With limited sample size, real loci can be missed... Thus, low statistical power can inflate discrepancies between eQTLs and pQTLs.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "nuances"
+        },
+        {
+          "claimId": "Claim 4",
+          "direction": "challenges"
+        }
+      ],
+      "note": "Caveat conceded by the authors: underpowered studies can artificially inflate apparent mRNA-protein discordance; a foil to a naive reading of orthogonality."
+    },
+    {
+      "id": "e10",
+      "text": "Second, experimental differences between studies may also inflate discrepancies between eQTLs and pQTLs. In nearly all cases, eQTLs and pQTLs were compared between experiments conducted in different laboratories, sometimes using different experimental designs, and, in the case of some human studies, comparing eQTLs and pQTLs mapped in different tissues. These comparisons are likely to be confounded by environmental influences, which can drastically alter the effects of regulatory variants.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Core motivation: cross-study, cross-lab, cross-tissue comparison of separately produced datasets is confounded and non-comparable."
+    },
+    {
+      "id": "e11",
+      "text": "To date, no study of regulatory variation has measured mRNA and protein with high statistical power and in the same samples. This challenge is not easy to overcome, because combined application of RNA-sequencing (RNA-seq) and mass spectrometry in thousands of matched samples remains prohibitively expensive.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concedes that paired, same-sample multimodal (mRNA + protein) measurement at scale is prohibitively expensive and had not been done."
+    },
+    {
+      "id": "e12",
+      "text": "We reasoned that such an approach would equalize all environmental confounders and most of the technical biases that could obscure the relationship between eQTLs and pQTLs.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Argues that only same-cell, same-condition measurement removes the environmental and technical confounders that plague cross-study integration."
+    },
+    {
+      "id": "e13",
+      "text": "Although our approach was explicitly designed to maximize the chance of detecting similar genetic effects on mRNA and protein, the majority of the identified loci affected only mRNA or protein for a given gene, or had discordant effects on mRNA and protein. These results demonstrate considerable differences in the genetic basis of variation in mRNA vs protein abundance.",
+      "anchor": "Introduction",
+      "touchpoints": [],
+      "note": "Even a design biased toward finding agreement still found mRNA and protein variation to be largely independent. (Abstract-level restatement of e1; quote kept, touchpoint not duplicated.)"
+    },
+    {
+      "id": "e14",
+      "text": "After correcting for cell size (Figure 3—figure supplement 2), mCherry and GFP were positively correlated for all tested genes (Figure 3—figure supplement 1B). The strength of the correlation varied from gene to gene. Lower correlations between mCherry and GFP were observed for the genes with many differences between published eQTLs and pQTLs compared to those with more concordant eQTLs and pQTLs. Thus, different genes are influenced by mRNA-specific or protein-specific variation to different degrees.",
+      "anchor": "Results — Simultaneous mapping of genetic variation affecting mRNA and protein levels",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Single-cell mRNA-protein correlation is positive but partial and gene-dependent, indicating gene-specific mRNA- or protein-specific regulation."
+    },
+    {
+      "id": "e15",
+      "text": "Across the ten genes, we detected 78 protein-QTLs and 44 mRNA-QTLs (Figure 4—source data 2 and Figure 4—source data 3). By design, all detected loci were trans-acting, and most were located on a different chromosome than the tagged gene.",
+      "anchor": "Results — Simultaneous mapping of genetic variation affecting mRNA and protein levels",
+      "touchpoints": [],
+      "note": "Quantifies that far more protein-QTLs than mRNA-QTLs were detected across the ten genes. (Count also captured in figuresNumbers; the layer-specific breakdown carries the stamp at e16.)"
+    },
+    {
+      "id": "e16",
+      "text": "Of these 86 loci, 16 affected mRNA and protein of a given gene in the same direction... A majority of the loci corresponded to protein-QTLs that did not overlap an mRNA-QTL. These 52 protein-specific QTLs may arise from variants that affect translation or protein degradation, without an effect on mRNA production.",
+      "anchor": "Results — Differences between mRNA-QTLs and protein-QTLs",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        }
+      ],
+      "note": "Breakdown of 86 loci: only 16 concordant, 52 protein-specific; protein variation that mRNA cannot report on."
+    },
+    {
+      "id": "e17",
+      "text": "There were eleven mRNA-QTLs that did not overlap with a protein-QTL and seven loci where mRNA-QTLs and protein-QTLs overlapped but had discordant effects. These two categories may occur when protein abundance and mRNA production of the same gene are regulated separately, through two different trans-acting pathways.",
+      "anchor": "Results — Differences between mRNA-QTLs and protein-QTLs",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        }
+      ],
+      "note": "Documents mRNA-specific and discordant (opposite-direction) loci, arguing mRNA and protein of one gene can be regulated through separate pathways."
+    },
+    {
+      "id": "e18",
+      "text": "While more than 73% of loci were specific for mRNA or protein, this difference might be inflated by loci that are truly concordant, but at which either the mRNA-QTL or the protein-QTL narrowly failed to meet the significance threshold. To bypass this potential limitation, we compared effect sizes, expressed as DAF, at significant mRNA-QTLs or protein-QTLs, irrespective of the significance of the locus in the other data (Figure 5B).",
+      "anchor": "Results — Differences between mRNA-QTLs and protein-QTLs",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Author-conceded caveat that significance thresholds can inflate apparent specificity; they perform a threshold-free effect-size analysis to address it."
+    },
+    {
+      "id": "e19",
+      "text": "When considering all loci, we observed a significant, positive correlation between mRNA and protein effect sizes (r = 0.41, p-value=8.4 - 10<sup> 5</sup>, Figure 5B). This overall correlation was almost exclusively driven by the concordant QTL pairs, whose effect sizes showed a strong correlation $( \\mathsf { r } = 0 . 8 8 \\mathsf { p } \\mathsf { - v a l u e } = 9 \\times 1 0 ^ { - 6 } )$ . In sharp contrast, neither protein-specific QTLs (r = 0.2, p-value=0.23) nor mRNA-specific QTLs (r =  0.05, p-value=0.9) had correlated effects across the two data types, as expected if these loci specifically affected only mRNA or only protein.",
+      "anchor": "Results — Differences between mRNA-QTLs and protein-QTLs",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        }
+      ],
+      "note": "Threshold-free analysis: the weak overall mRNA-protein effect-size correlation comes only from concordant loci; specific loci have essentially zero cross-modality correlation."
+    },
+    {
+      "id": "e20",
+      "text": "Overall, only 64% of QTLs affected mRNA and protein in the same direction. While this was more than the 50% expected by chance (binomial test p-value=0.006), it left 36% of loci with discordant effects... Together, these results are consistent with the existence of many QTLs that specifically affect mRNA production or protein abundance.",
+      "anchor": "Results — Differences between mRNA-QTLs and protein-QTLs",
+      "touchpoints": [],
+      "note": "Even by direction alone, 36% of loci move mRNA and protein in opposite directions; mRNA direction is an unreliable proxy for protein direction. (Direction stat; correlation stat at e19 carries the distinct Claim 4 stamp.)"
+    },
+    {
+      "id": "e21",
+      "text": "Consistent with a protein-specific trans-effect on $G P D 1 ,$ deletion of YAK1 in a strain in which GPD1 was tagged with GFPgRNA caused a reduction of green fluorescence but had no detectable effect on mCherry fluorescence (Figure 6F). Further, qPCR indicated no difference in the level of GPD1-GFP mRNA in $\\yen 4K 1^ { \\circ 5 7 8 ^ { \\star } }$ or yak1D compared to matched YAK1<sup>wt</sup> (Figure 6F).",
+      "anchor": "Results — A premature stop mutation in YAK1 affects gene expression posttranscriptionally",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        }
+      ],
+      "note": "Validated causal example: a YAK1 stop variant changes Gpd1 protein with no change in GPD1 mRNA, a clean protein-specific trans-effect."
+    },
+    {
+      "id": "e22",
+      "text": "By comparing mass spectrometry and RNA-seq results, we classified genes as affected only at the mRNA level (58 genes up, and 118 genes down-regulated), only at the protein level (60 genes up, and 50 genes down-regulated), or at both mRNA and protein (15 genes up, and 27 genes down-regulated).",
+      "anchor": "Results — A premature stop mutation in YAK1 affects gene expression posttranscriptionally",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        }
+      ],
+      "note": "Genome-wide RNA-seq + mass-spec comparison of one variant: large protein-only and mRNA-only gene sets, only a minority affected at both layers."
+    },
+    {
+      "id": "e23",
+      "text": "Nevertheless, of the 86 trans-acting loci that contributed to variation in the expression of ten genes, 84% did not have concordant effects on mRNA production and protein abundance. This result demonstrates the importance of variants that act on specific layers of gene expression.",
+      "anchor": "Discussion",
+      "touchpoints": [],
+      "note": "Restates the central finding: 84% of loci act layer-specifically rather than concordantly on mRNA and protein. (Restatement of e1/e16; quote kept for the precise 84% figure, touchpoint not duplicated.)"
+    },
+    {
+      "id": "e24",
+      "text": "While half of the mRNA-QTLs we detected had concordant effects on protein (16 out of 34), most protein-QTLs had no effects on mRNA (52 out of 75), in line with observations from prior work (Albert et al., 2014b; Albert et al., 2018; Foss et al., 2011). That 70% of our protein-QTLs had protein-specific effects suggests that the causal variants underlying many of these loci affect posttranscriptional processes, i.e. mRNA stability, translation, or protein degradation.",
+      "anchor": "Discussion",
+      "touchpoints": [],
+      "note": "70% of protein-QTLs are protein-specific, attributed to post-transcriptional mechanisms invisible to mRNA measurement. (Restates e16/e24 proportions; mechanism stamp held at e7/e16.)"
+    },
+    {
+      "id": "e25",
+      "text": "A well-studied example of this phenomenon is the regulation of expression of genes that encode members of a protein complex, in which excess protein molecules that cannot be incorporated in the complex are rapidly degraded (Taggart et al., 2020). Among the genes we investigated, RPS10A encodes a part of the ribosome small subunit complex. RPS10A showed the highest number of mRNA-specific QTLs, possibly because Rps10a is subject to buffering mechanisms.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        }
+      ],
+      "note": "Protein-complex stoichiometry buffering is offered as a mechanism decoupling protein abundance from mRNA, illustrating non-substitutability of the modalities."
+    },
+    {
+      "id": "e26",
+      "text": "Standard methods for mRNA quantification require lysis of cell cultures or tissues, constraining sample throughput and statistical power for mapping regulatory variation. Single-cell RNA-seq (Picelli, 2017; Tang et al., 2009) and in situ fluorescent hybridization techniques... are improving rapidly... However, these approaches still have throughput that is orders of magnitude below that available using FACS. Further, they involve cell lysis or fixation, precluding bulk segregant approaches that rely on growing cells after sorting.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 3",
+          "direction": "supports"
+        }
+      ],
+      "note": "Frames the throughput-vs-lysis tradeoff: standard mRNA quantification destroys cells, and live-cell FACS-based readout is what enables high-throughput, growth-after-sort approaches."
+    },
+    {
+      "id": "e27",
+      "text": "By contrast, our reporter allows quantification of mRNA production of a given gene within millions of single, live cells by flow cytometry.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        }
+      ],
+      "note": "Live-cell, non-destructive single-cell readout at millions-of-cells throughput, contrasting with destructive lysis-based methods."
+    },
+    {
+      "id": "e28",
+      "text": "The mCherry used here has a maturation time of about 40 min (Merzlyak et al., 2007), which limits the temporal resolution at which we can observe dynamic expression changes. Fluorescent proteins with faster maturation times and shorter half-lives, could enable precise investigation of rapid temporal change in mRNA production.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Axis B",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Author-conceded limitation: reporter maturation time caps temporal resolution for observing dynamic / time-resolved expression changes."
+    },
+    {
+      "id": "e29",
+      "text": "Yet, fewer than 20% of the detected trans-acting loci we detected had concordant effects on mRNA and protein levels, providing strong support for the existence of discordant trans effects on mRNA vs proteins... The fact that the majority of trans-QTLs identified here were protein-specific suggests that protein abundance is under more complex genetic control than mRNA abundance.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 5",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concluding claim that protein abundance is under more complex, distinct genetic control than mRNA, so protein is an irreplaceable functional readout."
+    }
+  ],
+  "figuresNumbers": [
+    {
+      "item": "Headline ratio",
+      "contains": "86 trans-acting loci mapped across ten genes; <20% (84% non-concordant) had concordant effects on mRNA and protein."
+    },
+    {
+      "item": "QTL counts",
+      "contains": "78 protein-QTLs and 44 mRNA-QTLs detected across ten genes (before/after MKT1 removal: mRNA-QTL median per gene = 3, protein-QTL median = 7)."
+    },
+    {
+      "item": "Figure 5A locus classification",
+      "contains": "Of 86 loci: 16 concordant (same direction), 7 discordant (opposite direction), 11 mRNA-specific, 52 protein-specific."
+    },
+    {
+      "item": "Figure 5B effect-size correlation",
+      "contains": "All loci: mRNA vs protein effect-size r = 0.41 (p = 8.4e-5); concordant pairs r = 0.88 (p = 9e-6); protein-specific r = 0.2 (p = 0.23); mRNA-specific r = -0.05 (p = 0.9)."
+    },
+    {
+      "item": "Direction agreement",
+      "contains": "Only 64% of QTLs affected mRNA and protein in the same direction (binomial p = 0.006), leaving 36% discordant; protein-specific 63% same-direction (p = 0.04); mRNA-specific 55% (p = 0.5, n.s.)."
+    },
+    {
+      "item": "Cross-study replication (Figure 4B-C)",
+      "contains": "Protein-QTL effects correlated with prior pQTLs across studies, Pearson r = 0.73 (p < 1e-15); mRNA-QTL effects r = 0.44 (p = 5e-6)."
+    },
+    {
+      "item": "YAK1 Q578* genome-wide effect (Figure 7)",
+      "contains": "Of 5755 mRNA transcripts, 262 up / 310 down (BH p < 0.05); of 2590 proteins, 82 down / 82 up (BH p < 0.05); classified mRNA-only (58 up, 118 down), protein-only (60 up, 50 down), both (15 up, 27 down)."
+    },
+    {
+      "item": "mRNA reporter dynamic range",
+      "contains": "Linear mCherry-vs-mRNA relationship up to ~half of ACT1 mRNA abundance; 95% of S. cerevisiae genes fall below this threshold, so >half of genome can be dual-quantified."
+    },
+    {
+      "item": "Reporter / kinetics constants",
+      "contains": "Hammerhead ribozyme self-cleavage rate 1.5 per minute; median yeast mRNA half-life 3.6 min; mCherry maturation time ~40 min; LOD threshold 4.5 at FDR ~7%."
+    }
+  ],
+  "primarySources": [
+    {
+      "topic": "Prior protein-abundance QTL mapping in large yeast populations (same strategy, comparison baseline)",
+      "citation": "Albert FW, Treusch S, Shockley AH, Bloom JS, Kruglyak L. 2014. Nature 506:494-497",
+      "refN": "Albert et al., 2014b"
+    },
+    {
+      "topic": "Genetics of trans-regulatory variation in gene expression (RNA-seq eQTLs in 1012 segregants)",
+      "citation": "Albert FW, Bloom JS, Siegel J, Day L, Kruglyak L. 2018. eLife 7:e35471",
+      "refN": "Albert et al., 2018"
+    },
+    {
+      "topic": "Impact of regulatory variation from RNA to protein (protein buffering of mRNA variation)",
+      "citation": "Battle A, Khan Z, Wang SH, Mitrano A, Ford MJ, Pritchard JK, Gilad Y. 2015. Science 347:664-667",
+      "refN": "Battle et al., 2015"
+    },
+    {
+      "topic": "mRNAs, proteins and emerging principles of gene expression control (post-transcriptional independence)",
+      "citation": "Buccitelli C, Selbach M. 2020. Nature Reviews Genetics 21:630-644",
+      "refN": "Buccitelli and Selbach, 2020"
+    },
+    {
+      "topic": "Post-transcriptional processes largely determine steady-state protein levels in yeast",
+      "citation": "Csardi G, Franks A, Choi DS, Airoldi EM, Drummond DA. 2015. PLOS Genetics 11:e1005206",
+      "refN": "Csardi et al., 2015"
+    },
+    {
+      "topic": "Proteome-wide consequences of genetic variation in mouse (trans-pQTL vs trans-eQTL overlap)",
+      "citation": "Chick JM, Munger SC, Simecek P, et al. 2016. Nature 534:500-505",
+      "refN": "Chick et al., 2016"
+    },
+    {
+      "topic": "Genetic influences on translation in yeast (translation tracks mRNA, not protein-specific)",
+      "citation": "Albert FW, Muzzey D, Weissman JS, Kruglyak L. 2014. PLOS Genetics 10:e1004692",
+      "refN": "Albert et al., 2014a"
+    },
+    {
+      "topic": "Non-invasive measurement of mRNA decay; median yeast mRNA half-life 3.6 min",
+      "citation": "Chan LY, Mugler CF, Heinrich S, Vallotton P, Weis K. 2018. eLife 7:e32536",
+      "refN": "Chan et al., 2018"
+    }
+  ],
+  "flags": [
+    "Metadata: dates from article header — Received 02 July 2020, Accepted 14 November 2020, Published 16 November 2020.",
+    "Metadata: article DOI 10.7554/eLife.60645 inferred from the decision-letter / author-response DOIs printed in the cleaned text (https://doi.org/10.7554/eLife.60645.sa1 and .sa2); the bare article DOI is not printed verbatim on the page header — verify before asserting.",
+    "Metadata: venue 'eLife' confirmed from header ('Reviewing editor', copyright 'Brion et al.', and eLife.60645 DOI family); volume/issue/page numbers not present in the cleaned text (eLife uses article IDs, no page range).",
+    "OCR quirks preserved verbatim in several excerpts (e.g. garbled LaTeX-like fragments around author 'et al.' citations and r-values such as 'r = 0.88', and the YAK1 variant repeatedly mis-rendered as '$\\yen 4K 123,456$' / '$\\yen 4K 1^{Q578*}$' — the intended notation is YAK1 Q578*).",
+    "Scope note: this paper is yeast (S. cerevisiae) bulk-segregant QTL mapping; cited for the modality-orthogonality (mRNA cannot predict protein) and cross-study-non-comparability arguments, not as a spatial/single-cell-organism example.",
+    "Read at source: Battle et al., 2015 (Science) and Buccitelli & Selbach 2020 (Nat Rev Genet) are strong first-hand sources for the general mRNA-protein decoupling claim if the writer wants a non-yeast or review citation.",
+    "Axis A (modality=protein) is the paper's core relevance but is captured under Claim 4 / Claim 5 touchpoints rather than as a separate 'Axis A' claimId, since the roadmap's Axis A is a table dimension not a numbered claim; Axis B used for the one temporal-resolution limitation."
+  ]
+}

@@ -1,0 +1,395 @@
+{
+  "schemaVersion": "精练-4.0",
+  "citationKey": "34",
+  "title": "Experimental reproducibility limits the correlation between mRNA and protein abundances in tumor proteomic profiles",
+  "authors": "Swathi Ramachandra Upadhya and Colm J. Ryan",
+  "venue": "Cell Reports Methods, 2022, 2(9):100288",
+  "year": "2022",
+  "doi": "doi:10.1016/j.crmeth.2022.100288",
+  "readOn": "2026-06-18",
+  "sourceFile": "/Users/augustsirius/Desktop/已清洗_260617/34 - Experimental reproducibility limits the correlation between mRNA and protein abundances_cleaned.md",
+  "oneSentence": "By analyzing tumor and cell-line datasets with replicate proteomic (and transcriptomic) profiles, the authors quantify how reproducibly individual proteins/transcripts are measured and show that measurement reproducibility explains a substantial fraction of the otherwise-unexplained variation in mRNA-protein correlation, with more reproducibly measured proteins having higher mRNA-protein correlation.",
+  "orientation": "Sits at the intersection of our Claim 4 (modalities are non-substitutable; RNA does not predict protein) and Claim 9 (cross-study incomparability / lack of standards). It is a double-edged source: it documents the well-known moderate mRNA-protein correlation (support for 'RNA cannot stand in for protein'), but it argues a large part of that gap is measurement error/reproducibility rather than post-transcriptional biology, which nuances naive 'orthogonal-information' readings. It is strong, quote-rich evidence for Claim 9 (pipeline choices, summary statistics, inclusion criteria, and platforms make reported correlations non-comparable across papers) and touches Claim 1 (limits of predicting protein from mRNA via ML).",
+  "excerpts": [
+    {
+      "id": "e1",
+      "text": "Large-scale studies of human proteomes have revealed only a moderate correlation between mRNA and protein abundances. It is unclear to what extent this moderate correlation reflects post-transcriptional regulation and to what extent it reflects measurement error.",
+      "anchor": "Summary",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        }
+      ],
+      "note": "States the central observed fact: mRNA and protein abundances are only moderately correlated, and the cause (biology vs measurement error) is unresolved."
+    },
+    {
+      "id": "e2",
+      "text": "As transcriptomes are easier to quantify than proteomes, mRNA abundances are often used as a proxy for protein abundances. However, the relationship between mRNA abundances and protein abundances is complex and non-linear and varies significantly from protein to protein.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        }
+      ],
+      "note": "mRNA is commonly used as a proxy for protein, but the mRNA-protein relationship is complex, non-linear, and protein-specific."
+    },
+    {
+      "id": "e3",
+      "text": "Consistent with this, largescale studies in humans and model organisms have revealed that for most genes there is only a moderate correlation between mRNA and protein abundances (Buccitelli and Selbach, 2020; Vogel and Marcotte, 2012).",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        }
+      ],
+      "note": "For most genes mRNA and protein are only moderately correlated across humans and model organisms."
+    },
+    {
+      "id": "e4",
+      "text": "These studies have reported an average mRNA-protein correlation in the range of 0.2–0.5 (Mertins et al., 2016; Zhang et al., 2014, 2016). This moderate correlation between mRNA and protein abundances can be attributed to both biological and technical factors. Major biological factors that influence mRNA-protein correlation include translation rates that vary across proteins and conditions, highly variable halflives for both proteins and mRNAs, and post-translational modifications that can alter protein stability and degradation (Buccitelli and Selbach, 2020).",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        }
+      ],
+      "note": "Quantifies the typical tumor mRNA-protein correlation (0.2-0.5) and lists biological drivers (translation rate, half-life, PTMs) that decouple RNA from protein."
+    },
+    {
+      "id": "e5",
+      "text": "Our technical ability to accurately and reproducibly quantify both mRNAs and proteins is potentially a major factor that influences the mRNA-protein correlation. If the error in our measurements is large, we would expect this error to reduce the correlation between mRNA and protein even in the absence of the biological factors outlined above.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "nuances"
+        },
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Core thesis: measurement error itself depresses mRNA-protein correlation independent of biology; nuances the interpretation of low correlation as evidence of orthogonal biological information."
+    },
+    {
+      "id": "e6",
+      "text": "The average mRNA-protein correlation reported for different tumor proteomic profiling efforts varies substantially across studies—ranging from 0.23 in an early proteomic study of colorectal cancer (Zhang et al., 2014) to 0.53 in a recent study of lung adenocarcinoma (Gillette et al., 2020) (Table 1). However, it is not meaningful to directly compare the reported correlations because the methods used to quantify the mRNA-protein correlation have varied across studies—different studies have used different summary statistics (mean versus median), different correlation metrics (Pearson versus Spearman), and different criteria for protein inclusion (e.g., no missing values, at least 30% measured values, only the 10% most variable proteins) (Table 1).",
+      "anchor": "Results: A standardized pipeline reveals differences in the mRNA-protein correlation across studies",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Reported mRNA-protein correlations are not directly comparable across studies because of differing summary statistics, correlation metrics, and protein-inclusion criteria; a standardized pipeline is needed."
+    },
+    {
+      "id": "e7",
+      "text": "For example, the correlation recalculated for endometrial cancer (0.48) was the same as originally reported (Dou et al., 2020), while the recalculated correlation for colon cancer was much lower than that reported by the authors (0.27 versus 0.48) (Vasaikar et al., 2019). This is because the colon cancer study reported the mean mRNA-protein correlation for only the 10% most variable proteins rather than the full set of proteins. These highly variable proteins have higher than average mRNA-protein correlations.",
+      "anchor": "Results: A standardized pipeline reveals differences in the mRNA-protein correlation across studies",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concrete example of cross-study incomparability: an analytic choice (top 10% most variable proteins) inflated a reported correlation from 0.27 to 0.48."
+    },
+    {
+      "id": "e8",
+      "text": "More recent studies appear to have higher mRNA-protein correlations, e.g., we observe a mean of 0.49 for studies published after 2019 versus 0.35 for studies published in 2016 or earlier (Table 1). This cannot simply be attributed to differences in the cancer types studied in different years, as the two cancer types profiled twice (colon and breast) see an improvement from the earlier studies (Table 1). This would suggest that technical and experimental factors may influence the reported mRNA-protein correlations and that improvements in either technology or experimental protocols have resulted in improved mRNA-protein correlations over time.",
+      "anchor": "Results: A standardized pipeline reveals differences in the mRNA-protein correlation across studies",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 4",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Correlation rose over time (0.35 pre-2016 to 0.49 post-2019) with technology/protocol improvements, implying the apparent mRNA-protein decoupling is partly a moving technical artifact, not a fixed biological constant."
+    },
+    {
+      "id": "e9",
+      "text": "Many biological factors that influence mRNA-protein correlation, such as post-transcriptional regulation, are not relevant in the case of replicate measurements of proteins, and so we expected the replicate proteomic profiles to be more highly correlated than mRNA and protein profiles. This was indeed the case for all studies. The median protein-protein reproducibility for the replicate proteomic profiles from the CCLE dataset was 0.72 (Figure 1B; Table S2), whereas the median mRNA-protein correlation was only 0.48 (Table 1).",
+      "anchor": "Results: The correlation across replicate proteomic profiles is only moderate",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Even technical replicate proteomes of the same samples correlate only moderately (CCLE median 0.72), quantifying the irreducible measurement noise in proteomics."
+    },
+    {
+      "id": "e10",
+      "text": "Overall, we can conclude that although protein-protein reproducibility is consistently higher than mRNA-protein correlations, the protein-protein reproducibility is still only moderate.",
+      "anchor": "Results: The correlation across replicate proteomic profiles is only moderate",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Replicate-to-replicate protein measurement reproducibility is itself only moderate, setting an upper bound on achievable mRNA-protein correlation."
+    },
+    {
+      "id": "e11",
+      "text": "We found, for all three studies, that the median mRNAprotein correlation increases with protein-protein reproducibility (Figure 2). The colon cancer study shows a difference in the median mRNA-protein correlation of 0.33 between the first and last deciles of protein reproducibility. Similarly, ovarian cancer data show a difference of 0.35, and the CCLE data show a difference of 0.37. This indicates that the reproducibility of proteomic measurements has a major impact on the calculated mRNA-protein correlation.",
+      "anchor": "Results: Proteins with higher reproducibility have higher mRNA-protein correlation",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "nuances"
+        }
+      ],
+      "note": "mRNA-protein correlation rises by ~0.33-0.37 from the lowest to highest reproducibility decile, showing measurement reproducibility, not just biology, drives the observed correlation."
+    },
+    {
+      "id": "e12",
+      "text": "This suggests that noise in the quantification of protein abundances explains much more (on average 3 times) of the variance in mRNA-protein correlation than the most predictive previously identified factor.",
+      "anchor": "Results: Proteins with higher reproducibility have higher mRNA-protein correlation",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Measurement noise explains ~3x more variance in mRNA-protein correlation than protein-complex membership, the top previously identified (biological) factor."
+    },
+    {
+      "id": "e13",
+      "text": "We then used this aggregated list to assess the extent to which ‘‘average’’ protein reproducibility explains the varying mRNA-protein correlations observed in ten other studies ... For all these studies, we find that proteins with more reproducible measurements tend to have higher mRNA-protein correlations. Although the aggregated ranks are based on data from cancer studies, we observe the same trend in healthy tissues obtained from the GTEx project (Figure 4J).",
+      "anchor": "Results: An integrated ranking of protein reproducibility partially explains the variable mRNA-protein correlation in 10 additional studies",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "nuances"
+        }
+      ],
+      "note": "A transferable aggregate reproducibility rank reproduces the reproducibility-vs-correlation trend across 10 further studies and in healthy GTEx tissue, generalizing the finding beyond cancer."
+    },
+    {
+      "id": "e14",
+      "text": "We hypothesized that proteins whose measurements are highly reproducible could be predicted better using machine-learning algorithms. ... We observed a stark difference in the prediction scores of the lowest and highest deciles of the protein reproducibility (Figures S4A and S4B). While the lowest decile has a correlation of 0.35 between the measurements and predictions, the highest decile has a correlation of 0.7.",
+      "anchor": "Results: An integrated ranking of protein reproducibility partially explains the variable mRNA-protein correlation in 10 additional studies",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "ML prediction of protein from mRNA is far better for reproducibly measured proteins (decile correlation 0.7 vs 0.35), implying measurement noise limits how well models can learn the mRNA-to-protein map."
+    },
+    {
+      "id": "e15",
+      "text": "We found a clear relationship between the mean protein abundance and the aggregated protein reproducibility rank—more abundant proteins are more reproducibly measured (Figure 5A).",
+      "anchor": "Results: Protein measurement reproducibility is influenced by abundance, variance, and unique peptides",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Low-abundance proteins are measured less reproducibly, a systematic, abundance-dependent bias in proteomic data."
+    },
+    {
+      "id": "e16",
+      "text": "To assess the impact of transcriptomic reproducibility on mRNA-protein correlation, we compared transcriptomic profiles for 382 cancer cell lines from the CCLE (Ghandi et al., 2019) with those generated in a separate profiling effort (Klijn et al., 2015). We find that the median gene-wise Spearman correlation across studies was 0.75 (STAR Methods; Figure 6A). Again, this varied significantly across transcripts, ranging from 0.05 to 0.96.",
+      "anchor": "Results: Transcriptomic reproducibility also contributes to the variance in mRNA-protein correlation",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Cross-study transcriptomic reproducibility is itself only ~0.75 and highly variable (0.05-0.96), so even RNA-seq, the relatively mature modality, is not perfectly reproducible across efforts."
+    },
+    {
+      "id": "e17",
+      "text": "These observations suggest that the reproducibility in transcriptomic and proteomic data contribute strongly and somewhat independently to the variability observed in mRNA-protein correlation.",
+      "anchor": "Results: Transcriptomic reproducibility also contributes to the variance in mRNA-protein correlation",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Both transcriptomic and proteomic measurement reproducibility independently degrade the observed mRNA-protein correlation."
+    },
+    {
+      "id": "e18",
+      "text": "However, our observation that both protein-protein measurement reproducibility and mRNA-mRNA measurement reproducibility contribute significantly to the variation in mRNA-protein correlation across genes suggests an alternative explanation—some pathways may have higher- or lowerthan-average mRNA-protein correlations simply because their component proteins are more reproducibly measured.",
+      "anchor": "Results: Metabolic pathways with higher-than-average mRNA-protein correlations may reflect differential reproducibility rather than differential posttranscriptional regulation",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Pathway-level differences in mRNA-protein correlation, previously read as differential post-transcriptional regulation, may instead reflect differential measurement reproducibility."
+    },
+    {
+      "id": "e19",
+      "text": "We found in both studies that the ‘‘housekeeping’’ protein complexes were still identified as being enriched among proteins with lower-than-average mRNA-protein correlations but that the metabolic pathways were no longer enriched in proteins with higher-than-average mRNA-protein correlations (Figures 7 and S7; Tables S3 and S4).",
+      "anchor": "Results: Metabolic pathways with higher-than-average mRNA-protein correlations may reflect differential reproducibility rather than differential posttranscriptional regulation",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "nuances"
+        }
+      ],
+      "note": "After adjusting for reproducibility, metabolic-pathway high correlation vanishes (a measurement artifact) while complex-subunit low correlation persists (a genuine biological/post-transcriptional signal)."
+    },
+    {
+      "id": "e20",
+      "text": "Here, we have demonstrated that the reproducibility of protein and transcript measurements is a very significant factor in the observed correlations between mRNA and protein abundances. After taking this into account, we found that some pathways previously identified as having a high mRNA-protein correlation are likely just more reproducibly measured. We therefore suggest that conclusions about functional groups with higher or lower mRNA-protein correlations, especially with regard to the potential role played by post-transcriptional regulation, should be made only after accounting for variation in the measurement reproducibility of their constituent proteins.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "nuances"
+        },
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Headline conclusion and a methodological caution: claims about post-transcriptional regulation drawn from mRNA-protein correlation are confounded by measurement reproducibility and must be reproducibility-adjusted."
+    },
+    {
+      "id": "e21",
+      "text": "We found here that proteins that are more reproducibly measured across experimental replicates are better predicted using machine-learning. This suggests that one of the factors limiting the accuracy of machine-learning methods to predict protein abundances is that the protein abundance measurements themselves are not reproducible. It may therefore be worth evaluating future methods on the subset of proteins that can be reproducibly measured.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Data quality/reproducibility, not only model design, is a ceiling on ML prediction of protein from mRNA; benchmarks should account for measurement reproducibility."
+    },
+    {
+      "id": "e22",
+      "text": "There are of course additional factors that influence the global reproducibility of proteomes and transcriptomes quantified from ‘‘replicates’’ of the same sample. These include real biological variation (e.g., tumor heterogeneity resulting in two samples of the same tumor having different profiles) and technical variation (e.g., variation in sample preparation between different runs of the same sample). We have not been able to address how much of the variance in the measurements of individual proteins can be attributed to these global factors. It is likely that reducing these sources of global variation, e.g., through automated sample preparation, will improve the overall reproducibility of protein measurements.",
+      "anchor": "Limitations of the study",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Author-conceded limitation: cannot separate biological from technical sources of replicate variation; automated/standardized sample prep is proposed to improve reproducibility."
+    },
+    {
+      "id": "e23",
+      "text": "Our results from analyzing the CCLE dataset, where the replicate correlation is highest, give what is likely the most realistic assessment of proteomic reproducibility using modern MS pipelines. The replicates in the CCLE study were generated by the same lab, using the same methodology, 1 year apart. In contrast, the ovarian cancer study contains replicates generated in different labs (introducing significant measurement heterogeneity), while the colon cancer study makes use of replicates generated using two entirely different MS approaches (label free versus TMT). Consequently, these likely represent lowerbound estimates of the reproducibility that can be observed using modern MS proteomic pipelines.",
+      "anchor": "Limitations of the study",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Reproducibility depends strongly on whether replicates span labs, methods, or MS platforms; cross-lab and cross-platform replicates are markedly less reproducible (lower-bound estimates)."
+    },
+    {
+      "id": "e24",
+      "text": "Previous work has demonstrated that statistical modeling that integrates multiple mRNA and protein datasets and explicitly takes into account different sources of noise and error can be used to provide improved estimates of mRNA-protein correlation within samples (Csa´ rdi et al., 2015).",
+      "anchor": "Limitations of the study",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        }
+      ],
+      "note": "Notes that integrating multiple mRNA and protein datasets while explicitly modeling noise yields better mRNA-protein correlation estimates, pointing toward multi-dataset integration with error modeling."
+    }
+  ],
+  "figuresNumbers": [
+    {
+      "item": "Table 1",
+      "contains": "Standardized-pipeline recomputation across 13 studies: median recalculated Spearman mRNA-protein correlation = 0.43; max 0.55 (LUAD, Gillette 2020), min 0.21 (CRC, Zhang 2014). Reported vs recomputed examples: colon 0.48 reported vs 0.27 recomputed; endometrial 0.48 vs 0.48; ccRCC 0.43 vs 0.41. Time trend: mean 0.49 (post-2019) vs 0.35 (<=2016)."
+    },
+    {
+      "item": "Figure 1B / Table S2",
+      "contains": "Median protein-protein replicate reproducibility (Spearman): CCLE 0.72, ovarian 0.57, colon 0.28; corresponding median mRNA-protein correlations 0.48, 0.41, 0.21. CCLE per-protein replicate correlation range 0.2-1.0; ovarian 0.6-1.0; colon 0.2-0.8."
+    },
+    {
+      "item": "Figure 2 / Figure S1A",
+      "contains": "mRNA-protein correlation difference between lowest and highest reproducibility decile: colon 0.33, ovarian 0.35, CCLE 0.37. Variance in mRNA-protein correlation explained by protein-protein reproducibility: ovarian ~14%, CCLE ~17%, colon ~23%. Protein-complex membership alone explains ~3% (ovarian), ~8% (CCLE), ~6.7% (colon). Combined reproducibility + complex membership: ~17%, ~23%, ~26%."
+    },
+    {
+      "item": "Figure 4",
+      "contains": "Aggregated reproducibility rank built on 5,211 proteins (quantified in >=2 of 3 replicate studies); explains 10%-20% (median 14%) of variation in mRNA-protein correlation across 10 additional studies; trend holds for healthy GTEx tissue and for DIA/SWATH-MS (NCI-60)."
+    },
+    {
+      "item": "Figures S4A-S4C",
+      "contains": "ML prediction (DREAM challenge best model): lowest reproducibility decile measurement-vs-prediction correlation 0.35, highest decile 0.7; aggregated reproducibility rank explains 25% (breast) and 26% (ovarian) of variation in prediction scores."
+    },
+    {
+      "item": "Figure 5 / Figure S5",
+      "contains": "Protein measurement reproducibility increases with mean protein abundance, protein variance (variance alone explains 20% of aggregated reproducibility rank), and number of unique peptides per protein; proteins with long half-life have higher median reproducibility (p = 9.70e-25, Mann-Whitney U)."
+    },
+    {
+      "item": "Figure 6 / Figure S6",
+      "contains": "Transcriptomic reproducibility (CCLE 382 cell lines vs Klijn 2015): median gene-wise Spearman 0.75, range 0.05-0.96; explains median 15% of mRNA-protein correlation variance across 13 studies (CCLE outlier 40%). Protein + mRNA reproducibility together explain 48% of variance for CCLE and 14%-26% for the other 12 studies; protein-protein reproducibility on average 2.8x more influential than mRNA-mRNA when sample sizes equalized (18 cell lines). Spearman between aggregated protein reproducibility and CCLE transcriptomic reproducibility = 0.37 across 4,795 proteins."
+    }
+  ],
+  "primarySources": [
+    {
+      "topic": "Moderate mRNA-protein correlation; emerging principles of gene-expression control (biological drivers: translation, half-life, PTMs)",
+      "citation": "Buccitelli, C. and Selbach, M. 2020, Nat. Rev. Genet. 21:630-644",
+      "refN": null
+    },
+    {
+      "topic": "Reproducibility of high-throughput mRNA and small-RNA sequencing across laboratories",
+      "citation": "'t Hoen, P.A.C. et al. 2013, Nat. Biotechnol. 31:1015-1022",
+      "refN": null
+    },
+    {
+      "topic": "Reproducibility of proteome quantitation using isobaric mass tags (iTRAQ and TMT)",
+      "citation": "Casey, T.M. et al. 2017, J. Proteome Res. 16:384-392",
+      "refN": null
+    },
+    {
+      "topic": "Accounting for experimental noise reveals mRNA largely determines steady-state protein levels in yeast (within-sample correction)",
+      "citation": "Csardi, G., Franks, A., Choi, D.S., Airoldi, E.M., Drummond, D.A. 2015, PLoS Genet. 11:e1005206",
+      "refN": null
+    },
+    {
+      "topic": "Protein-complex subunits have lower-than-average mRNA-protein correlation (post-transcriptional attenuation)",
+      "citation": "Goncalves, E. et al. 2017, Cell Syst. 5:386-398.e4",
+      "refN": null
+    },
+    {
+      "topic": "Quantitative proteome map of the human body (GTEx, source of abundance/variance/unique-peptide factors)",
+      "citation": "Jiang, L. et al. 2020, Cell 183:269-283.e19",
+      "refN": null
+    },
+    {
+      "topic": "ML prediction of protein abundance from mRNA; CPTAC DREAM proteogenomics challenge",
+      "citation": "Yang, M. et al. 2020 (NCI-CPTAC DREAM Proteogenomics challenge)",
+      "refN": null
+    },
+    {
+      "topic": "Highest-quality CCLE proteomic replicates (same lab, 1 year apart)",
+      "citation": "Nusinow, D.P. et al. 2020 (CCLE proteomics)",
+      "refN": null
+    }
+  ],
+  "flags": [
+    "Metadata: DOI 10.1016/j.crmeth.2022.100288 confirmed from text (lines 135, 495); venue 'Cell Reports Methods' and article number 100288 inferred from the 'crmeth' DOI prefix and 'crmeth.2022.100288' (not printed verbatim as journal name in this cleaned MD).",
+    "Dates confirmed from text: Received February 12, 2022; Revised July 14, 2022; Accepted August 16, 2022; Published September 8, 2022.",
+    "Authors taken verbatim from byline (line 485): Swathi Ramachandra Upadhya and Colm J. Ryan (initials in author contributions: S.R.U., C.J.R.).",
+    "OCR quirks preserved in excerpts: 'mRNAprotein'/'higherthan'/'lowerthan'/'halflives' (missing hyphens/spaces) and accented author name 'Csa´ rdi' (Csardi) appear as in source; doubled curly quotes in pathway names kept.",
+    "primarySources refN set to null: this cleaned MD uses author-year citations, not numbered references, so no refN exists.",
+    "Scope note: paper is tumor/cell-line proteogenomics; its relevance to our thesis is via Claim 4 (mRNA-protein non-substitutability), Claim 9 (cross-study incomparability / need for standards), and Claim 1 (limits of predicting protein from mRNA). Cancer-specific pathway details are otherwise off-roadmap and not captured."
+  ]
+}

@@ -1,0 +1,356 @@
+{
+  "schemaVersion": "精练-4.0",
+  "citationKey": "36",
+  "title": "Integrative single-cell metabolomics and phenotypic profiling reveals metabolic heterogeneity of cellular oxidation and senescence",
+  "authors": "Ziyi Wang, Siyuan Ge, Tiepeng Liao, Man Yuan, Wenwei Qian, Qi Chen, Wei Liang, Xiawei Cheng, Qinghua Zhou, Zhenyu Ju, Hongying Zhu & Wei Xiong",
+  "venue": "Nature Communications, 2025",
+  "year": "2025",
+  "doi": "doi:10.1038/s41467-025-57992-3",
+  "readOn": "2026-06-18",
+  "sourceFile": "/Users/augustsirius/Desktop/已清洗_260617/36 - Integrative single-cell metabolomics and phenotypic profiling reveals metabolic heterogeneity_cleaned.md",
+  "oneSentence": "The authors built SCLIMS, a cross-modality platform combining single-cell live-cell fluorescence imaging with single-cell mass spectrometry, to pair each cell's metabolome with its oxidative-stress phenotype, showing that single-cell metabolomic heterogeneity predicts and predetermines cellular oxidative/senescent fate and that supplementing key metabolites lowers oxidative stress and extends C. elegans lifespan.",
+  "orientation": "Primarily feeds the modality axis (metabolome as a distinct, non-substitutable layer measured at single-cell resolution) and the multi-modal integration / phenotype-grounding claims: it argues bulk metabolomics hides single-cell heterogeneity, integrates metabolome with cellular phenotype, and shows the metabolome predicts phenotype. It also lightly touches the temporal axis via pseudotime/trajectory inference over destructively-measured single cells (a distribution-level proxy, not paired longitudinal observation), and concedes spatial scope is limited to cultured/imaged cells. A non-binding routing hint, usable as support for 'modalities carry orthogonal information' and as a foil/limitation example for 'destructive measurement cannot pair cells over time.'",
+  "excerpts": [
+    {
+      "id": "e1",
+      "text": "Metabolism serves as both a re<sup>fl</sup>ection and regulator of cellular function<sup>15</sup>. Currently, most metabolomics research remains con<sup>fi</sup>ned to homogenate-level analysis involving the preparation of samples using bulk tissue or cell suspension. Consequently, the enigmatic metabolic heterogeneity exhibited by cells during biological processes and the underlying mechanisms at the single-cell level remain shrouded in ambiguity.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        },
+        {
+          "claimId": "spatial",
+          "direction": "supports"
+        }
+      ],
+      "note": "States that metabolomics has been confined to bulk/homogenate analysis, which obscures single-cell metabolic heterogeneity; metabolism both reflects and regulates function."
+    },
+    {
+      "id": "e2",
+      "text": "These new techniques mainly focused on the interpretation of the metabolome without the phenotype of single cells, omitting cross-modality features important for the better understanding of cellular metabolism and function. However, the integration of metabolic heterogeneity with phenotypic heterogeneity, such as distinct levels of oxidative or senescent states within individual cells, remains a formidable technical challenge.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 5",
+          "direction": "supports"
+        }
+      ],
+      "note": "Notes that prior single-cell metabolomics omitted phenotype, and that integrating metabolome with phenotype (cross-modality) remains a technical challenge."
+    },
+    {
+      "id": "e3",
+      "text": "A groundbreaking advancement in single-cell research lies in the seamless integration of multiple features or functions within individual cells, known as cross-modality analysis. This includes integrating single-cell omics with cellular function or phenotype, resulting in a truly remarkable and sophisticated approach<sup>9,10</sup>.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        }
+      ],
+      "note": "Frames cross-modality integration of single-cell omics with function/phenotype as a key advancement."
+    },
+    {
+      "id": "e4",
+      "text": "In the present study, we employ a combination of single-cell mass spectrometry (SCMS) and live-cell imaging techniques to simultaneously capture the metabolomic features and cellular identities of individual cells, thereby establishing a link between the metabolome and cellular status at a single-cell resolution.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        }
+      ],
+      "note": "States the method pairs single-cell mass spectrometry with live-cell imaging to link single-cell metabolome to phenotype."
+    },
+    {
+      "id": "e5",
+      "text": "In m/z ranging from 67 to 1000, a total of more than 500 ion signals, with signal-to-noise ratio greater than 3 (refs. 27,28) and detected at a frequency greater than 20% in all single cells were used in subsequent analysis. Among these signals, 162 matched annotations in the HMDB database through MS spectra. The annotated metabolites underwent further scrutiny via MS/MS, resulting in con<sup>fi</sup>rmation of 83 metabolites that were subsequently employed for pathway enrichment analysis (Supplementary Data File 1).",
+      "anchor": "Results — Integration of live-cell imaging and single-cell mass spectrometry",
+      "touchpoints": [
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        }
+      ],
+      "note": "Reports single-cell metabolome coverage: >500 ion signals, 162 HMDB-annotated, 83 MS/MS-confirmed metabolites per analysis."
+    },
+    {
+      "id": "e6",
+      "text": "Among the whole metabolome, we observed a total of 254 metabolites signi<sup>fi</sup>cantly correlated with OS level (P < 0.05). The majority (61.4%) of the metabolites correlated with OS level (P < 0.05) exhibited an inverse correlation, which is nearly double the number of metabolites that showed a positive correlation with cellular OS.",
+      "anchor": "Results — The SCLIMS reveals correlation between cellular metabolism and oxidative levels",
+      "touchpoints": [
+        {
+          "claimId": "Claim 5",
+          "direction": "supports"
+        }
+      ],
+      "note": "Quantifies that 254 metabolites correlate with the oxidative-stress phenotype, 61.4% inversely, linking metabolome to cellular state."
+    },
+    {
+      "id": "e7",
+      "text": "Machine learning is utilized to ascertain whether the metabolic pro<sup>fi</sup>le of individual cells can accurately predict heterogeneous subtypes with distinct OS levels. ... In multiclassi<sup>fi</sup>cation, the ROC curve had an average area under curve (AUC) of 0.98 (Fig. 4b). In cluster prediction, the model achieved an accuracy ranging from 77.8% to 100% (Fig. 4c). These results demonstrate that the single-cell metabolic pro<sup>fi</sup>les can directly predict metabolic subtypes.",
+      "anchor": "Results — The SCLIMS reveals capability of the single-cell metabolome in predicting cellular OS status",
+      "touchpoints": [
+        {
+          "claimId": "Claim 5",
+          "direction": "supports"
+        }
+      ],
+      "note": "Reports that single-cell metabolome predicts phenotypic subtype with AUC 0.98 and 77.8-100% accuracy; metabolome predicts cellular phenotype."
+    },
+    {
+      "id": "e8",
+      "text": "Thus, through the implementation of SCLIMS technique and its multi-modal integration, we have successfully demonstrated a link between single-cell metabolome and cellular OS states in two different cell types for the very <sup>fi</sup>rst time, suggesting the potential role of metabolome in determining cellular phenotype.",
+      "anchor": "Results — The SCLIMS reveals capability of the single-cell metabolome in predicting cellular OS status",
+      "touchpoints": [
+        {
+          "claimId": "Claim 5",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        }
+      ],
+      "note": "Claims first demonstration of a multi-modal link between single-cell metabolome and phenotype across two cell types."
+    },
+    {
+      "id": "e9",
+      "text": "We surprisingly found that while there was minimal heterogeneity in cellular OS levels among the initial cells (Fig. 5a and Supplementary Table 1), there existed heterogeneity in their single-cell metabolome (Fig. 5b, c).",
+      "anchor": "Results — The SCLIMS unveils the causal relationship between metabolic heterogeneity and OS status",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        }
+      ],
+      "note": "Finds that baseline cells homogeneous in the phenotypic readout still carry hidden single-cell metabolomic heterogeneity (metabolome reveals what the phenotype readout misses)."
+    },
+    {
+      "id": "e10",
+      "text": "Interestingly, despite no initial cells being subjected to OS stimulation, the metabolic disparity between the two cell subtypes in these initial cells already demonstrated a consistent pattern with the metabolic variation observed in cells with varying levels of OS.",
+      "anchor": "Results — The SCLIMS unveils the causal relationship between metabolic heterogeneity and OS status",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "nuances"
+        },
+        {
+          "claimId": "Claim 5",
+          "direction": "supports"
+        }
+      ],
+      "note": "Reports that pre-existing baseline metabolic state foreshadows later divergent oxidative outcomes (baseline metabolome predicts future fate)."
+    },
+    {
+      "id": "e11",
+      "text": "We then performed a pseudotime analysis using single-cell metabolomics data and generated a trajectory of the six subtypes. The trajectory originated from subtype C1, which exhibited the lowest level of OS, and gradually progressed towards other subtypes. ... These <sup>fi</sup>ndings suggest a metabolism-guided stepwise progression of cellular OS.",
+      "anchor": "Results — Cell types identified by the SCLIMS exhibit divergent OS levels",
+      "touchpoints": [
+        {
+          "claimId": "temporal",
+          "direction": "nuances"
+        },
+        {
+          "claimId": "Claim 3",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Infers a temporal trajectory of oxidative progression from static single-cell snapshots via pseudotime, not from longitudinally re-observed cells."
+    },
+    {
+      "id": "e12",
+      "text": "However, following OS induction, the MROS cells exhibited 2.7-fold higher of DCFDA intensity compared to their MROR counterparts (Fig. 6i, j), indicating an elevated state of OS. Furthermore, SA-β-Gal staining con<sup>fi</sup>rmed the sensitivity of MROS cells in OS-induced senescence (Fig. 6k, l). Thus, the data from the SCLIMS suggest that the metabolic features of an initial cell may dictate its destiny under OS and OSinduced senescence.",
+      "anchor": "Results — The metabolic heterogeneity of cells determines their senescence fate under OS",
+      "touchpoints": [
+        {
+          "claimId": "Claim 5",
+          "direction": "supports"
+        }
+      ],
+      "note": "Shows initial metabolic state (sorted by GSH) determines later divergent phenotypic fate (2.7-fold higher oxidative stress, more senescence)."
+    },
+    {
+      "id": "e13",
+      "text": "Supplementation of key metabolites screened by SCLIMS resulted in a reduction in cellular oxidative levels and an extension of C. elegans lifespan.",
+      "anchor": "Abstract",
+      "touchpoints": [
+        {
+          "claimId": "Claim 5",
+          "direction": "supports"
+        }
+      ],
+      "note": "States that metabolite supplementation (a metabolic perturbation) lowers oxidative levels and extends lifespan, grounding metabolome in phenotype."
+    },
+    {
+      "id": "e14",
+      "text": "Strikingly, the supplement of hypotaurine, phosphocreatine and O-phosphoethanolamine at various doses caused a remarkable extension in the lifespan of C. elegans by approximately 33%-50% (Fig. 8b and Supplementary Fig. 16a).",
+      "anchor": "Results — The SCLIMS-identified protective metabolites promote healthy aging and extend lifespan",
+      "touchpoints": [
+        {
+          "claimId": "Claim 5",
+          "direction": "supports"
+        }
+      ],
+      "note": "Quantifies that supplementation of three metabolites extends C. elegans lifespan by ~33-50%, an organismal phenotypic readout of a metabolic intervention."
+    },
+    {
+      "id": "e15",
+      "text": "The current study has certain limitations that we would like to address, along with potential solutions for future studies. Firstly, the identi<sup>fi</sup>cation of metabolites at the single-cell level poses a signi<sup>fi</sup>cant challenge due to the complexity of MS/MS analysis. Acquiring MS/MS spectra for hundreds of m/z in the metabolome is indeed arduous.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 6",
+          "direction": "challenges"
+        }
+      ],
+      "note": "Author-conceded limitation: single-cell metabolite identification is hard because MS/MS for hundreds of m/z is arduous (a measurement trade-off)."
+    },
+    {
+      "id": "e16",
+      "text": "Secondly, the SCLIMS utilized in this current study was meticulously designed to incorporate cultured cells and cellular models of OS. The versatility of SCLIMS extends to tissue-embedded cells, as they can also be effectively labeled with <sup>fl</sup>uorescence markers. However, the potential application of SCLIMS in tissue-embedded cells remains an intriguing area for future exploration and investigation.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "spatial",
+          "direction": "challenges"
+        },
+        {
+          "claimId": "Claim 7",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Author-conceded limitation: the method is demonstrated on cultured (dissociated) cells, not tissue-embedded cells in their spatial/micro-environmental context."
+    },
+    {
+      "id": "e17",
+      "text": "The single-cell metabolome and the cellular phenotype such as OS status are directly linked and integrated. The heterogeneous states are explained with single-cell metabolome and metabolic pathways.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        }
+      ],
+      "note": "Asserts metabolome carries information that explains heterogeneous cellular states, positioning metabolome as an explanatory layer distinct from transcriptome."
+    },
+    {
+      "id": "e18",
+      "text": "The cells were patched with a high-quality seal (>1 GΩ) and the cell membrane was disrupted by rapid application of negative pressure. Mild negative pressure was then applied to the pipette to obtain cytoplasmic chemical constituents, which were subsequently analyzed using mass spectrometry after removal of the pipette from the bath solution.",
+      "anchor": "Methods — The workflow and experimental setting of SCLIMS",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "supports"
+        }
+      ],
+      "note": "Describes the destructive sampling step (membrane disruption + cytoplasm aspiration), so each cell's metabolome is measured terminally and cannot be re-observed over time."
+    },
+    {
+      "id": "e19",
+      "text": "Subsequently, the cells were captured using a <sup>fl</sup>uorescent microscope to record their spatial distribution. The acquired images were subsequently subjected to analysis, enabling the calculation of oxidative stress levels in individual cells.",
+      "anchor": "Methods — The workflow and experimental setting of SCLIMS",
+      "touchpoints": [
+        {
+          "claimId": "spatial",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Notes imaging records spatial distribution of cells prior to sampling, a partial spatial registration of cultured cells (not tissue micro-environment)."
+    }
+  ],
+  "figuresNumbers": [
+    {
+      "item": "Single-cell metabolome coverage",
+      "contains": ">500 ion signals (S/N > 3, detected in >20% of cells); 162 metabolites HMDB-annotated by MS spectra; 83 metabolites MS/MS-confirmed for pathway analysis."
+    },
+    {
+      "item": "Metabolite-OS correlation",
+      "contains": "254 metabolites significantly correlated with OS level (P < 0.05); 61.4% inversely correlated (nearly double the positively correlated count)."
+    },
+    {
+      "item": "Fig. 4b-c (classification model, HEK293T)",
+      "contains": "Multiclass ROC average AUC = 0.98; cluster prediction accuracy 77.8%-100%."
+    },
+    {
+      "item": "Fig. 4e (regression model, HEK293T)",
+      "contains": "Predicted vs real single-cell OS level correlation r = 0.88 (P = 1.45e-20)."
+    },
+    {
+      "item": "Supplementary Fig. 7 (MEFs)",
+      "contains": "Classification AUC = 0.99, average accuracy 88.42%; predicted vs true OS r = 0.6 (P < 0.0001)."
+    },
+    {
+      "item": "Fig. 3a-b (clusters, HEK293T)",
+      "contains": "Six metabolic subtypes C1-C6 with distinct OS levels; n = 55, 34, 14, 41, 29, 17 for C1-C6; One-way ANOVA F(5,184)=5.880, P=4.57e-5."
+    },
+    {
+      "item": "C1-to-C6 differential metabolites",
+      "contains": "148 metabolites downregulated and 64 upregulated from C1 (lowest OS) to C6 (highest OS); MEFs M1-to-M6: 195 down, 134 up."
+    },
+    {
+      "item": "Fig. 5 (initial cells)",
+      "contains": "Two baseline metabolic subtypes Cluster-I (n=43) and Cluster-II (n=183); minimal OS-level heterogeneity but strong metabolome heterogeneity (1740 initial vs 960 OS cells; W=58627, P<2.2e-16). GSH/ATP/hypotaurine 82%/42%/87% lower in Cluster-II. GSH correlated with 15 metabolites in Cluster-I vs 5 in Cluster-II; GSH most-rewired metabolite."
+    },
+    {
+      "item": "Fig. 6i-l (MROR vs MROS fate)",
+      "contains": "DCFDA differs only 3% between MROR and MROS at baseline; after OS, MROS shows 2.7-fold higher DCFDA; SA-β-Gal confirms MROS senescence sensitivity."
+    },
+    {
+      "item": "Fig. 7 (metabolite rescue)",
+      "contains": "Three key metabolites (hypotaurine, phosphocreatine, O-phosphoethanolamine) cut OS by average 67% (DCFDA), reduced SA-β-Gal intensity by average 48%, rescued growth arrest and mitochondrial membrane potential."
+    },
+    {
+      "item": "Fig. 8 (C. elegans)",
+      "contains": "Metabolite supplementation extended lifespan ~33%-50%; DHE oxidative signal reduced by average 16%; thrashing decline (43%) ameliorated; free-moving speed 1.4-1.8 fold higher at Day 9, 1.1-1.2 fold at Day 5 vs vehicle."
+    }
+  ],
+  "primarySources": [
+    {
+      "topic": "Single-cell mass spectrometry of cytoplasmic constituents via patch clamp (the SCMS method this paper builds on)",
+      "citation": "Zhu, H. et al. 2017, Proc. Natl Acad. Sci. USA 114:2586-2591",
+      "refN": "17"
+    },
+    {
+      "topic": "Single-cell mass spectrometry / metabolism method (foundational SCMS)",
+      "citation": "Zhu, H. et al. 2018, Cell 173:1716-1727",
+      "refN": "18"
+    },
+    {
+      "topic": "Patch-seq linking single-cell transcriptome to function (cross-modality precedent)",
+      "citation": "Camunas-Soler, J. et al. 2020, Cell Metab. 31:1017-1031",
+      "refN": "11"
+    },
+    {
+      "topic": "Multi-omics of immune cells linking metabolism/transcriptome to COVID-19 disease severity",
+      "citation": "Lee, J. W. et al. 2022, Nat. Biotechnol. 40:110-120",
+      "refN": "13"
+    },
+    {
+      "topic": "Metabolic regulation of cell fate and function",
+      "citation": "Ghosh-Choudhary, S., Liu, J. & Finkel, T. 2020, Trends Cell Biol. 30:201-212",
+      "refN": "15"
+    }
+  ],
+  "flags": [
+    "Metadata: venue (Nature Communications) and year (2025) inferred from DOI 10.1038/s41467-025-57992-3, the '© The Author(s) 2025' line, and the peer-review note naming 'Nature Communications'; explicit journal/volume/issue/page citation line not present in the cleaned text.",
+    "Metadata: received/accepted/published dates not present in the cleaned source; not asserted.",
+    "Authors: full given names taken from the 'Authors' list (line 505); author-contribution section uses initials only.",
+    "Scope note: this paper's core subject is single-cell metabolomics + phenotype integration (modality + multi-modal axes). It is largely off-roadmap for the AIVC virtual-cell modeling thesis except as evidence that (a) the metabolome is a distinct non-substitutable layer worth measuring per-cell, (b) cross-modality integration is feasible, and (c) destructive single-cell sampling forces trajectory inference rather than paired temporal observation.",
+    "Temporal touchpoints (e10, e11) are 'nuances' not 'supports' on Claim 3/temporal: the paper reconstructs a temporal trajectory via pseudotime and via baseline-state prediction from destructively-measured snapshots, illustrating exactly the distribution-to-distribution / no-paired-observation constraint rather than true longitudinal tracking.",
+    "Read at source: refs #17 and #18 (Zhu et al.) are the primary SCMS method this work extends and are worth citing first-hand."
+  ]
+}

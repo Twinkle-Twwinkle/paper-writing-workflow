@@ -1,0 +1,384 @@
+{
+  "schemaVersion": "精练-4.0",
+  "citationKey": "12",
+  "title": "A comprehensive review of spatial transcriptomics data alignment and integration",
+  "authors": "Muiz Khan, Suzan Arslanturk, Sorin Draghici",
+  "venue": "unverified; see flags",
+  "year": "unverified; see flags",
+  "doi": null,
+  "readOn": "2026-06-18",
+  "sourceFile": "/Users/augustsirius/Desktop/已清洗_260617/12 - A comprehensive review of spatial transcriptomics data alignment and integration_cleaned.md",
+  "oneSentence": "A methods review of 24 computational tools for aligning and integrating multiple spatial transcriptomics (ST) tissue slices, categorizing them into statistical-mapping, image-registration, and graph-based groups, and proposing a generalized pipeline while cataloguing the persistent challenges of heterogeneity, batch effects, 3D reconstruction, and cross-platform comparability.",
+  "orientation": "Primary feed for our spatial axis and Claim 2 (scRNA-seq loses spatial information): it explicitly states that single-cell omics requires cell isolation that disrupts spatial context, motivating the entire ST field. It also feeds Claim 9 (data islands / cross-paper non-comparability / lack of standards) via its repeated emphasis on batch effects, protocol/technology variability, and the closing call for standardization and benchmark datasets. It touches the temporal axis (Claim 3) where ST slices at different time points are used as a proxy for development, and the multi-modal/integration axis (Claims 6/8) where it names spatial proteomics and metabolomics as a future direction. Largely supportive of our spatial/standards arguments; can also serve as a foil showing the field's heavy RNA-only, single-modality focus.",
+  "excerpts": [
+    {
+      "id": "e1",
+      "text": "In contrast, single-cell “omics” methods provide higher resolution and capture rare cell areas, but they require cell isolation, which also disrupts spatial context information.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 2",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Axis C · spatial",
+          "direction": "supports"
+        }
+      ],
+      "note": "States that single-cell omics requires cell isolation that disrupts spatial context, the motivating loss our thesis names."
+    },
+    {
+      "id": "e2",
+      "text": "Spatial transcriptomics (ST) technologies have significantly advanced our capacity to quantify gene expression within tissue sections while preserving crucial spatial context information.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Axis C · spatial",
+          "direction": "supports"
+        }
+      ],
+      "note": "Positions ST as the technology class that preserves spatial context, supporting the spatial-resolution requirement of our standard."
+    },
+    {
+      "id": "e3",
+      "text": "However, it is important to note that a single 2D coordinate space only represents a single slice of the tissue section, limiting the comprehensive analysis of the entire tissue context.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Axis C · spatial",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Notes that 2D single-slice ST still misses the full tissue context, nuancing how much spatial information current ST recovers."
+    },
+    {
+      "id": "e4",
+      "text": "On the other hand, the 2D nature of the sliced tissue sections leads to the loss of z-axis information, making it challenging to accurately reconstruct the 3D structure of the tissue.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Axis C · spatial",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Identifies loss of z-axis information from 2D slicing as a residual spatial gap even within ST."
+    },
+    {
+      "id": "e5",
+      "text": "Although this is a significant improvement over bulk RNA expressions while capturing the spatial information, the gene expression resolution and scale are lower than in scRNA expression.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        }
+      ],
+      "note": "States a resolution/throughput trade-off: ST captures spatial info but at lower gene-expression resolution than scRNA, a measurement-side tradeoff."
+    },
+    {
+      "id": "e6",
+      "text": "This task is nontrivial as it requires the consideration of spatial relationships and entails inherent challenges such as biological and technical variability, spatial warping, and differences in experimental protocols across ST platforms.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Lists technical variability and protocol differences across platforms as core integration obstacles."
+    },
+    {
+      "id": "e7",
+      "text": "Tools focusing solely on single-slice ST analysis or multi-omics data integration tools, such as those integrating ST data with scRNAseq data, were excluded from this review.",
+      "anchor": "Review selection criteria",
+      "touchpoints": [
+        {
+          "claimId": "Other",
+          "direction": "nuances",
+          "otherLabel": "Review scope is single-modality (RNA-only ST); multi-omics integration explicitly excluded"
+        }
+      ],
+      "note": "Defines the review's scope as ST-only, explicitly excluding multi-omics integration, illustrating the field's RNA-centric framing."
+    },
+    {
+      "id": "e8",
+      "text": "Furthermore, as ST data can be collected at different time-points or stages, it allows for the observation and analysis of tissue development or growth, providing insights into cell progression, disease dynamics, and the impact of marker genes [10, 13, 16–19].",
+      "anchor": "Significance",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Frames time as cross-sectional ST slices collected at different stages, not paired tracking of the same tissue over time."
+    },
+    {
+      "id": "e9",
+      "text": "This includes aligning nonconsecutive slices from different locations or time-points, where spatial regions may partially or fully overlap. For example, aligning heart tissue slices taken at different stages of development, such as from early embryonic stages to mature adult tissue, requires handling variations in structure, cell composition, and spatial organization as the heart grows and changes over time, but these slices still exhibit overlap or share similar spatial regions [10].",
+      "anchor": "Scope",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Describes temporal analysis as alignment of distinct slices sampled at different developmental stages rather than longitudinal observation of one sample."
+    },
+    {
+      "id": "e10",
+      "text": "ST datasets also exhibit variability, noise, and uncertainty, which can arise from various factors such as experimental conditions, tissue preparation, and sequencing artifacts [16].",
+      "anchor": "Inherent challenges",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Attributes ST data variability and noise to experimental conditions, tissue prep, and sequencing artifacts."
+    },
+    {
+      "id": "e11",
+      "text": "Additionally, batch effect removal is needed to ensure the accuracy of the alignment and integration process [10, 11].",
+      "anchor": "Scope",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "States that batch-effect removal is required for cross-dataset alignment accuracy."
+    },
+    {
+      "id": "e12",
+      "text": "For instance, adjacent tissue slices often exhibit better overlap than tissue slices that are farther apart [7]. Third, across dataset alignment is likely to involve data collected at different time points, using different protocols and technical configurations. There are essential factors when dealing with batch effects.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Identifies different protocols, time points and technical configurations across datasets as the source of batch effects to be corrected."
+    },
+    {
+      "id": "e13",
+      "text": "However, heterogeneity, technical variability, and biological differences arising from developmental stages or disease progression often lead to misalignment in soft tissues. Additionally, scalability poses a major hurdle, as existing methods struggle with large datasets and lack efficient strategies for accurate volumetric reconstruction.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Axis C · spatial",
+          "direction": "challenges"
+        }
+      ],
+      "note": "Concedes that heterogeneity and technical variability still cause misalignment and that scalable, accurate 3D/volumetric reconstruction remains unsolved."
+    },
+    {
+      "id": "e14",
+      "text": "While progress has been made in aligning and integrating heterogeneous tissue slices across datasets, challenges remain in achieving automatic alignment that is independent of dataset origins, experimental conditions, or technical configurations, relying solely on tissue context.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concedes that alignment independent of dataset origin/protocol/configuration is not yet achieved, underscoring the comparability gap."
+    },
+    {
+      "id": "e15",
+      "text": "Integrating multi-omics spatial data, including spatial proteomics and metabolomics, alongside ST could provide more insightful biological context for understanding complex molecular interactions.",
+      "anchor": "Conclusion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Axis A · modality",
+          "direction": "supports"
+        }
+      ],
+      "note": "Names spatial proteomics and metabolomics as needed complements to ST for richer biological context, a future direction beyond RNA."
+    },
+    {
+      "id": "e16",
+      "text": "Another key direction is improving cross-species ST alignment and integration techniques, allowing the comparison of gene expression patterns across model organisms and human tissues for better translational research.",
+      "anchor": "Conclusion",
+      "touchpoints": [
+        {
+          "claimId": "Other",
+          "direction": "nuances",
+          "otherLabel": "Cross-species ST alignment as a future direction for comparability"
+        }
+      ],
+      "note": "Proposes cross-species alignment as a future direction, a comparability angle beyond the roadmap's within-modality scope."
+    },
+    {
+      "id": "e17",
+      "text": "Moreover, ensuring standardization and reproducibility in ST data alignment through benchmark datasets and evaluation frameworks is crucial for advancing the field.",
+      "anchor": "Conclusion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Calls standardization, reproducibility, benchmark datasets, and evaluation frameworks crucial, directly echoing our no-standards argument."
+    },
+    {
+      "id": "e18",
+      "text": "Moving forward, an ideal solution should be a versatile tool capable of aligning and integrating tissue slices with shared gene expression patterns, regardless of data collection techniques, datasets, or tissue regions.",
+      "anchor": "Conclusion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "States the goal of technique/dataset-agnostic integration, implying current data are not comparable across collection methods."
+    },
+    {
+      "id": "e19",
+      "text": "This 3D reconstruction preserves the spatial relationships between tissue structures across slices, offering insights into cellular organization, interactions, and spatial gradients of gene expression that cannot be captured in isolated 2D slices.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 7",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Axis C · spatial",
+          "direction": "supports"
+        }
+      ],
+      "note": "Argues spatial organization, cell-cell interactions, and expression gradients require multi-slice 3D context unavailable in isolated 2D slices."
+    },
+    {
+      "id": "e20",
+      "text": "For instance, some technologies require 8–10 μm tissue thickness, which may lead to challenges such as cells overlapping within sections. This overlap can obscure spatial relationships, necessitating the use of bioinformatics tools designed to deconvolute mixed signals and infer underlying cellular compositions. To the best of our knowledge, no computational tool currently exists to specifically address this challenge.",
+      "anchor": "Experiments",
+      "touchpoints": [
+        {
+          "claimId": "Axis C · spatial",
+          "direction": "challenges"
+        }
+      ],
+      "note": "Concedes a resolution limit: tissue-thickness-induced cell overlap obscures spatial relationships, with no tool yet addressing it."
+    },
+    {
+      "id": "e21",
+      "text": "10 Visium [30] technology achieves a spatial resolution of 55 μm, with each capture site (spot) containing <sub>∼</sub>1–10 cells. Slide-seq [40] enhances the spatial resolution to nearly cellular level (10 μm), while Stereo-seq [43] achieves subcellular resolution (0.22 μm) [10].",
+      "anchor": "Across dataset & technologies",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        }
+      ],
+      "note": "Gives concrete per-platform spatial resolutions spanning multicellular to subcellular, quantifying the resolution range across ST technologies."
+    },
+    {
+      "id": "e22",
+      "text": "Advanced ST technologies such as Visium from 10 Genomics allows expression measurement of up to 5000 spots per slice, with each spot in the 2D space capturing between 1 and 30 cells [7].",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Quantifies Visium spot count and per-spot cell mixing, showing the spot-level (non-single-cell) granularity of a widely used ST platform."
+    },
+    {
+      "id": "e23",
+      "text": "However, the distribution-based approaches require prior assumptions to ensure correctness and incorrect assumptions can lead to inaccurate mappings. This is also related to hyperparameter selection, as the results can be sensitive to changes in these hyperparameters.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Concedes statistical-mapping tools are sensitive to prior assumptions and hyperparameters, a robustness caveat for these computational methods."
+    },
+    {
+      "id": "e24",
+      "text": "While this review serves as a detailed guide and highlights the potential for robust ST alignment and integration solutions, it remains theoretical in nature and does not provide a proof of concept.",
+      "anchor": "Conclusion",
+      "touchpoints": [
+        {
+          "claimId": "Other",
+          "direction": "nuances",
+          "otherLabel": "Self-conceded limitation: review is theoretical, no proof of concept / benchmark"
+        }
+      ],
+      "note": "Authors concede the review is theoretical with no empirical benchmark of the surveyed tools."
+    }
+  ],
+  "figuresNumbers": [
+    {
+      "item": "Table 2",
+      "contains": "Catalog of 24 ST alignment/integration tools across three categories: Statistical mapping (10 tools: Splotch, GPSA, Eggplant, PRECAST, PASTE, PASTE2, OTVI, DeST-OT, ST-GEARS, GraphST), Image processing & registration (4 tools: STIM, STaCker, STalign, STUtility), Graph-based (10 tools: SpatiAlign, STAligner, Graspot, ATAT, MaskGraphene, STAIR, SLAT, SPIRAL, BiGATAE, SPACEL), with datasets, downstream analyses, evaluation measures, and homogeneous/heterogeneous scope."
+    },
+    {
+      "item": "Table 3 (ST technology resolutions)",
+      "contains": "10x Genomics / Visium 55 μm; Slide-seq 10 μm; Slide-seqV2 10 μm; MERFISH 0.1 μm; SeqFISH+ 0.6 μm; Stereo-seq 0.5 μm; GeoMX DSP varies; Xenium 0.2 μm; Visium HD 2 μm; HDST 2 μm; STARmap 2 μm. Input materials range across Fresh Frozen, Fixed Cells, FFPE; species Human/Mouse."
+    },
+    {
+      "item": "Visium spot capacity",
+      "contains": "Up to 5000 spots per slice; each spot captures between 1 and 30 cells (1–10 cells per capture site cited elsewhere)."
+    },
+    {
+      "item": "Per-platform spatial resolution (in text)",
+      "contains": "10x Visium ~55 μm (~1–10 cells/spot); Slide-seq ~10 μm (near-cellular); Stereo-seq ~0.22 μm (subcellular)."
+    }
+  ],
+  "primarySources": [
+    {
+      "topic": "PASTE — original alignment and integration of ST data via fused Gromov-Wasserstein optimal transport (foundational tool the review repeatedly anchors to)",
+      "citation": "Zeira R, Land M, Strzalkowski A et al. Alignment and integration of spatial transcriptomics data. Nat Methods 2022;19:567-75",
+      "refN": "7"
+    },
+    {
+      "topic": "STAligner — integrating ST across conditions, technologies, and developmental stages (autoencoder + triplet loss; the review's top recommendation)",
+      "citation": "Zhou X, Dong K, Zhang S. Integrating spatial transcriptomics data across different conditions, technologies and developmental stages. Nat Comput Sci 2023;3:894-906",
+      "refN": "10"
+    },
+    {
+      "topic": "STalign — diffeomorphic-metric-mapping image registration for ST alignment, used for cross-resolution MERFISH/Visium alignment",
+      "citation": "Clifton K, Anant M, Aihara G et al. STalign: alignment of spatial transcriptomics data using diffeomorphic metric mapping. Nat Commun 2023;14:8123",
+      "refN": "12"
+    },
+    {
+      "topic": "SLAT — graph-based heterogeneous-slice alignment, cross-scale Visium/Xenium and seqFISH/Stereo-seq alignment",
+      "citation": "Xia CR, Cao ZJ, Tu XM et al. Spatial-linked alignment tool (SLAT) for aligning heterogenous slices. Nat Commun 2023;14:7236",
+      "refN": "15"
+    },
+    {
+      "topic": "GPSA — alignment of spatial genomics data using deep Gaussian processes (models spatial warping; used on breast-cancer tumor integration)",
+      "citation": "Jones A, Townes FW, Li D et al. Alignment of spatial genomics data using deep Gaussian processes. Nat Methods 2023;20:1379-87",
+      "refN": "16"
+    },
+    {
+      "topic": "Original spatial transcriptomics method (Ståhl) — the foundational Visium-precursor dataset reused across surveyed tools",
+      "citation": "Stahl PL, Salmén F, Vickovic S et al. Visualization and analysis of gene expression in tissue sections by spatial transcriptomics. Science 2016;353:78-82",
+      "refN": "30"
+    },
+    {
+      "topic": "Prior benchmarking review of ST clustering/alignment/integration the authors position against",
+      "citation": "Hu Y, Xie M, Li Y et al. Benchmarking clustering, alignment, and integration methods for spatial transcriptomics. Genome Biol 2024;25:212",
+      "refN": "9"
+    }
+  ],
+  "flags": [
+    "Metadata unverified: the cleaned MD contains no explicit venue, year, or DOI for THIS paper. Journal is likely Briefings in Bioinformatics (inferred from article style and the cluster of 'Brief Bioinform 2024' self/peer citations, e.g. ref 48), but this is NOT stated in the body; venue/year set to 'unverified; see flags' and doi to null.",
+    "Author initials: Sorin Draghici is corresponding author (Email: sorin@advaitabio.com); affiliations are Wayne State University (Dept. of Computer Science, Detroit) and Advaita Bioinformatics (Ann Arbor, Michigan).",
+    "Scope note: This is a methods review of ST (RNA-only) alignment/integration tools; it explicitly EXCLUDES multi-omics integration (e.g. ST+scRNA) and single-slice tools (Review selection criteria). Its value to our multi-modal claims (6/8) is mostly via the Conclusion's forward-looking call for spatial proteomics/metabolomics, not via reported multi-omics results.",
+    "OCR quirks kept verbatim: '10 Genomics'/'10 Visium' (should read '10x Genomics'/'10x Visium'); '<sub>∼</sub>1–10 cells'; 'spatiAlign'/'PRE-CAST'; '0.22 μm' subcellular resolution.",
+    "Read at source: ref #7 (PASTE, Nat Methods 2022) and ref #10 (STAligner, Nat Comput Sci 2023) are the most load-bearing primaries and worth citing first-hand; ref #30 (Ståhl 2016, Science) is the canonical original-ST primary."
+  ]
+}

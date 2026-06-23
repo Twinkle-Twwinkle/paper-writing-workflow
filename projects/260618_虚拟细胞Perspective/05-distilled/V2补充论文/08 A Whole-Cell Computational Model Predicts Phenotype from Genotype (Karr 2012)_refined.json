@@ -1,0 +1,220 @@
+{
+  "schemaVersion": "精练-4.0",
+  "citationKey": "08",
+  "title": "A Whole-Cell Computational Model Predicts Phenotype from Genotype",
+  "authors": "Karr JR et al. (author list not printed in this supplementary document; cleaned source contains only the supplementary methods)",
+  "venue": "unverified; see flags",
+  "year": "2012",
+  "doi": null,
+  "readOn": "2026-06-18",
+  "sourceFile": "/Users/jialindele/Desktop/v2补充论文 md CLEANED/08 A Whole-Cell Computational Model Predicts Phenotype from Genotype (Karr 2012)_cleaned.md",
+  "oneSentence": "This document is the supplementary methods of the M. genitalium whole-cell model, which integrates 28 process sub-models and 16 cell-state variables, reconstructed from over 900 sources and heterogeneous experimental datasets, to simulate single-cell dynamics and predict phenotype (e.g. gene essentiality, growth rates, metabolite concentrations) from genotype.",
+  "orientation": "A landmark mechanistic whole-cell model that depends on integrating many heterogeneous data types and submodels; it most directly feeds Claim 1 (mechanistic models also need high-quality input data and are bottlenecked by it), Claim 4/8 (multimodal, orthogonal data integration and the friction of combining datasets), and the Standard axis (heterogeneous, non-comparable, cross-organism datasets requiring curation/refinement to be made mutually consistent). It can serve both as support (a built example proving multimodal integration is necessary and possible) and as a foil (it concedes how sparse, heterogeneous, and largely cross-organism/homology-derived the underlying data are). Non-binding routing hint.",
+  "excerpts": [
+    {
+      "id": "e1",
+      "text": "The primary challenges to building a unified whole-cell model of a single cell are threefold: (1) complexity, processes relevant to cellular behavior are diverse and span a wide range of length and time scales, (2) heterogeneity, cellular networks have heterogeneous mathematical structures and are typically investigated using heterogeneous experimental methods, and (3) sparsity, little quantitative data rigorously describing single cell physiology is available.",
+      "anchor": "Chapter 1, Computational Methods (intro)",
+      "touchpoints": [
+        { "claimId": "Claim 1", "direction": "supports" },
+        { "claimId": "Standard", "direction": "supports" },
+        { "claimId": "Claim 8", "direction": "supports" }
+      ],
+      "note": "The authors name the three core obstacles to a whole-cell model: complexity, heterogeneity of data/methods, and sparsity of quantitative single-cell data."
+    },
+    {
+      "id": "e2",
+      "text": "Third, because the 28 cellular processes were trained using diferent experimental data obtained by diferent investigators under diferent conditions using diferent techniques and diferent model organisms, we refined the values of the sub-model parameters to make the processes mutually consistent. This was necessary for example, because amino acid production by the Metabolism process, which was trained using the observed amino acid composition of M. gallisepticum reported by Morowitz et al., conflicted with the amino acid requirements of the Translation process, which was trained using the observed Mycoplasma genetic code, the reported M. pneumoniae mRNA expression, and the N-end rule.",
+      "anchor": "Section 1.3 Cellular Process Integration / Process Alignment & Parameter Fitting",
+      "touchpoints": [
+        { "claimId": "Claim 9", "direction": "supports" },
+        { "claimId": "Claim 8", "direction": "supports" },
+        { "claimId": "Standard", "direction": "supports" }
+      ],
+      "note": "Submodels trained on data from different investigators, conditions, techniques, and organisms were mutually inconsistent and had to be computationally refined; gives a concrete example of two datasets conflicting."
+    },
+    {
+      "id": "e3",
+      "text": "Second, we computationally identified a set of parameter values which (1) satisfy all of these constraints and (2) deviate minimally from their experimentally observed values. Initially, we attempted to rigorously formulate this problem as a non-linear constrained optimization problem, and identify the parameter values which minimize the sum of squared diferences between the adjusted and observed parameter values among all sets of parameters which satisfy the constraints. However, we were unable to find a feasible solution, much less the globally optimal solution, to this optimization problem. Instead, we focused on identifying a mutually consistent set of parameter values, and developed a heuristic procedure that uses the constraints to calculate a consistent set of parameter values from a subset of the parameters.",
+      "anchor": "Section 1.3 / Process Alignment & Parameter Fitting",
+      "touchpoints": [
+        { "claimId": "Claim 9", "direction": "supports" },
+        { "claimId": "Standard", "direction": "nuances" }
+      ],
+      "note": "Reconciling heterogeneous datasets into a consistent parameter set could not be solved rigorously; the authors fell back on a heuristic, conceding the difficulty of integrating non-comparable data."
+    },
+    {
+      "id": "e4",
+      "text": "The M. genitalium whole-cell model was based on a detailed reconstruction of M. genitalium physiology developed from over 900 primary sources, reviews, books, and databases.",
+      "anchor": "Section 1.5 Reconstruction",
+      "touchpoints": [
+        { "claimId": "Claim 1", "direction": "supports" },
+        { "claimId": "Claim 8", "direction": "supports" }
+      ],
+      "note": "Quantifies the data burden: a single whole-cell mechanistic model required curation from over 900 sources."
+    },
+    {
+      "id": "e5",
+      "text": "To fill gaps in the reconstructed organism, such as observed reactions without reported enzyme catalysts, and to maximize the scope of the model, we also expanded and refined each gene’s annotation using primary research articles and reviews identified by systematically searching PubMed and Google Scholar for each gene and homologs of each gene.",
+      "anchor": "Section 1.5 Reconstruction",
+      "touchpoints": [
+        { "claimId": "Claim 1", "direction": "supports" },
+        { "claimId": "Axis A", "direction": "nuances" }
+      ],
+      "note": "Concedes there were gaps (e.g. reactions without known enzymes) that had to be filled by manual literature search and homology rather than direct measurement."
+    },
+    {
+      "id": "e6",
+      "text": "Table S3T-S3BK describe the how the reconstructed organism was developed, including detailed notes on how the value of each reconstructed property was derived by consensus of all available experimental observations and computational predictions.",
+      "anchor": "Section 1.5 Reconstruction",
+      "touchpoints": [
+        { "claimId": "Claim 9", "direction": "supports" },
+        { "claimId": "Standard", "direction": "nuances" }
+      ],
+      "note": "Each parameter was set by manual consensus across heterogeneous observations and predictions, underscoring the absence of a single comparable dataset."
+    },
+    {
+      "id": "e7",
+      "text": "Because M. genitalium is not well-studied, the M. genitalium reconstruction was primarily based on studie of M. genitalium homologs identified by bi-directional best BLAST. Where possible, the M. genitalium reconstruction was based on closely related organisms.",
+      "anchor": "Section 1.5 Reconstruction",
+      "touchpoints": [
+        { "claimId": "Claim 1", "direction": "challenges" },
+        { "claimId": "Standard", "direction": "challenges" }
+      ],
+      "note": "Admits the model of the target organism was largely built from homologs and related organisms because direct data on M. genitalium were unavailable."
+    },
+    {
+      "id": "e8",
+      "text": "The M. genitalium whole-cell model was validated by comparing the model’s predictions to three experimental datasets: (1) the essentiality of each M. genitalium gene reported by Glass et al., (2) the measured growth rates of 12 non-essential M. genitalium single-gene disruption strains, and (3) the cytosolic concentrations of 39 E. coli metabolites reported by Bennett et al. and curated by Sundararaj et al.",
+      "anchor": "Section 1.6 Experimental Validation",
+      "touchpoints": [
+        { "claimId": "Claim 1", "direction": "supports" },
+        { "claimId": "Axis A", "direction": "supports" }
+      ],
+      "note": "Validation rested on a small number of heterogeneous experimental datasets, including metabolite concentrations measured in a different organism (E. coli)."
+    },
+    {
+      "id": "e9",
+      "text": "Figure 2E of the accompanying manuscript and Table S2E compare the predicted and measured concentrations of 39 cytosolic metabolites, illustrating that 70% of the model’s predictions are statistically consistent with the Sundararaj et al. dataset. The model doesn’t reproduce the Bennett et al. dataset, and interestingly, there is significant disagreement between the Bennett et al. and Sundararaj et al. datasets.",
+      "anchor": "Section 1.6 Experimental Validation",
+      "touchpoints": [
+        { "claimId": "Claim 9", "direction": "supports" },
+        { "claimId": "Standard", "direction": "supports" }
+      ],
+      "note": "Two independent metabolomics datasets significantly disagree with each other, a concrete instance of cross-study non-comparability undermining validation."
+    },
+    {
+      "id": "e10",
+      "text": "We mapped the inputs and outputs of each sub-model onto 16 state variables which together represent the complete configuration of the modeled cell: (1) metabolite, RNA, and protein copy numbers, (2) metabolic reaction fluxes, (3) nascent DNA, RNA, and protein polymers, (4) molecular machines, (5) cell mass, volume, and shape, (6) the external environment including the host urogenital epithelium, and (7) time.",
+      "anchor": "Section 1.3 / Cell States",
+      "touchpoints": [
+        { "claimId": "Claim 4", "direction": "supports" },
+        { "claimId": "Axis A", "direction": "supports" },
+        { "claimId": "Axis B", "direction": "supports" },
+        { "claimId": "Axis C", "direction": "supports" }
+      ],
+      "note": "Enumerates the multimodal cell-state representation a whole-cell model requires: metabolites, RNA, protein, fluxes, polymers, machines, geometry, environment, and time, spanning modality, spatial, and temporal axes."
+    },
+    {
+      "id": "e11",
+      "text": "The sub-models were modeled using diferent mathematics and trained using diferent experimental data. Each of the 28 functional processes, or cellular processes, represents a group of chemical reactions which transform chemical substrates into products using enzyme catalysts. Computationally, the inputs and outputs of each sub-model are the copy numbers of metabolites and macromolecules; the configurations of RNA, protein and DNA polymers; and the catalytic capacity and configurations of the enzymes which participate in each sub-model.",
+      "anchor": "Chapter 3, Cellular Process Methods (intro)",
+      "touchpoints": [
+        { "claimId": "Claim 4", "direction": "supports" },
+        { "claimId": "Claim 8", "direction": "supports" }
+      ],
+      "note": "Each submodel consumes a different data modality (copy numbers, polymer configurations, enzyme kinetics/capacity), illustrating that orthogonal modalities are jointly required."
+    },
+    {
+      "id": "e12",
+      "text": "The Metabolism process was reconstructed primarily based on DNA sequence homology of M. genitalium to E. coli and a comprehensive metabolic model of E. coli. The Metabolism process was modeled using FBA and trained using the observed growth rate of M. genitalium and the observed chemical compositions of M. gallisepticum and E. coli.",
+      "anchor": "Chapter 3 / Metabolism",
+      "touchpoints": [
+        { "claimId": "Claim 1", "direction": "challenges" },
+        { "claimId": "Axis A", "direction": "nuances" }
+      ],
+      "note": "The metabolism submodel was built largely from cross-organism data (E. coli model and chemical compositions of E. coli and M. gallisepticum) rather than direct M. genitalium metabolomics."
+    },
+    {
+      "id": "e13",
+      "text": "Because transcription termination is not well-characterized, termination was modeled as a deterministic process which proceeds to completion within the 1 s simulation time step if there is least one copy of each of the characterized transcription termination factors.",
+      "anchor": "Chapter 3 / RNA Synthesis & Degradation",
+      "touchpoints": [
+        { "claimId": "Claim 1", "direction": "challenges" }
+      ],
+      "note": "A representative admission that, where mechanistic data are missing, the model resorts to a simplifying assumption rather than data-grounded mechanism."
+    },
+    {
+      "id": "e14",
+      "text": "Half-lives of all the RNA species are largely based on experimental measurements of homologous E. coli genes. The E. coli genes are mapped to the M. genitalium genes by homology.",
+      "anchor": "Chapter 3 / RNA Decay process class",
+      "touchpoints": [
+        { "claimId": "Claim 3", "direction": "challenges" },
+        { "claimId": "Axis B", "direction": "nuances" }
+      ],
+      "note": "RNA temporal parameters (half-lives) for the target organism were imported from E. coli by homology, not measured in M. genitalium itself."
+    },
+    {
+      "id": "e15",
+      "text": "We obtained mRNA half-lives from measurements in E. coli performed at $3 0 ^ { \\circ } \\mathrm { C }$ in M9 minimal media. Additional sets of E. coli half-life data are available, but we chose the set with the most comprehensive list of genes mapping to homologous M. genitalium genes, and the set whose average half-life was closest to the reported bulk E. coli mRNA half-life. ... This have us a half-life estimate for 274 M. genitalium genes. For the remaining genes, we assigned the average half-life, 4.425 minutes.",
+      "anchor": "Chapter 3 / Transcription (RNA half-life determination)",
+      "touchpoints": [
+        { "claimId": "Claim 3", "direction": "challenges" },
+        { "claimId": "Claim 9", "direction": "supports" }
+      ],
+      "note": "Temporal dynamics data were sparse and incompatible: half-lives came from a chosen E. coli dataset (one of several conflicting ones) and missing genes were filled with a single average value."
+    },
+    {
+      "id": "e16",
+      "text": "The exact mechanism of replication initiation in M. genitalium is unknown. M. genitalium does not include a DnaC homolog, which in other species is an essential cue for the binding of the replication machinery to the oriC. Here, the binding of 29 DnaA-ATP molecules to the oriC is the cue for replication initiation.",
+      "anchor": "Chapter 3 / Replication",
+      "touchpoints": [
+        { "claimId": "Claim 1", "direction": "challenges" }
+      ],
+      "note": "An explicit 'mechanism is unknown' admission where the model substitutes an assumed cue, illustrating sparsity of mechanistic data."
+    },
+    {
+      "id": "e17",
+      "text": "M. genitalium cytokinesis is thus a cycle of filament binding, bending, and dissociation. ... M. genitalium has the tubulin homologue, FtsZ (MG224), but does not contain the accessory proteins required for cell division in other bacterial species. Therefore, cytokinesis in M. genitalium is not fully understood.",
+      "anchor": "Chapter 3 / Cytokinesis",
+      "touchpoints": [
+        { "claimId": "Claim 1", "direction": "challenges" }
+      ],
+      "note": "Another conceded knowledge gap: a core process (cell division) is not fully understood and is modeled from a proposed mechanism."
+    }
+  ],
+  "figuresNumbers": [
+    { "item": "Model scope", "contains": "28 cellular process sub-models and 16 cellular state variables, spanning six areas of cell biology." },
+    { "item": "Reconstruction sources", "contains": "Over 900 primary sources, reviews, books, and databases." },
+    { "item": "Simulation scale", "contains": "192 wild type cells and 3,011 single-gene deletants simulated; MATLAB R2010b on a 128-core Linux cluster." },
+    { "item": "Gene essentiality validation", "contains": "Model reproduces observed gene essentiality with 79% accuracy." },
+    { "item": "Growth-rate validation", "contains": "Correctly predicts measured growth rates of 67% of 12 non-essential single-gene disruption strains." },
+    { "item": "Metabolite validation (Fig. 2E / Table S2E)", "contains": "70% of predicted concentrations of 39 cytosolic metabolites statistically consistent with the Sundararaj et al. dataset; model does not reproduce the Bennett et al. dataset, which itself significantly disagrees with Sundararaj et al." },
+    { "item": "Parameter refinement (Fig. S1A)", "contains": "Computationally adjusted gene expression correlated with that observed by Weiner et al. at R^2 = 0.68." },
+    { "item": "Genome organization", "contains": "In silico chromosome organized into 335 transcription units containing 525 genes." },
+    { "item": "RNA half-life coverage", "contains": "Half-life estimates obtained for 274 M. genitalium genes by E. coli homology; remaining genes assigned the average 4.425 minutes; tRNA 45 min, rRNA 150 min, sRNA 89 min." },
+    { "item": "Transcriptional regulation", "contains": "Reconstructed network of five regulators regulating 54 genes through 29 regulatory interactions." }
+  ],
+  "primarySources": [
+    { "topic": "Gene essentiality data used for validation", "citation": "Glass et al. 2006", "refN": "193" },
+    { "topic": "E. coli cytosolic metabolite concentrations (validation dataset)", "citation": "Bennett et al.", "refN": "392" },
+    { "topic": "Curated metabolite concentrations (validation dataset)", "citation": "Sundararaj et al.", "refN": "394" },
+    { "topic": "M. gallisepticum cell chemical/amino acid composition", "citation": "Morowitz et al. 1962", "refN": "870" },
+    { "topic": "M. pneumoniae mRNA expression / promoters", "citation": "Weiner et al. 2003 (expression); Weiner et al. 2000 (promoters)", "refN": "569" },
+    { "topic": "E. coli mRNA half-lives", "citation": "Bernstein et al. 2002", "refN": "602" },
+    { "topic": "Transcription unit / suboperon organization of M. pneumoniae", "citation": "Güell et al. 2009", "refN": "418" },
+    { "topic": "E. coli comprehensive metabolic model (basis of Metabolism submodel)", "citation": "Feist et al. 2007", "refN": "558" },
+    { "topic": "M. genitalium FBA metabolic model", "citation": "Suthers et al. 2009", "refN": "610" },
+    { "topic": "E. coli cell chemical composition", "citation": "Neidhardt et al. 1990", "refN": "393" }
+  ],
+  "flags": [
+    "Metadata unverified: the cleaned source contains ONLY the supplementary methods (Chapters 1-4, Appendix A/B); it has no title page, abstract, author list, journal name, or DOI. Title/year taken from the filename ('Karr 2012'). venue set to 'unverified; see flags' and doi set to null.",
+    "Known from filename only: author surname 'Karr' and year '2012'; full author list and initials not present in the cleaned text, so authors field is partial/reconstructed and labeled as such.",
+    "DOI scan negative: grep for '10.[0-9]{4,}/' over the source returned no DOI.",
+    "OCR quirks preserved verbatim in excerpts (e.g. 'diferent', 'studie', 'This have us', '$3 0 ^ { \\circ }$', 'afinity'); not corrected.",
+    "Scope note: the bulk of the document (Chapters 2-3 per-process modeling detail) is mechanistic/biology-implementation detail that is off-roadmap (the context file explicitly does NOT cover specific modeling methods); only data-sourcing, heterogeneity, sparsity, multimodal-integration, and validation statements were captured.",
+    "Scope note: this paper is bacterial (M. genitalium); per context-file boundaries, specific organism is treated as example only, not as subject matter.",
+    "Read at source: refs #193 (Glass essentiality), #392/#394 (Bennett/Sundararaj metabolomics), #569 (Weiner mRNA expression), #602 (Bernstein E. coli mRNA half-lives), and #558 (Feist E. coli metabolic model) are the worth-citing first-hand primary datasets underpinning the cross-organism / heterogeneous-data points; resolve full citations from the original paper's reference list before citing.",
+    "Figure numbers cited as 'accompanying manuscript' (e.g. Fig. 2E, Fig. 6B, Fig. 7A) refer to the main paper, not present in this supplementary source."
+  ]
+}

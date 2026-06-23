@@ -1,0 +1,422 @@
+{
+  "schemaVersion": "精练-4.0",
+  "citationKey": "37",
+  "title": "Integrated analysis of multimodal single-cell data",
+  "authors": "Y. Hao, S. Hao, E. Andersen-Nissen, W.M. Mauck III, S. Zheng, A. Butler, M.J. Lee, A.J. Wilk, C. Darby, M. Zager, P. Hoffman, M. Stoeckius, E. Papalexi, E.P. Mimitou, J. Jain, A. Srivastava, T. Stuart, L.B. Fleming, B. Yeung, A.J. Rogers, J.M. McElrath, C.A. Blish, R. Gottardo, P. Smibert, R. Satija",
+  "venue": "Cell, 2021, 184(13):3573-3587",
+  "year": "2021",
+  "doi": "doi:10.1016/j.cell.2021.04.048",
+  "readOn": "2026-06-18",
+  "sourceFile": "/Users/augustsirius/Desktop/已清洗_260617/37 - Integrated analysis of multimodal single-cell data_cleaned.md",
+  "oneSentence": "The paper introduces weighted-nearest neighbor (WNN) analysis, an unsupervised framework that learns cell-specific modality weights to integrate paired measurements (e.g., RNA + surface protein in CITE-seq), and applies it to a 211,000-cell PBMC atlas with up to 228 antibodies, showing that joint multimodal analysis resolves cell states that scRNA-seq alone cannot.",
+  "orientation": "Strong support for the modality-orthogonality / non-substitutability axis (Claim 4) and for the multimodal-integration axis (Claim 8): the paper repeatedly shows transcriptome-alone fails to separate functionally distinct cell states that protein or chromatin modalities resolve. It also bears on Claim 2 (limits of scRNA-seq) and Claim 9 (reference mapping / cross-dataset standardization via Azimuth). Note: this is a single-cell, dissociation-based, non-spatial, non-temporal method paper, so it can also serve as a foil illustrating the very RNA-centric, snapshot paradigm our thesis critiques on the temporal and spatial axes.",
+  "excerpts": [
+    {
+      "id": "e1",
+      "text": "Although established technologies like single-cell RNA-seq (scRNA-seq) are capable of discovering new cell types and states in heterogeneous tissues, transcriptomics alone is often incapable of separating molecularly similar, but functionally distinct, categories of immune cells.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 2",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        }
+      ],
+      "note": "States that transcriptomics alone often cannot separate functionally distinct cell categories."
+    },
+    {
+      "id": "e2",
+      "text": "More broadly, this exhibits the challenge of defining cell states based on the transcriptome alone, because important sources of cellular heterogeneity may not correlate strongly with transcriptomic features despite being identifiable in other modalities.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        }
+      ],
+      "note": "Argues important cellular heterogeneity is not captured by transcriptomic features but is identifiable in other modalities (modality orthogonality)."
+    },
+    {
+      "id": "e3",
+      "text": "This reflects technical challenges driven by the minimal RNA content of T cells coupled with high RNase expression (Andreeff et al., 1978; Lu et al., 2018; Sercan Alp et al., 2015), which hampers scRNAseq data quality.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 2",
+          "direction": "supports"
+        }
+      ],
+      "note": "Notes a concrete technical limitation of scRNA-seq: low RNA content and high RNase in T cells degrade data quality."
+    },
+    {
+      "id": "e4",
+      "text": "Each of these approaches offers an exciting solution to overcome the inherent limitations of scRNA-seq and to explore how multiple cellular modalities affect cellular state and function (Zhu et al., 2020).",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 2",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        }
+      ],
+      "note": "Frames multimodal technologies as overcoming inherent limitations of scRNA-seq."
+    },
+    {
+      "id": "e5",
+      "text": "Importantly, these strategies must be robust to potentially large differences in the data quality and information content for each modality.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Highlights that modalities differ in data quality and information content, a challenge for integration."
+    },
+    {
+      "id": "e6",
+      "text": "The varying information content of each modality, even across cells in the same dataset, represents a pressing challenge for the analysis and integration of multimodal datasets.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "nuances"
+        }
+      ],
+      "note": "States that each modality carries varying information content, even cell-to-cell, complicating integration."
+    },
+    {
+      "id": "e7",
+      "text": "For example, CD8<sup>+</sup> and CD4<sup>+</sup> T cells were partially blended together when analyzing the transcriptome but separated clearly in the protein data. Contrastingly, conventional dendritic cells (cDCs), along with a rare population of erythroid progenitors and spiked-in murine 3T3 controls, formed distinct clusters when analyzing RNA but were intermixed with other cell types based on surface protein abundance.",
+      "anchor": "Results: Quantifying the relative utility of each modality in each cell",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        }
+      ],
+      "note": "Direct demonstration that RNA and protein each resolve cell states the other cannot, in opposite directions (orthogonal information)."
+    },
+    {
+      "id": "e8",
+      "text": "We found that for CD8<sup>+</sup> T cells, the most similar RNA neighbors often reflected a mix of CD8<sup>+</sup> and CD4<sup>+</sup> T cells (in the RNA KNN graph, there are a total of 944 incorrect edges that connect CD8<sup>+</sup> to CD4<sup>+</sup> T cells). By contrast, protein neighbors were predominantly correctly identified as CD8<sup>+</sup> T cells (in the protein KNN graph, 12 CD8<sup>+</sup>/CD4<sup>+</sup> edges were identified).",
+      "anchor": "Results: Quantifying the relative utility of each modality in each cell",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        }
+      ],
+      "note": "Quantifies how protein data resolves CD8/CD4 T cells far better than RNA (944 vs 12 incorrect edges)."
+    },
+    {
+      "id": "e9",
+      "text": "However, although these cell types are defined by both RNA and protein markers, the statistical power in unsupervised analysis of either modality separately was insufficient to identify these populations, demonstrating the importance of joint analysis.",
+      "anchor": "Results: WNN analysis is a robust and flexible approach",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        }
+      ],
+      "note": "Neither modality alone has the statistical power to identify certain populations; joint analysis is required."
+    },
+    {
+      "id": "e10",
+      "text": "These results suggest that integrated WNN analysis can provide necessary flexibility and allow one data type to compensate for weaknesses in another.",
+      "anchor": "Results: WNN analysis is a robust and flexible approach",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        }
+      ],
+      "note": "Claims one modality can compensate for another's weaknesses through integration."
+    },
+    {
+      "id": "e11",
+      "text": "However, in addition to the published findings, WNN analysis identified a novel population of Basal cells that exhibits distinct chromatin accessibility profiles, but does not exhibit unique transcriptomic characteristics (Figure S3).",
+      "anchor": "Results: WNN analysis is a robust and flexible approach (SHARE-seq mouse skin)",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        }
+      ],
+      "note": "A cell population distinguishable only by chromatin accessibility, not by transcriptome, demonstrating chromatin carries information RNA does not."
+    },
+    {
+      "id": "e12",
+      "text": "Taken together, these findings demonstrate that the ability of WNN to identify subpopulations that are masked by scRNA-seq alone is not limited to immune or CITEseq datasets.",
+      "anchor": "Results: WNN analysis is a robust and flexible approach",
+      "touchpoints": [
+        {
+          "claimId": "Claim 2",
+          "direction": "supports"
+        }
+      ],
+      "note": "Generalizes that subpopulations masked by scRNA-seq alone are recoverable with added modalities across tissue and assay types."
+    },
+    {
+      "id": "e13",
+      "text": "Our integrated WNN analysis reveals a rich diversity of T cell states that is not typically captured in scRNA-seq analyses, including CD4<sup>+</sup> regulatory T cells, MAIT cells, multiple subpopulations of gd and double-negative T cells, along with heterogeneous subpopulations of naive, memory, and effector states.",
+      "anchor": "Results: Multimodal heterogeneity within lymphoid populations",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        }
+      ],
+      "note": "Multimodal analysis reveals lymphoid diversity not typically captured by scRNA-seq alone."
+    },
+    {
+      "id": "e14",
+      "text": "We conclude that multimodal integration is essential for the unsupervised discovery and annotation of immune cell states; however, once these states are enumerated, supervised differential analyses are capable of sensitively describing markers that define their molecular state.",
+      "anchor": "Results: A multimodal atlas of the human PBMCs",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        }
+      ],
+      "note": "Asserts multimodal integration is essential for unsupervised discovery of immune cell states."
+    },
+    {
+      "id": "e15",
+      "text": "Integrative multimodal analysis therefore provides a path forward to move beyond the partial and transcriptomefocused view of a cell and toward a unified definition of cellular behavior, identity, and function.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        }
+      ],
+      "note": "Frames transcriptome-focused single-cell analysis as partial and calls for multimodal integration toward a unified cellular definition."
+    },
+    {
+      "id": "e16",
+      "text": "As future technologies enable the simultaneous measurement of modalities spanning the central dogma including chromatin state, DNA methylation, transcription, lineage, spatial location, and protein levels—WNN analysis may help to reveal how subpopulations of cells differentially utilize these modalities to regulate their current state and future potential.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Other",
+          "direction": "nuances",
+          "otherLabel": "Lineage and spatial location named as additional modalities yet to be jointly measured (gap framing)"
+        }
+      ],
+      "note": "Lists modalities across the central dogma (including spatial location and lineage) that future technologies should measure simultaneously; implicitly notes these are not yet jointly captured."
+    },
+    {
+      "id": "e17",
+      "text": "Last, we note that the modality weights learned in our procedure serve not only as a proxy for the technical quality of a measurement type, but may also reflect the biological importance of each modality in determining cellular identity. For example, our analyses of human bone marrow demonstrated that progenitor cells and differentiated cells exhibited divergent modality weights.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        }
+      ],
+      "note": "Argues different cell types depend on different modalities to define identity (modality importance is cell-state dependent)."
+    },
+    {
+      "id": "e18",
+      "text": "We accomplish this via a supervised version of principal component analysis to identify the best transcriptomic modules which delineate our WNN-defined cell types. Supervised mapping represents an attractive alternative to unsupervised analysis, and we show how this workflow can improve cell type identification and robustly integrate samples from multiple donors and disease states.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Describes a reference-based mapping workflow that integrates samples across donors and disease states onto a common reference."
+    },
+    {
+      "id": "e19",
+      "text": "To assist the community in utilizing our resource, we have created a web application, freely available at https://azimuth.hubmapconsortium.org/, which enables users to rapidly map their own datasets online, automating the process of visualization and annotation.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Provides a public reference (Azimuth) for mapping new datasets onto a shared annotated atlas, a step toward cross-dataset comparability."
+    },
+    {
+      "id": "e20",
+      "text": "Second, WNN assumes that modalities do not define conflicting sets of cell states. Although we have not observed this when using molecular data such as chromatin state, gene expression, and surface protein abundance, this assumption may be problematic when integrating morphological, functional, and molecular data.",
+      "anchor": "Limitations of the study",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "challenges"
+        },
+        {
+          "claimId": "Other",
+          "direction": "nuances",
+          "otherLabel": "Integration assumption breaks down across morphological/functional/molecular data types"
+        }
+      ],
+      "note": "Author-conceded limitation: the integration method assumes modalities do not define conflicting cell states, which may fail for morphological/functional data."
+    },
+    {
+      "id": "e21",
+      "text": "First, WNN requires a dimensional reduction to describe the neighborhood structure between cells. This requirement is not compatible with categorical or low-dimensional data.",
+      "anchor": "Limitations of the study",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "challenges"
+        }
+      ],
+      "note": "Author-conceded limitation: the integration method cannot handle categorical or low-dimensional modalities."
+    },
+    {
+      "id": "e22",
+      "text": "In addition, our circulating immune atlas was constructed from PBMCs and therefore contains few cells with no nuclei (erythrocytes) or multi-lobed nuclei (granulocytes).",
+      "anchor": "Limitations of the study",
+      "touchpoints": [
+        {
+          "claimId": "Other",
+          "direction": "nuances",
+          "otherLabel": "Dissociation/PBMC sampling bias excludes whole cell populations"
+        }
+      ],
+      "note": "Concedes the dissociation-based PBMC atlas systematically omits certain cell types (erythrocytes, granulocytes)."
+    },
+    {
+      "id": "e23",
+      "text": "We observed strong quantitative agreement (R = 0.911) in the fraction of MAIT cells predicted by scRNA-seq and measured by CyTOF in the original cohort (Figure 7E).",
+      "anchor": "Results: Mapping query datasets to multimodal references",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Reports R = 0.911 concordance between scRNA-seq reference-mapping predictions and an orthogonal CyTOF measurement, supporting cross-platform validation."
+    }
+  ],
+  "figuresNumbers": [
+    {
+      "item": "PBMC CITE-seq atlas",
+      "contains": "210,911 total cells after QC and doublet filtration; 161,764 cells via 10x 3' with 228 TotalSeq A antibodies (avg 8,003 unique RNA molecules/cell, 5,251 unique ADT/cell); plus 49,147 cells with 54 antibodies via ECCITE-seq (10x 5'). 8 volunteers, ages 20-49, 3 time points (day 0, 3, 7) post VSV-vectored HIV vaccine, 24 samples."
+    },
+    {
+      "item": "Cord blood demonstration dataset",
+      "contains": "8,617 cord blood mononuclear cells, panel of 10 immunophenotypic markers (Stoeckius et al., 2017)."
+    },
+    {
+      "item": "Bone marrow benchmarking dataset",
+      "contains": "30,672 mononuclear cells, panel of 25 antibodies."
+    },
+    {
+      "item": "CD8/CD4 incorrect KNN edges (cord blood)",
+      "contains": "RNA KNN graph: 944 incorrect CD8+/CD4+ edges; protein KNN graph: 12; WNN graph: 20."
+    },
+    {
+      "item": "Naive CD8/CD4 incorrect edges (10x Multiome ATAC+RNA, 11,351 cells)",
+      "contains": "RNA KNN: 984; ATAC KNN: 373; WNN: 322."
+    },
+    {
+      "item": "SHARE-seq mouse skin dataset",
+      "contains": "34,774 mouse skin cells; WNN recapitulated all 23 originally described populations and identified a novel Basal cell population (Basal_4) distinguishable only by chromatin accessibility (CTCF and p53 motifs)."
+    },
+    {
+      "item": "Clustering granularity",
+      "contains": "57 clusters in WNN analysis; three annotation levels (level 1: 8 categories; level 2: 30 categories; level 3: 57 categories). Cell groupings: CD4+ T (12 clusters), CD8+ T (12), unconventional T (7), NK (6), B/plasma/plasmablasts (8), DC and monocytes (8)."
+    },
+    {
+      "item": "Marker panel enrichment (Figure 4C)",
+      "contains": "A single marker achieved >=10-fold enrichment for 45 clusters; a 3-marker panel achieved 10-fold enrichment for 55 clusters."
+    },
+    {
+      "item": "Fig. 2E (speed)",
+      "contains": "WNN analysis up to 15-fold faster than MOFA+/totalVI on the full dataset."
+    },
+    {
+      "item": "Vaccination response",
+      "contains": "CD14+ classical and CD16+ non-classical monocytes upregulated a shared module of 62 genes enriched for type I interferon response; Siglec-1 (CD169) induced only at day 3."
+    },
+    {
+      "item": "Rare population resolution",
+      "contains": "ASDC dendritic cells (AXL+ SIGLEC6+) at 0.02% frequency; 97% of TCR clones were single-cell; 31 expanded clones (>=10 cells) excluding MAIT/iNKT; CMV-positive volunteers accounted for 91% of expanded-clone cells."
+    },
+    {
+      "item": "Fig. 7E (reference mapping validation)",
+      "contains": "Pearson R = 0.911 between MAIT-cell fraction predicted by scRNA-seq reference mapping and measured by CyTOF."
+    },
+    {
+      "item": "Azimuth mapping throughput",
+      "contains": "A dataset of 50,000 cells can be fully processed and mapped in less than 5 min."
+    }
+  ],
+  "primarySources": [
+    {
+      "topic": "CITE-seq: simultaneous RNA and surface protein measurement",
+      "citation": "Stoeckius et al. 2017, Nat. Methods 14:865-868",
+      "refN": null
+    },
+    {
+      "topic": "Comprehensive integration / anchor-based workflow (Seurat v3)",
+      "citation": "Stuart et al. 2019, Cell 177:1888-1902",
+      "refN": null
+    },
+    {
+      "topic": "MOFA+ benchmark method",
+      "citation": "Argelaguet et al. 2020, Genome Biol. 21:111",
+      "refN": null
+    },
+    {
+      "topic": "totalVI benchmark method",
+      "citation": "Gayoso et al. 2019, bioRxiv 791947",
+      "refN": null
+    },
+    {
+      "topic": "scArches reference-mapping benchmark",
+      "citation": "Lotfollahi et al. 2020, bioRxiv 2020.07.16.205997",
+      "refN": null
+    },
+    {
+      "topic": "Supervised principal component analysis (sPCA)",
+      "citation": "Barshan et al. 2011, Pattern Recognit. 44:1357-1371",
+      "refN": null
+    },
+    {
+      "topic": "ECCITE-seq (protein + transcriptome + clonotype + CRISPR)",
+      "citation": "Mimitou et al. 2019, Nat. Methods 16:409-412",
+      "refN": null
+    },
+    {
+      "topic": "Low RNA content / high RNase in lymphocytes degrades scRNA-seq",
+      "citation": "Andreeff et al. 1978, Proc. Natl. Acad. Sci. USA 75:1938-1942",
+      "refN": null
+    },
+    {
+      "topic": "COVID-19 PBMC scRNA-seq query dataset (MAIT depletion validation)",
+      "citation": "Wilk et al. 2020 (cited in text)",
+      "refN": null
+    }
+  ],
+  "flags": [
+    "Metadata: DOI confirmed in-text as 10.1016/j.cell.2021.04.048 (lines 134, 855); dates confirmed in-text (Received Nov 3 2020, Revised Mar 3 2021, Accepted Apr 28 2021, Published May 31 2021). Venue volume/issue/pages (184(13):3573-3587) NOT printed in the cleaned source — supplied from external knowledge of the published Cell article; treat volume/page span as unverified against the source text.",
+    "Authors: header in the cleaned MD does not list the author byline; author initials taken from the AUTHOR CONTRIBUTIONS section and standard published byline. Full given names not all available from source; some entries reconstructed — verify against published article if exact author list is needed.",
+    "Scope note: This is a single-cell, dissociation-based, snapshot method paper with no spatial-omics and no true temporal/lineage tracking. It does not directly support roadmap Claim 3 (destructive sequencing / temporal pairing) or the spatial axis (Claim 2/7 spatial); on those axes it exemplifies the paradigm our thesis critiques (potential foil), captured via excerpts e16 (notes spatial/lineage not yet jointly measured) and e22 (dissociation sampling bias).",
+    "Read at source: ref Stuart et al. 2019 (Cell 177:1888-1902) and Stoeckius et al. 2017 (Nat. Methods 14:865-868) are worth citing first-hand for the integration framework and CITE-seq technology respectively.",
+    "OCR quirks preserved in excerpts: '<sup>+</sup>', 'gd' (for gamma-delta), 'scRNAseq' (missing hyphen), 'transcriptomefocused', 'CITEseq' as they appear in the cleaned source."
+  ]
+}

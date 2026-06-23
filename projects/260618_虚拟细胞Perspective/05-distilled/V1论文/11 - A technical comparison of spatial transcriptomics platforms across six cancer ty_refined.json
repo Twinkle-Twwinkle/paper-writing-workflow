@@ -1,0 +1,508 @@
+{
+  "schemaVersion": "精练-4.0",
+  "citationKey": "11",
+  "title": "A technical comparison of spatial transcriptomics platforms across six cancer types",
+  "authors": "Sergi Cervilla, Daniela Grases, Elena Perez, Francisco X. Real, Eva Musulen, Julieta Aprea, Manel Esteller, Eduard Porta-Pardo",
+  "venue": "Genome Biology, 2026 (DOI prefix s13059; venue inferred, see flags)",
+  "year": "2026",
+  "doi": "doi:10.1186/s13059-026-03937-y",
+  "readOn": "2026-06-18",
+  "sourceFile": "/Users/augustsirius/Desktop/已清洗_260617/11 - A technical comparison of spatial transcriptomics platforms across six cancer types_cleaned.md",
+  "oneSentence": "The authors systematically benchmark five commercial spatial transcriptomics platforms (Visium v1, Visium v2/CytAssist, VisiumHD, Xenium, CosMx) plus a 35-protein Visium panel on matched FFPE sections from six cancer types, quantifying trade-offs in sensitivity, resolution, panel size, sampling area, and RNA-protein concordance.",
+  "orientation": "This paper sits squarely on our spatial axis and on Claims 2, 9, and 10: it documents that single-cell methods destroy spatial context (supporting our spatial-loss premise), that platforms are hard to compare without same-sample benchmarking and harmonization (data-island / standards), and it surfaces explicit resolution-vs-coverage-vs-sensitivity trade-offs. Its RNA-protein decoupling finding is strong ammunition for Claim 4 (modalities are non-substitutable). It can serve as support (spatial preserves context, modalities orthogonal) and as a sober foil (even spatial transcriptomics has severe per-platform limitations, sparsity, segmentation bias, sampling bias).",
+  "excerpts": [
+    {
+      "id": "e1",
+      "text": "Yet, these methods require dissociation of the tissue, thereby destroying the spatial relationships between cells and their microenvironment. Tis information is critical the context of most diseases, including solid tumors, where spatial organization infuences cell signaling, immune infltration, and therapeutic response.",
+      "anchor": "Background",
+      "touchpoints": [
+        {
+          "claimId": "Claim 2",
+          "direction": "supports"
+        },
+        {
+          "claimId": "spatial",
+          "direction": "supports"
+        }
+      ],
+      "note": "States that single-cell methods require dissociation, destroying spatial relationships, and that spatial context is critical to disease biology."
+    },
+    {
+      "id": "e2",
+      "text": "Spatial omics technologies bridge this gap by capturing molecular information while preserving spatial architecture [13]. Advances in spatial profling now allow measurement of DNA alterations [14], epigenetic modifcations [15], and, most commonly, RNA [16–23] and protein [24–26] expression, directly within intact tissue sections.",
+      "anchor": "Background",
+      "touchpoints": [
+        {
+          "claimId": "spatial",
+          "direction": "supports"
+        }
+      ],
+      "note": "Positions spatial omics as preserving spatial architecture while measuring RNA and protein within intact tissue."
+    },
+    {
+      "id": "e3",
+      "text": "However, by averaging signals across heterogeneous cell populations, bulk profling obscures the cellular diversity and spatial context that shape tumor behavior.",
+      "anchor": "Background",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        }
+      ],
+      "note": "Notes that bulk profiling averages over heterogeneous cells and loses cellular diversity and spatial context."
+    },
+    {
+      "id": "e4",
+      "text": "However, technical benchmarking across platforms remains limited, particularly in formalin-fxed, parafnembedded (FFPE) clinical samples, which represent the most common tissue format in oncology.",
+      "anchor": "Abstract",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "States that cross-platform technical benchmarking is limited, motivating standardized comparison."
+    },
+    {
+      "id": "e5",
+      "text": "Collectively, this work provides a harmonized dataset and technical reference for the spatial transcriptomics community, ofering insight into the relative strengths, limitations, and design considerations associated with high-throughput spatial profling of FFPE tumors.",
+      "anchor": "Conclusions",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        },
+        {
+          "claimId": "standard",
+          "direction": "supports"
+        }
+      ],
+      "note": "Frames the study as producing a harmonized dataset and technical reference, i.e. a step toward comparability/standardization."
+    },
+    {
+      "id": "e6",
+      "text": "Uniquely, our study includes both sequencingbased and imaging-based platforms profled on the same samples, enabling direct technical comparisons across spatial capture modalities.",
+      "anchor": "Abstract",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        },
+        {
+          "claimId": "standard",
+          "direction": "supports"
+        }
+      ],
+      "note": "Emphasizes that same-sample profiling across platforms is what enables direct, comparable technical comparison."
+    },
+    {
+      "id": "e7",
+      "text": "Prior studies have compared in situ platforms across various tissues [41–44], but few have included matched sequencing-based platforms, and none have systematically profled Visium v1, Visium v2, and VisiumHD within the same framework.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Notes a gap: prior benchmarks rarely use matched/same-framework comparison across sequencing-based platforms."
+    },
+    {
+      "id": "e8",
+      "text": "Te platforms evaluated thus far require a trade-of between spatial resolution and transcriptome breadth: Visium (v1 and v2) provides whole-transcriptome coverage at multicellular resolution, whereas CosMx and Xenium ofer subcellular resolution but are limited to targeted gene panels. VisiumHD represents a new class of technology that may ofer both: single-cell or subcellular resolution with whole-transcriptome coverage.",
+      "anchor": "Subcellular resolution and whole-transcriptome coverage",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        }
+      ],
+      "note": "States an explicit trade-off between spatial resolution and transcriptome breadth across platform classes."
+    },
+    {
+      "id": "e9",
+      "text": "However, larger panels may sufer from reduced sensitivity due to optical crowding, an efect in which high probe density compromises accurate signal resolution [35].",
+      "anchor": "Efect of panel size in Xenium results",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        }
+      ],
+      "note": "Describes optical crowding: a sensitivity-vs-coverage trade-off intrinsic to high-plex imaging panels."
+    },
+    {
+      "id": "e10",
+      "text": "In summary, our comparison of the Xenium Multi-Tissue and 5 K panels revealed a clear trade-of between gene coverage and per-gene sensitivity. While the larger panel improved cell type annotation and enabled deeper immune subtyping, it exhibited lower transcript detection efciency and higher sparisity.",
+      "anchor": "Efect of panel size in Xenium results",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        }
+      ],
+      "note": "Quantitative-trade-off summary: broader gene coverage costs per-gene sensitivity and increases sparsity."
+    },
+    {
+      "id": "e11",
+      "text": "While this brings the resolution to a sub-cellular level, it has extraordinary computational costs. To mitigate this, coarser bin aggregations (e.g., 8 µm or 16 µm per side) are typically used, reducing bin counts to \\~ 700  K and \\~ 160  K, respectively. However, this binning strategy introduces tradeofs: larger bins may include transcripts from multiple cells, while smaller bins may fragment single-cell transcriptomes.",
+      "anchor": "Subcellular resolution and whole-transcriptome coverage",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        }
+      ],
+      "note": "Describes VisiumHD binning trade-off: subcellular resolution costs compute and forces bins that either mix or fragment cells."
+    },
+    {
+      "id": "e12",
+      "text": "Across the fve analyzed tumor samples, we observed weak global correlation between transcript and protein levels. Te average Pearson correlation coefcient across all genes and samples was approximately 0.1 (Fig.  6a), substantially lower than the \\~ 0.7 average correlation observed in matched bulk tumor samples from the Clinical Proteomic Tumor Analysis Consortium (CPTAC) across seven cancer types (Fig. 6b).",
+      "anchor": "Correlation of transcriptomics and proteomics measurements across space",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        }
+      ],
+      "note": "Reports weak spatial RNA-protein correlation (~0.1) versus ~0.7 in bulk, evidence that RNA does not reconstruct protein."
+    },
+    {
+      "id": "e13",
+      "text": "Finally, we integrate Visium targeted protein data with matched RNA profles, uncovering widespread RNA–protein decoupling and spatial heterogeneity in concordance.",
+      "anchor": "Abstract",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        }
+      ],
+      "note": "Headline finding of widespread RNA-protein decoupling and spatially heterogeneous concordance."
+    },
+    {
+      "id": "e14",
+      "text": "While bulk data suggests consistent RNA–protein coupling, our spatial analysis demonstrates that these relationships are context-dependent and may vary across regions, cell types, and technologies.",
+      "anchor": "Correlation of transcriptomics and proteomics measurements across space",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        },
+        {
+          "claimId": "spatial",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concludes RNA-protein relationships are context-dependent in space, contrasting bulk-aggregate coupling."
+    },
+    {
+      "id": "e15",
+      "text": "Tis suggests that local microenvironmental efects, post-transcriptional regulation, and protein stability contribute to RNA–protein decoupling in situ, fndings that are masked in aggregate measurements but critical for translational insight.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        }
+      ],
+      "note": "Attributes RNA-protein decoupling to post-transcriptional regulation and protein stability, hidden in aggregate data."
+    },
+    {
+      "id": "e16",
+      "text": "In the second pattern, correlations were near zero, typically involving genes with low transcript abundance despite protein presence, such as KRT5 in the same lung sample (Fig. 6c, bottom).",
+      "anchor": "Correlation of transcriptomics and proteomics measurements across space",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concrete example (KRT5) of protein present while transcript is low, illustrating non-substitutability of RNA for protein."
+    },
+    {
+      "id": "e17",
+      "text": "We further incorporated targeted spatial protein measurements using the Visium FFPE multi-omic assay, enabling side-by-side RNA and protein mapping.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        }
+      ],
+      "note": "Describes spatial multi-omic co-profiling of RNA and protein from the same tissue, an integration example."
+    },
+    {
+      "id": "e18",
+      "text": "We evaluate platform performance across multiple dimensions, including transcript and UMI detection, gene–histology concordance, cell type recovery, and integration with a targeted protein panel (Visium v2, 30 proteins), enabling spatial multi-omics.",
+      "anchor": "Abstract",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        }
+      ],
+      "note": "States the study enables spatial multi-omics by integrating a targeted protein panel with transcriptomics; note panel size given as 30 here but 35 elsewhere (see flags)."
+    },
+    {
+      "id": "e19",
+      "text": "However, sampling only a single FOV yielded highly variable estimates. For example, the inferred proportion of cancer cells ranged from 5 to 55%, whereas the true value for the entire sample was 22% (Fig. 3e, Additional fle 2: Fig. S14).",
+      "anchor": "Biological concordance and interpretability across in situ platforms",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        },
+        {
+          "claimId": "spatial",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Quantifies sampling bias: a single small region gives cancer-cell fraction 5-55% vs true 22%, showing measured cell composition depends heavily on scanned area."
+    },
+    {
+      "id": "e20",
+      "text": "Tese results illustrate how spatial constraints, even when total cell numbers are matched, can introduce substantial variability in cell type composition estimates, highlighting the importance of scanned area in the design and interpretation of spatial transcriptomics experiments.",
+      "anchor": "Biological concordance and interpretability across in situ platforms",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concludes that scanned-area / sampling design materially changes spatial results, a comparability/standards concern."
+    },
+    {
+      "id": "e21",
+      "text": "When comparing the proportion of negative control signals relative to gene signals, normalized by the panel size, we found that CosMx exhibited a negative probe signal rate of approximately 10.31%, while Xenium demonstrated a markedly lower rate of 0.06% (Additional fle  3: Table  S2).",
+      "anchor": "Technical comparison of imaging-based platforms: CosMx vs Xenium",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Quantifies large cross-platform background-noise difference (CosMx ~10.31% vs Xenium 0.06% negative-probe rate), evidence of platform incomparability without harmonization."
+    },
+    {
+      "id": "e22",
+      "text": "In matched FFPE samples, Visium v2 consistently detected more unique genes (\\~ 2,000 vs. \\~ 200; Fig. 1c), captured more UMIs per spot, and exhibited stronger spatial autocorrelation (Moran’s I), particularly for lowly expressed genes (Additional fle 2: Fig. S1).",
+      "anchor": "Generation of matching spatial transcriptomics and proteomics data",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Within-platform upgrade (Visium v1 to v2) changes detected genes ~200 to ~2,000, showing even chemistry versions are not directly comparable."
+    },
+    {
+      "id": "e23",
+      "text": "Tese observations highlight the potential for sampling bias when spatial studies rely on small tissue regions.",
+      "anchor": "Biological concordance and interpretability across in situ platforms",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Flags sampling bias from small tissue regions as a reproducibility/comparability hazard."
+    },
+    {
+      "id": "e24",
+      "text": "Importantly, neither currently ofers full transcriptome coverage but instead rely on targeted panels.",
+      "anchor": "Technical comparison of imaging-based platforms: CosMx vs Xenium",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        }
+      ],
+      "note": "States imaging-based subcellular platforms (CosMx, Xenium) lack whole-transcriptome coverage and use targeted panels."
+    },
+    {
+      "id": "e25",
+      "text": "First, spatial transcriptomics is a fast-moving feld, and our data refect the capabilities of each platform as of mid-2025. For example, CosMx now ofers a whole-transcriptome panel, which was not available at the time of data generation.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Author-conceded limitation: platform capabilities are a moving target, so benchmarks are time-stamped and not durable references."
+    },
+    {
+      "id": "e26",
+      "text": "Second, while we included several major platforms, our study does not cover other important technologies such as MERFISH, Slide-seq, or Stereo-seq.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Author-conceded scope limitation: several major spatial platforms were not benchmarked."
+    },
+    {
+      "id": "e27",
+      "text": "Tird, although we processed serial sections from the same FFPE blocks when possible, some comparisons (particularly those involving newer chemistries like Xenium Prime) used tissue sections generated at later time points, potentially introducing Z-axis variability.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Author-conceded confounder: serial sections at different times introduce Z-axis variability undermining strict same-sample comparison."
+    },
+    {
+      "id": "e28",
+      "text": "Despite its potential, VisiumHD presented challenges, including lower UMI density, incomplete library saturation, and spatial artifacts related to its gridded capture design.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 10",
+          "direction": "supports"
+        },
+        {
+          "claimId": "spatial",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Concedes that the whole-transcriptome subcellular platform (VisiumHD) trades in sparsity, saturation and grid artifacts."
+    },
+    {
+      "id": "e29",
+      "text": "A third, more complex pattern involved partial concordance, where RNA and protein signals overlapped in some regions but diverged in others.",
+      "anchor": "Correlation of transcriptomics and proteomics measurements across space",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Notes a partial-concordance pattern where RNA and protein agree in some regions and diverge in others (spatially heterogeneous coupling)."
+    },
+    {
+      "id": "e30",
+      "text": "To explore this discrepancy, we performed cross-platform validation using Xenium data from the same tissue block, registering the Xenium and Visium v2 images and generating pseudo-spots for direct comparison. Te RNA expression of CD68 inferred from Xenium largely matched the protein spatial pattern, including the extended signal in the lower-right region (Fig.  6e), suggesting that the divergence may result from platformspecifc technical variability rather than true biological dissociation.",
+      "anchor": "Correlation of transcriptomics and proteomics measurements across space",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "nuances"
+        },
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Counter-nuance: some RNA-protein divergence is attributed to platform-specific technical variability rather than true biology, showing cross-platform incomparability can masquerade as decoupling."
+    }
+  ],
+  "figuresNumbers": [
+    {
+      "item": "Table 1 (platform characteristics)",
+      "contains": "Visium v1 55 um / 17,943 genes; Visium v2 CytAssist 55 um / 18,085 genes + 35 proteins; VisiumHD 2 um / 18,085 genes; Xenium Multi-Tissue single-cell / 377 genes; Xenium Prime single-cell / 5000 genes; CosMx single-cell / 1000 genes."
+    },
+    {
+      "item": "Captured units after QC",
+      "contains": "18,672 spots (Visium v1); 33,117 spots (Visium v2); 2,551,540 8x8 um bins (VisiumHD); 667,916 cells (CosMx); 5,809,890 cells (Xenium)."
+    },
+    {
+      "item": "Fig. 1c (Visium v1 vs v2 gene detection)",
+      "contains": "Visium v2 ~2,000 unique genes vs Visium v1 ~200 in matched FFPE samples."
+    },
+    {
+      "item": "Negative probe / signal-to-noise (Table S2, Fig. S4)",
+      "contains": "Negative probe rate CosMx ~10.31% vs Xenium 0.06%; signal-to-noise ~3x (CosMx) vs ~450x (Xenium)."
+    },
+    {
+      "item": "Fig. 2g (correlation to Visium v2)",
+      "contains": "UMI-density-per-gene correlation Xenium Pearson R=0.93 vs CosMx R=0.86 across all tumor types."
+    },
+    {
+      "item": "Per-cell detection (Fig. 2e,f)",
+      "contains": "Full panels: CosMx detected 2-3x more genes/transcripts per cell than Xenium (larger panel); for 125 shared genes Xenium gave higher transcript counts per cell."
+    },
+    {
+      "item": "Cell counts / size (Fig. 2a,c)",
+      "contains": "Xenium detected 5%-30% more cells than CosMx; Xenium-segmented cells larger than CosMx across all tumors except lymphoma; outliers >1,000 um2 from nucleus expansion."
+    },
+    {
+      "item": "Fig. 4 (panel size XeniumMT vs Xenium5K)",
+      "contains": "~13-fold panel-size difference; for 225 shared genes XeniumMT detected more; both R=0.92-0.93 vs Visium; Xenium5K ~threefold fewer transcripts per gene; MYC-positive cancer cells 70% (XeniumMT) vs 30% (Xenium5K)."
+    },
+    {
+      "item": "Misclassification (Fig. 3d, 4f)",
+      "contains": "Fibroblasts misclassified as cancer 71.6% (CosMx) vs 10.2% (Xenium) in stroma; endothelial cells 8.51% (CosMx) vs 28.7% (Xenium); ovarian misclassified epithelial 12% (XeniumMT) vs <1% (Xenium5K)."
+    },
+    {
+      "item": "FOV sampling (Fig. 3e)",
+      "contains": "Single-FOV inferred cancer-cell proportion ranged 5-55% vs true 22% for whole sample."
+    },
+    {
+      "item": "VisiumHD bin mixing (Fig. 5a, Fig. S20)",
+      "contains": "At 2 um most bins one cell; 8 um bins 2-4 cells; 16 um bins 5-10 cells; bins per cell ~10-25 at 2 um vs ~1-5 at 16 um; ~11 million bins at native 2 um, ~700K at 8 um, ~160K at 16 um."
+    },
+    {
+      "item": "Cross-platform gene correlation (Fig. 5c)",
+      "contains": "VisiumHD vs Visium v2 R>0.97 and vs Xenium R>0.85; UMI density ~3x lower than Visium v2 and ~15x lower than Xenium."
+    },
+    {
+      "item": "RNA-protein correlation (Fig. 6a,b)",
+      "contains": "Average spatial Pearson RNA-protein correlation ~0.1 across all genes/samples vs ~0.7 in bulk CPTAC across seven cancer types (35-protein Visium v2 IO panel)."
+    }
+  ],
+  "primarySources": [
+    {
+      "topic": "Single-cell methods reveal heterogeneity but require tissue dissociation (transcriptional heterogeneity)",
+      "citation": "Barkley D, et al. Cancer cell states recur across tumor types and form specific interactions with the tumor microenvironment. Nat Genet. 2022;54:1192-201.",
+      "refN": "12"
+    },
+    {
+      "topic": "Spatial omics preserves spatial architecture (Museum of spatial transcriptomics)",
+      "citation": "Moses L, Pachter L. Museum of spatial transcriptomics. Nat Methods. 2022;19:534-46.",
+      "refN": "13"
+    },
+    {
+      "topic": "First spatial transcriptomics method (Visium lineage origin)",
+      "citation": "Stahl PL, et al. Visualization and analysis of gene expression in tissue sections by spatial transcriptomics. Science. 2016;353:78-82.",
+      "refN": "16"
+    },
+    {
+      "topic": "CosMx / spatial molecular imaging of RNA and protein at subcellular resolution",
+      "citation": "He S, et al. High-plex imaging of RNA and proteins at subcellular resolution in fixed tissue by spatial molecular imaging. Nat Biotechnol. 2022;40:1794-806.",
+      "refN": "20"
+    },
+    {
+      "topic": "Xenium / integrated single-cell, spatial and in situ analysis of tumor microenvironment",
+      "citation": "Janesick A, et al. High resolution mapping of the tumor microenvironment using integrated single-cell, spatial and in situ analysis. Nat Commun. 2023;14:8353.",
+      "refN": "23"
+    },
+    {
+      "topic": "Optical crowding limits high-plex imaging sensitivity (seqFISH+)",
+      "citation": "Eng C-HL, et al. Transcriptome-scale super-resolved imaging in tissues by RNA seqFISH+. Nature. 2019;568:235-9.",
+      "refN": "35"
+    },
+    {
+      "topic": "CPTAC bulk RNA-protein correlation reference data",
+      "citation": "Liang W-W, et al. Integrative multi-omic cancer profiling reveals DNA methylation patterns associated with therapeutic vulnerability and cell-of-origin. Cancer Cell. 2023;41:1567-1585.e7.",
+      "refN": "53"
+    },
+    {
+      "topic": "Prior systematic comparison of sequencing-based spatial transcriptomic methods",
+      "citation": "You Y, et al. Systematic comparison of sequencing-based spatial transcriptomic methods. Nat Methods. 2024;21:1743-54.",
+      "refN": "44"
+    }
+  ],
+  "flags": [
+    "Metadata: venue inferred as Genome Biology from DOI prefix s13059 (10.1186/s13059-026-03937-y) and Springer Nature note; not stated verbatim in the cleaned text. Volume/issue/pages not present.",
+    "Dates from text: Received 13 October 2025; Accepted 6 January 2026; Published online 12 January 2026.",
+    "Source inconsistency: abstract says targeted protein panel of '30 proteins' (excerpt e18) while Table 1, Results and Methods state 35 proteins; figuresNumbers and e12 use 35.",
+    "OCR quirks preserved verbatim throughout (e.g. 'fxed', 'parafn', 'fve', 'diferences', 'Te', 'profling', 'sparisity', 'efector'); not corrected.",
+    "Scope note: extensive Methods (sectioning, reagents, kit catalog numbers, sequencing cycles) are off-roadmap and not captured.",
+    "Read at source: ref #20 (He S, CosMx) and ref #23 (Janesick A, Xenium) are the primary platform papers worth first-hand citation; ref #13 (Moses & Pachter) for the spatial-preservation framing; ref #53 (Liang, CPTAC) for the bulk RNA-protein ~0.7 benchmark.",
+    "Paper is itself the primary source for all its same-sample benchmarking numbers (e.g. negative-probe rates, FOV sampling 5-55%, RNA-protein ~0.1)."
+  ]
+}

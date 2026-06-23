@@ -1,0 +1,425 @@
+{
+  "schemaVersion": "精练-4.0",
+  "citationKey": "28",
+  "title": "Whole-cell segmentation of tissue images with human-level performance using large-scale data annotation and deep learning",
+  "authors": "Noah F. Greenwald, Geneva Miller, Erick Moen, Alex Kong, Adam Kagel, Thomas Dougherty, Christine Camacho Fullaway, Brianna J. McIntosh, Ke Xuan Leow, Morgan Sarah Schwartz, Cole Pavelchek, Sunny Cui, Isabella Camplisson, Omer Bar-Tal, Jaiveer Singh, Mara Fong, Gautam Chaudhry, Zion Abraham, Jackson Moseley, Shiri Warshawsky, Erin Soon, Shirley Greenbaum, Tyler Risom, Travis Hollmann, Sean C. Bendall, Leeat Keren, William Graf, Michael Angelo, David Van Valen",
+  "venue": "Nature Biotechnology, 2022, 40(4):555-565",
+  "year": "2021",
+  "doi": "doi:10.1038/s41587-021-01094-0",
+  "readOn": "2026-06-18",
+  "sourceFile": "/Users/augustsirius/Desktop/已清洗_260617/28_cleaned.md",
+  "oneSentence": "The authors built TissueNet, a tissue-image segmentation dataset of >1 million manually labeled cells via a crowdsourced human-in-the-loop pipeline, and trained Mesmer, a deep-learning algorithm that performs whole-cell and nuclear segmentation of multiplexed tissue images at human-level accuracy across diverse tissue types and imaging platforms, enabling automated extraction of subcellular protein localization, N/C ratio, and cell morphology.",
+  "orientation": "A methods/resource paper on the spatial-imaging modality axis: it operates on intact tissue rather than dissociated cells, so it most directly feeds the spatial roadmap claim (scRNA-seq loses spatial info; imaging preserves it) and the modality axis (imaging/morphology, subcellular protein localization). Its benchmarking finding (architectures converge once trained on TissueNet; training-data scale, not model, drives accuracy) is usable support for 'bottleneck is data, not model.' It also touches the standard axis via the explicit need for a standardized cross-tissue antibody panel and the absence of generalized tools. Can serve as support (imaging recovers spatial/morphological information dissociation destroys; data is the bottleneck) and, more weakly, as a foil/nuance on temporal (its over-time analysis compares patient cohorts, not paired same-cell tracking).",
+  "excerpts": [
+    {
+      "id": "e1",
+      "text": "Unlike flow cytometry or single-cell RNA sequencing, tissue imaging is performed with intact specimens.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 2 (scRNA-seq loses spatial info)",
+          "direction": "supports"
+        },
+        {
+          "claimId": "axis C (spatial)",
+          "direction": "supports"
+        }
+      ],
+      "note": "States that tissue imaging works on intact specimens, in contrast to flow cytometry and scRNA-seq."
+    },
+    {
+      "id": "e2",
+      "text": "Understanding the structural and functional relationships present in tissues is a challenge at the forefront of basic and translational research. Recent advances in multiplexed imaging have expanded the number of transcripts and proteins that can be quantified simultaneously, opening new avenues for large-scale analysis of human tissue samples.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "axis C (spatial)",
+          "direction": "supports"
+        }
+      ],
+      "note": "Multiplexed imaging quantifies many transcripts and proteins simultaneously while preserving tissue structural and functional relationships."
+    },
+    {
+      "id": "e3",
+      "text": "Ambitious collaborative efforts such as the Human Tumor Atlas Network, the Human BioMolecular Atlas Program and the Human Cell Atlas are using these methods to comprehensively characterize the location, function and phenotype of cells in the human body. However, the tools needed for analysis and interpretation of these datasets at scale do not yet exist. The clearest example is the lack of a generalized algorithm for locating single cells in images.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9 (data islands / no standard / not comparable)",
+          "direction": "supports"
+        }
+      ],
+      "note": "Large atlas consortia generate spatial location/function/phenotype data, but the analysis tools to interpret these datasets at scale, including a generalized single-cell-locating algorithm, do not yet exist."
+    },
+    {
+      "id": "e4",
+      "text": "Since the features extracted through this process are the basis for downstream analyses, inaccuracies at this stage can have far-reaching consequences for interpreting image data. The difficulty of achieving accurate, automated cell segmentation is due in large part to the differences in cell shape, size and density across tissue types.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9 (data islands / no standard / not comparable)",
+          "direction": "supports"
+        }
+      ],
+      "note": "Segmentation errors propagate into all downstream single-cell analyses; cross-tissue heterogeneity makes automated segmentation hard."
+    },
+    {
+      "id": "e5",
+      "text": "A common pitfall is the need to perform manual, image-specific adjustments to produce useful segmentations. This lack of full automation poses a prohibitive barrier given the increasing scale of tissue imaging experiments.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9 (data islands / no standard / not comparable)",
+          "direction": "supports"
+        }
+      ],
+      "note": "Prior machine-learning segmentation required manual, image-specific tuning, which does not scale."
+    },
+    {
+      "id": "e6",
+      "text": "These algorithms are capable of achieving high accuracy, but require substantial amounts of annotated training data. Generating ground-truth data for cell segmentation is time-intensive, and, as a result, existing datasets are of modest size (10⁴–10⁵ annotations).",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1 (data is bottleneck; data-driven models generalize poorly)",
+          "direction": "supports"
+        }
+      ],
+      "note": "Deep learning accuracy hinges on large annotated training data, but ground-truth generation is laborious so existing datasets stay small (10^4-10^5)."
+    },
+    {
+      "id": "e7",
+      "text": "Moreover, most public datasets annotate the location of cell nuclei rather than whole cells, meaning that models trained on these datasets are capable only of performing nuclear segmentation, not cell segmentation. Thus, the lack of available data, combined with the difficulties of deploying pretrained models to the life science community, has hampered progress in whole-cell segmentation.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1 (data is bottleneck; data-driven models generalize poorly)",
+          "direction": "supports"
+        }
+      ],
+      "note": "Scarcity of whole-cell (vs nuclear) annotated data, plus deployment difficulty, has been the limiting factor for progress."
+    },
+    {
+      "id": "e8",
+      "text": "As a result of the scalability of our human-in-the-loop approach to data labeling, TissueNet is larger than the sum total of all previously published datasets (Fig. 1b), with 1.3 million whole-cell annotations and 1.2 million nuclear annotations. TissueNet contains 2D data from six imaging platforms (Fig. 1c), nine organs (Fig. 1d), and includes both histologically normal and diseased tissue (for example, tumor resections). TissueNet also encompasses three species, with images from human, mouse and macaque. Constructing TissueNet required >4,000 person-hours, the equivalent of nearly 2 person-years of full-time effort (Fig. 1e).",
+      "anchor": "A human-in-the-loop approach for constructing TissueNet",
+      "touchpoints": [
+        {
+          "claimId": "axis C (spatial)",
+          "direction": "supports"
+        }
+      ],
+      "note": "TissueNet aggregates 1.3M whole-cell and 1.2M nuclear annotations across 6 platforms, 9 organs, 3 species, normal and diseased tissue, requiring >4,000 person-hours."
+    },
+    {
+      "id": "e9",
+      "text": "In contrast, Cellpose and StarDist obtained equivalent performance to Mesmer when trained on TissueNet (Fig. 2b).",
+      "anchor": "Mesmer is a deep learning algorithm for accurate whole-cell segmentation",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1 (data is bottleneck; data-driven models generalize poorly)",
+          "direction": "supports"
+        }
+      ],
+      "note": "Distinct architectures (Cellpose, StarDist) reach Mesmer-equivalent accuracy once trained on the same TissueNet data, implying training data, not architecture, drives accuracy."
+    },
+    {
+      "id": "e10",
+      "text": "These comparisons allowed us to understand the relative contributions of deep learning methodology and training data to overall accuracy.",
+      "anchor": "Mesmer is a deep learning algorithm for accurate whole-cell segmentation",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1 (data is bottleneck; data-driven models generalize poorly)",
+          "direction": "supports"
+        }
+      ],
+      "note": "The benchmarking is explicitly designed to separate the contribution of methodology versus training data to accuracy."
+    },
+    {
+      "id": "e11",
+      "text": "In general, specialist models had poor performance when evaluated on data types not seen during training (Extended Data Fig. 3b). Dataset size likewise played an important role, as models trained on small subsets of TissueNet did not perform as well as those trained on the entire dataset (Extended Data Fig. 3d–h).",
+      "anchor": "Mesmer achieves human-level performance for segmentation",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1 (data is bottleneck; data-driven models generalize poorly)",
+          "direction": "supports"
+        }
+      ],
+      "note": "Models trained on narrow/small data subsets generalize poorly to unseen data types; diversity and scale of training data are needed for generalization."
+    },
+    {
+      "id": "e12",
+      "text": "One example is predicting the subcellular localization of proteins in cells, which can be used to quantify the nuclear translocation of transcription factors or degree of membrane staining of HER2 for the assessment of breast cancer.",
+      "anchor": "Mesmer enables accurate downstream analysis of tissue imaging data",
+      "touchpoints": [
+        {
+          "claimId": "axis A modality (protein / imaging-morphology)",
+          "direction": "supports"
+        },
+        {
+          "claimId": "axis C (spatial)",
+          "direction": "supports"
+        }
+      ],
+      "note": "Whole-cell segmentation enables quantifying subcellular (nuclear vs membrane) protein localization, e.g. TF nuclear translocation and HER2 membrane staining."
+    },
+    {
+      "id": "e13",
+      "text": "Subcellular localization predictions from Mesmer agreed with those from the ground-truth data (Fig. 4b). We observed predominantly nuclear expression for known nuclear markers (for example, Ki67 and HH3) and non-nuclear expression for membrane markers (for example, E-cadherin and HER2; Fig. 4b).",
+      "anchor": "Mesmer enables accurate downstream analysis of tissue imaging data",
+      "touchpoints": [
+        {
+          "claimId": "axis A modality (protein / imaging-morphology)",
+          "direction": "supports"
+        },
+        {
+          "claimId": "axis C (spatial)",
+          "direction": "supports"
+        }
+      ],
+      "note": "Imaging-based segmentation recovers correct subcellular spatial distribution of protein markers (nuclear markers nuclear, membrane markers non-nuclear)."
+    },
+    {
+      "id": "e14",
+      "text": "This analysis identified a subpopulation of cells with an N/C ratio of zero (Fig. 4e), indicating that no nucleus was observed in that cell. These cells arise when the imaging plane used to acquire the data captures the cytoplasm but not the nucleus.",
+      "anchor": "Mesmer enables accurate downstream analysis of tissue imaging data",
+      "touchpoints": [
+        {
+          "claimId": "axis C (spatial)",
+          "direction": "nuances"
+        }
+      ],
+      "note": "2D imaging planes can capture a cell's cytoplasm but miss its nucleus, an out-of-plane-nucleus artifact of imaging a single tissue section."
+    },
+    {
+      "id": "e15",
+      "text": "Cells with out-of-plane nuclei are missed by nucleus-based segmentation approaches but are captured by Mesmer.",
+      "anchor": "Mesmer enables accurate downstream analysis of tissue imaging data",
+      "touchpoints": [
+        {
+          "claimId": "axis C (spatial)",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Whole-cell (vs nucleus-based) segmentation recovers cells whose nucleus is out of the imaging plane."
+    },
+    {
+      "id": "e16",
+      "text": "However, some tissue types have complex morphologies that cannot be accurately captured with only two channels of imaging data. For example, the decidua, the mucosal membrane of the uterus, shows substantial variation in cell size and cell shape arising from the interaction between maternal and fetal cells.",
+      "anchor": "Lineage-aware segmentation quantifies morphological changes",
+      "touchpoints": [
+        {
+          "claimId": "axis A modality (protein / imaging-morphology)",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 7 (spatial organization / microenvironment alters cell state)",
+          "direction": "supports"
+        }
+      ],
+      "note": "Complex tissue morphology (decidua) arises from maternal-fetal cell interaction and requires more than two imaging channels to capture."
+    },
+    {
+      "id": "e17",
+      "text": "These additional markers provide crucial information about cell morphology during model training that is lost when they are combined into a single channel.",
+      "anchor": "Lineage-aware segmentation quantifies morphological changes",
+      "touchpoints": [
+        {
+          "claimId": "axis A modality (protein / imaging-morphology)",
+          "direction": "supports"
+        }
+      ],
+      "note": "Additional lineage-specific marker channels carry morphological information that is lost when markers are collapsed into a single channel."
+    },
+    {
+      "id": "e18",
+      "text": "To determine how these cellular morphologies changed over time in the human decidua, we divided the samples into two groups based on age: early (6–8 weeks) and late (16–18 weeks) gestational age.",
+      "anchor": "Lineage-aware segmentation quantifies morphological changes",
+      "touchpoints": [
+        {
+          "claimId": "axis B (temporal)",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Temporal change in cell morphology is inferred by comparing two cross-sectional patient age groups (early vs late gestation), not by tracking the same cells over time."
+    },
+    {
+      "id": "e19",
+      "text": "Our analysis demonstrates that whole-cell segmentation can make cell morphology a quantitative observable, bridging the historical knowledge of pathologists and modern multiplexed imaging methods.",
+      "anchor": "Lineage-aware segmentation quantifies morphological changes",
+      "touchpoints": [
+        {
+          "claimId": "axis A modality (protein / imaging-morphology)",
+          "direction": "supports"
+        }
+      ],
+      "note": "Segmentation turns cell morphology into a quantitative, measurable feature from multiplexed imaging."
+    },
+    {
+      "id": "e20",
+      "text": "Cell segmentation has been a principal bottleneck for the tissue imaging community, as previous methods required extensive manual curation and parameter tuning to produce usable results. Our experience has shown that these shortcomings can lead to months-long delays in analysis.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9 (data islands / no standard / not comparable)",
+          "direction": "supports"
+        }
+      ],
+      "note": "Segmentation has been a principal bottleneck because prior methods needed manual curation and tuning, causing months-long analysis delays."
+    },
+    {
+      "id": "e21",
+      "text": "Previous tissue datasets were not large enough to train accurate whole-cell segmentation models. As a result, previous efforts to generate accurate tissue-segmentation models have focused on nuclear segmentation, meaning that nearly all previous benchmarking has been limited to the evaluation of nuclear segmentation models.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1 (data is bottleneck; data-driven models generalize poorly)",
+          "direction": "supports"
+        }
+      ],
+      "note": "Insufficient dataset size, not method, confined prior tissue segmentation work and benchmarking to nuclear-only models."
+    },
+    {
+      "id": "e22",
+      "text": "Our experience developing TissueNet and Mesmer raises a natural question: how much data is enough? We observed diminishing returns to training data at \\~10⁴–10⁵ labels (Extended Data Fig. 3c). We believe that the effort required to go beyond this scale is warranted when accuracy is a paramount concern, for example for models applied across projects or in clinical contexts, which is the case for Mesmer.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1 (data is bottleneck; data-driven models generalize poorly)",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Accuracy shows diminishing returns at ~10^4-10^5 labels; going beyond is justified only when high accuracy across projects/clinical use is required."
+    },
+    {
+      "id": "e23",
+      "text": "Future challenges include the need for a standardized, cross-tissue antibody panel for cell segmentation. Development of such a panel would be a significant advance and would synergize with the work presented here.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9 (data islands / no standard / not comparable)",
+          "direction": "supports"
+        }
+      ],
+      "note": "The authors concede the field lacks a standardized cross-tissue antibody panel and that creating one would be a significant advance."
+    },
+    {
+      "id": "e24",
+      "text": "Whole-cell segmentation in three-dimensional (3D) is another challenge that will become more prominent as imaging throughput increases to allow routine collection of such datasets. Existing deep learning approaches for 3D instance segmentation are promising, but a 3D equivalent of TissueNet to power future models currently does not exist.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "axis C (spatial)",
+          "direction": "nuances"
+        }
+      ],
+      "note": "3D whole-cell segmentation remains an unsolved challenge because no 3D-equivalent training dataset yet exists; current work is 2D slices of 3D tissue."
+    },
+    {
+      "id": "e25",
+      "text": "Multiplexed imaging platforms analyze tissue slices that represent a two-dimensional cut through a 3D structure. As a result, sometimes the nucleus of a given cell is not captured in the image plane/ tissue section, whereas the rest of the cell is.",
+      "anchor": "Methods - Assessing frequency of out-of-plane nuclei",
+      "touchpoints": [
+        {
+          "claimId": "axis C (spatial)",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Multiplexed imaging measures 2D cuts of 3D tissue, so a cell's nucleus may fall outside the imaged section, an inherent spatial-sampling limitation."
+    },
+    {
+      "id": "e26",
+      "text": "Although some highly multiplexed platforms are capable of imaging dozens of markers at once, restricting TissueNet to include only the minimum number of channels necessary for whole-cell segmentation maximizes the number of imaging platforms where the resulting models can be used.",
+      "anchor": "Methods - TissueNet construction",
+      "touchpoints": [
+        {
+          "claimId": "axis A modality (protein / imaging-morphology)",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Highly multiplexed platforms image dozens of protein markers at once, but TissueNet deliberately uses only two channels to maximize cross-platform applicability."
+    }
+  ],
+  "figuresNumbers": [
+    {
+      "item": "TissueNet scale",
+      "contains": "1.3 million whole-cell annotations and 1.2 million nuclear annotations; >1 million manually labeled cells total; an order of magnitude more than all previously published segmentation training datasets; twice as many nuclear and 16 times as many whole-cell labels as all previously published datasets combined."
+    },
+    {
+      "item": "TissueNet coverage",
+      "contains": "6 imaging platforms, 9 organs, 3 species (human, mouse, macaque), normal and diseased tissue; >4,000 person-hours (~2 person-years) to construct."
+    },
+    {
+      "item": "Fig. 2b / Table (accuracy)",
+      "contains": "Mesmer F1 = 0.82 (text) / 0.820 (table); FeatureNet F1 = 0.63 (text) / 0.583 (table); Cellpose F1 = 0.41 (text) / 0.40 (table). Table also: Mesmer Prec .83, Recall 0.81, Jacc 0.84."
+    },
+    {
+      "item": "Speed (Fig. 2b)",
+      "contains": "Mesmer only 13% slower than FeatureNet despite larger model capacity; Mesmer 20 times faster than Cellpose."
+    },
+    {
+      "item": "Human-parity (Fig. 3d)",
+      "contains": "No significant difference between human-to-human and human-to-Mesmer F1 scores (P = 0.93); five independent expert annotators; four board-certified pathologists rated Mesmer and annotator predictions equivalently."
+    },
+    {
+      "item": "N/C ratio (Fig. 4d)",
+      "contains": "Pearson's r = 0.87 correlation between predicted and ground-truth nuclear-to-whole-cell (N/C) ratios across all cells in TissueNet."
+    },
+    {
+      "item": "Subcellular localization (Fig. 4b)",
+      "contains": "n = 1069 cells; nuclear markers Ki67 and HH3 predominantly nuclear, membrane markers E-cadherin and HER2 non-nuclear."
+    },
+    {
+      "item": "Diminishing returns (Extended Data Fig. 3c)",
+      "contains": "Training-data accuracy shows diminishing returns at ~10^4-10^5 labels; existing prior datasets were 10^4-10^5 annotations."
+    },
+    {
+      "item": "Deployment thresholds (Fig. 6)",
+      "contains": "Web portal for moderate data (<10^3 1-megapixel images); local Docker/container deployment for larger volumes (>10^3 1-megapixel images)."
+    }
+  ],
+  "primarySources": [
+    {
+      "topic": "Cellpose generalist cell segmentation algorithm (compared as foil)",
+      "citation": "Stringer, C., Wang, T., Michaelos, M. & Pachitariu, M. Cellpose: a generalist algorithm for cellular segmentation. Nat. Methods 18, 100-106 (2021)",
+      "refN": "28"
+    },
+    {
+      "topic": "StarDist star-convex polyhedra segmentation (equivalent when trained on TissueNet)",
+      "citation": "Weigert, M., Schmidt, U., Haase, R., Sugawara, K. & Myers, G. Star-convex polyhedra for 3D object detection and segmentation in microscopy. WACV 3655-3662 (2020)",
+      "refN": "53"
+    },
+    {
+      "topic": "Human Cell Atlas consortium",
+      "citation": "Regev, A. et al. The human cell atlas white paper. Preprint at arXiv 1810.05192v1 (2018)",
+      "refN": "15"
+    },
+    {
+      "topic": "Human BioMolecular Atlas Program (HuBMAP)",
+      "citation": "Snyder, M. P. et al. The human body at cellular resolution: the NIH Human Biomolecular Atlas Program. Nature 574, 187-192 (2019)",
+      "refN": "14"
+    },
+    {
+      "topic": "Human Tumor Atlas Network (charting tumor transitions across space and time)",
+      "citation": "Rozenblatt-Rosen, O. et al. The human tumor atlas network: charting tumor transitions across space and time at single-cell resolution. Cell 181, 236-249 (2020)",
+      "refN": "13"
+    },
+    {
+      "topic": "MIBI-TOF multiplexed ion beam imaging platform (used for subcellular protein/morphology data)",
+      "citation": "Keren, L. et al. MIBI-TOF: a multiplexed imaging platform relates cellular phenotypes and tissue structure. Sci. Adv. 5, eaax5851 (2019)",
+      "refN": "2"
+    },
+    {
+      "topic": "Highly multiplexed imaging expands transcripts/proteins quantified simultaneously (origin of capability)",
+      "citation": "Giesen, C. et al. Highly multiplexed imaging of tumor tissues with subcellular resolution by mass cytometry. Nat. Methods 11, 417-422 (2014)",
+      "refN": "1"
+    }
+  ],
+  "flags": [
+    "Metadata: DOI 10.1038/s41587-021-01094-0 confirmed from text (appears multiple times). Received 1 March 2021; Accepted 14 September 2021; Published online 18 November 2021 (confirmed in text). Journal is Nature Biotechnology (inferred from peer-review line 'Nature Biotechnology thanks the anonymous reviewers'); the cleaned MD does not print volume/issue/page in the body, so venue 'Nature Biotechnology, 2022, 40(4):555-565' is the standard published citation but the exact volume/issue/pages are NOT verifiable from this source text - treat as unverified beyond journal name and online date.",
+    "Authors copied verbatim from the author block; superscript affiliation/corresponding markers stripped. Source prints full given names (not initials).",
+    "Source inconsistency: main text gives Mesmer F1 = 0.82, FeatureNet 0.63, Cellpose 0.41, while the OCR table (line 397) gives 0.820, 0.583 (FeatureNet) and 0.40 (Cellpose). Both recorded in figuresNumbers; the table appears to be a partially garbled OCR of Fig. 2b.",
+    "Scope note: this is a spatial-imaging methods/resource paper (segmentation tooling). It is on-roadmap for the spatial axis, the imaging/morphology modality, and the data-is-bottleneck claim; its 'over time' decidua analysis is cross-sectional cohort comparison, not paired temporal tracking - tagged as 'nuances' on axis B, not support.",
+    "OCR quirks preserved in excerpts where present (e.g. tilde-escaped '\\~' in e22). Numeric superscript citation markers were removed from quoted text for readability of the verbatim sentence."
+  ]
+}

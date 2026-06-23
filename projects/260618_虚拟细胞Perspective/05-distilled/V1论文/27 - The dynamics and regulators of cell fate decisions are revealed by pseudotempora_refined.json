@@ -1,0 +1,346 @@
+{
+  "schemaVersion": "精练-4.0",
+  "citationKey": "27",
+  "title": "The dynamics and regulators of cell fate decisions are revealed by pseudotemporal ordering of single cells",
+  "authors": "Cole Trapnell, Davide Cacchiarelli, Jonna Grimsby, Prapti Pokharel, Shuqiang Li, Michael Morse, Niall J Lennon, Kenneth J Livak, Tarjei S Mikkelsen & John L Rinn",
+  "venue": "unverified; see flags",
+  "year": "unverified; see flags",
+  "doi": null,
+  "readOn": "2026-06-18",
+  "sourceFile": "/Users/augustsirius/Desktop/已清洗_260617/27_cleaned.md",
+  "oneSentence": "The paper introduces Monocle, an unsupervised algorithm that orders single-cell RNA-Seq profiles in 'pseudotime' along a trajectory (minimum spanning tree / PQ-tree reconstruction) to recover transcriptional dynamics of differentiation without prior marker knowledge, applied to human myoblast differentiation where it resolved sequential waves of gene regulation and identified new regulators.",
+  "orientation": "This is a foundational trajectory-inference / pseudotime method and is directly relevant to the temporal axis and Claim 3 (destructive sequencing cannot pair-observe the same cell over time). It both embodies the workaround we critique (reconstructing a temporal axis computationally from a single destructive snapshot, i.e. ordering distinct cells as surrogate time points) AND concedes the underlying constraint (each cell is measured once, time is inferred not observed). It can therefore serve as support for 'time is reconstructed from distributions, not real trajectories' and as the named method our thesis says is a proxy for missing time-course data. It also touches Claim 1 (averaging artifacts / Simpson's paradox in bulk data motivating single-cell) and Claim 2 (dissociation/in-vitro context).",
+  "excerpts": [
+    {
+      "id": "e1",
+      "text": "Here we describe Monocle, an unsupervised algorithm that increases the temporal resolution of transcriptome dynamics using single-cell RNA-Seq data collected at multiple time points.",
+      "anchor": "Abstract",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "challenges"
+        },
+        {
+          "claimId": "temporal",
+          "direction": "challenges"
+        }
+      ],
+      "note": "States Monocle's purpose: increase temporal resolution of dynamics from scRNA-Seq collected at multiple real time points."
+    },
+    {
+      "id": "e2",
+      "text": "In essence, one RNA-Seq experiment would constitute a time series, with each cell representing a distinct time point along a continuum.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "challenges"
+        },
+        {
+          "claimId": "temporal",
+          "direction": "challenges"
+        }
+      ],
+      "note": "Core conceptual move: distinct individual cells are treated as surrogate time points; a static snapshot of many cells stands in for a time series."
+    },
+    {
+      "id": "e3",
+      "text": "Monocle orders single-cell expression profiles in ‘pseudotime’—a quantitative measure of progress through a biological process.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "challenges"
+        },
+        {
+          "claimId": "temporal",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Defines pseudotime as a computed measure of progress, explicitly distinct from real elapsed time."
+    },
+    {
+      "id": "e4",
+      "text": "Each point in the image of the function is the state of the cell at s, which can be thought of as progress through the biological process, rather than time. That is, two cells might execute exactly the same sequence of changes as they differentiate but take different amounts of time to do so.",
+      "anchor": "Online Methods - The single cell ordering problem",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "nuances"
+        },
+        {
+          "claimId": "temporal",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Explicitly distinguishes inferred 'progress' from real time; pseudotime decouples ordering from elapsed time."
+    },
+    {
+      "id": "e5",
+      "text": "This ‘pseudotemporal’ scale of differentiation is numerically arbitrary and will of course vary from experiment to experiment, but nevertheless is useful for downstream analysis.",
+      "anchor": "Online Methods - cell ordering problem (Definition 2)",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "nuances"
+        },
+        {
+          "claimId": "temporal",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Concedes pseudotime is a numerically arbitrary, relative scale, not an absolute physical time measurement."
+    },
+    {
+      "id": "e6",
+      "text": "single-cell proteomic methods rely on a priori knowledge of key distinguishing markers",
+      "anchor": "Abstract",
+      "touchpoints": [
+        {
+          "claimId": "modality",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Characterizes contemporary single-cell proteomic methods as requiring a priori known markers (a stated limitation of those methods)."
+    },
+    {
+      "id": "e7",
+      "text": "Recently, several studies carried out at single-cell resolution revealed high cell-to-cell variation in the expression of most genes, even key developmental regulators, during the differentiation process. Such high variability can complicate analysis of these experiments.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Notes high cell-to-cell expression variability complicates analysis, motivating ordering methods over raw averages."
+    },
+    {
+      "id": "e8",
+      "text": "In general, averages of measurements from two or more distinct groups of data points can follow trends that qualitatively differ from the trend that describes each group, a phenomenon known as Simpson’s paradox.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Invokes Simpson's paradox: averaging across heterogeneous cells can produce misleading aggregate trends."
+    },
+    {
+      "id": "e9",
+      "text": "As a population of cells captured at the same time may include many distinct intermediate differentiation states, considering only its average properties would mask trends occurring across individual cells.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Argues that averaging over an asynchronous population masks real per-cell trends; single-cell resolution is needed."
+    },
+    {
+      "id": "e10",
+      "text": "Solving this problem by experimental synchronization of cells or by stringent isolation of precursors at distinct stages is challenging and can sharply alter differentiation kinetics.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concedes that the experimental route to clean temporal data (synchronization / stage isolation) is hard and perturbs the very kinetics being measured, motivating the computational surrogate."
+    },
+    {
+      "id": "e11",
+      "text": "However, because these algorithms operate on bulk expression measurements, they are sensitive to mixture effects arising from Simpson’s paradox and other averaging artifacts.",
+      "anchor": "Introduction",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Bulk-based ordering algorithms are confounded by mixture/averaging artifacts, a limitation single-cell ordering aims to overcome."
+    },
+    {
+      "id": "e12",
+      "text": "A time-series analysis of myoblast differentiation with bulk RNA-Seq identified up- and downregulated genes but did not identify the transient clusters or distinguish the early from late regulation visible with pseudotemporally ordered single cells (Supplementary Fig. 9). Furthermore, dynamic range of expression was compressed for most genes, confirming that failure to account for variability in progress through differentiation leads directly to the effects associated with Simpson’s paradox.",
+      "anchor": "Results",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        },
+        {
+          "claimId": "temporal",
+          "direction": "challenges"
+        }
+      ],
+      "note": "Empirically shows bulk time-series misses early/late and transient structure and compresses dynamic range, while pseudotime ordering recovers it."
+    },
+    {
+      "id": "e13",
+      "text": "even cells in a genetically and epigenetically clonal population might progress through differentiation at different rates in vitro, depending on positioning and physical contact with neighboring cells.",
+      "anchor": "Online Methods - The single cell ordering problem",
+      "touchpoints": [
+        {
+          "claimId": "Claim 7",
+          "direction": "supports"
+        }
+      ],
+      "note": "Notes that a cell's progression rate depends on its position and physical contact with neighbors (spatial/microenvironment dependence of cell state)."
+    },
+    {
+      "id": "e14",
+      "text": "Moreover, single-cell analysis distinguishes cells of interest from contaminating cell types such as interstitial mesenchymal cells without experimental isolation that might disrupt cell-cell interactions important in the in vivo niche.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "Claim 7",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Argues experimental isolation/purification can disrupt cell-cell interactions important in the in vivo niche; concedes the relevance of spatial niche context."
+    },
+    {
+      "id": "e15",
+      "text": "maintaining in vitro differentiation kinetics that resemble physiological cell crosstalk occurring in the in vivo niche.",
+      "anchor": "Results",
+      "touchpoints": [
+        {
+          "claimId": "Claim 7",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Frames in-vitro kinetics as only resembling in-vivo niche crosstalk, implicitly conceding the in-vivo spatial niche is the reference standard."
+    },
+    {
+      "id": "e16",
+      "text": "We captured between 49 and 77 cells at each of four time points after the switch to DM using the Fluidigm $\\mathrm { C _ { 1 } }$ microfluidic system. RNA from each cell was isolated and used to construct a single mRNA-Seq library per cell, which was then sequenced to a depth of \\~4 million reads per library, resulting in a complete gene expression profile for each cell",
+      "anchor": "Results",
+      "touchpoints": [
+        {
+          "claimId": "Claim 2",
+          "direction": "nuances"
+        },
+        {
+          "claimId": "Claim 3",
+          "direction": "supports"
+        }
+      ],
+      "note": "Describes the destructive single-cell workflow: cells dissociated and lysed, RNA isolated per cell, one library per cell, only four discrete real time points captured."
+    },
+    {
+      "id": "e17",
+      "text": "Monocle placed subsets as small as 50 cells in pseudotemporal order highly similar (Spearman ≥ 0.8) to their relative order in the full data set. The algorithm retained the ability to detect dynamically regulated genes with high precision (≥95%) over all designs and with increasing recall as more of the cells were included",
+      "anchor": "Results",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "supports"
+        }
+      ],
+      "note": "Quantifies robustness of pseudotemporal ordering (Spearman >= 0.8 down to 50 cells; precision >= 95%)."
+    },
+    {
+      "id": "e18",
+      "text": "This pseudotime ordering pinpoints key events in differentiation, such as the ID1/MYOG switch, that are masked both by conventional bulk cell expression profiling and by single-cell expression profiles ordered by time collected.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "temporal",
+          "direction": "challenges"
+        },
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Claims pseudotime reveals events masked both by bulk profiling and by ordering cells by their real collection time."
+    },
+    {
+      "id": "e19",
+      "text": "Sequencing-based measurements of small RNAs and mRNAs from the same cell will provide answers to such systems-level questions.",
+      "anchor": "Discussion",
+      "touchpoints": [
+        {
+          "claimId": "modality",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Anticipates joint measurement of multiple molecular layers (small RNA + mRNA) from the same cell to answer systems-level questions."
+    },
+    {
+      "id": "e20",
+      "text": "Looking at average behavior in a group of cells is thus not necessarily faithful to the process through which an individual cell transits.",
+      "anchor": "Online Methods - The single cell ordering problem",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Restates that population-average behavior is not faithful to the individual-cell trajectory."
+    }
+  ],
+  "figuresNumbers": [
+    {
+      "item": "Cells captured",
+      "contains": "Between 49 and 77 cells captured at each of four time points (0, 24, 48, 72 h after switch to differentiation medium), via Fluidigm C1."
+    },
+    {
+      "item": "Sequencing depth",
+      "contains": "~4 million reads per single-cell C1 library; 10-20 million reads per bulk TruSeq library; 100-bp paired-end on HiSeq 2500."
+    },
+    {
+      "item": "Dynamically regulated genes",
+      "contains": "1,061 genes dynamically regulated during differentiation at FDR < 5% (Fig. 2c)."
+    },
+    {
+      "item": "Robustness benchmark",
+      "contains": "Subsets as small as 50 cells ordered with Spearman >= 0.8 vs full-data order; dynamically-regulated-gene detection precision >= 95% across all designs."
+    },
+    {
+      "item": "Regulatory analysis",
+      "contains": "Upregulated genes enriched for regulatory elements containing binding motifs for 175 transcription factors; loss-of-function screen on 11 candidate factors with 44 distinct shRNAs; significantly altered differentiation (FDR < 5%) for MZF1, ZIC1, XBP1, USF1; eight previously unappreciated transcription factors identified."
+    },
+    {
+      "item": "Quality filter",
+      "contains": "Libraries with < 1 million reads or < 80% of fragments mapping to nonmitochondrial protein-coding genes were excluded."
+    }
+  ],
+  "primarySources": [
+    {
+      "topic": "Single-cell mass cytometry tracking up to 32 proteins to reconstruct differentiation hierarchies (single-cell ordering precedent)",
+      "citation": "Bendall, S.C. et al. Single-cell mass cytometry of differential immune and drug responses across a human hematopoietic continuum. Science 332, 687-696 (2011)",
+      "refN": "1"
+    },
+    {
+      "topic": "High cell-to-cell variability in single-cell transcriptomics during differentiation",
+      "citation": "Shalek, A.K. et al. Single-cell transcriptomics reveals bimodality in expression and splicing in immune cells. Nature 498, 236-240 (2013)",
+      "refN": "2"
+    },
+    {
+      "topic": "Simpson's paradox (averaging artifact)",
+      "citation": "Simpson, E.H. The interpretation of interaction in contingency tables. J. R. Stat. Soc. Series B Stat. Methodol. 13, 238-241 (1951)",
+      "refN": "8"
+    },
+    {
+      "topic": "Temporal ordering of bulk microarray samples (algorithmic predecessor that Monocle extends)",
+      "citation": "Magwene, P.M., Lizardi, P. & Kim, J. Reconstructing the temporal ordering of biological samples using microarray data. Bioinformatics 19, 842-850 (2003)",
+      "refN": "10"
+    },
+    {
+      "topic": "SPADE - extracting cellular hierarchy from high-dimensional cytometry (single-cell lineage reconstruction precedent)",
+      "citation": "Qiu, P. et al. Extracting a cellular hierarchy from high-dimensional cytometry data with SPADE. Nat. Biotechnol. 29, 886-891 (2011)",
+      "refN": "13"
+    }
+  ],
+  "flags": [
+    "Metadata unverified: the cleaned MD contains no DOI, venue, or publication date for this paper (only a DOI for ref 16). venue/year set to 'unverified; see flags', doi=null. Self-citations (refs 30, 34) are Nat. Protoc. / Nat. Biotechnol., consistent with a Nature-family venue; this paper is widely known as Trapnell et al., Nat. Biotechnol. 32:381-386 (2014), but that is NOT stated in the source text and is therefore not asserted here.",
+    "OCR quirks preserved verbatim in excerpts e4, e5, e16 (LaTeX-rendered math and subscript artifacts such as '$\\mathrm { C _ { 1 } }$', stray glyphs).",
+    "Scope note: this paper is in-scope chiefly for the temporal axis / Claim 3 (computational reconstruction of a time axis from destructive single-snapshot scRNA-Seq). Its myogenesis biology, specific transcription-factor regulators, and detailed algorithmic internals (PQ-tree, ICA, GAM/Tobit) are off-roadmap and largely not captured.",
+    "Direction note: Monocle's pseudotime is tagged both 'challenges' (it computationally recovers a temporal axis, partially countering 'we have no temporal data') and 'nuances' (it concedes pseudotime is inferred progress, numerically arbitrary, and not real paired time-course observation) - a downstream agent can deploy it as either the workaround we critique or the concession we build on."
+  ]
+}

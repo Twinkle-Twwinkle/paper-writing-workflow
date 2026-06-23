@@ -1,0 +1,520 @@
+{
+  "schemaVersion": "精练-4.0",
+  "citationKey": "06",
+  "title": "Insights, opportunities, and challenges provided by large cell atlases",
+  "authors": "Martin Hemberg, Federico Marini, Shila Ghazanfar, Ahmad Al Ajami, Najla Abassi, Benedict Anchang, Bérénice A. Benayoun, Yue Cao, Ken Chen, Yesid Cuesta-Astroz, Zachary DeBruine, Calliope A. Dendrou, Iwijn De Vlaminck, Katharina Imkeller, Ilya Korsunsky, Alex R. Lederer, Jessica Jingyi Li, Pieter Meysman, Clint L. Miller, Kerry A. Mullan, Uwe Ohler, Pratibha Panwar, Nikolaos Patikas, Jonas Schuck, Jacqueline H. Y. Siu, Timothy J. Triche Jr., Alex Tsankov, Sander W. van der Laan, Masanao Yajima, Jean Yang, Fabio Zanini and Ivana Jelic",
+  "venue": "unverified; see flags",
+  "year": "2025",
+  "doi": null,
+  "readOn": "2026-06-18",
+  "sourceFile": "/Users/augustsirius/Desktop/已清洗_260617/06 - Insights, opportunities, and challenges provided by large cell atlases_cleaned.md",
+  "oneSentence": "A CZI-affiliated multi-author review surveys the building, maintenance, and use of large single-cell cell atlases (e.g., CELLxGENE, HuBMAP, DISCO), cataloging current resources and the computational opportunities and challenges around data ingestion, metadata, integration, benchmarking, multimodal/spatial expansion, and biomedical use.",
+  "orientation": "A review of the dominant dissociated-scRNA-seq atlas paradigm; it generally champions that paradigm but openly concedes the very gaps our thesis builds on (atlases are almost entirely scRNA-seq, spatial and other modalities are still 'beyond' the norm, batch effects cannot be eliminated, metadata/standards are immature, cross-dataset integration struggles, proteomics/metabolomics single-cell profiling is not yet available at scale). Most useful as conceded-fact support for the modality-breadth, spatial, standards/integration, and benchmarking-comparability claims (Claims 2, 4, 8, 9; axes A/C/standard), and as a named mainstream-perspective foil; some lines on biological replicates and trajectories also touch the temporal axis (Claim 3 / axis B). A routing hint, non-binding.",
+  "excerpts": [
+    {
+      "id": "e1",
+      "text": "By making sure that data is uniformly processed and adheres to standard formats, it also becomes interoperable and reusable. Although straightforward in principle, the scale and complexity of a cell atlas make it difcult to achieve these goals.",
+      "anchor": "Data ingestion, access, and representation",
+      "touchpoints": [
+        {
+          "claimId": "standard",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concedes that achieving interoperability/reusability via uniform processing and standard formats is difficult at atlas scale."
+    },
+    {
+      "id": "e2",
+      "text": "Although preprocessing can improve the internal consistency, it does not prevent the emergence of discrepancies within and across atlases. A particular concern for cell atlases is batch efects, technical artifacts that emerge due to diferences in how the data was obtained and processed. Although batch efects can be reduced, they cannot be eliminated altogether.",
+      "anchor": "Data pre-processing",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        },
+        {
+          "claimId": "standard",
+          "direction": "supports"
+        }
+      ],
+      "note": "States that discrepancies arise within and across atlases and that batch effects can be reduced but never fully eliminated."
+    },
+    {
+      "id": "e3",
+      "text": "As no repository will be able to span all conditions, populations, organisms, cells, and modalities of interest, maintaining this possibility is a key requirement for enabling meta-analyses.",
+      "anchor": "Data pre-processing",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concedes no single repository spans all conditions/modalities, so cross-dataset meta-analysis machinery is required."
+    },
+    {
+      "id": "e4",
+      "text": "However, tools for indexing, metadata standardization, and cross-cohort queries are in their infancy, and this limits the ability of users to identify suitable datasets [2, 17].",
+      "anchor": "Data accessibility, interoperability, and reusability",
+      "touchpoints": [
+        {
+          "claimId": "standard",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "States metadata standardization and cross-cohort query tooling are still in their infancy."
+    },
+    {
+      "id": "e5",
+      "text": "On the other hand, missing or incomplete metadata could mislead data interpretation (e.g., in a human study, efects that are actually due to donor sex or age would erroneously be attributed to treatment).",
+      "anchor": "Metadata and ontologies",
+      "touchpoints": [
+        {
+          "claimId": "standard",
+          "direction": "supports"
+        }
+      ],
+      "note": "Warns that missing/incomplete metadata (e.g., donor sex/age) can confound and mislead interpretation."
+    },
+    {
+      "id": "e6",
+      "text": "For example, metadata capturing timepoints post-infection enables reconstruction of disease trajectories.",
+      "anchor": "Metadata and ontologies",
+      "touchpoints": [
+        {
+          "claimId": "Claim 3",
+          "direction": "nuances"
+        },
+        {
+          "claimId": "B",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Notes that timepoint metadata across samples enables reconstruction of disease trajectories (cross-sample time, not paired single-cell tracking)."
+    },
+    {
+      "id": "e7",
+      "text": "However, when aggregating datasets, it is often the case that they have not been annotated consistently, and assigning a consistent set of cell labels remains a major challenge. No universally accepted defnition of cell types exists; however, as our knowledge of cell biology and identities is ever improving, consequently, ontologies must remain fexible to accommodate the diversity of cell types, states, and conditions.",
+      "anchor": "Metadata and ontologies",
+      "touchpoints": [
+        {
+          "claimId": "standard",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concedes inconsistent annotation across aggregated datasets and the lack of a universally accepted cell-type definition."
+    },
+    {
+      "id": "e8",
+      "text": "The integration of disease data into atlases also presents its own set of difculties as disease-associated cells may acquire distinct cell states, requiring expanded annotations in the metadata. Moreover, when querying a “normal” atlas with disease-specifc data, researchers must account for the potential lack of representation or mismatch in cell types [26].",
+      "anchor": "Metadata and ontologies",
+      "touchpoints": [
+        {
+          "claimId": "Claim 7",
+          "direction": "nuances"
+        },
+        {
+          "claimId": "standard",
+          "direction": "supports"
+        }
+      ],
+      "note": "Disease/perturbed cell states acquire distinct identities that may not be represented in a normal reference atlas, complicating mapping."
+    },
+    {
+      "id": "e9",
+      "text": "Te typical workfow when using a cell atlas requires a user to frst identify and download the relevant datasets. Given their size, already exceeding 1 TB using standard data structures, this can require signifcant bandwidth and be prohibitive to many research labs without high-memory computing resources.",
+      "anchor": "Data representation and subsampling",
+      "touchpoints": [
+        {
+          "claimId": "Other",
+          "direction": "nuances",
+          "otherLabel": "Atlas scale creates compute/storage barriers to reuse"
+        }
+      ],
+      "note": "Reports atlas datasets already exceed 1 TB with standard structures, creating bandwidth/memory barriers for many labs."
+    },
+    {
+      "id": "e10",
+      "text": "Subsampling can ease computation over diverse datasets and help reduce bias of highly represented signals, but may also compromise the unprecedented modeling power that comes with a dataset of this size. Issues include racial and gender bias in samples [28], over-representation of specifc cell types [29], opportunistic collection of rare samples [30], but the best approach depends on the scientifc goals of the study.",
+      "anchor": "Data representation and subsampling",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "nuances"
+        },
+        {
+          "claimId": "standard",
+          "direction": "supports"
+        }
+      ],
+      "note": "Notes biases (racial/gender, cell-type over-representation, opportunistic rare sampling) embedded in atlas data and the tradeoffs of subsampling."
+    },
+    {
+      "id": "e11",
+      "text": "Simple random subsampling does not address signal representation and can miss rare subpopulations [31, 32], and it is desirable to balance the tradeof between representing the true proportions of cell types and full extent of cell identities of rare cell types [33].",
+      "anchor": "Data representation and subsampling",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "nuances"
+        }
+      ],
+      "note": "States random subsampling can miss rare subpopulations and distort proportions; a representation tradeoff."
+    },
+    {
+      "id": "e12",
+      "text": "In modern single-cell analysis, this data integration is often key for harmonizing distinct datasets, and it serves as an initial step for meta-analysis of single-cell datasets. Appropriate meta-analyses will not only have to consider corrected cell type labels, but also other statistical factors that remain challenging to deal with.",
+      "anchor": "Data integration and meta-analysis",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        },
+        {
+          "claimId": "standard",
+          "direction": "supports"
+        }
+      ],
+      "note": "Data integration to harmonize distinct datasets is a prerequisite for meta-analysis, with residual challenging statistical factors."
+    },
+    {
+      "id": "e13",
+      "text": "Numerous methods for carrying out batch integration have been proposed in recent years, resulting in substantial progress in terms of performance, as demonstrated by independent benchmarks [37, 40, 41]. However, several challenges remain, and existing methods often struggle in more complex scenarios, e.g., involving diferent species [42], imbalanced datasets [43], or very large numbers of cells.",
+      "anchor": "Data integration and meta-analysis",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concedes integration methods still struggle with cross-species, imbalanced, and very large datasets despite benchmarked progress."
+    },
+    {
+      "id": "e14",
+      "text": "Importantly, even for single-cell atlases, biological replicates should consist of samples procured from independent biological sources/individuals, and not just independent cells from the same sample [50–52]. Tus, a key feature of context-aware cell atlases is the inclusion of sufcient independent biological samples across conditions to account for inter-individual variability. Tis requires sufcient numbers of true biological replicates, similar to bulk approaches [53].",
+      "anchor": "Building cell atlases in context",
+      "touchpoints": [
+        {
+          "claimId": "standard",
+          "direction": "supports"
+        }
+      ],
+      "note": "Argues single cells are not biological replicates; true independent biological replicates across conditions are required, as in bulk."
+    },
+    {
+      "id": "e15",
+      "text": "One of the main challenges when comparing methods is that for most problems, we do not have an independent ground truth. Hence, evaluating the performance will involve some degree of subjectivity. One way of circumventing this challenge is to use simulations to create synthetic data. However, most synthetic datasets are unable to capture the full spectrum of complexities found in real datasets, and more work is required to build on recent developments [56].",
+      "anchor": "Benchmarking and development of novel methods",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concedes the lack of independent ground truth in benchmarking and that synthetic data fail to capture real-data complexity."
+    },
+    {
+      "id": "e16",
+      "text": "Today, most analysis tools and strategies are designed within the context of a smaller number of datasets or total cells. Many methods that are commonly used may not scale well to tens of millions of cells and thousands of conditions, and consequently, there is a need to increase computational and algorithmic efciency.",
+      "anchor": "Benchmarking and development of novel methods",
+      "touchpoints": [
+        {
+          "claimId": "Other",
+          "direction": "nuances",
+          "otherLabel": "Existing methods do not scale to atlas-size data"
+        }
+      ],
+      "note": "States most current methods do not scale to tens of millions of cells and thousands of conditions."
+    },
+    {
+      "id": "e17",
+      "text": "Foundation models learn generalizable representations of cell type and state from gene expression profles, and they can be used to annotate new datasets, project them into shared latent spaces, infer missing modalities, and simulate responses to genetic or pharmacological perturbations. Despite these advances, widespread practical use remains limited. Current challenges include technical barriers to applying these models in user-friendly interfaces, dealing with memory and computational infrastructure requirements, limited interpretability and explainability of model predictions and representations, and the lack of widespread stress-testing of models on noisy, rare and disease-specifc single cell datasets to improve trust.",
+      "anchor": "Benchmarking and development of novel methods",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concedes single-cell foundation models are learned from gene-expression profiles and have limited practical use, interpretability, and stress-testing."
+    },
+    {
+      "id": "e18",
+      "text": "Single-cell RNA-seq was the frst high-throughput method that allows for a high-plex characterization of individual cells, and thus it has been the most widely used approach [1, 88]. However, there are numerous other single-cell technologies under active development, and we foresee that over the coming years cell atlases will see an infux of other modalities [89].",
+      "anchor": "Beyond atlases of dissociated single-cell transcriptomes",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        },
+        {
+          "claimId": "A",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concedes scRNA-seq has been the dominant approach and that other modalities are only anticipated to flow into atlases in coming years."
+    },
+    {
+      "id": "e19",
+      "text": "This starts with the organizations supporting the cell atlas, which must develop standards and protocols for how to process and curate other modalities [90]. Ensuring that diferent modalities can be combined for joint analyses is key, but it will present some major challenges, e.g., developing pre-processing pipelines, ontologies, and determining what metadata to include.",
+      "anchor": "Beyond atlases of dissociated single-cell transcriptomes",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        },
+        {
+          "claimId": "standard",
+          "direction": "supports"
+        }
+      ],
+      "note": "States that supporting other modalities requires new standards, pipelines, ontologies, and metadata, and that joint multimodal analysis is a major challenge."
+    },
+    {
+      "id": "e20",
+      "text": "As multi-omics datasets become more complex and heterogeneous, future integration frameworks will need to account for missing modalities, difering noise characteristics, and scale.",
+      "anchor": "Beyond atlases of dissociated single-cell transcriptomes",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        }
+      ],
+      "note": "States future multi-omics integration must handle missing modalities, differing noise, and scale."
+    },
+    {
+      "id": "e21",
+      "text": "Perhaps the most important direction of new technologies is toward spatial methods, primarily for transcriptomics and proteomics, but other modalities are likely to follow. Spatial data brings numerous challenges along with great potential for additional insights [94].",
+      "anchor": "Beyond atlases of dissociated single-cell transcriptomes",
+      "touchpoints": [
+        {
+          "claimId": "Claim 2",
+          "direction": "supports"
+        },
+        {
+          "claimId": "C",
+          "direction": "supports"
+        }
+      ],
+      "note": "Frames spatial transcriptomics and proteomics as the most important emerging direction, signaling spatial is not yet standard in atlases."
+    },
+    {
+      "id": "e22",
+      "text": "Tis representation is relatively straightforward for individual datasets, and indeed is implemented in cell atlas interfaces such as CxG, but for multiple samples it becomes much more challenging. For multiple samples, it may be more useful to map cells/spots to a common coordinate system, either informed by relative landmarks [95] or by merging across multiple samples [96].",
+      "anchor": "Beyond atlases of dissociated single-cell transcriptomes",
+      "touchpoints": [
+        {
+          "claimId": "Claim 2",
+          "direction": "supports"
+        },
+        {
+          "claimId": "C",
+          "direction": "supports"
+        },
+        {
+          "claimId": "standard",
+          "direction": "supports"
+        }
+      ],
+      "note": "Notes that handling spatial data across multiple samples is challenging and motivates a common coordinate system."
+    },
+    {
+      "id": "e23",
+      "text": "Mining spatial data typically involves fnding subcellular patterns in cells associated with disease, type, and outcomes [97], as well as spatial patterns from histopathological image data that can then be used across archival histology data without the companion omics layers [98]. As technologies evolve and are able to profle larger tissue sections at subcellular resolution, a particular challenge will be to develop methods that can bridge molecular, cellular, and tissue-level patterns.",
+      "anchor": "Beyond atlases of dissociated single-cell transcriptomes",
+      "touchpoints": [
+        {
+          "claimId": "Claim 2",
+          "direction": "supports"
+        },
+        {
+          "claimId": "C",
+          "direction": "supports"
+        }
+      ],
+      "note": "Identifies subcellular spatial patterns and bridging molecular-cellular-tissue scales as challenges/value of spatial omics."
+    },
+    {
+      "id": "e24",
+      "text": "Most likely, within the next few years, advancements in the felds of proteomics and metabolomics will enable the profling of large numbers of single cells via these modalities, unlocking more accurate modeling of metabolism, signaling, and cell–cell communication.",
+      "anchor": "Conclusions and outlook",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 5",
+          "direction": "supports"
+        },
+        {
+          "claimId": "A",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concedes single-cell proteomics and metabolomics are not yet available at scale and projects that they will unlock more accurate modeling of metabolism, signaling, and cell-cell communication."
+    },
+    {
+      "id": "e25",
+      "text": "To realize the potential not just for biomedical research, but for other aspects of biology, we need better coverage of human populations across the age spectra and for multiple disease states.",
+      "anchor": "Conclusions and outlook",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concedes current atlases lack adequate coverage across human age and disease states."
+    },
+    {
+      "id": "e26",
+      "text": "Single-cell data is information dense, and there is little chance that the lab that generated the data has the capacity to make all the discoveries that are possible, in particular those that are only possible by combining with other datasets.",
+      "anchor": "Conclusions and outlook",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        }
+      ],
+      "note": "Argues that combining datasets across labs is necessary to extract the full value of single-cell data."
+    }
+  ],
+  "figuresNumbers": [
+    {
+      "item": "Table 1 (CZ CELLxGENE Discover)",
+      "contains": "112.8 M cells, 5 k donors, launched 2022, CZI, 7 species"
+    },
+    {
+      "item": "Table 1 (Single Cell Atlas, SCA)",
+      "contains": "200 M cells, 125 donors, 2024 publication, 1 species"
+    },
+    {
+      "item": "Table 1 (DISCO, Deeply Integrated Single-Cell Omics)",
+      "contains": "125.6 M cells, donors not reported, 2022 publication, Singapore Immunology Network"
+    },
+    {
+      "item": "Table 1 (Human Cell Atlas, HCA)",
+      "contains": "65.4 M cells, 9.6 k donors, launched 2016"
+    },
+    {
+      "item": "Table 1 (Single Cell Portal, Broad)",
+      "contains": "57.6 M cells, donors not reported, launched 2020, 18 species"
+    },
+    {
+      "item": "Atlas dataset size",
+      "contains": "Cell atlas datasets already exceed 1 TB using standard data structures"
+    },
+    {
+      "item": "Data-structure efficiency",
+      "contains": "New data structures for R/C/Python (e.g., disk-backed/pyramidal formats: Zarr, Parquet, TileDB) can reduce memory footprint up to tenfold over standard sparse matrices with minimal compute cost"
+    },
+    {
+      "item": "CAD GWAS knowledge gap",
+      "contains": "For 50% of risk loci identified for coronary artery disease (CAD), the responsible gene(s) and cell(s) remain unclear"
+    },
+    {
+      "item": "Integration criteria",
+      "contains": "Integration algorithms must scale to 10,000s of confounder levels (number of donors)"
+    }
+  ],
+  "primarySources": [
+    {
+      "topic": "FAIR principles for scientific data",
+      "citation": "Wilkinson MD, et al. 2016, Sci Data 3:160018",
+      "refN": "15"
+    },
+    {
+      "topic": "scRNA-seq metadata/standards precedent (MIAME microarray standard)",
+      "citation": "Brazma A, et al. 2001, Nat Genet 29(4):365-371",
+      "refN": "18"
+    },
+    {
+      "topic": "Cell Ontology for annotating cell types and states",
+      "citation": "Diehl AD, et al. 2016, J Biomed Semantics 7(1):44",
+      "refN": "19"
+    },
+    {
+      "topic": "MAMS matrix and metadata standards",
+      "citation": "Sarfraz I, et al. 2024, Genome Biol 25(1):1-15",
+      "refN": "20"
+    },
+    {
+      "topic": "Precise identification of disease-altered cell states vs healthy reference",
+      "citation": "Dann E, et al. 2023, Nat Genet 55(11):1998-2008",
+      "refN": "26"
+    },
+    {
+      "topic": "Benchmarking atlas-level data integration",
+      "citation": "Luecken MD, et al. 2022, Nat Methods 19(1):41-50",
+      "refN": "37"
+    },
+    {
+      "topic": "Impacts of dataset imbalance on single-cell integration",
+      "citation": "Maan H, et al. 2024, Nat Biotechnol 42(12):1899-1908",
+      "refN": "43"
+    },
+    {
+      "topic": "Confronting false discoveries in single-cell differential expression (replicate/pseudobulk argument)",
+      "citation": "Squair JW, et al. 2021, Nat Commun 12:5692",
+      "refN": "51"
+    },
+    {
+      "topic": "Realistic in silico data generation for benchmarking (scDesign3)",
+      "citation": "Song D, et al. 2024, Nat Biotechnol 42(2):247-252",
+      "refN": "56"
+    },
+    {
+      "topic": "Single-cell multimodal omics: the power of many",
+      "citation": "Zhu C, Preissl S, Ren B. 2020, Nat Methods 17(1):11-14",
+      "refN": "89"
+    },
+    {
+      "topic": "Best practices for single-cell analysis across modalities",
+      "citation": "Heumos L, et al. 2023, Nat Rev Genet 24(8):550-572",
+      "refN": "90"
+    },
+    {
+      "topic": "Methods and applications for single-cell and spatial multi-omics",
+      "citation": "Vandereyken K, et al. 2023, Nat Rev Genet 24(8):494-515",
+      "refN": "92"
+    },
+    {
+      "topic": "Introduction to spatial transcriptomics for biomedical research",
+      "citation": "Williams CG, et al. 2022, Genome Med 14(1):1-18",
+      "refN": "94"
+    },
+    {
+      "topic": "Considerations for building and using integrated single-cell atlases (best-practice guide)",
+      "citation": "Hrovatin K, et al. 2025, Nat Methods 22(1):41-57",
+      "refN": "87"
+    }
+  ],
+  "flags": [
+    "Metadata unverified: venue not stated in the cleaned text body; layout (Open Access, REVIEW header, BMC-style numbered references, multiple Genome Biology self-citations, CZI funding, Springer Nature Publisher's Note) is consistent with Genome Biology (BMC/Springer Nature) but is NOT confirmed in-text; venue set to 'unverified; see flags' and doi set to null.",
+    "No article DOI printed in the cleaned text; the only DOIs present (lines 31-33) belong to the cataloged third-party atlases in Table 1, not to this paper.",
+    "Dates from end matter: Received 14 June 2024; Accepted 3 September 2025; Published online 20 October 2025 (line 375-377). Year set to 2025.",
+    "OCR quirks preserved verbatim in excerpts (e.g., 'feld', 'difcult', 'efects', 'fnd', 'profling', 'Te', 'Tis', 'Tese', 'fve', 'frst', 'infammation') — not corrected.",
+    "Scope note: large portions of this paper (data structures/compression, outreach/public engagement, GWAS/molQTL drug-target discovery, foundation-model UX/interpretability) are off-roadmap and were captured only where they double as conceded gaps bearing on a roadmap claim.",
+    "Read at source: ref #87 (Hrovatin K, et al. 2025, Nat Methods, 'Considerations for building and using integrated single-cell atlases') and ref #51 (Squair JW, et al. 2021, Nat Commun, false discoveries / replicate argument) are worth first-hand consultation for standards and biological-replicate claims.",
+    "Direction note: this paper mostly concedes our gaps as facts (spatial, modality breadth, standards, scale) rather than disputing them; few lines actively challenge the thesis, so most touchpoints are 'supports' (conceded-fact) — it can also be deployed as a mainstream-perspective foil that defends the scRNA-seq atlas paradigm."
+  ]
+}

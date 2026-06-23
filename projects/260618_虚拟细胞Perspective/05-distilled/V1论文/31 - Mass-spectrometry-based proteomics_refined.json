@@ -1,0 +1,756 @@
+{
+  "schemaVersion": "精练-4.0",
+  "citationKey": "31",
+  "title": "Mass-spectrometry-based proteomics: from single cells to clinical applications",
+  "authors": "Tiannan Guo, Judith A. Steen & Matthias Mann",
+  "venue": "Nature, 2025, 639(8053):pages not stated in source; see flags",
+  "year": "2025",
+  "doi": "doi:10.1038/s41586-025-08584-0",
+  "readOn": "2026-06-18",
+  "sourceFile": "/Users/augustsirius/Desktop/已清洗_260617/31 - Mass-spectrometry-based proteomics - from single cells to clinical applications_cleaned.md",
+  "oneSentence": "A Nature Review surveying recent advances in MS-based proteomics technology (sample prep, instrumentation, DIA/DDA acquisition, AI) and its applications across expression, interaction, PTM, structural and chemo-proteomics, single-cell and spatial proteomics, and clinical biomarker discovery, arguing the field is now robust, sensitive and high-throughput enough to move from basic research toward the clinic.",
+  "orientation": "Strongly on-roadmap and authored by our own group (T. Guo, Westlake): it is the field-level evidence base for the protein modality. It feeds Claim 4/5/6 (protein carries orthogonal, non-substitutable information vs the transcriptome; proteomics directly interrogates the functional machinery; high-throughput spatial proteomics is now feasible), Claim 2/7 (spatial proteomics preserves tissue context that single-cell loses), Claim 8 (multimodal/multi-omics integration), and Claim 9 (data standards, comparability, IVD/QC gaps). It can serve as BOTH ally (proteomics as an indispensable, under-used modality with spatial+clinical capability) and foil (it concedes single-cell proteomics is currently expression-only, that intensity values across MS workflows are not directly comparable, and that biomarker datasets are often underpowered with little cross-study standardization). Note on temporal axis: the paper says little about destructive measurement / paired temporal observation; the few touchpoints to Claim 3 are nuancing concessions, not core support.",
+  "excerpts": [
+    {
+      "id": "e1",
+      "text": "As the direct effector of biological functions and phenotypes, the proteome reflects the complex interplay between genetic predisposition, environmental factors and lifestyle influences. Whereas genomics and transcriptomics inform on cellular potential, and metabolomics focuses on downstream small molecules, proteomics directly interrogates the functional machinery inside and outside cells.",
+      "anchor": "Introduction, p.1",
+      "touchpoints": [
+        {
+          "claimId": "Claim 5",
+          "direction": "supports"
+        },
+        {
+          "claimId": "modality",
+          "direction": "supports"
+        }
+      ],
+      "note": "Positions the proteome as the direct functional effector that genomics/transcriptomics (potential) and metabolomics (downstream) do not capture."
+    },
+    {
+      "id": "e2",
+      "text": "Although genomics has been the central focus of the past 20 years, the importance of proteomics is becoming more and more evident<sup>1</sup>. The increased complexity at the protein level is due to alternative splicing, varying translation rates, post-translational modifications (PTMs) and proteolytic cleavage.",
+      "anchor": "Introduction, p.1",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        },
+        {
+          "claimId": "modality",
+          "direction": "supports"
+        }
+      ],
+      "note": "Argues protein-level complexity (splicing, translation rates, PTMs, cleavage) exceeds the genome/transcriptome, justifying a distinct proteomic modality."
+    },
+    {
+      "id": "e3",
+      "text": "Unlike affinity-based methods<sup>2–4</sup>, MS-based proteomics directly identifies and quantifies amino acid sequences, offering unbiased, systematic analyses of protein expression, modifications and interactions across various conditions<sup>5,6</sup> (Box 1). Its strengths include unrivalled quantitative accuracy, specificity and universal applicability across all organisms without requiring specific binding reagents or previous system knowledge except a sequenced genome.",
+      "anchor": "Introduction, p.1",
+      "touchpoints": [
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        },
+        {
+          "claimId": "modality",
+          "direction": "supports"
+        }
+      ],
+      "note": "Frames MS-based proteomics as unbiased, sequence-direct and universally applicable, contrasting it with affinity-based binder methods."
+    },
+    {
+      "id": "e4",
+      "text": "Recent technological advances have overcome many previous limitations, including completeness of proteome characterization, workflow robustness, throughput and sample quantity requirements. These improvements have expanded the scope of proteomics from bulk analyses to single-cell studies and spatial profiling, providing remarkable insights into cellular heterogeneity and tissue organization.",
+      "anchor": "Introduction, p.1",
+      "touchpoints": [
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        },
+        {
+          "claimId": "spatial",
+          "direction": "supports"
+        }
+      ],
+      "note": "Claims technical advances have extended proteomics from bulk to single-cell and spatial scales, addressing throughput and sample-quantity barriers."
+    },
+    {
+      "id": "e5",
+      "text": "The Evosep One system, which uses preformed gradients, exemplifies this trend, allowing the analysis of 30 to 100+ samples per day with high reproducibility<sup>15</sup>. Another innovation is the μPAC chip system, which replaces packed columns with chip columns created by microlithography, ensuring consistent peptide retention times across laboratories<sup>16</sup>.",
+      "anchor": "The technology of MS-based proteomics, p.2",
+      "touchpoints": [
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        },
+        {
+          "claimId": "standard",
+          "direction": "supports"
+        }
+      ],
+      "note": "Cites preformed-gradient LC (30-100+ samples/day) and micro-lithography chip columns giving consistent retention times across labs as throughput and cross-lab reproducibility gains."
+    },
+    {
+      "id": "e6",
+      "text": "Data-independent acquisition (DIA) has gained prominence, selecting sequential windows across the entire mass-to-charge range and fragmenting all peptides in each cycle<sup>22,23</sup>. Also compatible with ion mobility<sup>24</sup>, this approach overcomes the stochasticity of DDA, reducing missing values between runs.",
+      "anchor": "The technology of MS-based proteomics, p.2",
+      "touchpoints": [
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        },
+        {
+          "claimId": "standard",
+          "direction": "supports"
+        }
+      ],
+      "note": "States DIA overcomes DDA stochasticity and reduces missing values between runs, improving completeness and comparability across measurements."
+    },
+    {
+      "id": "e7",
+      "text": "Targeted proteomics remains crucial for clinical applications, allowing sensitive and absolute quantification of specific peptides<sup>41,42</sup>. It can now be scaled to measure hundreds of samples on a single instrument per day using short LC gradients and target thousands of peptides in a single run<sup>43</sup>. We believe the time has come for the community to provide a proteome-wide heavy proteome resource, which would greatly benefit the field for workflow-independent absolute quantification and for quick independent verification for proteins or special biological or clinical importance.",
+      "anchor": "The technology of MS-based proteomics, p.2",
+      "touchpoints": [
+        {
+          "claimId": "standard",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 9",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Calls for a community proteome-wide heavy (isotope) standard resource to enable workflow-independent absolute quantification, framed as currently missing."
+    },
+    {
+      "id": "e8",
+      "text": "Expression proteomics, the large-scale study of protein abundance changes across different conditions or cell types, has become increasingly comprehensive and quantitative, and provides complementary and different information from the transcriptome.",
+      "anchor": "Expression proteomics, p.3",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        },
+        {
+          "claimId": "modality",
+          "direction": "supports"
+        }
+      ],
+      "note": "States expression proteomics gives complementary and different information from the transcriptome."
+    },
+    {
+      "id": "e9",
+      "text": "In human cell lines, cutting-edge technologies can now quantify more than 10,000 protein groups with minimal measuring time and sample amounts. Adding upfront fractionation yielded near-comprehensive proteomes of more than 13,000 protein groups, indicating that common cell lines express at least 70% of the 20,000 human protein-coding genes<sup>47,48</sup>.",
+      "anchor": "Expression proteomics, p.3",
+      "touchpoints": [
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        }
+      ],
+      "note": "Quantitative depth: >10,000 protein groups routinely, >13,000 with fractionation, covering at least 70% of 20,000 protein-coding genes in cell lines."
+    },
+    {
+      "id": "e10",
+      "text": "Furthermore, the proteome has turned out to be a close proxy for the functional state of a cell. The Human Proteome Project has found protein-level evidence for 90% of all protein-coding genes, validating and expanding our understanding of the expressed genome<sup>50</sup>.",
+      "anchor": "Expression proteomics, p.3",
+      "touchpoints": [
+        {
+          "claimId": "Claim 5",
+          "direction": "supports"
+        }
+      ],
+      "note": "Asserts the proteome is a close proxy for the functional state of a cell; 90% of protein-coding genes have protein-level evidence."
+    },
+    {
+      "id": "e11",
+      "text": "Improved accuracy in both proteomics and transcriptomics measurements should have increased reported correlations by reducing independent experimental noise, but this does not seem to have happened<sup>52</sup>. Instead, it has become apparent that transcriptome and proteome regulation are distinct in many dynamic situations, such as during development or disease progression<sup>53</sup>.",
+      "anchor": "Expression proteomics, p.3",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        }
+      ],
+      "note": "Key orthogonality evidence: better measurement did not raise mRNA-protein correlation; transcriptome and proteome regulation are distinct in dynamic states (development, disease)."
+    },
+    {
+      "id": "e12",
+      "text": "Secreted proteins represent another area in which transcriptome– proteome correlations are often low; these proteins have crucial roles in circulation and the microenvironment and can be directly measured by proteomics<sup>54</sup>.",
+      "anchor": "Expression proteomics, p.3",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 7",
+          "direction": "supports"
+        }
+      ],
+      "note": "Secreted proteins (circulation, microenvironment) show low mRNA-protein correlation and are only directly measurable by proteomics."
+    },
+    {
+      "id": "e13",
+      "text": "Both transcriptomics and proteomics can estimate copy numbers, with proteins typically present at 100-fold or higher copy numbers than their corresponding transcripts, especially in post-mitotic tissues<sup>57</sup>. Although transcripts are often expressed at less than one copy per cell on average, functional proteins tend to have at least 30 copies per cell, even for very-low-abundance complexes in yeast, and more than 100 in mammalian cells<sup>58</sup>.",
+      "anchor": "Expression proteomics, p.3",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        }
+      ],
+      "note": "Quantitative: proteins present at ~100-fold higher copy number than transcripts; transcripts often <1 copy/cell while functional proteins have >=30 (yeast) to >100 (mammalian) copies."
+    },
+    {
+      "id": "e14",
+      "text": "The proteome exhibits a much higher dynamic range—the difference between the lowest and the highest expressed protein—than the transcriptome<sup>59</sup>. Transcriptome-to-proteome divergence reflects the complex regulation of protein abundance through synthesis, degradation and PTMs, highlighting the importance of direct proteomic measurements for understanding cellular function.",
+      "anchor": "Expression proteomics, p.3",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        }
+      ],
+      "note": "States proteome dynamic range exceeds the transcriptome and divergence arises from synthesis/degradation/PTM regulation, so direct protein measurement is needed."
+    },
+    {
+      "id": "e15",
+      "text": "Proteins, as cellular nanomachines, perform specific functions through interactions with other proteins, RNA<sup>52</sup>, DNA<sup>60,61</sup>, metabolites and small-molecule drugs<sup>62</sup>. Mapping these interactions is fundamental to understanding cellular processes in biological or disease contexts.",
+      "anchor": "Interaction proteomics, p.3",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        }
+      ],
+      "note": "Frames protein-protein, protein-RNA, protein-DNA, protein-metabolite interactions (interactome modality) as fundamental, an information layer beyond abundance."
+    },
+    {
+      "id": "e16",
+      "text": "A prime example is the recent elucidation of an essentially complete yeast interactome, providing an unprecedented view of the protein interaction landscape in a eukaryotic organism<sup>63</sup>.",
+      "anchor": "Interaction proteomics, p.3",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        }
+      ],
+      "note": "Cites an essentially complete yeast interactome as evidence of proteome-scale interaction (complex) mapping now achievable."
+    },
+    {
+      "id": "e17",
+      "text": "PTMs have crucial roles in regulating protein function, localization and interactions, with profound consequences for cellular processes, disease mechanisms and therapeutic interventions. MS-based proteomics has emerged as the premier tool for discovering and quantifying PTMs, with recent technological advances substantially increasing the depth and breadth of PTM analysis<sup>69,70</sup>.",
+      "anchor": "PTMs, p.4",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        },
+        {
+          "claimId": "modality",
+          "direction": "supports"
+        }
+      ],
+      "note": "Establishes PTMs as a functionally decisive layer (function, localization, interactions) measurable by MS, not inferable from RNA."
+    },
+    {
+      "id": "e18",
+      "text": "Researchers can now quantify tens of thousands of PTMs localized to specific amino acids, providing insights into cellular signalling networks and their dynamics in response to stimuli or inhibitors<sup>74–76</sup>.",
+      "anchor": "PTMs, p.4",
+      "touchpoints": [
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        }
+      ],
+      "note": "Quantitative: tens of thousands of site-localized PTMs now measurable, informing signalling network dynamics."
+    },
+    {
+      "id": "e19",
+      "text": "It has also become clear that the average phosphorylation stoichiometry is often relatively high—for instance, in the circadian rhythm<sup>80</sup>—whereas it is generally very low for ubiquitylation<sup>81</sup>.",
+      "anchor": "PTMs, p.4",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        }
+      ],
+      "note": "Stoichiometry differs by PTM type (high for phosphorylation, low for ubiquitylation), detail unavailable from transcript measurement."
+    },
+    {
+      "id": "e20",
+      "text": "The success of single-cell transcriptomics in defining new cell types has generated tremendous interest in single-cell proteomics, which can provide a direct readout of the functional state of individual cells. However, the limited amount of protein in a single cell (typically 50–500 pg) has posed major challenges for MS-based analysis<sup>108</sup>. Note that unlike transcriptomics, proteomics cannot amplify the quantity measured; however, there is typically more than 100-fold more protein than transcript for every expressed gene, and those proteins reflect the cell-to-cell variance much better.",
+      "anchor": "Single-cell proteomics, p.5",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 2",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Concedes the no-amplification sensitivity barrier (50-500 pg/cell) but argues >100-fold more protein than transcript makes proteins reflect cell-to-cell variance better."
+    },
+    {
+      "id": "e21",
+      "text": "The introduction of the SCoPE (single-cell proteomics) method, which uses isobaric labelling to combine single cells with a carrier channel, enabled the quantification of about 1,000 proteins across 100 single cells<sup>111</sup>.",
+      "anchor": "Single-cell proteomics, p.5",
+      "touchpoints": [
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        }
+      ],
+      "note": "Quantitative milestone: SCoPE quantified ~1,000 proteins across 100 single cells."
+    },
+    {
+      "id": "e22",
+      "text": "The reduction of LC flow rates has resulted in proportional MS signal gain, allowing the quantification of up to 2,000 proteins across the cell cycle without multiplexing in single HeLa cells using the timsTOF SCP instrument<sup>113</sup>.",
+      "anchor": "Single-cell proteomics, p.5",
+      "touchpoints": [
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        }
+      ],
+      "note": "Quantitative: up to 2,000 proteins per single HeLa cell across the cell cycle, label-free, on timsTOF SCP."
+    },
+    {
+      "id": "e23",
+      "text": "Recent developments— such as multiplexed DIA<sup>114,115</sup> and narrow-window DIA (nDIA) on the Astral mass analyser—have pushed the boundaries even further, quantifying more than 5,000 proteins in single oocytes in a ‘One-Tip’ set-up that eliminates sample loss<sup>116,117</sup>.",
+      "anchor": "Single-cell proteomics, p.5",
+      "touchpoints": [
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        }
+      ],
+      "note": "Quantitative: >5,000 proteins in single oocytes via nDIA on Astral with a One-Tip workflow."
+    },
+    {
+      "id": "e24",
+      "text": "Note that unlike transcriptomics, proteomics cannot amplify the quantity measured; however, there is typically more than 100-fold more protein than transcript for every expressed gene, and those proteins reflect the cell-to-cell variance much better. ... The fact that there are many more copies of proteins than transcripts in single cells means that they are not subject to Poisson or shot noise. This potentially enables single-cell proteomics to define cell states with much fewer cells than transcriptomics allows.",
+      "anchor": "Single-cell proteomics, p.5",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        }
+      ],
+      "note": "Argues higher protein copy number means single-cell proteomics is free of Poisson/shot noise and can define cell states with fewer cells than transcriptomics (data-quality argument). OCR note: the two sentences are non-contiguous in source, joined here with an ellipsis."
+    },
+    {
+      "id": "e25",
+      "text": "Single-cell proteomics: Analysis of protein content of individual cells, revealing cellular heterogeneity—currently limited to expression proteomics.",
+      "anchor": "Box 1 Glossary, p.2",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "challenges"
+        },
+        {
+          "claimId": "modality",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Concedes single-cell proteomics is currently limited to expression proteomics (no PTM/interaction/structure at single-cell scale yet) - a foil to the full multimodal-protein argument."
+    },
+    {
+      "id": "e26",
+      "text": "As technology continues to improve, integration with other singlecell modalities, such as transcriptomics and metabolomics, promises to provide a more comprehensive view of cellular states and functions. The ability to perform parallel transcriptome and proteome analysis from the same single cell is now within reach, offering unprecedented insights into cellular biology.",
+      "anchor": "Single-cell proteomics, p.5",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        }
+      ],
+      "note": "States parallel transcriptome+proteome from the same single cell is now within reach, motivating multimodal integration."
+    },
+    {
+      "id": "e27",
+      "text": "Although single-cell approaches provide valuable information about cellular heterogeneity, they often lack spatial context within tissues. Spatial proteomics aims to bridge this gap by characterizing proteomes while preserving spatial information, providing crucial insights into tissue organization and cell–cell interactions.",
+      "anchor": "Spatial proteomics, p.5",
+      "touchpoints": [
+        {
+          "claimId": "Claim 2",
+          "direction": "supports"
+        },
+        {
+          "claimId": "spatial",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 7",
+          "direction": "supports"
+        }
+      ],
+      "note": "Directly states single-cell (dissociated) approaches lack spatial context; spatial proteomics preserves it to reveal tissue organization and cell-cell interactions."
+    },
+    {
+      "id": "e28",
+      "text": "One pioneering approach is deep visual proteomics (DVP), which combines imaging of tissue slides with AI-driven cell classification and microdissection, followed by deep proteomic analysis of specific cell types and states<sup>119</sup>. The effective throughput of the method is high, and functional differences between cell types and states in the same tissue context are straightforward to interpret.",
+      "anchor": "Spatial proteomics, p.5",
+      "touchpoints": [
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        },
+        {
+          "claimId": "spatial",
+          "direction": "supports"
+        }
+      ],
+      "note": "Describes DVP (imaging + AI classification + microdissection + deep proteomics) as a high-throughput spatial-proteomics method preserving tissue context."
+    },
+    {
+      "id": "e29",
+      "text": "For example, DVP was recently used to uncover key molecular alterations that drive a lethal drug-induced skin rash called toxic epidermal necrolysis (TEN), with hyperactivation of the JAK–STAT pathway identified as a key driver<sup>120</sup>. This discovery led to the successful repurposing of an approved inhibitor to cure this condition, showcasing the potential of spatial proteomics in personalized medicine.",
+      "anchor": "Spatial proteomics, p.5",
+      "touchpoints": [
+        {
+          "claimId": "Claim 7",
+          "direction": "supports"
+        },
+        {
+          "claimId": "spatial",
+          "direction": "supports"
+        }
+      ],
+      "note": "Worked example: spatial proteomics (DVP) identified JAK-STAT driver of TEN in tissue context, leading to a curative drug repurposing - spatial signal driving phenotype/therapy."
+    },
+    {
+      "id": "e30",
+      "text": "Tissue expansion technology, when combined with proteomics, has enabled the study of subcellular structures, such as single nuclei from mouse hepatocytes<sup>121</sup>. The use of micro-scaffolds created by customized three-dimensional printing technology has allowed the generation of complete proteome maps of tissue slices with high spatial resolution<sup>122</sup>.",
+      "anchor": "Spatial proteomics, p.5",
+      "touchpoints": [
+        {
+          "claimId": "spatial",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        }
+      ],
+      "note": "Subcellular-to-tissue spatial proteomics: expansion proteomics resolves single nuclei; 3D-printed micro-scaffolds give high-resolution whole-tissue-slice proteome maps."
+    },
+    {
+      "id": "e31",
+      "text": "Blood plasma, being in contact with all organs, has long been considered a treasure trove of potential biomarkers for various diseases<sup>123,124</sup>. However, its extreme dynamic range—spanning more than ten orders of magnitude, from the most abundant proteins, such as albumin, to the least abundant, such as cytokines—poses a formidable analytical challenge.",
+      "anchor": "Bringing proteomics to the clinic, p.6",
+      "touchpoints": [
+        {
+          "claimId": "Claim 5",
+          "direction": "supports"
+        }
+      ],
+      "note": "Quantitative: plasma proteome dynamic range spans >10 orders of magnitude (albumin to cytokines), the central analytical challenge for biomarker discovery."
+    },
+    {
+      "id": "e32",
+      "text": "Current MS-based proteomics workflows routinely measure 300–500 proteins in a single-injection analysis of neat plasma<sup>125–127</sup>. For instance, a workflow using liquid handlers, Evosep HPLC systems and a timsTOF mass spectrometer enabled the rapid analysis of 1,612 samples, successfully uncovering biomarkers of sepsis<sup>128</sup>.",
+      "anchor": "Bringing proteomics to the clinic, p.6",
+      "touchpoints": [
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        }
+      ],
+      "note": "Quantitative throughput: 300-500 proteins/single-injection neat plasma; 1,612-sample sepsis biomarker study."
+    },
+    {
+      "id": "e33",
+      "text": "Unlike MS-based proteomics, affinity-based methods (such as Olink and SomaLogic) have been used for population-scale protein quantitative trait loci (QTL) analysis<sup>134</sup>. Evaluating the specificity of the binders used across various sample matrices is essential, especially because limited correlation among major binder platforms has been observed<sup>135,136</sup>. Orthogonal validation with MS-based methods is crucial to address this limitation<sup>137</sup>.",
+      "anchor": "Bringing proteomics to the clinic, p.6",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Limited correlation among major affinity binder platforms (Olink, SomaLogic) requires orthogonal MS validation - a comparability/standards problem across measurement platforms."
+    },
+    {
+      "id": "e34",
+      "text": "The Clinical Proteomic Tumor Analysis Consortium (CPTAC), launched in 2011, has characterized proteogenomic and PTM changes in more than 1,500 samples and 10 cancer types, revealing new insights, including the identification of proteomic subtypes, prioritization of driver mutations and elucidation of cancer-relevant signalling pathways and PTMs<sup>143,144</sup>. It has also been valuable in pioneering standardization efforts across several clinical centres, and in multi-omics integration.",
+      "anchor": "Bringing proteomics to the clinic, p.6",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "CPTAC cited as a large multi-omics, multi-centre standardization effort (>1,500 samples, 10 cancer types) integrating proteogenomic and PTM data."
+    },
+    {
+      "id": "e35",
+      "text": "Given that the intensity values of different MS workflows are not directly comparable, such models are likely to be constrained to specific instruments unless spike-in standards are used.",
+      "anchor": "Bringing proteomics to the clinic, p.6",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Explicit concession: intensity values across different MS workflows are not directly comparable, constraining models to specific instruments without spike-in standards - core cross-platform-comparability foil."
+    },
+    {
+      "id": "e36",
+      "text": "With many technological barriers now overcome, it has become increasingly clear that the correct design of cohorts and studies is crucial for obtaining generalizable biomarker panels. For instance, MS-based proteomics datasets for biomarkers studies have often been greatly underpowered. Implementing a requirement for raw data to be deposited in archives enables, in principle, meta-analyses to test and better power biomarker discovery<sup>153</sup>.",
+      "anchor": "Bringing proteomics to the clinic, p.6",
+      "touchpoints": [
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concedes biomarker datasets are often greatly underpowered and study design / data-sharing standards (raw-data deposition) are needed for generalizable, poolable results."
+    },
+    {
+      "id": "e37",
+      "text": "However, better means of linking de-identified clinical data with raw files must be implemented to avoid violating privacy regulations.",
+      "anchor": "Bringing proteomics to the clinic, p.6",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "nuances"
+        }
+      ],
+      "note": "Notes a standards/metadata gap: linking de-identified clinical data to raw files is needed for reuse without privacy violations."
+    },
+    {
+      "id": "e38",
+      "text": "Recent advances in MS-based proteomics have enabled proteomics from biopsy-scale tissue samples, expanding diagnostic or prognostic capabilities<sup>125,145,146</sup> when compared with RNA-based tests on biopsy specimens in clinical settings<sup>147</sup>. The main obstacles to the acceptance of MS-based protein diagnostics are not technical, but more related to the clinical community’s lack of awareness of technological advancements in proteomics.",
+      "anchor": "Bringing proteomics to the clinic, p.6",
+      "touchpoints": [
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        }
+      ],
+      "note": "Claims biopsy-scale proteomics now expands diagnostic capability vs RNA-based biopsy tests; remaining obstacles are awareness, not technical."
+    },
+    {
+      "id": "e39",
+      "text": "Note that most tissue-based proteomics studies only report potentially novel protein biomarkers discovered from a limited number of ... retrospective specimens<sup>143,144,150,151</sup>, without further development or validation in the clinical setting. Although some studies have reported in-depth mechanistic investigations of selected proteins and validated protein biomarkers or panels in one or several independent cohorts, few have progressed into clinically applicable tests.",
+      "anchor": "Bringing proteomics to the clinic, p.6",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        }
+      ],
+      "note": "Concedes most tissue-proteomics studies report biomarkers from limited retrospective cohorts without validation; few reach clinical tests - a reproducibility/validation gap. OCR note: sentence interrupted in source by a stray figure-caption line, joined with an ellipsis."
+    },
+    {
+      "id": "e40",
+      "text": "More ambitiously, with sufficient proteomics data—in particular, perturbation proteomics data<sup>156</sup>—it might be possible to develop foundation models that embed knowledge about the underlying biology of cells. Although the single-cell transcriptomics community is already exploring this approach<sup>157</sup>, the quantitative and functional nature of proteomics might ultimately make it a more powerful candidate for such models.",
+      "anchor": "Outlook and the role of AI in proteomics, p.7",
+      "touchpoints": [
+        {
+          "claimId": "Claim 4",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 1",
+          "direction": "supports"
+        },
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        }
+      ],
+      "note": "Argues that with sufficient (especially perturbation) proteomics data, foundation models could embed cell biology, and the quantitative/functional nature of proteomics may make it a stronger substrate than single-cell transcriptomics - directly engages the virtual-cell foundation-model premise."
+    },
+    {
+      "id": "e41",
+      "text": "Combining proteomics with genomics, transcriptomics and metabolomics promises a comprehensive understanding of biological systems. Multimodal data integration, facilitated by AI and advanced computational methods, will elucidate intricate molecular networks, revealing the interplay between biomolecules and their functional consequences.",
+      "anchor": "Outlook and the role of AI in proteomics, p.7",
+      "touchpoints": [
+        {
+          "claimId": "Claim 8",
+          "direction": "supports"
+        }
+      ],
+      "note": "States multimodal integration of proteomics with genomics/transcriptomics/metabolomics is required for a comprehensive systems-level understanding."
+    },
+    {
+      "id": "e42",
+      "text": "Standardizing experimental protocols, data formats and analysis pipelines will facilitate data integration, reproducibility and cross-study comparisons, ultimately accelerating scientific progress.",
+      "anchor": "Outlook and the role of AI in proteomics, p.7",
+      "touchpoints": [
+        {
+          "claimId": "Claim 9",
+          "direction": "supports"
+        },
+        {
+          "claimId": "standard",
+          "direction": "supports"
+        }
+      ],
+      "note": "Explicit call for standardized protocols, data formats and pipelines to enable integration, reproducibility and cross-study comparison."
+    },
+    {
+      "id": "e43",
+      "text": "We are delighted that this potential is also increasingly recognized outside the field—as exemplified by the planned massive investment in the π-HuB (proteomic navigator of the human body) project in China<sup>158</sup>.",
+      "anchor": "Outlook and the role of AI in proteomics, p.7",
+      "touchpoints": [
+        {
+          "claimId": "Claim 6",
+          "direction": "supports"
+        }
+      ],
+      "note": "Cites the large-scale pi-HuB (proteomic navigator of the human body) initiative as evidence of field-scale momentum and resourcing for proteomics."
+    }
+  ],
+  "figuresNumbers": [
+    {
+      "item": "Protein per single cell",
+      "contains": "typically 50-500 pg of protein in a single cell; proteomics cannot amplify; >100-fold more protein than transcript per expressed gene"
+    },
+    {
+      "item": "Cell-line proteome depth",
+      "contains": ">10,000 protein groups routinely; >13,000 with upfront fractionation; cell lines express at least 70% of the ~20,000 human protein-coding genes"
+    },
+    {
+      "item": "Human Proteome Project",
+      "contains": "protein-level evidence for 90% of all protein-coding genes"
+    },
+    {
+      "item": "Copy-number / dynamic range",
+      "contains": "proteins ~100-fold or higher copy number than transcripts; transcripts often <1 copy/cell; functional proteins >=30 copies/cell (yeast), >100 (mammalian); proteome dynamic range exceeds transcriptome"
+    },
+    {
+      "item": "Single-cell proteomics milestones",
+      "contains": "SCoPE ~1,000 proteins across 100 single cells; ~1,500 proteins per circulating tumour cell; up to 2,000 proteins/single HeLa cell (timsTOF SCP); >5,000 proteins in single oocytes (nDIA, Astral, One-Tip)"
+    },
+    {
+      "item": "Plasma proteomics",
+      "contains": "plasma dynamic range >10 orders of magnitude; 300-500 proteins per single-injection neat plasma; 1,612-sample sepsis study; ~1,000 proteins at up to 100 samples/day on Astral; perchloric acid workflow reaching 1,600+ proteins"
+    },
+    {
+      "item": "PTM analysis",
+      "contains": "tens of thousands of site-localized PTMs quantifiable; up to 32 TMT samples compared directly"
+    },
+    {
+      "item": "CPTAC",
+      "contains": "launched 2011; >1,500 samples; 10 cancer types; proteogenomic + PTM characterization"
+    },
+    {
+      "item": "Box 1 Glossary",
+      "contains": "definitions of DDA, DIA, DVP, single-cell proteomics (noted as currently limited to expression proteomics), spatial profiling, TMT, PASEF, etc."
+    },
+    {
+      "item": "Fig. 2",
+      "contains": "single-cell proteomics methods (nanolitre-droplet, microfluidics, SCoPE2 isobaric, label-free) and tissue spatial proteomics (DVP, expansion proteomics, LCM)"
+    }
+  ],
+  "primarySources": [
+    {
+      "topic": "mRNA-protein correlation did not improve with better measurement; distinct regulation",
+      "citation": "Buccitelli, C. & Selbach, M. 2020, Nat. Rev. Genet. 21:630-644",
+      "refN": "52"
+    },
+    {
+      "topic": "Dependency of protein levels on mRNA abundance (transcriptome vs proteome regulation)",
+      "citation": "Liu, Y., Beyer, A. & Aebersold, R. 2016, Cell 165:535-550",
+      "refN": "53"
+    },
+    {
+      "topic": "Protein vs transcript copy number / minimal proteomic copy-number estimation",
+      "citation": "Kulak, N. A. et al. 2014, Nat. Methods 11:319-324",
+      "refN": "58"
+    },
+    {
+      "topic": "Higher proteome dynamic range than transcriptome",
+      "citation": "MacCoss, M. J. et al. 2023, Nat. Methods 20:339-346",
+      "refN": "59"
+    },
+    {
+      "topic": "Essentially complete yeast interactome",
+      "citation": "Michaelis, A. C. et al. 2023, Nature 624:192-200",
+      "refN": "63"
+    },
+    {
+      "topic": "SCoPE-MS single-cell proteomics (~1,000 proteins / 100 cells)",
+      "citation": "Budnik, B., Levy, E., Harmange, G. & Slavov, N. 2018, Genome Biol. 19:161",
+      "refN": "111"
+    },
+    {
+      "topic": "Single-cell proteome changes upon perturbation (2,000 proteins/HeLa, timsTOF SCP)",
+      "citation": "Brunner, A. D. et al. 2022, Mol. Syst. Biol. 18:e10798",
+      "refN": "113"
+    },
+    {
+      "topic": ">5,000 proteins in single oocytes / Chip-Tip deep single-cell proteomics",
+      "citation": "Ye, Z. et al. 2025, Nat. Methods (doi:10.1038/s41592-024-02558-2)",
+      "refN": "116"
+    },
+    {
+      "topic": "Deep visual proteomics (DVP) defining single-cell identity and heterogeneity",
+      "citation": "Mund, A. et al. 2022, Nat. Biotechnol. 40:1231-1240",
+      "refN": "119"
+    },
+    {
+      "topic": "Spatial proteomics identifies JAKi for lethal skin disease (TEN)",
+      "citation": "Nordmann, T. M. et al. 2024, Nature 635:1001-1009",
+      "refN": "120"
+    },
+    {
+      "topic": "Limited correlation among aptamer- and antibody-based binder platforms",
+      "citation": "Katz, D. H. et al. 2022, Sci. Adv. 8:eabm5164",
+      "refN": "136"
+    },
+    {
+      "topic": "CPTAC cancer proteogenomics impact and prospects",
+      "citation": "Mani, D. R. et al. 2022, Nat. Rev. Cancer 22:298-313",
+      "refN": "143"
+    },
+    {
+      "topic": "AI-empowered perturbation proteomics for foundation models",
+      "citation": "Qian, L. et al. 2024, Cell Genom. 4:100691",
+      "refN": "156"
+    },
+    {
+      "topic": "Single-cell transcriptomics foundation model (Geneformer)",
+      "citation": "Theodoris, C. V. et al. 2023, Nature 618:616-624",
+      "refN": "154"
+    },
+    {
+      "topic": "pi-HuB proteomic navigator of the human body initiative",
+      "citation": "He, F. et al. 2024, Nature 636:322-331",
+      "refN": "158"
+    }
+  ],
+  "flags": [
+    "Metadata: DOI doi:10.1038/s41586-025-08584-0 confirmed in text (line 523); s41586 prefix = Nature. Received 5 May 2024, Accepted 2 Jan 2025, Published online 26 Feb 2025; copyright (c) Springer Nature Limited 2025 (line 517).",
+    "Metadata unverified: exact Nature volume/issue/page numbers are NOT printed in the cleaned source; venue volume(issue):pages inferred/left partial - treat 639(8053) as unconfirmed.",
+    "Authorship note: paper authored by Tiannan Guo (Westlake, our group), Judith A. Steen and Matthias Mann. This is partly OUR OWN field-positioning Review; use with awareness of self-interest when deploying as independent evidence. T.G. is a shareholder of Westlake Omics; M.M. is an indirect investor in Evosep/OmicVision (Competing interests, line 505).",
+    "Scope note: large sections (chemoproteomics, HDX-MS, XL-MS detail, urine/CSF/tear fluids, degrader screening) are technique surveys only weakly on-roadmap; captured selectively, off-roadmap technique detail intentionally not transcribed.",
+    "Temporal axis (Claim 3, destructive measurement / paired observation): this Review barely addresses it; touchpoints to Claim 3 are absent except indirectly via single-cell no-amplification. Do not over-read this paper as temporal-axis evidence.",
+    "OCR quirks preserved verbatim: ligature losses such as 'analysing', 'profling', 'modifcations', 'fuids', 'artifcial', 'hepatocellul carcinoma' (ref 151), 'singlecell'/'labelfree'/'stableisotopelabelled' word-joins in figure captions, and en-dashes rendered as '–'. Two excerpts (e24, e39) join non-contiguous source spans with an explicit ellipsis; this is flagged inline in their notes.",
+    "Read at source: ref 52 (Buccitelli & Selbach 2020, Nat. Rev. Genet.) and ref 53 (Liu, Beyer & Aebersold 2016, Cell) are the primary sources for the mRNA-protein non-correlation argument and worth citing first-hand for Claim 4.",
+    "Reference-list page ranges for several entries (e.g. ref 102 Cell 184:6207-6210, ref 16 Nature 582:592-596) are as printed; not independently verified."
+  ]
+}
