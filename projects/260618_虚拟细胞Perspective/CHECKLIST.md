@@ -25,14 +25,22 @@
 - [ ] ✅ 核验:结构规范?正文连贯?
 
 ## 步骤 5 · 精练（skill：精练3.0 → 本项目升级为 4.0/JSON）　→　`05-distilled/`
-- [x] 41 篇高召回打捞为 `cards.json`（excerpt-centric），转置成 `evidence-matrix.md` + `citation-registry.md`（说明见 `05-distilled/README.md`）
-- [ ] ✅ 核验:支持/反方引文都抓到?引文逐字无改写?claim-touchpoint 键对得上 context?未核实元数据进 Flags(`meta?=⚠`)?
+- [x] 41 篇高召回打捞为 `cards.json`（excerpt-centric）
+- [x] 派生检查视图 `evidence-matrix.md` + `citation-registry.md` 已移入 `_inspection/`（说明见 `05-distilled/README.md` / `_inspection/README.md`）
+- [x] 固定 ClaimID 清单 `00-context/evidence-questions.md` 已建（蒸馏唯一读取的取证清单）
+- [ ] ✅ 核验:支持/反方引文都抓到?引文逐字无改写?claimId 用规范 key?未核实元数据进 Flags(`meta?=⚠`)?
+- [ ] 🧹 债务：`cards.json` 原始 claimId 未归一化（见 `迭代日志.md` 已知债务）
 
-## 步骤 6 · Outline → 成文　→　`06-outline-and-draft/`
-- [x] 6a `outline.md` = 可审计骨架（45 论断，每条绑 [引用号] + 逐字原句）
-- [x] 6b `draft.md` = 编译出的 1714 字英文成稿（P5 审计 PASS、零编造）
-- [ ] ✅ 核验:论证主线?引用对得上?**并入 v2 的 VC≠DT 范围界定段**?书目核验?
+## 步骤 6 · Outline → 成文　→　`06-outline-and-draft/vN/`
+- [x] v1 已快照进 `06-outline-and-draft/v1/`：`outline.md`（45 论断可审计骨架）+ `draft.md`（1714 字英文成稿，P5 审计 PASS）
+- [ ] ✅ 核验:论证主线?引用对得上?字数/体裁?
+
+## 步骤 7 · 迭代（skill：论文迭代）　→　`07-iteration/` + `06-outline-and-draft/vN/`
+- [x] `07-iteration/` 已建 `README.md` + `迭代日志.md`（`CURRENT: v1`）
+- [ ] **v2（待跑）**：开场加一段范围界定，并入郭天南两条意见（AIVC≠scRNA、VC≠DT）→ 出 `06-outline-and-draft/v2/`
+- [ ] 书目核验：`_inspection/citation-registry.md` 约 33 篇 `meta?=⚠` 待核实
 
 ---
 
-✅ 一轮跑通 → 待按 v2 回炉 + 书目核验后定稿。　废弃产物丢 `_archive/`,杂项/方法学丢 `99-notes/`。
+> 流程总入口见 repo 根 `../../WORKFLOW.md`；本文件只记当前项目进度。
+✅ v1 跑通 → 待跑 v2（范围界定）+ 书目核验后定稿。　废弃产物丢 `_archive/`，杂项/方法学丢 `99-notes/`。

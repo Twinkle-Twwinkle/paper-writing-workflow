@@ -1,5 +1,8 @@
 # Agent 写作工作流（Paper Writing Workflow）
 
+> 📌 **稳定流程入口看 [`WORKFLOW.md`](WORKFLOW.md)**（5 问 + 各步输入/启动/产物/核验/下一步 + 第 07 步迭代）。
+> 本 README 是项目背景与起源说明；正常跑流程只读 `WORKFLOW.md` + 当前步骤的 `README.md`/`SKILL.md`，`99-notes/` 是方法学参考、不是运行入口。
+
 一套用 **Claude Code 技能（skills）** 串起来的论文写作**标准化流程**。
 从「给定研究 context」到「完成论文初稿」，共 6 步，**每一步都需要人工核验后再进入下一步**。
 
